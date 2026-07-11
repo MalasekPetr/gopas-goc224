@@ -11,6 +11,7 @@ Zdrojové materiály kurzu **GOC224** (GOPAS). Vše je psané v Markdownu s Merm
 - **Závazné názvosloví** (produkty, formáty, PowerShell) je v [`GLOSSARY.md`](GLOSSARY.md) — jediný zdroj pravdy.
 - **Konvence** (MD styl, Mermaid, currency-markery) jsou v [`CONVENTIONS.md`](CONVENTIONS.md).
 - **Šablony** modulu a labu jsou v [`_templates/`](_templates/).
+- **Prostředí kurzu** (pracovní tenant, na který se laby odkazují) je v [`environment.md`](environment.md).
 
 ## Struktura
 
