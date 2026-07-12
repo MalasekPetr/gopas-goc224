@@ -15,7 +15,7 @@ Zdrojové materiály kurzu **GOC224** (GOPAS). Vše je psané v Markdownu s Merm
 
 ## Struktura
 
-```
+```text
 goc224/
 ├─ README.md          # tento soubor
 ├─ CONVENTIONS.md      # jak psát materiály
