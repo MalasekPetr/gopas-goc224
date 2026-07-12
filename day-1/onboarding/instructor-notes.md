@@ -5,6 +5,7 @@
 
 ## Před během — checklist prostředí
 - [ ] Hesla pro `user.11`–`user.30` připravena k rozdání.
+- [ ] MFA vynuceno (Conditional Access) — první přihlášení vyžádá registraci; studenti jedou podle [`mfa-setup.md`](mfa-setup.md).
 - [ ] Licence Business Basic přiřazené všem 20 účtům.
 - [ ] PAYG billing policy zapnutá a pokrývající studentské účty (Copilot Credits).
 - [ ] Budget alert na PAYG nastavený (spotřebu nezastaví, ale upozorní).
