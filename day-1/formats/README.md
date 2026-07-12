@@ -73,6 +73,8 @@ Pozor: `rezim: simulace` patří pod `lab:` jen díky odsazení — když ho ods
 
 [Skills v Copilot in SharePoint (MD)](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills) · [Column formatting (JSON)](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/column-formatting) · [View formatting (JSON)](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/view-formatting) · [Formatting syntax reference](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-syntax-reference) · [Deklarativní agent manifest (JSON)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents)
 
+Další zdroje (formáty samotné): [YAML (Wikipedia)](https://en.wikipedia.org/wiki/YAML) · [JSON (Wikipedia)](https://en.wikipedia.org/wiki/JSON)
+
 ## Stav produktu / delta
 
 - Stabilní téma bez fast-moving faktů. Ověřit jen aktuální název YAML config souboru Agents Toolkitu, pokud ho budeš v M09 ukazovat.
