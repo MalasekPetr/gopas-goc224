@@ -46,13 +46,22 @@ Mini příklad (obarvení sloupce dle hodnoty):
 Čitelná konfigurace, odsazením místo závorek; povoluje komentáře `#`. Pozor na odsazení (mezery, ne taby).
 - **Kde v kurzu**: **front-matter** dokumentů, konfigurační soubory, **CI pipeline** (GitHub Actions) v repu; projektový config nástroje Microsoft 365 Agents Toolkit je také YAML.
 
-Mini příklad (front-matter):
+Mini příklad (front-matter s komentářem a vnořením):
 
 ```yaml
+# Komentář uvozuje '#' — v JSON nic takového není
 title: Modul licencí
 type: povinný
 den: 1
+lab:                     # vnořený objekt: odsazení 2 mezerami, nikdy taby
+  soubor: lab-license-matrix.md
+  rezim: simulace
+temata:                  # seznam: položky uvozené pomlčkou
+  - PAYG
+  - Copilot Credits
 ```
+
+Pozor: `rezim: simulace` patří pod `lab:` jen díky odsazení — když ho odsadíš špatně, změní se význam dokumentu, ne jen vzhled.
 
 ## Klíčové rozlišení
 
