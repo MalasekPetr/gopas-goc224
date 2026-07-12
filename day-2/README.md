@@ -1,10 +1,10 @@
-# Den 2 — Obsahové služby & governance
+# Den 2 — Prompting, scripting & konfigurace
 
 | Pořadí | Blok | Slug | Typ |
 |---|---|---|---|
-| 1 | SharePoint PowerShell (SPO module) | `powershell-spo` | P |
-| 2 | Konfigurace krok za krokem | `configuration` | P |
-| 3 | Základy Document processing for Microsoft 365 | `document-processing` | P |
-| 4 | Scénáře eSignature | `esignature` | P |
+| 1 | Základy promptování a agentní anatomie | `prompting-fundamentals` | P |
+| 2 | SharePoint PowerShell (SPO module) | `powershell-spo` | P |
+| 3 | Konfigurace krok za krokem | `configuration` | P |
+| 4 | Základy Document processing for Microsoft 365 | `document-processing` | P |
 
-> [!NOTE] 4 povinné bloky (povinný PowerShell). Obsah TBD.
+> [!NOTE] Prompting hned ráno — prompt literacy se úročí celý týden a šetří Copilot Credits. Document processing je největší blok dne (živá konfigurace + dema autofill columns a image tagging) — hlídat timing dopoledních bloků.

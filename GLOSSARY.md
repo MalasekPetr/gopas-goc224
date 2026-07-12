@@ -74,5 +74,16 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 | **Microsoft 365 Agents Toolkit** | nástupce Teams Toolkitu; VS Code / Visual Studio / GitHub Copilot / CLI; scaffolduje deklarativní a custom engine agenty, manifest, provisioning, MCP akce | zdarma |
 | **GitHub Copilot** | AI asistent při psaní kódu; Agents Toolkit je pro něj dostupný | vlastní licence (mimo M365) |
 | **Copilot Studio** | low-code stavba agentů | Copilot Credits / M365 Copilot licence |
+| **Agent Builder** | lightweight tvorba deklarativních agentů přímo v M365 Copilot (bez opuštění appky) | M365 Copilot licence / Copilot Credits — ověřit k datu běhu |
 
 Rozhodovací osa pro M09: deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
+
+## Azure AI služby (mimo M365)
+
+| Používat | Dřívější názvy | Kde v kurzu |
+|---|---|---|
+| **Azure AI services** | Azure Cognitive Services | zastřešující rodina Azure AI služeb |
+| **Azure AI Document Intelligence** | Form Recognizer (→ součást ex-Cognitive Services) | D3 — robustnější alternativa vytěžování faktur vůči AI Builder / Document processing |
+
+> [!IMPORTANT] Názvosloví
+> „Azure Cognitive Services" je zastaralý brand — v materiálech používat **Azure AI services**, pro faktury konkrétně **Azure AI Document Intelligence**. Účtování jde přes Azure subscription (třetí kategorie vedle obou M365 PAYG modelů).
