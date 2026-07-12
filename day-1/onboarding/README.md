@@ -11,7 +11,7 @@
 ## Průběh dopoledne
 
 1. **Rozdání účtů a hesel** — každý student dostane `user.NN@spdemo.online` (NN = 11–30) a heslo.
-2. **První přihlášení** — portal.office.com, případný reset hesla / MFA dle nastavení tenantu.
+2. **První přihlášení** — portal.office.com, případný reset hesla + **registrace MFA** (postup: [`mfa-setup.md`](mfa-setup.md)). Účet `user.NN@spdemo.online` slouží po celý týden jako pracovní účet na počítači v učebně.
 3. **Ověření přístupu** — student vidí svůj web/knihovnu a Copilot in SharePoint (viz lab).
 4. **Orientace v prostředí** — kde je SharePoint, kde Copilot, co znamená „Business Basic" (web, ne desktop).
 5. **Pravidla způsobu práce** — viz [`ways-of-working.md`](ways-of-working.md).
