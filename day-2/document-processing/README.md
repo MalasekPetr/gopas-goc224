@@ -13,7 +13,7 @@
 
 ### Co rodina obsahuje
 
-**Document processing for Microsoft 365** (ex-Syntex, viz glosář) = 10 služeb: autofill columns, document translation, eSignature, OCR, content assembly, image tagging, taxonomy tagging, prebuilt / structured & freeform / unstructured modely ([Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-overview)). Licenčně **čistý PAYG** — žádný upfront závazek, platí se použití.
+**Document processing for Microsoft 365** (ex-Syntex, viz glosář) = 10 služeb: autofill columns, document translation, eSignature, OCR, content assembly, image tagging, taxonomy tagging, prebuilt / structured & freeform / unstructured modely ([Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-overview)). Licenčně **čistý PAYG** — žádný upfront závazek, platí se použití. Výjimka: **structured a freeform modely jsou AI Builder** (Power Platform) a přes M365 PAYG se neúčtují — srovnání typů modelů vč. Dataverse napojení a jazyků: [`comparison-models.md`](comparison-models.md).
 
 ```mermaid
 flowchart LR
@@ -64,3 +64,4 @@ Viz [`lab-sample-library.md`](lab-sample-library.md) — nastavení ukázkové k
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
 > Promo „měsíční kapacita zdarma" končí **červen 2026** — ověřit, zda ještě platí, jinak vyhodit ze slidů. Autofill překryv s Copilot in SharePoint (preview) se při GA může změnit. Ceny průběžně revidovat proti pricing stránce; docs jedou pod `/documentprocessing/`, staré `/syntex/` URL redirectují.
+> **AI Builder kredity** (structured/freeform modely) končí k 1. 11. 2026 — náhrada Copilot Credits; detail v [`comparison-models.md`](comparison-models.md).

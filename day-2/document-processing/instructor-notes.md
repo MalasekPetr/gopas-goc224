@@ -10,6 +10,7 @@
 - [ ] Sada vzorků: 3 dokumenty CZ (smlouva, objednávka, zápis — s jasnou „protistranou") + 3 obrázky (jeden schválně víceznačný, ať tagging ukáže limity), distribuce přes odkaz.
 - [ ] Demo knihovna připravená, ale autofill sloupec zakládat AŽ živě — to je celé demo.
 - [ ] Budget alert zkontrolovaný — 20 studentů × ~10 transakcí je drobné, ale viditelné.
+- [ ] Structured/freeform: pokud se má ukázat víc než slide, ověřit **Power Platform environment + kreditovou cestu** (AI Builder kredity nemáme — jde to přes Copilot Credits dual-mode? viz `comparison-models.md`). Bez toho jen výklad nad maticí, demo nechat na prebuilt/unstructured (M365 PAYG).
 
 ## Dema
 
