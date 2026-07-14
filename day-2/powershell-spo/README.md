@@ -49,11 +49,14 @@ flowchart LR
 
 Viz [`lab-spo-scripting.md`](lab-spo-scripting.md) — inventura tenantu skriptem.
 
+Navazující návod: [`guide-copilot-inventory.md`](guide-copilot-inventory.md) — inventarizace nastavení Copilot in SharePoint (scope + RCD → efektivní dostupnost per web).
+
 ## Zdroje (Microsoft)
 
-[Get started with SPO Management Shell](https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online) · [Intro to SPO Management Shell](https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/introduction-sharepoint-online-management-shell) · [Cmdlet reference](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/?view=sharepoint-ps) · [Get-SPOSite](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-sposite?view=sharepoint-ps) · [Get-SPOTenant](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spotenant?view=sharepoint-ps)
+[Get started with SPO Management Shell](https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online) · [Intro to SPO Management Shell](https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/introduction-sharepoint-online-management-shell) · [Cmdlet reference](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/?view=sharepoint-ps) · [Get-SPOSite](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-sposite?view=sharepoint-ps) · [Get-SPOTenant](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spotenant?view=sharepoint-ps) · [Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)
 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
 > Copilot funkce vyžadují modul 16.0.26615.12013+ — před kurzem aktualizovat. Zda `Get-*` cmdlety fungují pod Global Reader, dokumentace neříká (uvádí jen SharePoint Administrator) — otestovat v tenantu před během, viz instructor-notes.
+> Copilot in SharePoint je od 2026-06 **opt-out preview** (zapíná se automaticky licencovaným uživatelům); parametry si drží preview názvy `KnowledgeAgent*`. Enablement se má pro GA změnit — před během ověřit v článku [Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started).

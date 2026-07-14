@@ -18,6 +18,10 @@ param(
     [string]$OutputCsv = "tenant-inventory.csv"
 )
 
+# POVINNÝ krok: manifest modulu exportuje wildcardem, autoloading nefunguje —
+# bez explicitního importu není Connect-SPOService k nalezení.
+Import-Module Microsoft.Online.SharePoint.PowerShell
+
 # Připojení k SPO admin endpointu — všechny další cmdlety běží v jeho kontextu.
 Connect-SPOService -Url $AdminUrl
 
