@@ -10,6 +10,7 @@
 - **Dva PAYG modely nezaměňovat**: eSignature jede na Document processing PAYG (Azure metry), ne na Copilot Credits.
 - Partner provider ≠ zadarmo: PAYG setup je nutný i pro Adobe/Docusign, jen se neúčtují requesty — platí se licence providera.
 - Word podpora vyžaduje Enterprise/Current/Beta channel — v učebně (Business Basic, web only) demonstrovat na PDF.
+- **eIDAS opatrně**: učíme rozhodovací rámec (SES/AES/QES tabulka), ne právní poradenství — na dotazy typu „stačí to na naši smlouvu?" odpovídat „úroveň určuje váš právník, IT vybírá nástroj". CZ specifikum (297/2016 Sb., uznávaný podpis vůči veřejné správě) zmínit — pro studenty ze státní správy je to dealbreaker nativního eSignature.
 
 ## Go/no-go pro živé demo
 
