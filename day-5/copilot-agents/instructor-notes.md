@@ -17,6 +17,7 @@
 - Negativní test v evaluačním plánu je povinný — bez něj se agent „vždycky povede".
 - Researcher/Analyst nejsou „agenti k tvorbě" — D4 už to říkal, nenechat zamotat.
 - Demo agenta stavět nad instruktorským webem, ne nad studentskými (práva, překvapení).
+- Srovnávací matici (`comparison-agent-paths.md`) promítnout u mapy cest — nosné rozdíly: listy (Studio 10 + analytika / Builder 1 / SharePoint agent 1 a nic jiného / Toolkit nic), akce (Studio konektory+MCP+triggery vs. Toolkit OpenAPI), ALM (jen Toolkit = git). U SharePoint agents zmínit docs lag k listům (MC1255409 GA ~05/2026, get-started to k 06/2026 neuvádí).
 
 ## Vazby
 
