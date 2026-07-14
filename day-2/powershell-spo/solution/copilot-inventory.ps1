@@ -58,6 +58,10 @@ $report = foreach ($s in Get-SPOSite -Limit ALL) {
     # Restricted Content Discovery přebíjí availability nastavení:
     # web s RCD Copilot nezobrazí, ať je scope jakýkoli.
     $rcd = [bool]$detail.RestrictContentOrgWideSearch
+
+    # IsAuthoritative = pozitivní signál "oficiální zdroj" pro Search/Copilot
+    # (nic neomezuje) — viz ../../configuration/explainer-copilot-controls.md.
+    $authoritative = [bool]$detail.IsAuthoritative
     $inList = $selectedSites -contains $s.Url.TrimEnd('/').ToLowerInvariant()
 
     # Dostupnost podle scope (bez RCD) — zvlášť, ať jde v souhrnu odlišit
@@ -74,6 +78,7 @@ $report = foreach ($s in Get-SPOSite -Limit ALL) {
         Url                        = $s.Url
         Template                   = $s.Template
         RestrictedContentDiscovery = $rcd
+        IsAuthoritative            = $authoritative
         InSelectedSitesList        = $inList
         InScope                    = $inScope
         CopilotAvailable           = $available

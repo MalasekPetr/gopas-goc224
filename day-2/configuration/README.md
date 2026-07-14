@@ -25,6 +25,8 @@ Azure subscription ve stejném tenantu + resource group; role SharePoint/Global 
 
 Grounding jede přes Microsoft Graph a search — co není v indexu / na co nejsou práva, Copilot nenajde. Restricted SharePoint Search a RCD jsou vypínače viditelnosti; autoritativní obsah lze značit (`-IsAuthoritative`, viz ranní PowerShell).
 
+Detailní výklad tří ovladačů (scope × RCD × IsAuthoritative) vč. kombinačních scénářů a častých omylů: [`explainer-copilot-controls.md`](explainer-copilot-controls.md).
+
 ### Krok 3 — change management a komunikace
 
 Technický rollout je menší půlka. Komunikační plán: co se zapíná, koho se to týká, co s náklady (PAYG!), kam hlásit problémy. Vzory: [Copilot enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources) (5 kroků: readiness → licence → apps/network → setup → welcome + feedback).

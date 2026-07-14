@@ -70,9 +70,12 @@ foreach ($s in $sites) {
     # -Limit ALL vrací defaulty vlastností (lekce z labu!) — detail nutno číst per web.
     $detail = Get-SPOSite -Identity $s.Url
     $rcd = [bool]$detail.RestrictContentOrgWideSearch
+    $authoritative = [bool]$detail.IsAuthoritative   # signál "oficiální zdroj" pro Search/Copilot
     ...
 }
 ```
+
+Význam všech tří nastavení (scope × RCD × `IsAuthoritative`) a jejich kombinace ve scénářích: [`../configuration/explainer-copilot-controls.md`](../configuration/explainer-copilot-controls.md).
 
 S 20 weby kurzu je smyčka rychlá; v produkci s tisíci weby by chtěla dávkování/throttling awareness.
 
@@ -97,7 +100,7 @@ Tripwire: URL v `KnowledgeAgentSelectedSitesList` porovnávej **normalizovaně**
 
 ## Krok 6 — Export a interpretace
 
-- Výsledná tabulka per web: `Url, Template, RestrictedContentDiscovery, InSelectedSitesList, InScope, CopilotAvailable`.
+- Výsledná tabulka per web: `Url, Template, RestrictedContentDiscovery, IsAuthoritative, InSelectedSitesList, InScope, CopilotAvailable`.
 - `Export-Csv -Encoding utf8 -NoTypeInformation` + souhrn na konzoli (scope, počet dostupných webů, počet blokovaných RCD).
 - Odpověz nad výstupem: **(a)** jaká je hodnota `KnowledgeAgentScope`, **(b)** na kolika webech je Copilot efektivně dostupný, **(c)** blokuje někde RCD web, který by jinak dostupný byl?
 
