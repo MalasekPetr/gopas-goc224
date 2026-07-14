@@ -8,8 +8,9 @@ Napsat skript, který vytvoří AI-governance inventuru tenantu: weby + nastaven
 
 ## Předpoklady
 
-- PowerShell 7 + modul `Microsoft.Online.SharePoint.PowerShell` (import přes `-UseWindowsPowerShell`).
+- PowerShell 7 + modul `Microsoft.Online.SharePoint.PowerShell` v aktuální verzi (od ~16.0.24810 podporuje PS7 nativně, `-UseWindowsPowerShell` už není potřeba). Pokud modul hlásí chybu kompatibility, jde o starou verzi z cache — `Update-Module Microsoft.Online.SharePoint.PowerShell -Force`.
 - Admin URL tenantu (viz `../../environment.md`).
+- Role **SharePoint Administrator** (nebo vyšší — Global Administrator) na účtu, kterým se studenti připojují. Bez ní `Connect-SPOService` proběhne, ale `Get-SPOTenant` / `Get-SPOSite -Limit ALL` skončí na 403 — SPO admin cmdlety vyžadují administrátorskou roli, členství ve site collection admins nestačí.
 
 ## Kroky
 
