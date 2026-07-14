@@ -13,7 +13,7 @@
 
 ### Nástroj
 
-**Copilot Studio** = grafická low-code stavba **agentů a agent flows**; samostatná appka copilotstudio.microsoft.com ([What is Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)). Oproti Agent Builderu (minulý blok): plná kontrola nad topics, akcemi, kanály a publikací.
+**Copilot Studio** = grafická low-code stavba **agentů a agent flows**; samostatná appka copilotstudio.microsoft.com ([What is Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)). Oproti Agent Builderu (včerejší `copilot-agents` blok, D4): plná kontrola nad topics, akcemi, kanály a publikací.
 
 ### SharePoint jako knowledge
 
@@ -49,13 +49,13 @@ Data policies v **Power Platform admin centru** (konektory Business/Non-business
 
 ## Klíčové rozlišení
 
-- **Copilot Studio vs. Agent Builder**: stejný deklarativní základ; Studio přidává topics, akce/konektory, kanály, ALM — a s tím DLP povinnosti a kreditové účtování. Builder = rychlý osobní agent; Studio = spravovaný firemní agent. Úplná rozdílová matice všech cest: [`../copilot-agents/comparison-agent-paths.md`](../copilot-agents/comparison-agent-paths.md).
+- **Copilot Studio vs. Agent Builder**: stejný deklarativní základ; Studio přidává topics, akce/konektory, kanály, ALM — a s tím DLP povinnosti a kreditové účtování. Builder = rychlý osobní agent; Studio = spravovaný firemní agent. Úplná rozdílová matice všech cest: [`../../day-4/copilot-agents/comparison-agent-paths.md`](../../day-4/copilot-agents/comparison-agent-paths.md).
 - **Knowledge vs. topic**: knowledge = odkud čerpá fakta (grounding); topic = co má *udělat* (dialog/akce). Nacpat FAQ do topics je anti-pattern — patří do knowledge.
 - **Kredity vs. Document processing PAYG**: podruhé a naposledy — dva různé metry (glosář); agent nad SharePointem čerpá **Copilot Credits**.
 
 ## Naše prostředí
 
-- Studenti staví agenta nad **vlastním webem** (SharePoint knowledge). Přístup do Copilot Studia přes tenant PAYG — go/no-go instruktora; každý testovací dotaz čerpá kredity (evaluační plán z minulého bloku = 5 testů, ne 50).
+- Studenti staví agenta nad **vlastním webem** (SharePoint knowledge). Přístup do Copilot Studia přes tenant PAYG — go/no-go instruktora; každý testovací dotaz čerpá kredity (evaluační plán ze včerejšího `copilot-agents` labu = 5 testů, ne 50).
 
 ## Lab
 

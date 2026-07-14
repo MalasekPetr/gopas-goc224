@@ -1,6 +1,6 @@
 # M · Copilot Agents — cesty tvorby agentů
 
-> Typ: povinný · Den: 5 (otvírák) · Odhad: AM blok — vč. živého dema Agent Builderu
+> Typ: povinný · Den: 4 (závěr dne — přesun z D5) · Odhad: poslední PM blok — vč. živého dema Agent Builderu
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle
@@ -21,7 +21,7 @@ Deklarativní agent = **instrukce + knowledge + akce** běžící na stejném or
 flowchart TB
   DA[Deklarativní agent<br>orchestrátor M365 Copilot]
   AB[Agent Builder<br>v M365 Copilot appce] --> DA
-  CS[Copilot Studio<br>low-code, další blok] --> DA
+  CS[Copilot Studio<br>low-code, zítra D5] --> DA
   ATK[Agents Toolkit<br>pro-code, repo] --> DA
   SPA[SharePoint agents<br>.agent na webu] --> DA
   SK[Skills — SKILL.md<br>workflow, ne celý agent] -.doplněk.-> DA
@@ -33,7 +33,7 @@ flowchart TB
 | **Copilot Studio** | maker / power user | Copilot Studio přístup (kredity/PAYG) | org katalog přes schválení, marketplace |
 | **Agents Toolkit** | vývojář | zdarma (VS Code); repo-as-code | org katalog, marketplace |
 | **SharePoint agents** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG ([SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)) | jen web (sdílení do Teams chatu) |
-| **Skills** (preview) | uživatel webu | Edit na webu; `SKILL.md` v Agent Assets ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)) | v rámci webu |
+| **Skills** (preview) | uživatel webu | web s Copilot in SharePoint (**= Copilot licence, PAYG nestačí**) + Edit; `SKILL.md` v Agent Assets ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)) — hloubkově zítra v [`../../day-5/skills/`](../../day-5/skills/) | v rámci webu |
 
 Detailní **srovnání schopností** cest (knowledge vč. listů, akce, orchestrace, ALM, governance) + rozhodovací osa: [`comparison-agent-paths.md`](comparison-agent-paths.md).
 
@@ -41,9 +41,9 @@ Detailní **srovnání schopností** cest (knowledge vč. listů, akce, orchestr
 
 Lightweight tvorba přímo v M365 Copilot (web/Teams desktop; ne mobil): popis → instrukce → knowledge → publikace. Backend je Copilot Studio. Demo: agent „Průvodce kurzem" nad materiály na webu instruktora.
 
-### Distribuce a governance — most na D4
+### Distribuce a governance — návaznost na copilot-admin
 
-Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reject → „Built by your org" v **Agent Store** ([Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store), [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)). Registry, blokace a Agent 365 — to všechno už znáte z D4 copilot-admin.
+Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reject → „Built by your org" v **Agent Store** ([Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store), [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)). Registry, blokace a Agent 365 — to všechno už znáte z dnešního `copilot-admin` bloku.
 
 ## Klíčové rozlišení
 
@@ -53,7 +53,7 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 
 ## Naše prostředí
 
-- Agent Builder demo dělá instruktor; hands-on část labu podle go/no-go (dostupnost Agent Builderu při PAYG bez Copilot licencí — ověřit!). Skills jedou na Edit práva — dostupné všem na vlastním webu.
+- Agent Builder demo dělá instruktor; hands-on část labu podle go/no-go (dostupnost Agent Builderu při PAYG bez Copilot licencí — ověřit!). **Skills studentům nejedou** — vyžadují Copilot in SharePoint, který je license-only (ověřeno živě 2026-07); živé demo a návrhový lab zítra v D5 `skills` na instruktorském účtu.
 
 ## Lab
 

@@ -3,12 +3,13 @@
 ## Timing
 
 - 45 min výklad + demo, 40 min lab, 10 min sdílení. Demo Agent Builderu držet pod 15 min — celý flow (popis → instrukce → knowledge → test → publikace), ne ladění.
+- **Závěr D4** (přesun z D5): energie nízká — demo dát doprostřed bloku jako oživení; lab část A je psací, funguje i unaveně. Most: „dnes jste agenty spravovali (copilot-admin), teď víte, jak vznikají — zítra je stavíte."
 
 ## Go/no-go — otestovat před během
 
 - **Agent Builder v našem tenantu**: docs říkají „M365 Copilot licence NEBO tenant s PAYG pro Copilot Studio" — ověřit, že PAYG cesta u nás reálně Agent Builder zpřístupňuje (i pro studenty). Určuje část B labu (krok 6 vs. 7).
 - **SharePoint agents**: tvorba vyžaduje Copilot licenci — studenti s PAYG mohou agenty *používat*, ne tvořit. Nezakládat na tom lab; zmínit jako licenční teaching point.
-- Skills = jistý fallback (Edit práva stačí, jede od D1).
+- **Skills NEJSOU studentský fallback** — vyžadují Copilot in SharePoint (license-only; PAYG neodemyká, ověřeno živě 2026-07). Fallback labu = návrhová část A + instruktor staví vybrané návrhy v demu.
 
 ## Tripwires
 
@@ -21,5 +22,5 @@
 
 ## Vazby
 
-- Zpět: Agent Instructions/orchestrator (D2), publikační flow a registry (D4 copilot-admin).
-- Dopředu: Copilot Studio (hned další blok) = „stejný návrh, silnější nástroj" — návrhy z části A se v něm dají rovnou stavět; evaluační plán se recykluje v capstone.
+- Zpět: Agent Instructions/orchestrator (D2), publikační flow a registry (dnešní `copilot-admin`).
+- Dopředu: Skills a Copilot Studio (zítra, D5) = „stejný návrh, silnější nástroj" — návrhy z části A se v Copilot Studiu dají rovnou stavět; evaluační plán se recykluje v capstone.

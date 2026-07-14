@@ -19,4 +19,4 @@
 ## Vazby
 
 - Zpět: demo flow (blok 3), Document Intelligence akcent, formáty (OpenAPI = JSON/YAML, D1).
-- Dopředu: deklarativní vs. custom engine agent → D5 `copilot-agents`; repo-as-code přístup → D5 capstone.
+- Dopředu: deklarativní vs. custom engine agent → D4 `copilot-agents` (hned zítra, závěr dne); repo-as-code přístup → D5 capstone.

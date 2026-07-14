@@ -1,9 +1,9 @@
 # M · Orchestry — možnosti řízení Copilotu (volitelný)
 
-> Typ: volitelný · Den: 4 (konec dne, go/no-go po monitoringu) · Odhad: krátký blok
+> Typ: **self-study** (vypadl z programu ve prospěch `copilot-agents` na konci D4) · Odhad: krátký blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
-> [!NOTE] Volitelný **leaf** modul — Capstone ani den 5 na něm nezávisí. Spouští se, když po monitoringu zbývá čas a skupina chce 3rd-party perspektivu.
+> [!NOTE] Self-study **leaf** modul — Capstone ani den 5 na něm nezávisí. 3rd-party mapa se zmiňuje v `copilot-admin` (10 min); tento materiál slouží zájemcům k samostudiu po kurzu.
 
 ## Cíle
 

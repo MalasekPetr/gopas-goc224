@@ -19,4 +19,4 @@
 ## Vazby
 
 - Zpět: D1 `ai-landscape` (grounding, datové hranice), ways-of-working (PAYG chování).
-- Dopředu: Agent Instructions → D5 `copilot-agents` (explicitní callback — „tuhle tabulku uvidíte znovu"); orchestrator → D5 Copilot Studio (generative orchestration).
+- Dopředu: Agent Instructions → D4 `copilot-agents` (explicitní callback — „tuhle tabulku uvidíte znovu"); orchestrator → D5 Copilot Studio (generative orchestration).

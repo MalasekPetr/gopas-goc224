@@ -21,4 +21,4 @@
 ## Vazby
 
 - Zpět: SAM jako SharePoint vrstva (D3) — mapa vrstev na ni naváže; archiv/RCD = „co AI vidí".
-- Dopředu: audit → `monitoring` (hned potom); 3rd-party řádek mapy → `opt-orchestry` (go/no-go); registry a publikace → D5 `copilot-agents` (Agent Store flow).
+- Dopředu: audit → `monitoring` (hned potom); 3rd-party řádek mapy → **Orchestry zmínit 10 min tady** (`opt-orchestry` je nově self-study — blok ustoupil copilot-agents); registry a publikace → `copilot-agents` (dnes, závěr dne — Agent Store flow).

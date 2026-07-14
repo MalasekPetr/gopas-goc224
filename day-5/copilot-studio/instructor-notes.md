@@ -19,5 +19,5 @@
 
 ## Vazby
 
-- Zpět: návrhy a evaluační plány (dopolední copilot-agents), popisy/instrukce (D2), DLP a registry (D4), RSS/RCD (D2–D3).
+- Zpět: návrhy a evaluační plány (včerejší copilot-agents, D4), Skills (ranní blok — skill vs. topic!), popisy/instrukce (D2), DLP a registry (D4), RSS/RCD (D2–D3).
 - Dopředu: capstone — agent je jedna sekce blueprintu, evaluační plán a governance flow se recyklují.

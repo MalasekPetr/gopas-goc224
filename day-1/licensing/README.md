@@ -51,22 +51,26 @@ Bývalý deštník „SharePoint Premium" je rozdělen — tohle jsou **samostat
 
 ## 4. Licence vs. permissions
 
-- **Licence** = přístup k *funkci* (placený M365 Copilot, nebo Copilot Credits PAYG → Copilot in SharePoint / agenti / Skills).
+- **Licence** = přístup k *funkci* — dvě různé brány: **Copilot in SharePoint a Skills vyžadují M365 Copilot licenci** (PAYG je neodemyká — [get-started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started) uvádí jen licenci a [PAYG overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview) je v seznamu služeb nemá; ověřeno živě v kurzovním tenantu 2026-07); Copilot Chat a použití SharePoint agents = licence NEBO Copilot Credits PAYG.
 - **SharePoint permissions** = *kdo funkci použije* (Edit = tvorba agenta/Skillu, View = spuštění). Agenti v SharePointu jsou `.agent` soubory; oprávnění na souboru řídí přístup ([Manage access to agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint)).
 
 ## Diagram — licenční decision flow
 
 ```mermaid
 flowchart TD
-  Start[Uživatel potřebuje Copilot in SharePoint / agenty / Skills] --> Q1{Placená M365 Copilot licence?}
-  Q1 -->|Ano| OK[Přístup, tenant grounding není metrovaný]
-  Q1 -->|Ne| Q2{Copilot Credits PAYG zapnutý?}
-  Q2 -->|Ano| Metered[Přístup, spotřeba v Copilot Credits]
-  Q2 -->|Ne| No[Bez přístupu k tenant groundingu]
+  Start[Co uživatel potřebuje?] --> F1[Copilot in SharePoint / Skills]
+  Start --> F2[Copilot Chat / použití SharePoint agents]
+  F1 --> Q1{Placená M365 Copilot licence?}
+  Q1 -->|Ano| OK1[Přístup]
+  Q1 -->|Ne| No1[Bez přístupu — PAYG tuhle funkci NEodemyká]
+  F2 --> Q2{Licence NEBO Copilot Credits PAYG?}
+  Q2 -->|Licence| OK2[Přístup, nemetrováno]
+  Q2 -->|PAYG| Metered[Přístup, spotřeba v Copilot Credits]
+  Q2 -->|Nic| No2[Bez přístupu]
 ```
 
 ## 5. Naše prostředí (kurz)
-Studenti mají **Business Basic + Copilot PAYG** → cesta „nelicencovaný + PAYG": Copilot in SharePointu a Skills fungují, ale **každá reálná interakce čerpá kredity** bez tvrdého stropu. Proto budget alert + páteční deaktivace účtů (viz `../../environment.md`).
+Studenti mají **Business Basic + Copilot PAYG** → cesta „nelicencovaný + PAYG": funguje **Copilot Chat a použití SharePoint agents** (každá interakce čerpá kredity bez tvrdého stropu — proto budget alert + páteční deaktivace účtů, viz `../../environment.md`). **Copilot in SharePoint a Skills studentům NEfungují** (license-only, ověřeno živě 2026-07) — vidí je jen na instruktorském účtu s Copilot licencí (dema).
 
 ## 6. Doplňky, které souvisí s kurzem
 
@@ -83,7 +87,7 @@ Všechny PAYG modely (document processing, Copilot Credits, eSignature, Backup, 
 Pro-code cesta ke stavbě agentů: **VS Code + Microsoft 365 Agents Toolkit** (nástupce Teams Toolkitu; i pro Visual Studio, GitHub Copilot a CLI) scaffolduje deklarativní agenty, edituje manifest, provisionuje, umí akce přes MCP; **GitHub Copilot** jako AI asistent při psaní kódu ([Agents Toolkit intro](https://devblogs.microsoft.com/microsoft365dev/introducing-the-microsoft-365-agents-toolkit/), [Build declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents), [MCP agents](https://devblogs.microsoft.com/microsoft365dev/build-declarative-agents-for-microsoft-365-copilot-with-mcp/)). Licenční dotyk: Agents Toolkit je zdarma, GitHub Copilot má vlastní licenci. Detail → [`../../day-3/procode-vs-lowcode/`](../../day-3/procode-vs-lowcode/).
 
 
-- **„Skills jen pro E licence"** — mýtus. Gate je *placená* Copilot licence (i Business) nebo PAYG, ne tier.
+- **„Skills jen pro E licence"** — mýtus. Gate je *placená* M365 Copilot licence bez ohledu na tier (i Business). Pozor ale: **PAYG nestačí** — Skills jedou jen s licencí.
 - **Dva PAYG** — Document processing (Azure metry) ≠ Copilot Credits.
 - **Budget ≠ strop** u Copilot PAYG.
 - **„SharePoint Premium"** jako jeden produkt — neexistuje, je rozdělený.

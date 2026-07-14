@@ -27,7 +27,7 @@ Značka „SharePoint Premium" byla rozdělena. **Není** 1:1 přejmenovaná na 
 | Model | Co platí | Metrika | Kde |
 |---|---|---|---|
 | **Document processing PAYG** | vytěžování dokumentů, OCR, překlad, eSignature | Azure metry (za stránku/dokument) | M365 admin center → billing |
-| **Copilot Credits PAYG** | agenti / Copilot in SharePoint / Copilot Chat nad tenant daty | Copilot Credits ($0,01/kredit) | M365 admin center → PAYG billing policy + Azure |
+| **Copilot Credits PAYG** | Copilot Chat (placené funkce nad tenant daty) + použití SharePoint agents; **neodemyká Copilot in SharePoint ani Skills** (ty jsou license-only — ověřeno živě 2026-07) | Copilot Credits ($0,01/kredit) | M365 admin center → PAYG billing policy + Azure |
 
 Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plumbing jako Document processing, ale samostatné produkty a pricing.
 
@@ -37,7 +37,7 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 
 ## Licence vs. permissions (nosný princip)
 
-- **Licence** gate-uje *přístup k funkci* (M365 Copilot licence, resp. Copilot Credits PAYG → Copilot in SharePoint a Skills).
+- **Licence** gate-uje *přístup k funkci* — pozor na dvě různé brány: **Copilot in SharePoint a Skills = jen M365 Copilot licence** (PAYG je neodemyká); Copilot Chat a použití SharePoint agents = licence NEBO Copilot Credits PAYG.
 - **SharePoint permissions** gate-ují *kdo funkci použije* (Edit = tvorba Skill/agenta, View = spuštění).
 - Skills nemají vlastní SKU ani PAYG metr.
 

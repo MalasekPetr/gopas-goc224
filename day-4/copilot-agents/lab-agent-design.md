@@ -1,6 +1,6 @@
 # Lab · Návrh agenta a plán vyhodnocení
 
-> Modul: copilot-agents · Odhad: 40 min · Režim: návrh (papír/MD) + hands-on dle go/no-go (Agent Builder / Skills)
+> Modul: copilot-agents · Odhad: 40 min · Režim: návrh (papír/MD) + hands-on dle go/no-go (Agent Builder)
 
 ## Cíl
 
@@ -19,7 +19,8 @@ Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, 
 ### Část B — hands-on (dle go/no-go)
 
 6. **Agent Builder dostupný:** postav agenta z části A (instrukce + knowledge = vlastní web), spusť 5 testů z plánu, zapiš výsledky.
-7. **Fallback — Skills:** na svém webu vytvoř Skill z opakovaného postupu (D1/D2 laby) a ověř `SKILL.md` v Agent Assets; testy z kroku 5 spusť proti Copilot in SharePoint.
+
+> Skills jako hands-on nejsou možné — vyžadují Copilot in SharePoint (license-only). Návrh a živý běh Skillu přijde zítra v D5 `skills`.
 
 ## Ověření
 
@@ -30,4 +31,4 @@ Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, 
 
 ## Fallback
 
-- Není Agent Builder ani Skills: část A je plnohodnotný deliverable; 2–3 návrhy projít nahlas, instruktor vybraný postaví v demu.
+- Není Agent Builder: část A je plnohodnotný deliverable; 2–3 návrhy projít nahlas, instruktor vybraný postaví v demu.
