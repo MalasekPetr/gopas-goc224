@@ -13,7 +13,7 @@ Značka „SharePoint Premium" byla rozdělena. **Není** 1:1 přejmenovaná na 
 |---|---|---|---|
 | **Document processing for Microsoft 365** | Syntex → SharePoint Premium (content-AI část) | vytěžování dokumentů, PAYG | prioritní služby: Autofill columns, Document translation, OCR, eSignature |
 | **eSignature** | SharePoint eSignature | podepisování dokumentů | služba pod Document processing; v UI stále „SharePoint eSignature" |
-| **SharePoint Advanced Management (SAM)** | (dříve pod deštníkem „Premium") | governance webů/OneDrive | samostatný add-on |
+| **SharePoint Advanced Management (SAM)** | (dříve pod deštníkem „Premium") | governance webů/OneDrive | dvě licenční cesty: Plan 1 add-on ($3/user/měs), NEBO ≥1 M365 Copilot licence v tenantu (výjimka: restricted site creation by apps = jen Plan 1) |
 | **Microsoft 365 Backup** | „SharePoint backup" | záloha SharePoint + OneDrive + Exchange | samostatný produkt |
 | **Microsoft 365 Archive** | „SharePoint archive" | studená data / cold storage | samostatný produkt |
 | **Copilot in SharePoint** | Knowledge Agent → AI in SharePoint | Copilot zážitek nad weby (vč. Skills) | opt-out preview, default-on pro Copilot licence |

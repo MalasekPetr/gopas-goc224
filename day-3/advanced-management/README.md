@@ -36,8 +36,11 @@ Copilot respektuje permissions — **oversharing se stává AI problémem**: co 
 
 ### Licencování
 
-- **Jedna přiřazená M365 Copilot licence odemyká SAM funkce pro celý tenant** ([SAM licensing](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing)).
-- Výjimka: *restricted site creation by apps* vyžaduje **SAM Plan 1 add-on** (per-user); DAG report nad sensitivity labels navíc E5.
+SAM není jeden SKU, ale sada funkcí se **dvěma odemykacími cestami** ([SAM features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-features-copilot-license)):
+
+- **SAM Plan 1 add-on** — samostatná per-user licence ($3/uživatel/měs, viz D1); cesta pro organizace bez Copilotu.
+- **M365 Copilot licence** — **jedna přiřazená licence odemyká SAM funkce pro celý tenant** (přesně náš případ). Feature set je totožný s Plan 1 až na jedinou dokumentovanou výjimku: *restricted site creation by apps* vyžaduje Plan 1 i tak. DAG report nad sensitivity labels chce navíc E5.
+- Formulační pozor: neříkat „SAM zdarma s Copilotem" — Copilot licence je dražší než Plan 1; odemčení SAM je vedlejší efekt.
 
 ## Klíčové rozlišení
 
@@ -60,4 +63,4 @@ Viz [`lab-sam-policies.md`](lab-sam-policies.md) — aplikace a ověření polit
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Odemknutí SAM přes Copilot licenci: ověřit, že v kurzovním tenantu (Business Basic + PAYG, bez Copilot seat) jsou SAM funkce vidět — jinak jede blok na screenshotech/demo videu. Feature set SAM roste po měsících (stránka aktualizovaná 2026-06).
+> Odemknutí SAM přes Copilot licenci: v běhu 2026-07 **potvrzeno** (instruktorský účet má Copilot licenci) — pro další běhy ověřit znovu. Feature set SAM roste po měsících (stránka aktualizovaná 2026-06).

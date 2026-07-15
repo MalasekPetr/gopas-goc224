@@ -16,6 +16,7 @@ Vidět životní cyklus SAM politiky: výběr → aplikace → ověření dopadu
 1. **Instruktor (demo):** otevře DAG reporty v SharePoint admin centru → sharing links report; třída tipuje, co bude nejčastější nález.
 2. **Instruktor (demo):** aplikuje **inactive site policy** (nebo RCD na vybraný testovací web).
 3. **Studenti:** v SharePoint admin centru (read-only) najdou aplikovanou politiku a zapíšou: na co cílí, koho notifikuje / co skrývá.
+   - **Můstek na D2 (pokud ranní go/no-go dovolil PowerShell):** znovu pusť `copilot-inventory.ps1` z D2 — u webu s RCD se `RestrictedContentDiscovery` překlopí na True a `CopilotAvailable` na False. Skript ze včerejška detekuje dnešní admin zásah.
 4. **Studenti:** pro svůj web rozhodnou RAC vs. RCD vs. nic — jedna věta odůvodnění (kdo web používá, co je na něm).
 5. **Společně:** projít 2–3 rozhodnutí nahlas; konfrontovat s pravidlem „RAC = přístup, RCD = viditelnost pro AI".
 
@@ -24,6 +25,7 @@ Vidět životní cyklus SAM politiky: výběr → aplikace → ověření dopadu
 - [ ] Student našel politiku v admin centru a popsal její dopad.
 - [ ] Student má RAC/RCD/nic rozhodnutí pro svůj web s odůvodněním.
 - [ ] Student umí říct, co ukazuje sharing links DAG report.
+- [ ] (Pokud jel PowerShell můstek) Student ukázal změněný řádek v inventuře a vysvětlil, proč se `CopilotAvailable` změnilo.
 
 ## Fallback
 
