@@ -11,6 +11,10 @@
 
 ## Výklad
 
+### Kam flow patří — environmenty (úvod před prvním Power Platform blokem)
+
+Než první flow: **environment = kontejner a governance hranice Power Platformy** (security, DLP, billing, lifecycle). Doporučená strategie (default jen jako „personal productivity", environment routing, vyhrazený environment pro kurz) a jak zacházet s předprovisionovaným „Microsoft 365 sandbox" v našem CDX tenantu: [`explainer-environments.md`](explainer-environments.md). Rozhodnutí odsud (environment `GOC224-lab` + billing policy) je **předpoklad pátečního Copilot Studio labu**.
+
 ### Anatomie flow
 
 ```mermaid

@@ -7,6 +7,7 @@
 ## Go/no-go — otestovat před během
 
 - **Přístup studentů do Copilot Studia**: PAYG billing policy / trial pro 20 účtů — ověřit přihlášení testovacím studentským účtem vč. založení agenta a SharePoint knowledge. No-go → fallback (stavba podle návrhů studentů na projektoru).
+- **Environment**: studenti staví v `GOC224-lab` (Sandbox, založený v D3 — viz `../../day-3/power-automate-invoices/explainer-environments.md`), role Environment Maker, billing policy připojená k tomuto environmentu. Ověřit, že se Copilot Studio otvírá v něm, ne v defaultu (přepínač environmentu vpravo nahoře).
 - Ověřit, že **Restricted SharePoint Search není zapnutý** (blokoval by SharePoint knowledge celé třídě).
 - DLP politiky prostředí: nesmí blokovat SharePoint knowledge, ale ideálně mít **zablokovaný HTTP node a neautentizovaný chat** — governance příklad k ukázání.
 

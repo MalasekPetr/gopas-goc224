@@ -6,6 +6,8 @@
 
 ## Demo checklist
 
+- [ ] **Environment `GOC224-lab` (Sandbox) založený** + Copilot Credits PAYG billing policy připojená + DLP zkontrolované (SharePoint konektor povolený) — viz `explainer-environments.md`. Demo flow stavět v něm, NE v defaultu. Totéž prostředí použije páteční Copilot Studio lab.
+- [ ] V úvodu bloku 5 min: environment strategie + ukázat „Microsoft 365 sandbox" v admin centru jako příklad environment sprawl (CDX artefakt — ignorujeme, nemažeme).
 - [ ] Připravený flow v tenantu: knihovna „Faktury" na instruktorském webu, trigger (properties only), AI Builder invoice model, Start and wait for an approval, zápis metadat.
 - [ ] 2 testovací faktury (PDF, česky) — jedna čistá, jedna „rozbitá" (sken nakřivo) na ukázku confidence.
 - [ ] Schvalovací notifikaci předvést v Teams i e-mailu.
