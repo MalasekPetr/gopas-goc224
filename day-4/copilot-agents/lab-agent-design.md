@@ -6,6 +6,9 @@
 
 Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, cesta tvorby — a plán, jak poznáš, že funguje.
 
+> [!NOTE] Worked example
+> Pokud nemáš vlastní scénář, použij **HR Asistenta** — [`scenario-hr-agent.md`](scenario-hr-agent.md) (list zaměstnanců + knihovny propojené osobním číslem). Jeho stavbu třemi cestami řeší navazující [`lab-hr-agent-build.md`](lab-hr-agent-build.md).
+
 ## Kroky
 
 ### Část A — návrh (všichni)

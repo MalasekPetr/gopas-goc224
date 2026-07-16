@@ -11,6 +11,9 @@ Postavit v Copilot Studiu agenta nad vlastním SharePoint webem a protáhnout ho
 - Přístup do copilotstudio.microsoft.com (vyhlásí instruktor — PAYG/trial).
 - Návrh agenta z dopoledního labu (instrukce, knowledge, 5 testů).
 
+> [!NOTE] Návaznost na D4
+> Kdo v D4 stavěl **HR Asistenta** ([`../../day-4/copilot-agents/scenario-hr-agent.md`](../../day-4/copilot-agents/scenario-hr-agent.md)): tady ho dotáhni na **analytické dotazy** nad listem `Zaměstnanci` („komu propadá certifikát do 30 dnů", „kdo nepodepsal") — to je přesně to, co Agent Builder ani SharePoint agent neuměly. Copilot Studio je jediná cesta na agregační dotazy (až 10 listů).
+
 ## Kroky
 
 1. Založ agenta (New agent) — jméno a **popis piš pečlivě**: generative orchestration podle něj routuje.

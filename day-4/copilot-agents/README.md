@@ -53,11 +53,20 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 
 ## Naše prostředí
 
-- Agent Builder demo dělá instruktor; hands-on část labu podle go/no-go (dostupnost Agent Builderu při PAYG bez Copilot licencí — ověřit!). **Skills studentům nejedou** — vyžadují Copilot in SharePoint, který je license-only (ověřeno živě 2026-07); živé demo a návrhový lab zítra v D5 `skills` na instruktorském účtu.
+- **D4 = tři cesty:** Agent Builder (**studenti hands-on**), SharePoint agent (**instruktor jen ukáže** — tvorba je license-only), Agents Toolkit (**studenti hands-on, společně**). **Copilot Studio je celé až D5** (analytický payoff nad týmiž daty). **Skills** taky D5 (license-only, ověřeno 2026-07). Go/no-go: dostupnost Agent Builderu v PAYG ověřit před během.
 
 ## Lab
 
-Viz [`lab-agent-design.md`](lab-agent-design.md) — návrh agenta a plán vyhodnocení (+ hands-on).
+- [`lab-agent-design.md`](lab-agent-design.md) — návrh agenta a plán vyhodnocení (všichni, psací).
+- [`lab-hr-agent-build.md`](lab-hr-agent-build.md) — HR Asistent: **Agent Builder** (studenti) + **SharePoint agent** (instruktor ukáže).
+- [`lab-toolkit-agent.md`](lab-toolkit-agent.md) — první agent v **Agents Toolkitu** (studenti, společně) jako spravovaná konfigurace nad knihovnou `Runbooky` (bez akce, jen M365).
+
+Dva running examples (každý nástroj na své práci):
+
+- [`scenario-hr-agent.md`](scenario-hr-agent.md) — číst list + soubory → Agent Builder / SharePoint agent (analytika → Copilot Studio v D5).
+- [`scenario-support-agent.md`](scenario-support-agent.md) — čtení runbooků, agent jako **spravovaná konfigurace** (bez akce, jen M365) → Agents Toolkit.
+
+Instruktorský demo playbook (tři cesty naživo, „nástroj na svou práci"): [`guide-agent-build-demo.md`](guide-agent-build-demo.md).
 
 ## Zdroje (Microsoft)
 

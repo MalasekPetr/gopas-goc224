@@ -43,7 +43,7 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 | 2 | Microsoft 365 Archive | `day-4/archive` | P |
 | 3 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-4/copilot-admin` | P |
 | 4 | Provozní monitoring a compliance | `day-4/monitoring` | P |
-| 5 | Copilot Agents — cesty tvorby agentů (Agent Builder demo) *(přesun z D5 — most „od správy k tvorbě")* | `day-4/copilot-agents` | P |
+| 5 | Copilot Agents — cesty tvorby agentů *(hands-on: Agent Builder + Toolkit; SharePoint agent demo; Copilot Studio až D5)* | `day-4/copilot-agents` | P |
 
 > [!NOTE] Orchestry (`day-4/opt-orchestry`) vypadl z programu ve prospěch copilot-agents — zůstává jako **self-study** materiál; 3rd-party mapa se zmiňuje v `copilot-admin`.
 

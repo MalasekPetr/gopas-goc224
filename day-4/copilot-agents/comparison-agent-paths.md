@@ -10,7 +10,7 @@
 | Schopnost | **Agent Builder** | **Copilot Studio** (new exp.) | **Agents Toolkit** (VS Code) | **SharePoint agents** |
 | --- | --- | --- | --- | --- |
 | **SharePoint soubory/weby** | ✅ až 100 souborů/složek/webů | ✅ weby real-time nebo upload se sync | ✅ URL / SharePoint IDs (site, knihovna, složka, soubor) | ✅ zdroje z webu |
-| **SharePoint listy** | ✅ **1 list** (20k položek / 50 MB; přílohy se neindexují) | ✅ **až 10 listů**, ~120k řádků celkem; **analytické/agregační dotazy** | ❌ scopování na list manifest neumí (`list_id` = knihovna!); jen org-wide search | ✅ **1 list — a nic jiného** (přidání listu odstraní ostatní zdroje; MC1255409) |
+| **SharePoint listy** | ✅ **1 list** (20k položek / 50 MB; přílohy se neindexují) | ✅ **až 10 listů**, ~120k řádků celkem; **analytické/agregační dotazy** | ❌ list jako tabulku manifest nezná (`list_id` = **knihovna**, ne list — schema 1.7); tabulková data jen přes `Dataverse`/konektor/akci | ✅ **1 list — a nic jiného** (přidání listu odstraní ostatní zdroje; MC1255409) |
 | **Dataverse** | ❌ | ✅ nativní | ✅ capability `Dataverse` (tabulky v manifestu) | ❌ |
 | **Copilot konektory** | ✅ vč. scopování atributem | ✅ | ✅ + **KQL filtr** (`additional_search_terms`), scoping per item/container | ❌ |
 | **Teams / e-mail / People / schůzky** | ✅ (Teams 5 chatů, e-mail bez scopování) | částečně (přes konektory/tools) | ✅ nejjemnější: e-mail per složka + **shared/group mailboxy**, schůzky per ID, People s related content | ❌ |
