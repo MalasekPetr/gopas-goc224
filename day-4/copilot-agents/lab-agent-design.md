@@ -7,7 +7,7 @@
 Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, cesta tvorby — a plán, jak poznáš, že funguje.
 
 > [!NOTE] Worked example
-> Pokud nemáš vlastní scénář, použij **HR Asistenta** — [`scenario-hr-agent.md`](scenario-hr-agent.md) (list zaměstnanců + knihovny propojené osobním číslem). Jeho stavbu třemi cestami řeší navazující [`lab-hr-agent-build.md`](lab-hr-agent-build.md).
+> Pokud nemáš vlastní scénář, použij **HR Asistenta** — [`scenario-hr-agent.md`](scenario-hr-agent.md) (list zaměstnanců + knihovny propojené osobním číslem). Jeho stavbu řeší nástrojové bloky: [Agent Builder](../agent-builder/lab-agent-builder.md), [SharePoint agents](../sharepoint-agents/lab-sharepoint-agent.md), [Agents Toolkit](../agents-toolkit/lab-toolkit-agent.md).
 
 ## Kroky
 

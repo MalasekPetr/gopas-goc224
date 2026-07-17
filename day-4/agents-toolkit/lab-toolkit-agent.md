@@ -1,7 +1,7 @@
 # Lab · První agent v Agents Toolkitu — agent jako spravovaná konfigurace
 
 > Modul: copilot-agents · Odhad: 35 min · Režim: **studenti hands-on, vedeni instruktorem** · Publikum: **správci**
-> Scénář: [`scenario-support-agent.md`](scenario-support-agent.md) · Srovnání cest: [`comparison-agent-paths.md`](comparison-agent-paths.md)
+> Scénář: [`../copilot-agents/scenario-support-agent.md`](../copilot-agents/scenario-support-agent.md) · Srovnání cest: [`../copilot-agents/comparison-agent-paths.md`](../copilot-agents/comparison-agent-paths.md)
 
 ## Cíl
 

@@ -1,13 +1,15 @@
-# M · Copilot Agents — cesty tvorby agentů
+# M · Agenti — mapa cest tvorby (úvod)
 
-> Typ: povinný · Den: 4 (závěr dne — přesun z D5) · Odhad: poslední PM blok — vč. živého dema Agent Builderu
+> Typ: povinný · Den: 4 (úvod k agentním blokům) · Odhad: krátký blok — výklad + srovnání + návrhový lab
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
+
+Úvodní blok před třemi nástrojovými: [`../agent-builder/`](../agent-builder/README.md) · [`../sharepoint-agents/`](../sharepoint-agents/README.md) · [`../agents-toolkit/`](../agents-toolkit/README.md). Tady se učí **společný základ** (deklarativní agent, mapa cest, srovnání) a navrhne se agent včetně **plánu vyhodnocení**.
 
 ## Cíle
 
 - Student zná **všechny cesty tvorby agentů** a umí vybrat podle scénáře a publika.
-- Student viděl živě stavbu agenta v **Agent Builderu**.
-- Student navrhne agenta včetně **plánu vyhodnocení** (lab) — návrat pojmů z D2 (Agent Instructions!).
+- Student rozumí **deklarativnímu agentovi** (instrukce + knowledge + akce) — návrat pojmů z D2 (Agent Instructions!).
+- Student navrhne agenta včetně **plánu vyhodnocení** (lab), použitelného v následujících nástrojových blocích.
 
 ## Výklad
 
@@ -21,7 +23,7 @@ Deklarativní agent = **instrukce + knowledge + akce** běžící na stejném or
 flowchart TB
   DA[Deklarativní agent<br>orchestrátor M365 Copilot]
   AB[Agent Builder<br>v M365 Copilot appce] --> DA
-  CS[Copilot Studio<br>low-code, zítra D5] --> DA
+  CS[Copilot Studio<br>low-code, D5] --> DA
   ATK[Agents Toolkit<br>pro-code, repo] --> DA
   SPA[SharePoint agents<br>.agent na webu] --> DA
   SK[Skills — SKILL.md<br>workflow, ne celý agent] -.doplněk.-> DA
@@ -29,17 +31,13 @@ flowchart TB
 
 | Cesta | Pro koho | Tvorba vyžaduje | Distribuce |
 |---|---|---|---|
-| **Agent Builder** | koncový uživatel | M365 Copilot licence, **nebo tenant s PAYG pro Copilot Studio** ([Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)) | sdílení + org katalog; **ne marketplace** |
-| **Copilot Studio** | maker / power user | Copilot Studio přístup (kredity/PAYG) | org katalog přes schválení, marketplace |
-| **Agents Toolkit** | vývojář | zdarma (VS Code); repo-as-code | org katalog, marketplace |
-| **SharePoint agents** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG ([SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)) | jen web (sdílení do Teams chatu) |
-| **Skills** (preview) | uživatel webu | web s Copilot in SharePoint (**= Copilot licence, PAYG nestačí**) + Edit; `SKILL.md` v Agent Assets ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)) — hloubkově zítra v [`../../day-5/skills/`](../../day-5/skills/) | v rámci webu |
+| **[Agent Builder](../agent-builder/README.md)** | koncový uživatel | M365 Copilot licence, **nebo** tenant s PAYG pro Copilot Studio | sdílení + org katalog; **ne marketplace** |
+| **[SharePoint agents](../sharepoint-agents/README.md)** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG | jen web (sdílení do Teams chatu) |
+| **[Agents Toolkit](../agents-toolkit/README.md)** | vývojář (u nás: správce, jako konfigurace) | zdarma (VS Code); repo-as-code | org katalog, marketplace |
+| **Copilot Studio** (D5) | maker / power user | Copilot Studio přístup (kredity/PAYG) | org katalog přes schválení, marketplace |
+| **Skills** (D5, preview) | uživatel webu | web s Copilot in SharePoint (**= Copilot licence, PAYG nestačí**) + Edit | v rámci webu |
 
-Detailní **srovnání schopností** cest (knowledge vč. listů, akce, orchestrace, ALM, governance) + rozhodovací osa: [`comparison-agent-paths.md`](comparison-agent-paths.md).
-
-### Agent Builder — demo v bloku
-
-Lightweight tvorba přímo v M365 Copilot (web/Teams desktop; ne mobil): popis → instrukce → knowledge → publikace. Backend je Copilot Studio. Demo: agent „Průvodce kurzem" nad materiály na webu instruktora.
+Detailní **srovnání schopností** (knowledge vč. listů, akce, orchestrace, ALM, governance) + rozhodovací osa: [`comparison-agent-paths.md`](comparison-agent-paths.md).
 
 ### Distribuce a governance — návaznost na copilot-admin
 
@@ -48,31 +46,29 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 ## Klíčové rozlišení
 
 - **Agent vs. Skill**: Skill = uložený vícekrokový postup uvnitř Copilot in SharePoint (neumí externí systémy, nepřekročí práva uživatele); agent = samostatná persona s instrukcemi, knowledge a případně akcemi.
-- **Tvorba vs. použití** (licenčně!): u SharePoint agentů PAYG uživatel agenta *použije*, ale k *tvorbě* potřebuje Copilot licenci. Stejný vzor „licence gate-uje funkci, permissions gate-ují obsah" z D1.
-- **Kde se rozhoduje o kvalitě**: instrukce + popis (generative orchestration vybírá podle popisů — další blok). Proto lab vyžaduje evaluační plán, ne jen nápad.
+- **Tvorba vs. použití** (licenčně!): u SharePoint agentů PAYG uživatel agenta *použije*, ale k *tvorbě* potřebuje Copilot licenci. Vzor „licence gate-uje funkci, permissions gate-ují obsah" z D1.
+- **Kde se rozhoduje o kvalitě**: instrukce + popis (generative orchestration vybírá podle popisů). Proto lab vyžaduje evaluační plán, ne jen nápad.
 
-## Naše prostředí
+## Naše prostředí — čtyři agentní bloky D4
 
-- **D4 = tři cesty:** Agent Builder (**studenti hands-on**), SharePoint agent (**instruktor jen ukáže** — tvorba je license-only), Agents Toolkit (**studenti hands-on, společně**). **Copilot Studio je celé až D5** (analytický payoff nad týmiž daty). **Skills** taky D5 (license-only, ověřeno 2026-07). Go/no-go: dostupnost Agent Builderu v PAYG ověřit před během.
+1. **Agenti — mapa cest** (tento blok): výklad + srovnání + návrhový lab.
+2. **[Agent Builder](../agent-builder/README.md)** — studenti hands-on (HR Asistent).
+3. **[SharePoint agents](../sharepoint-agents/README.md)** — instruktor ukáže (limit 1 zdroj; tvorba license-only).
+4. **[Agents Toolkit](../agents-toolkit/README.md)** — studenti společně (agent jako spravovaná konfigurace).
 
-## Lab
+**Copilot Studio i Skills jsou až D5.**
 
-- [`lab-agent-design.md`](lab-agent-design.md) — návrh agenta a plán vyhodnocení (všichni, psací).
-- [`lab-hr-agent-build.md`](lab-hr-agent-build.md) — HR Asistent: **Agent Builder** (studenti) + **SharePoint agent** (instruktor ukáže).
-- [`lab-toolkit-agent.md`](lab-toolkit-agent.md) — první agent v **Agents Toolkitu** (studenti, společně) jako spravovaná konfigurace nad knihovnou `Runbooky` (bez akce, jen M365).
+## Lab a sdílené materiály
 
-Dva running examples (každý nástroj na své práci):
-
-- [`scenario-hr-agent.md`](scenario-hr-agent.md) — číst list + soubory → Agent Builder / SharePoint agent (analytika → Copilot Studio v D5).
-- [`scenario-support-agent.md`](scenario-support-agent.md) — čtení runbooků, agent jako **spravovaná konfigurace** (bez akce, jen M365) → Agents Toolkit.
-
-Instruktorský demo playbook (tři cesty naživo, „nástroj na svou práci"): [`guide-agent-build-demo.md`](guide-agent-build-demo.md).
+- [`lab-agent-design.md`](lab-agent-design.md) — návrh agenta a plán vyhodnocení (všichni, psací); použije se v nástrojových blocích.
+- Running examples: [`scenario-hr-agent.md`](scenario-hr-agent.md) (data/list → Agent Builder + SharePoint agent) · [`scenario-support-agent.md`](scenario-support-agent.md) (runbooky → Agents Toolkit).
+- Instruktorský demo playbook (všechny cesty naživo): [`guide-agent-build-demo.md`](guide-agent-build-demo.md).
 
 ## Zdroje (Microsoft)
 
-[Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) · [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) · [SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents) · [Skills in Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills) · [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) · [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
+[Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) · [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) · [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Skills = preview (Copilot in SharePoint preview). Licenční matice tvorba/použití u SharePoint agentů se může při GA měnit — ověřit tabulku na get-started stránce. Agent Builder dostupnost v PAYG tenantu ověřit živě před během (go/no-go labu).
+> Dostupnost Agent Builderu v PAYG tenantu ověřit před během (go/no-go). SharePoint agents podpora listů = GA ~05/2026 (docs lag). Skills = preview, license-only.

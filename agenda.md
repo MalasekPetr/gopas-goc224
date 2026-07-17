@@ -41,7 +41,10 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 |---|---|---|---|
 | 1 | Microsoft 365 Backup | `day-4/backup` | P |
 | 2 | Microsoft 365 Archive | `day-4/archive` | P |
-| 3 | Copilot Agents — cesty tvorby agentů *(hands-on: Agent Builder + Toolkit; SharePoint agent demo; Copilot Studio až D5)* | `day-4/copilot-agents` | P |
+| 3 | Agenti — mapa cest tvorby *(úvod: deklarativní agent, srovnání, návrhový lab)* | `day-4/copilot-agents` | P |
+| 4 | Agent Builder *(studenti hands-on)* | `day-4/agent-builder` | P |
+| 5 | SharePoint agents *(instruktor demo — limit 1 zdroj)* | `day-4/sharepoint-agents` | P |
+| 6 | Microsoft 365 Agents Toolkit *(agent jako spravovaná konfigurace)* | `day-4/agents-toolkit` | P |
 
 ## Den 5 — Správa, stavba & rollout
 

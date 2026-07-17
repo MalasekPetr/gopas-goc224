@@ -65,7 +65,7 @@ Na tabuli napiš **5 dotazů** a po každé cestě doplň sloupec ✅/❌.
 
 ## Scénář B · Support Asistent (agent jako kód) — Agents Toolkit, studenti společně
 
-Detail a lab: [`scenario-support-agent.md`](scenario-support-agent.md) · [`lab-toolkit-agent.md`](lab-toolkit-agent.md). Pro **správce**: tentýž typ agenta (čte knowledge) jako v Builderu, ale postavený jako **verzovaná, řízená konfigurace** — ne osobní klikačka. Vše v M365, **žádné API / Azure / psaní kódu**.
+Detail a lab: [`scenario-support-agent.md`](scenario-support-agent.md) · [`../agents-toolkit/lab-toolkit-agent.md`](../agents-toolkit/lab-toolkit-agent.md). Pro **správce**: tentýž typ agenta (čte knowledge) jako v Builderu, ale postavený jako **verzovaná, řízená konfigurace** — ne osobní klikačka. Vše v M365, **žádné API / Azure / psaní kódu**.
 
 > [!IMPORTANT] Rozsah
 > **Akci (API plugin) nestavíme** — je to vývoj mimo M365. Jen ukážeme slot `actions` a řekneme, k čemu je. „Udělej něco v tenantu" = Power Automate (D3), ne vlastní API.
