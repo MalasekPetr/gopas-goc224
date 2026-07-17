@@ -2,7 +2,7 @@
 
 ## Go/no-go
 
-- VS Code + rozšíření Agents Toolkit připravené; instruktorský M365 login. `Provision`/běh = Copilot licence (vede instruktor).
+- VS Code + rozšíření Agents Toolkit připravené; M365 login. `Provision`/běh **empiricky fungují i pro studenty na PAYG** (ověřeno 2026-07-17; MS nedokumentuje) — může každý sám, nebo společný instruktorský běh. Re-verify před během.
 - Knihovna `Runbooky` na `/sites/hr-demo` (z `New-HRAgentData.ps1 -Reseed`).
 - Když čas tlačí: lab zkrátit na scaffold + editaci manifestu (část A+B), běh nechat jako jeden instruktorský run.
 

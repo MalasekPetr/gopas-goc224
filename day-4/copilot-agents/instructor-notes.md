@@ -12,7 +12,7 @@
 ## Go/no-go — otestovat před během
 
 - Tool-specific go/no-go je v instructor-notes jednotlivých bloků: [agent-builder](../agent-builder/instructor-notes.md), [sharepoint-agents](../sharepoint-agents/instructor-notes.md), [agents-toolkit](../agents-toolkit/instructor-notes.md).
-- Napříč: **Agent Builder** dostupnost v PAYG (určuje studenti vs. demo); **SharePoint agents** tvorba = Copilot licence (jen demo); **Skills** = license-only, až D5.
+- Napříč: **Agent Builder** dostupnost v PAYG (určuje studenti vs. demo); **SharePoint agents** tvorba = Copilot licence (jen demo — empiricky potvrzeno); **Skills** a **Toolkit** (tvorba/nasazení) empiricky fungují i na PAYG (ověřeno 2026-07-17, MS nedokumentuje). Skills až D5.
 
 ## Tripwires
 

@@ -27,7 +27,7 @@ Značka „SharePoint Premium" byla rozdělena. **Není** 1:1 přejmenovaná na 
 | Model | Co platí | Metrika | Kde |
 |---|---|---|---|
 | **Document processing PAYG** | vytěžování dokumentů, OCR, překlad, eSignature | Azure metry (za stránku/dokument) | M365 admin center → billing |
-| **Copilot Credits PAYG** | Copilot Chat (placené funkce nad tenant daty) + použití SharePoint agents; **neodemyká Copilot in SharePoint ani Skills** (ty jsou license-only — ověřeno živě 2026-07) | Copilot Credits ($0,01/kredit) | M365 admin center → PAYG billing policy + Azure |
+| **Copilot Credits PAYG** | Copilot Chat (nad tenant daty) + použití SharePoint agents + **Skills / Copilot in SharePoint** a **tvorba/nasazení agentů přes Agents Toolkit** (empiricky fungují i na PAYG bez Copilot licence — MS nedokumentuje, ověřeno na kurzu 2026-07-17) | Copilot Credits ($0,01/kredit) | M365 admin center → PAYG billing policy + Azure |
 
 Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plumbing jako Document processing, ale samostatné produkty a pricing.
 
@@ -37,7 +37,7 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 
 ## Licence vs. permissions (nosný princip)
 
-- **Licence** gate-uje *přístup k funkci* — pozor na dvě různé brány: **Copilot in SharePoint a Skills = jen M365 Copilot licence** (PAYG je neodemyká); Copilot Chat a použití SharePoint agents = licence NEBO Copilot Credits PAYG.
+- **Licence** gate-uje *přístup k funkci*. MS dokumentuje **Copilot in SharePoint a Skills jako license-only**, ale **empiricky fungují i na PAYG bez Copilot licence** — tvorba i použití (ověřeno na kurzu 2026-07-17; Microsoft to takto nedokumentuje). Totéž platí pro **tvorbu a nasazení agentů přes Agents Toolkit** na PAYG. Copilot Chat a použití SharePoint agents = licence NEBO PAYG. **Výjimka: tvorba SharePoint agenta Copilot licenci vyžaduje** (empiricky potvrzeno — použití jde přes PAYG).
 - **SharePoint permissions** gate-ují *kdo funkci použije* (Edit = tvorba Skill/agenta, View = spuštění).
 - Skills nemají vlastní SKU ani PAYG metr.
 

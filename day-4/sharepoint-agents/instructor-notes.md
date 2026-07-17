@@ -8,7 +8,7 @@
 ## Tripwires
 
 - **1 zdroj a nic jiného** (MC1255409) — nosná pointa; přidání listu shodí knihovnu, ukázat naživo.
-- Nezaměnit „SharePoint agent" (na webu, deklarativní) s **Copilot in SharePoint / Skills** (license-only, D5) — jiná věc.
+- Nezaměnit „SharePoint agent" (na webu, deklarativní) s **Copilot in SharePoint / Skills** (D5; ty na PAYG empiricky fungují — na rozdíl od tvorby SP agenta) — jiná věc.
 - Docs lag k listům (GA ~05/2026, admin docs to k 06/2026 neuváděly) — dobrý příklad „ověř stav k datu běhu".
 
 ## Vazby

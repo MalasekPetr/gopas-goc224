@@ -13,11 +13,11 @@ Postavit společně deklarativního agenta v Microsoft 365 Agents Toolkitu **jak
 ## Předpoklady
 
 - **VS Code** + rozšíření **Microsoft 365 Agents Toolkit** (tvorba zdarma).
-- Přihlášení do M365 v Toolkitu; go/no-go instruktora na `Provision`/běh (běh deklarativního agenta = Copilot licence → provisionuje instruktor).
+- Přihlášení do M365 v Toolkitu. `Provision` i běh deklarativního agenta **empiricky fungují i pro studenty na PAYG bez Copilot licence** (ověřeno na kurzu 2026-07-17; MS to nedokumentuje — re-verify) → může provisionovat a spustit každý sám.
 - Knihovna `Runbooky` na `/sites/hr-demo` (vzniká přes `scripts/New-HRAgentData.ps1`).
 
 > [!NOTE] Kdo co dělá
-> **Studenti**: scaffold projektu + editace manifestu (JSON) — hands-on, zdarma, v M365. **Instruktor**: `Provision` a živý běh (Copilot licence). Cíl je *pochopit agenta jako spravovanou konfiguraci*, ne mít každý vlastní běžící instanci.
+> **Studenti**: scaffold projektu + editace manifestu (JSON) — hands-on, zdarma, v M365. **`Provision` i živý běh** empiricky fungují i studentům na PAYG (ověřeno 2026-07-17; MS nedokumentuje) — může každý sám, nebo společný instruktorský běh. Cíl je *pochopit agenta jako spravovanou konfiguraci*.
 
 ## Kroky
 
@@ -33,9 +33,9 @@ Postavit společně deklarativního agenta v Microsoft 365 Agents Toolkitu **jak
 5. Přidej **`editorial_answers`** s jedním párem (SLA na P1) a **`behavior_overrides.special_instructions.discourage_model_knowledge: true`**.
 6. Ukaž prázdný slot **`actions`**: „sem by se zapojilo API — to je vývoj, mimo náš rozsah; my zůstáváme v M365."
 
-### Část C — provisioning a test (instruktor běží, třída sleduje)
+### Část C — provisioning a test (studenti i instruktor)
 
-7. **Instruktor: Provision** (Lifecycle pane) → nasadí agenta do tenantu (žádné Azure).
+7. **Provision** (Lifecycle pane) → nasadí agenta do tenantu (žádné Azure). Empiricky funguje i studentům na PAYG (2026-07-17) — každý svůj běh, nebo společný instruktorský.
 8. Pusť 4 dotazy scénáře: access-denied runbook, SLA (editorial answer), tisková fronta, a negativní (`discourage_model_knowledge`).
 9. Ukaž **manifest v gitu vs. běžící agent**: „tohle je verzovatelné, review-ovatelné, nasaditelné přes schválení" — porovnej s Agent Builderem z dopoledne (žádný source control, osobní nástroj).
 

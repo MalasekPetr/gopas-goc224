@@ -35,7 +35,7 @@ flowchart TB
 | **[SharePoint agents](../sharepoint-agents/README.md)** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG | jen web (sdílení do Teams chatu) |
 | **[Agents Toolkit](../agents-toolkit/README.md)** | vývojář (u nás: správce, jako konfigurace) | zdarma (VS Code); repo-as-code | org katalog, marketplace |
 | **Copilot Studio** (D5) | maker / power user | Copilot Studio přístup (kredity/PAYG) | org katalog přes schválení, marketplace |
-| **Skills** (D5, preview) | uživatel webu | web s Copilot in SharePoint (**= Copilot licence, PAYG nestačí**) + Edit | v rámci webu |
+| **Skills** (D5, preview) | uživatel webu | Copilot in SharePoint (MS: Copilot licence; **empiricky i PAYG** — ověřeno 2026-07-17) + Edit | v rámci webu |
 
 Detailní **srovnání schopností** (knowledge vč. listů, akce, orchestrace, ALM, governance) + rozhodovací osa: [`comparison-agent-paths.md`](comparison-agent-paths.md).
 
@@ -71,4 +71,4 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Dostupnost Agent Builderu v PAYG tenantu ověřit před během (go/no-go). SharePoint agents podpora listů = GA ~05/2026 (docs lag). Skills = preview, license-only.
+> Dostupnost Agent Builderu v PAYG tenantu ověřit před během (go/no-go). SharePoint agents podpora listů = GA ~05/2026 (docs lag). Skills = preview; MS uvádí license-only, ale **empiricky fungují i na PAYG** (ověřeno 2026-07-17). **Tvorba SharePoint agenta** ale Copilot licenci **vyžaduje** (potvrzeno).

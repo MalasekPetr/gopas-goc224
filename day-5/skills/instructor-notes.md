@@ -13,7 +13,7 @@
 
 ## Tripwires
 
-- **Studenti si Skills nespustí** — říct hned na začátku a proč (license-only, PAYG neodemyká — ověřeno v našem tenantu; licenční lekce z D1 v praxi). Lab je návrhový záměrně, ne z nouze: psaní SKILL.md je přenositelná dovednost.
+- **Studenti si Skills empiricky spustí** — Copilot in SharePoint funguje i na Business Basic + PAYG bez Copilot licence (ověřeno na kurzu 2026-07-17; MS to nedokumentuje — docs uvádějí licenci, docs lag). Lab tedy může být **plně hands-on** (návrh → tvorba → běh). Re-verify před během; fallback = návrh + instruktorský běh. Dřívější předpoklad „license-only" byl empiricky vyvrácen — psaní SKILL.md ale zůstává přenositelná dovednost.
 - **Skills ≠ automatizace**: žádné externí systémy, žádný kód, žádné triggery — na to jsou agenti (odpoledne) a Power Automate (D3). Studenti budou chtít „skill, co pošle e-mail" — zastavit u kroku 3 labu.
 - **Žádný admin vypínač** — governance dotazy směřovat na file permissions na Agent Assets (break inheritance), ne do admin centra.
 - Agent Assets nejde smazat — nepanikat při demu, je to by design.

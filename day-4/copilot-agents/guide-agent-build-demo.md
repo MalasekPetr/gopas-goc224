@@ -49,7 +49,7 @@ Na tabuli napiš **5 dotazů** a po každé cestě doplň sloupec ✅/❌.
 ### SharePoint agent — instruktor jen ukáže
 
 > [!IMPORTANT] Proč jen demo
-> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — studenti na Business Basic + PAYG ho můžou *používat*, ne *tvořit* (ověřeno). Proto tuhle cestu **instruktor jen předvede**, studenti nestaví.
+> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — studenti na Business Basic + PAYG ho můžou *používat*, ne *tvořit* (empiricky potvrzeno 2026-07-17 — na rozdíl od Skills a Toolkitu, které na PAYG fungují). Proto tuhle cestu **instruktor jen předvede**, studenti nestaví.
 
 1. Na `/sites/hr-demo` → **Create agent**, scope omez na **jednu knihovnu** `Smlouvy`.
 2. Dotaz 2 (smlouva) projde; dotaz 1 (list) ne. **Zkus přidat list jako druhý zdroj** → shodí knihovnu.
@@ -84,7 +84,7 @@ Detail a lab: [`scenario-support-agent.md`](scenario-support-agent.md) · [`../a
 1. Ve VS Code s **Agents Toolkit** → **Create a New Agent/App → Declarative Agent → bez akce**. Ukaž **manifest jako konfiguraci** (`declarativeAgent.json`) verzovanou v gitu — ne program.
 2. Uprav `instructions` na Support Asistenta; přidej **knowledge** `OneDriveAndSharePoint` → knihovna `Runbooky` (`items_by_url`).
 3. Přidej `editorial_answers` (dotaz 2) a `discourage_model_knowledge` (dotaz 4). Ukaž **prázdný slot `actions`**: „sem by šlo API — vývoj, mimo náš rozsah."
-4. **Instruktor: Provision** → nasadí do tenantu (žádné Azure). Pusť 4 dotazy.
+4. **Provision** → nasadí do tenantu (žádné Azure). Empiricky funguje i studentům na PAYG (ověřeno 2026-07-17). Pusť 4 dotazy.
 
 > [!NOTE] V čem se liší (co ukázat — pointa pro správce)
 >

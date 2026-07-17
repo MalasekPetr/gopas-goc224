@@ -29,4 +29,4 @@ Učíme ho jako **„agent jako spravovaná konfigurace"** — governance a ALM 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Toolkit 6.0; názvy šablon se mění (stavíme „Declarative Agent" bez akce). Manifest schema pro listy k 2026-07 neexistuje — `list_id` je stále knihovna. Provisioning/běh deklarativního agenta = Copilot licence (instruktor).
+> Toolkit 6.0; názvy šablon se mění (stavíme „Declarative Agent" bez akce). Manifest schema pro listy k 2026-07 neexistuje — `list_id` je stále knihovna. **Provisioning i běh deklarativního agenta empiricky fungují i pro studenty na PAYG bez Copilot licence** (ověřeno na kurzu 2026-07-17; MS to takto nedokumentuje — re-verify při GA).

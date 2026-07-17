@@ -32,13 +32,13 @@
 
 - **Žádný admin vypínač** — Skills jsou nativní schopnost Copilot in SharePoint, samostatně se nevypínají. Knihovnu Agent Assets vytváří produkt a **nejde smazat**.
 - Řízení = **standardní file governance**: permissions, retention, sensitivity labels, audit — jako u každého obsahu. Default: **Edit** na webu = tvorba Skillu, **View** = spuštění; přísnější model = break inheritance na Agent Assets.
-- **Licenční brána (první!)**: Skills běží jen tam, kde je dostupný **Copilot in SharePoint = M365 Copilot licence**. PAYG je neodemyká (ověřeno živě v tomto tenantu 2026-07) — Edit/View práva jsou až druhá brána.
+- **Licenční brána**: Skills běží tam, kde je dostupný **Copilot in SharePoint**. Microsoft to dokumentuje jako license-only, ale **empiricky funguje i na PAYG bez Copilot licence** — tvorba i použití (ověřeno na kurzu **2026-07-17**; MS to takto nedokumentuje — docs lag, re-verify). Druhá brána = **Edit** (tvorba) / **View** (spuštění).
 
 ### Jak se Skills aktivují
 
 Skills se samostatně nezapínají — jedou tam, kde je dostupný **Copilot in SharePoint**. Dvě brány:
 
-1. **Licence:** uživatel má **M365 Copilot licenci** (PAYG neodemyká).
+1. **Licence:** MS uvádí **M365 Copilot licenci**; **empiricky stačí i PAYG bez licence** (ověřeno 2026-07-17, MS nedokumentuje — re-verify).
 2. **Dostupnost webu (tenant):** `KnowledgeAgentScope` na `Set-SPOTenant` (`AllSites` / `IncludeSelectedSites` / `ExcludeSelectedSites` / `NoSites`) — od poloviny června 2026 **opt-out preview** (default-on pro licencované; dřívější opt-out se ctí). PowerShell postup je v D2 [`../../day-2/powershell-spo/guide-copilot-inventory.md`](../../day-2/powershell-spo/guide-copilot-inventory.md).
 
 Na úrovni webu **není žádná „site collection feature" k aktivaci** (dle aktuálních docs). Web má jen *controls*: **Site AI settings** (vlastník volí, který agent se z ikony otevře; skryje Copilot tlačítko pro visitory) a **Restricted Content Discovery** (RCD web z Copilotu vyřadí — přebíjí availability). Skills jsou pak nativní schopnost — žádný další vypínač.
@@ -57,6 +57,15 @@ Copilot in SharePoint — a tedy Skills — běží na **Microsoft-managed reaso
 > [!IMPORTANT] Zatím neoficiální
 > **`SHAREPOINT.md` není k 2026-06 dokumentován na Microsoft Learn** (oficiálně jen `SKILL.md`) — komunitní pattern, chování před produkčním spoléháním ověřit. Detail, šablona, kam patří a na co dát pozor: [`explainer-sharepoint-md.md`](explainer-sharepoint-md.md).
 
+### Tip: `--agenttools` — co agent na webu umí
+
+V chatu Copilot in SharePoint vypíše `--agenttools` **view-only seznam všech tools**, které má agent na daném místě, seskupené do kategorií (docAssist, Creation, Deletion, Automation & Rules…) — např. `create_file`, `create_folder`, `create_form`, `delete_field`, `delete_list`. Rychlá **discoverability**: co může Skill na tomto webu/knihovně řetězit.
+
+> [!IMPORTANT] Zatím neoficiální
+> `--agenttools` (a další `--` příkazy) **nejsou dokumentované na MS Learn** — in-product preview pomůcka; hláška v UI sama říká, že se tools v čase mění. Brát jako tip, ne stabilní API.
+
+Nejblíž oficiálnímu **katalogu schopností** je [Work IQ SharePoint reference (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-sharepoint-work-iq) — MCP server „Work IQ SharePoint" pro Copilot Studio (`findSite`, `createSmallTextFile`, `createFolder`, `createList`, `createColumn`, `shareFileOrFolder`, `setSensitivityLabelOnFile`…). Pozor: **jiná plocha** (Copilot Studio MCP) a **jiné názvy** než `--agenttools` — reference schopností, ne 1:1 dokumentace toho příkazu. Preview: názvy se můžou měnit.
+
 ### Živé demo (instruktor)
 
 Celý cyklus na instruktorském webu: prompt na tvorbu Skillu (review smluv → zápis nevalidních do listu) → review draftu → uložení → výběr souborů v knihovně → běh → skill indicator card → prohlídka `SKILL.md` v Agent Assets.
@@ -69,7 +78,7 @@ Celý cyklus na instruktorském webu: prompt na tvorbu Skillu (review smluv → 
 
 ## Naše prostředí
 
-- **Studenti Skills spustit nemohou** (Business Basic + PAYG — license-only funkce). Živé demo běží na **instruktorském účtu s M365 Copilot licencí**; studenti v labu Skill **navrhují a revidují** (`SKILL.md` je jen Markdown — psát umí od D1) a vybrané návrhy instruktor spustí živě.
+- **Studenti Skills empiricky ZVLÁDNOU** — Copilot in SharePoint funguje i na Business Basic + PAYG bez Copilot licence (ověřeno na kurzu **2026-07-17**; MS to nedokumentuje — docs uvádějí licenci, re-verify před během). Studenti tedy Skill **navrhnou, vytvoří i spustí sami** (`SKILL.md` je jen Markdown — psát umí od D1). Fallback, kdyby v tenantu nešlo: návrh + review + instruktorský běh. *(Pozn.: dřívější předpoklad „license-only, PAYG neodemyká" byl na kurzu empiricky vyvrácen.)*
 
 ## Lab
 
@@ -82,4 +91,4 @@ Viz [`lab-skill-design.md`](lab-skill-design.md) — návrh a review SKILL.md + 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Skills = součást **preview** Copilot in SharePoint — chování (auto-load, indicator card, formát SKILL.md) se může měnit; před během projít docs (ms.date 2026-06-23). Licenční brána (license-only, PAYG neodemyká) ověřena živě 2026-07 — při GA se může změnit enablement celého Copilot in SharePoint. Skills jsou zatím dostupné jen v first-party Copilot in SharePoint experience.
+> Skills = součást **preview** Copilot in SharePoint — chování (auto-load, indicator card, formát SKILL.md) se může měnit; před během projít docs (ms.date 2026-06-23). **Licence: MS uvádí Copilot licenci (license-only), ale empiricky Skills fungují i na PAYG bez licence — ověřeno na kurzu 2026-07-17 (MS nedokumentuje, docs lag); re-verify při GA.** Skills jsou zatím dostupné jen v first-party Copilot in SharePoint experience.
