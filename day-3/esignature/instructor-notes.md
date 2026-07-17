@@ -19,5 +19,5 @@
 
 ## Vazby
 
-- Dopředu: audit trail → D4 `monitoring` (Purview Audit); schvalování → blok 3 (Power Automate Approvals).
+- Dopředu: audit trail → D5 `monitoring` (Purview Audit); schvalování → blok 3 (Power Automate Approvals).
 - Zpět: PAYG setup → D2 `configuration`; rodina Document processing → D2 `document-processing`.

@@ -12,7 +12,7 @@ Sestavit rollout blueprint pro vlastní organizaci a obhájit ho ve 3 minutách.
 2. **Kontext** (5 min): velikost, počet webů, licenční stav, cíl nasazení — 5 řádků.
 3. **Konfigurace** (10 min): PAYG model(y) — které metry a proč; Copilot scope (jaké weby, jak řízeno); search/zdroje (RSS/RCD/autoritativní weby). Konkrétně, ne „zapneme Copilota".
 4. **Automatizace** (10 min): 1 proces k automatizaci (vzor: faktury z D3) + cesta vytěžení a schvalování; 1 agent (návrh z dopoledne se sem vkládá!).
-5. **Governance** (10 min): SAM politiky, kdo má AI Administrator, audit + runbook odkaz, backup policy + archiv strategie. Tabulka mapy vrstev z D4 jako kostra.
+5. **Governance** (10 min): SAM politiky, kdo má AI Administrator, audit + runbook odkaz, backup policy + archiv strategie. Tabulka mapy vrstev z D5 jako kostra.
 6. **Registr rizik** (10 min): 5 povinných kategorií z README, formát riziko → dopad → mitigace (nástroj!) → vlastník.
 7. **Change enablement + roadmapa** (10 min): 3 komunikační kroky; 3 fáze s go/no-go branami.
 8. **Prezentace** (3 min/student): kontext → 1 rozhodnutí, na které jsi hrdý/á → 1 největší riziko. Ostatní: 1 otázka.

@@ -52,7 +52,7 @@ eIDAS definuje tři úrovně elektronického podpisu — a **SharePoint eSignatu
 
 ### Governance, audit, retence
 
-- Aktivity eSignature se logují do **Purview Audit logu** (hledej `eSignature*`) — návaznost na D4 monitoring.
+- Aktivity eSignature se logují do **Purview Audit logu** (hledej `eSignature*`) — návaznost na D5 monitoring.
 - Pracovní kopie žije ve skryté knihovně a drží se **5 let, nebo dle Purview retention policy tenantu** — retence má přednost.
 - Odkazy v e-mailech expirují **30 dní** po dokončení/zamítnutí.
 - Sensitivity label webu může zablokovat externí požadavky (pokud label nepovoluje external sharing).

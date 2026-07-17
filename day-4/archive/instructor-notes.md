@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 30 min výklad + 25 min lab. Kratší blok — most mezi backupem a copilot-admin.
+- 30 min výklad + 25 min lab. Kratší blok — most mezi backupem a copilot-agents.
 
 ## Demo
 
@@ -18,4 +18,4 @@
 ## Vazby
 
 - Zpět: inactive site policy (D3 SAM) jako zdroj kandidátů; inventura webů (D2 PowerShell) jako vstup labu.
-- Dopředu: „Copilot negrounduje archiv" → `copilot-admin` (řízení co AI vidí) a D5 grounding.
+- Dopředu: „Copilot negrounduje archiv" → `copilot-admin` (D5, řízení co AI vidí) a D5 grounding.

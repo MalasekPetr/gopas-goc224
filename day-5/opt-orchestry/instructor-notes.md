@@ -3,7 +3,7 @@
 ## Go/no-go (po monitoringu)
 
 - **Go:** zbývá 45+ min, skupina má governance publikum (IT správci, ne makeři), monitoring doběhl vč. runbooku.
-- **No-go:** čas věnovat dotazům k D4 nebo přípravě na D5. Modul je leaf — nic dalšího na něm nestojí.
+- **No-go:** čas věnovat dotazům nebo capstone. Modul je leaf — nic dalšího na něm nestojí.
 
 ## Timing
 

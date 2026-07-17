@@ -20,4 +20,4 @@
 ## Vazby
 
 - Zpět: PAYG plumbing (D2 configuration, glosář — třetí kategorie metrů: storage/data).
-- Dopředu: `archive` hned potom (stejná Azure plumbing, jiný problém — cold data vs. obnova); drill/runbook myšlení → `monitoring`.
+- Dopředu: `archive` hned potom (stejná Azure plumbing, jiný problém — cold data vs. obnova); drill/runbook myšlení → `monitoring` (D5).

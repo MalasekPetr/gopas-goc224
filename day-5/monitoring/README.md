@@ -1,6 +1,6 @@
 # M · Provozní monitoring a compliance
 
-> Typ: povinný · Den: 4 · Odhad: PM blok
+> Typ: povinný · Den: 5 · Odhad: AM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle
@@ -33,7 +33,7 @@ flowchart LR
   K --> P[Post-mortem<br>úprava politik]
 ```
 
-Provozní signály z celého týdne se tu potkávají: PAYG spotřeba (D2), DAG reporty (D3), backup drilly a agent dashboard (D4). Runbook je říká *v jakém pořadí a kdo*.
+Provozní signály z celého týdne se tu potkávají: PAYG spotřeba (D2), DAG reporty (D3), backup drilly (D4) a agent dashboard (D5, `copilot-admin`). Runbook je říká *v jakém pořadí a kdo*.
 
 ## Klíčové rozlišení
 

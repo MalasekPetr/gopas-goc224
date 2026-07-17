@@ -41,5 +41,5 @@
 
 ## Vazby
 
-- Zpět: Agent Instructions/orchestrator (D2), publikační flow a registry (dnešní `copilot-admin`).
-- Dopředu: Skills a Copilot Studio (zítra, D5) = „stejný návrh, silnější nástroj" — návrhy z části A se v Copilot Studiu dají rovnou stavět; **HR Asistent** se v D5 dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.
+- Zpět: Agent Instructions/orchestrator (D2).
+- Dopředu: **správa agentů** (registr, blokace, Agent 365) hned zítra ráno v `copilot-admin` (D5); pak Skills a Copilot Studio = „stejný návrh, silnější nástroj" — návrhy z části A se ve Studiu dají rovnou stavět, **HR Asistent** se dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.

@@ -29,7 +29,7 @@ Každá sekce má oporu v modulu kurzu — blueprint je rekapitulace týdne v ja
 
 ### Registr rizik — minimum
 
-Formát: riziko → dopad → pravděpodobnost → mitigace (nástroj z kurzu!) → vlastník. Povinné kategorie: oversharing (D3), náklady PAYG (D1/D2), ztráta dat (D4), nekontrolovaní agenti (D4/D5), adopční selhání (change).
+Formát: riziko → dopad → pravděpodobnost → mitigace (nástroj z kurzu!) → vlastník. Povinné kategorie: oversharing (D3), náklady PAYG (D1/D2), ztráta dat (D4), nekontrolovaní agenti (D5), adopční selhání (change).
 
 ### Next steps — kam po kurzu
 
@@ -39,7 +39,7 @@ Formát: riziko → dopad → pravděpodobnost → mitigace (nástroj z kurzu!) 
 
 ## Klíčové rozlišení
 
-- **Blueprint vs. runbook**: runbook (D4) říká *co dělat, když hoří*; blueprint říká *co postavit, aby nehořelo*. Runbook je jedna sekce blueprintu (governance/provoz).
+- **Blueprint vs. runbook**: runbook (D5) říká *co dělat, když hoří*; blueprint říká *co postavit, aby nehořelo*. Runbook je jedna sekce blueprintu (governance/provoz).
 - **Roadmapa s branami**: každá fáze má go/no-go kritérium (např. „DAG report bez kritických nálezů → pustit Copilot na další weby") — přesně jak jel celý kurz.
 
 ## Naše prostředí

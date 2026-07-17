@@ -28,7 +28,7 @@ flowchart LR
 
 - **Trigger**: knihovna — „When a file is created (properties only)". Pozor: triggery „...in a folder" jsou **deprecated**, v designeru ale pořád vidět ([SharePoint connector triggers](https://learn.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/sharepoint-connector-actions-triggers)).
 - **Schválení**: akce **Start and wait for an approval**; odpověď z e-mailu, Teams i mobilu. Nad 30 dní → „Create an approval (v2)" + druhý flow na odpovědi ([Approvals](https://learn.microsoft.com/en-us/power-automate/modern-approvals)).
-- **Výjimky a mantinely**: větev pro nízkou confidence, retry policy, limit AI Builderu 360 volání/prostředí/60 s — provozní runbook viz D4 [`monitoring`](../../day-4/monitoring/README.md).
+- **Výjimky a mantinely**: větev pro nízkou confidence, retry policy, limit AI Builderu 360 volání/prostředí/60 s — provozní runbook viz D5 [`monitoring`](../../day-5/monitoring/README.md).
 
 ### Tři cesty vytěžení — a proč akcentujeme Azure
 

@@ -43,7 +43,7 @@ Lightweight tvorba přímo v M365 Copilot (web/Teams desktop; ne mobil): popis �
 
 ### Distribuce a governance — návaznost na copilot-admin
 
-Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reject → „Built by your org" v **Agent Store** ([Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store), [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)). Registry, blokace a Agent 365 — to všechno už znáte z dnešního `copilot-admin` bloku.
+Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reject → „Built by your org" v **Agent Store** ([Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store), [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)). Registr, blokaci a Agent 365 proberete hned zítra ráno v `copilot-admin` (D5).
 
 ## Klíčové rozlišení
 

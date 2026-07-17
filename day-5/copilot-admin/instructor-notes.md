@@ -7,9 +7,9 @@
 ## Před během
 
 - [ ] Proklikat živý tenant: CCS taby, Agents sekce, Overview dashboard — **UI se mění po měsících**, slidy vs. realita.
-- [ ] Mít v tenantu aspoň 2–3 agenty (z D5 příprav / testovací), ať registry není prázdný a je co blokovat.
+- [ ] Mít v tenantu aspoň 2–3 agenty (z D4 `copilot-agents` / testovací), ať registr není prázdný a je co blokovat.
 - [ ] Ověřit, co přesně Global Reader vidí v sekci Agents (preview oblasti se mění) — určuje rozsah labu.
-- [ ] Testovací agent na blokaci (demo) — ne ten, který D5 potřebuje!
+- [ ] Testovací agent na blokaci (demo) — ne ten, který potřebují pozdější bloky D5 (Skills/Studio)!
 
 ## Tripwires
 
@@ -21,4 +21,4 @@
 ## Vazby
 
 - Zpět: SAM jako SharePoint vrstva (D3) — mapa vrstev na ni naváže; archiv/RCD = „co AI vidí".
-- Dopředu: audit → `monitoring` (hned potom); 3rd-party řádek mapy → **Orchestry zmínit 10 min tady** (`opt-orchestry` je nově self-study — blok ustoupil copilot-agents); registry a publikace → `copilot-agents` (dnes, závěr dne — Agent Store flow).
+- Dopředu: audit → `monitoring` (hned potom); 3rd-party řádek mapy → **Orchestry** (samostatný volitelný blok D5 hned po monitoringu); registr a publikace → `copilot-agents` (**včera, D4** — Agent Store flow).

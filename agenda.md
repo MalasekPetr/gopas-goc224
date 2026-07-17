@@ -35,22 +35,23 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 | 3 | Power Automate — příchozí faktury *(jen výklad + demo; akcent Azure AI Document Intelligence jako alternativa)* | `day-3/power-automate-invoices` | P |
 | 4 | Pro-code vs. low-code agenti a vzory rozšíření | `day-3/procode-vs-lowcode` | P |
 
-## Den 4 — Data protection & správa provozu
+## Den 4 — Data protection & tvorba agentů
 
 | # | Blok | Slug | Typ |
 |---|---|---|---|
 | 1 | Microsoft 365 Backup | `day-4/backup` | P |
 | 2 | Microsoft 365 Archive | `day-4/archive` | P |
-| 3 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-4/copilot-admin` | P |
-| 4 | Provozní monitoring a compliance | `day-4/monitoring` | P |
-| 5 | Copilot Agents — cesty tvorby agentů *(hands-on: Agent Builder + Toolkit; SharePoint agent demo; Copilot Studio až D5)* | `day-4/copilot-agents` | P |
+| 3 | Copilot Agents — cesty tvorby agentů *(hands-on: Agent Builder + Toolkit; SharePoint agent demo; Copilot Studio až D5)* | `day-4/copilot-agents` | P |
 
-> [!NOTE] Orchestry (`day-4/opt-orchestry`) vypadl z programu ve prospěch copilot-agents — zůstává jako **self-study** materiál; 3rd-party mapa se zmiňuje v `copilot-admin`.
-
-## Den 5 — AI stavba & rollout
+## Den 5 — Správa, stavba & rollout
 
 | # | Blok | Slug | Typ |
 |---|---|---|---|
-| 1 | Skills — rozšíření Copilot in SharePoint *(živé demo na instruktorském účtu)* | `day-5/skills` | P |
-| 2 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
-| 3 | Capstone & next steps *(rollout blueprint)* | `day-5/capstone` | P |
+| 1 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-5/copilot-admin` | P |
+| 2 | Provozní monitoring a compliance | `day-5/monitoring` | P |
+| 3 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
+| 4 | Skills — rozšíření Copilot in SharePoint *(živé demo na instruktorském účtu)* | `day-5/skills` | P |
+| 5 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
+| 6 | Capstone & next steps *(rollout blueprint)* | `day-5/capstone` | P |
+
+> [!NOTE] D4 skončí **stavbou** agentů (`copilot-agents`); D5 ráno naváže jejich **správou** (copilot-admin → monitoring → volitelná Orchestry), pak pokračuje **stavbou** (Skills, Copilot Studio) a **rolloutem** (capstone). Oblouk „postavili jste — teď to řídíte — a stavíte dál". Přesun copilot-admin/monitoring/orchestry z D4 do D5 odlehčil přetížený D4 (velký hands-on blok copilot-agents).

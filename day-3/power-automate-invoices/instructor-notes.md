@@ -22,4 +22,4 @@
 ## Vazby
 
 - Zpět: vytěžování → D2 `document-processing`; schvalování → D3 `esignature` (Approvals vs. podpis).
-- Dopředu: demo flow = podklad pro lab v `procode-vs-lowcode`; provozní výjimky → D4 `monitoring` (runbook).
+- Dopředu: demo flow = podklad pro lab v `procode-vs-lowcode`; provozní výjimky → D5 `monitoring` (runbook).

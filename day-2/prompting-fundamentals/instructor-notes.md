@@ -7,7 +7,7 @@
 ## Tripwires
 
 - Pojmy držet přesně dle README tabulky — studenti si jinak spojí Memory s context window. Kreslit vrstvy na tabuli.
-- Memory/personalizace = **preview** — neslibovat chování; zmínit, že Purview retence/audit na paměť nesahá (governance dotek pro D4).
+- Memory/personalizace = **preview** — neslibovat chování; zmínit, že Purview retence/audit na paměť nesahá (governance dotek pro D5).
 - XPIA zmínit u Agent Instructions jednou větou (instrukce nepatří do knowledge) — hlubší bezpečnost až D5.
 - PAYG: hned ráno zopakovat pravidlo z ways-of-working — iterace ano, bezcílné mlácení do chatu ne.
 

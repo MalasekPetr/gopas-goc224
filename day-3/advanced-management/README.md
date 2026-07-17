@@ -32,7 +32,7 @@ flowchart TB
 
 ### Proč před Copilotem
 
-Copilot respektuje permissions — **oversharing se stává AI problémem**: co je přesdílené, Copilot ochotně najde. SAM (DAG reporty → RAC/RCD) je hlavní Microsoft nástroj, jak to srovnat před rolloutem. Tahle nit pokračuje v D4 [`copilot-admin`](../../day-4/copilot-admin/README.md).
+Copilot respektuje permissions — **oversharing se stává AI problémem**: co je přesdílené, Copilot ochotně najde. SAM (DAG reporty → RAC/RCD) je hlavní Microsoft nástroj, jak to srovnat před rolloutem. Tahle nit pokračuje v D5 [`copilot-admin`](../../day-5/copilot-admin/README.md).
 
 ### Licencování
 

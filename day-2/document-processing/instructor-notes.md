@@ -27,4 +27,4 @@
 ## Vazby
 
 - Zpět: prompt anatomie (ranní blok) přímo v promptu autofill sloupce; PAYG modely (D1 licensing).
-- Dopředu: eSignature (D3/1), vytěžování faktur — prebuilt modely vs. Azure (D3/3), náklady/observabilita → D4 `monitoring`.
+- Dopředu: eSignature (D3/1), vytěžování faktur — prebuilt modely vs. Azure (D3/3), náklady/observabilita → D5 `monitoring`.
