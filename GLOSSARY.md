@@ -50,6 +50,11 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 - **Basic vs Premium Copilot split** — plný in-app Copilot jen v Premium; Basic = chat.
 - Bezplatný Copilot Chat/Basic **nestačí** na grounding nad SharePointem — nutná placená Copilot licence nebo Copilot Credits PAYG.
 
+## AI subprocesoři (modely třetích stran)
+
+> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
+> Copilot může vedle OpenAI používat **Anthropic** modely. Anthropic = **Microsoft subprocesor** (pod Microsoft DPA), ale inference **mimo Azure / EU Data Boundary** (AWS/GCP, US). **EU/EFTA/UK: default vypnuto**; jinde on-by-default. **Preview models with Data Retention** (Claude Fable 5, Mythos 5) = Anthropic jako **nezávislý procesor** (drží data), vždy opt-in. **Copilot in SharePoint / Skills běží na OpenAI modelu — na Anthropicu nezávisí.** Detail: [`day-5/copilot-admin/explainer-ai-subprocessors.md`](day-5/copilot-admin/explainer-ai-subprocessors.md).
+
 ## Formáty (proč je studenti potřebují)
 
 | Formát | Role v kurzu |

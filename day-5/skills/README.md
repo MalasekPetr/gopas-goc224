@@ -34,6 +34,29 @@
 - Řízení = **standardní file governance**: permissions, retention, sensitivity labels, audit — jako u každého obsahu. Default: **Edit** na webu = tvorba Skillu, **View** = spuštění; přísnější model = break inheritance na Agent Assets.
 - **Licenční brána (první!)**: Skills běží jen tam, kde je dostupný **Copilot in SharePoint = M365 Copilot licence**. PAYG je neodemyká (ověřeno živě v tomto tenantu 2026-07) — Edit/View práva jsou až druhá brána.
 
+### Jak se Skills aktivují
+
+Skills se samostatně nezapínají — jedou tam, kde je dostupný **Copilot in SharePoint**. Dvě brány:
+
+1. **Licence:** uživatel má **M365 Copilot licenci** (PAYG neodemyká).
+2. **Dostupnost webu (tenant):** `KnowledgeAgentScope` na `Set-SPOTenant` (`AllSites` / `IncludeSelectedSites` / `ExcludeSelectedSites` / `NoSites`) — od poloviny června 2026 **opt-out preview** (default-on pro licencované; dřívější opt-out se ctí). PowerShell postup je v D2 [`../../day-2/powershell-spo/guide-copilot-inventory.md`](../../day-2/powershell-spo/guide-copilot-inventory.md).
+
+Na úrovni webu **není žádná „site collection feature" k aktivaci** (dle aktuálních docs). Web má jen *controls*: **Site AI settings** (vlastník volí, který agent se z ikony otevře; skryje Copilot tlačítko pro visitory) a **Restricted Content Discovery** (RCD web z Copilotu vyřadí — přebíjí availability). Skills jsou pak nativní schopnost — žádný další vypínač.
+
+> [!WARNING] Ověřit k datu běhu
+> Samostatnou „site collection feature" pro Skills/Copilot in SharePoint aktuální docs (opt-out preview, ms.date 2026-06) **neuvádějí** — aktivace = licence + `KnowledgeAgentScope`, na webu Site AI settings / RCD. Enablement se při GA mění; pokud narazíš na feature v UI, ověřit.
+
+### Na jakém modelu Skills běží (a co Anthropic)
+
+Copilot in SharePoint — a tedy Skills — běží na **Microsoft-managed reasoning modelu od OpenAI**; model se nekonfiguruje. Skills proto **na Anthropicu nezávisí** (Claude se v této cestě aktuálně nepoužívá). AI subprocesoři, Anthropic a EU Data Boundary: [`../copilot-admin/explainer-ai-subprocessors.md`](../copilot-admin/explainer-ai-subprocessors.md).
+
+### Kontext webu — SHAREPOINT.md (doporučení)
+
+**Doporučená praxe:** jeden `SHAREPOINT.md` v **kořeni knihovny Agent Assets** dá Copilotu trvalý kontext o webu (účel, mapa knihoven, konvence pojmenování, pravidla pro AI, glosář) — načítá se do každého chatu na webu a Skills ho dědí. Konzistentní kontext napříč tenanty = levná páka na kvalitu odpovědí (obdoba `AGENTS.md`/`CLAUDE.md` pro repo).
+
+> [!IMPORTANT] Zatím neoficiální
+> **`SHAREPOINT.md` není k 2026-06 dokumentován na Microsoft Learn** (oficiálně jen `SKILL.md`) — komunitní pattern, chování před produkčním spoléháním ověřit. Detail, šablona, kam patří a na co dát pozor: [`explainer-sharepoint-md.md`](explainer-sharepoint-md.md).
+
 ### Živé demo (instruktor)
 
 Celý cyklus na instruktorském webu: prompt na tvorbu Skillu (review smluv → zápis nevalidních do listu) → review draftu → uložení → výběr souborů v knihovně → běh → skill indicator card → prohlídka `SKILL.md` v Agent Assets.

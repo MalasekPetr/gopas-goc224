@@ -17,7 +17,7 @@ M365 admin center → **Copilot → Settings** ([Copilot page](https://learn.mic
 
 - **User access** — kdo má Copilot (licence, self-service nákupy).
 - **Data access** — připojená data, agenti, web grounding.
-- **Copilot actions** a **Other settings** — PAYG billing, Frontier preview program, **AI providers** (vč. modelů třetích stran).
+- **Copilot actions** a **Other settings** — PAYG billing, Frontier preview program, **AI providers operating as Microsoft subprocessors** (modely třetích stran — Anthropic). Datová suverenita / EU Data Boundary / subprocesor vs. nezávislý procesor: [`explainer-ai-subprocessors.md`](explainer-ai-subprocessors.md).
 - **Role model:** spravuje **AI Administrator**, čte **Global Reader** — Global Admin na tohle není potřeba (least privilege posun).
 
 ### 2. Sekce Agents — Agent Registry
