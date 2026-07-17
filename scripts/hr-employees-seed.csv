@@ -1,0 +1,21 @@
+UserIndex,OsobniCislo,Jmeno,Prijmeni,Utvar,Pozice,Manazer,Lokalita,TypUvazku,NastupDaysAgo,ProbationOffset,UcetAktivni,VyzadovaneCertifikace,CertExpiryOffset,TypSmlouvy,DokumentKPodpisu,SignedOffset,Stav,KonecPPOffset
+11,10011,Jana,Nováková,HR,HR Manažer,,Praha,HPP,1240,,true,BOZP,210,Na dobu neurčitou,false,-1210,Aktivní,
+12,10012,Petr,Svoboda,IT,IT Manažer,,Praha,HPP,1400,,true,BOZP|ISO auditor,320,Na dobu neurčitou,false,-1370,Aktivní,
+13,10013,Eva,Dvořáková,Finance,Finanční ředitelka,,Praha,HPP,1600,,true,BOZP,180,Na dobu neurčitou,false,-1570,Aktivní,
+14,10014,Martin,Novák,Obchod,Obchodní ředitel,,Brno,HPP,980,,true,Řidičák B|BOZP,140,Na dobu neurčitou,false,-950,Aktivní,
+15,10015,Tomáš,Procházka,Výroba,Vedoucí výroby,,Ostrava,HPP,1100,,true,BOZP|Svářečský průkaz,260,Na dobu neurčitou,false,-1070,Aktivní,
+16,10016,Lucie,Králová,HR,HR Specialista,Jana Nováková,Praha,HPP,540,,true,BOZP,-15,Na dobu neurčitou,false,-510,Aktivní,
+17,10017,Jakub,Veselý,IT,Systémový administrátor,Petr Svoboda,Praha,HPP,320,,true,BOZP,150,Na dobu určitou,true,,Aktivní,
+18,10018,Markéta,Horáková,Výroba,Svářeč,Tomáš Procházka,Ostrava,HPP,700,,true,BOZP|Svářečský průkaz,7,Na dobu neurčitou,false,-670,Aktivní,
+19,10019,Ondřej,Marek,Obchod,Obchodní zástupce,Martin Novák,Brno,HPP,410,,true,Řidičák B,95,Na dobu určitou,true,,Aktivní,
+20,10020,Tereza,Pospíšilová,Finance,Účetní,Eva Dvořáková,Praha,HPP,860,,true,BOZP,300,Na dobu neurčitou,false,-830,Aktivní,
+21,10021,Filip,Černý,IT,Vývojář,Petr Svoboda,Remote,HPP,220,,true,,,Na dobu neurčitou,false,-190,Aktivní,
+22,10022,Kateřina,Kučerová,Výroba,Operátor výroby,Tomáš Procházka,Ostrava,DPČ,480,,true,BOZP,21,Dohoda,false,-450,Aktivní,
+23,10023,David,Beneš,Obchod,Obchodní zástupce,Martin Novák,Brno,HPP,600,,true,Řidičák B|BOZP,60,Na dobu určitou,false,-560,Výpověď,45
+24,10024,Barbora,Fiala,Marketing,Marketing specialista,Jana Nováková,Praha,HPP,750,,true,BOZP,-90,Na dobu neurčitou,false,-720,Aktivní,
+25,10025,Michal,Sedláček,IT,Helpdesk,Petr Svoboda,Praha,HPP,150,,true,BOZP,130,Na dobu určitou,true,,Aktivní,
+26,10026,Veronika,Marková,HR,HR Asistent,Jana Nováková,Praha,HPP,70,10,true,,,Na dobu určitou,false,-40,Onboarding,
+27,10027,Lukáš,Pokorný,Výroba,Svářeč,Tomáš Procházka,Ostrava,HPP,900,,true,BOZP|Svářečský průkaz,28,Na dobu neurčitou,false,-870,Aktivní,
+28,10028,Nikola,Zemanová,Finance,Účetní,Eva Dvořáková,Praha,HPP,1300,,true,BOZP,90,Na dobu neurčitou,false,-1270,Offboarding,14
+29,10029,Adam,Urban,Obchod,Obchodní zástupce,Martin Novák,Brno,HPP,260,,true,Řidičák B,110,Na dobu určitou,true,,Aktivní,
+30,10030,Simona,Rybová,IT,Datový analytik,Petr Svoboda,Remote,HPP,55,25,true,,,Na dobu určitou,false,-30,Onboarding,

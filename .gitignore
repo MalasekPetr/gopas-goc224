@@ -2,5 +2,7 @@
 CLAUDE.md
 .claude/
 
-# Pomocne automatizacni skripty — lokalni, necommitovat (public repo)
-/scripts/
+# Vygenerovane credentials a lokalni vystupy — NIKDY necommitovat (public repo)
+/scripts/student-credentials.csv
+/scripts/*.local.*
+day-2/powershell-spo/solution/tenant-inventory.csv
