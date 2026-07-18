@@ -57,7 +57,7 @@ Toto je most do zbytku kurzu:
 
 ## 5. Vazba na kurz
 
-Kvalita IA a permissions z tohoto modulu je předpoklad pro bezpečné nasazení Copilota (SAM v M07 to pak vynucuje, oversharing reporty atd.). Prohloubení IA je ve volitelném [`../opt-ia-spo/`](../opt-ia-spo/).
+Kvalita IA a permissions z tohoto modulu je předpoklad pro bezpečné nasazení Copilota ([`../../day-3/advanced-management/`](../../day-3/advanced-management/) to pak vynucuje, oversharing reporty atd.). Prohloubení IA je ve volitelném [`../opt-ia-spo/`](../opt-ia-spo/).
 
 ## Zdroje (Microsoft)
 

@@ -1,6 +1,6 @@
 # Jak zaregistrovat vícefaktorové ověřování (MFA)
 
-> Modul: M00 · Prostředí: [`../../environment.md`](../../environment.md)
+> Prostředí: [`../../environment.md`](../../environment.md)
 
 > Účet `user.NN@spdemo.online` je po celou dobu kurzu váš **pracovní účet na počítači v učebně GOPAS** — přihlaste se jím do prohlížeče (profil Edge) a používejte ho celý týden. Při prvním přihlášení je nutné zaregistrovat vícefaktorové ověřování (MFA); bez něj se ke zdrojům tenantu nedostanete.
 

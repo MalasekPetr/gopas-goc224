@@ -1,4 +1,4 @@
-# Instructor notes — M00 Onboarding
+# Instructor notes — Onboarding
 
 ## Timing
 - Celé dopoledne. Velká rezerva na přihlašování/MFA/reset hesel u 20 účtů — historicky největší žrout času.

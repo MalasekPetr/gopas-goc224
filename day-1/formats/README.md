@@ -77,4 +77,4 @@ Další zdroje (formáty samotné): [YAML (Wikipedia)](https://en.wikipedia.org/
 
 ## Stav produktu / delta
 
-- Stabilní téma bez fast-moving faktů. Ověřit jen aktuální název YAML config souboru Agents Toolkitu, pokud ho budeš v M09 ukazovat.
+- Stabilní téma bez fast-moving faktů. Ověřit jen aktuální název YAML config souboru Agents Toolkitu, pokud ho budeš v [`../../day-4/agents-toolkit/`](../../day-4/agents-toolkit/) ukazovat.

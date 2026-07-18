@@ -1,4 +1,4 @@
-# M00 · Onboarding & pravidla práce
+# Onboarding & pravidla práce
 
 > Typ: povinný · Den: 1 (celé dopoledne) · Odhad: AM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md)

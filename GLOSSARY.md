@@ -81,7 +81,7 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 | **Copilot Studio** | low-code stavba agentů | Copilot Credits / M365 Copilot licence |
 | **Agent Builder** | lightweight tvorba deklarativních agentů přímo v M365 Copilot (bez opuštění appky) | M365 Copilot licence / Copilot Credits — ověřit k datu běhu |
 
-Rozhodovací osa pro M09: deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
+Rozhodovací osa pro [`day-3/procode-vs-lowcode`](day-3/procode-vs-lowcode/): deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
 
 ## Azure AI služby (mimo M365)
 

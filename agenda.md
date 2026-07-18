@@ -2,7 +2,7 @@
 
 Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tato tabulka.
 
-**5 dní · ~3–4 bloky/den.** P = povinný, V = volitelný.
+**5 dní · ~4–6 bloky/den.** P = povinný, V = volitelný.
 
 ## Den 1 — Foundation
 

@@ -1,6 +1,6 @@
 # Lab · Přístup do tenantu & ověření
 
-> Modul: M00 · Režim: živý tenant · Prostředí: `../../environment.md`
+> Režim: živý tenant · Prostředí: `../../environment.md`
 
 ## Cíl
 Student se přihlásí, ověří přístup ke svému prostoru a potvrdí dostupnost Copilot in SharePoint.
