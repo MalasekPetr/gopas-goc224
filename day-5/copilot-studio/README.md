@@ -1,4 +1,4 @@
-# M · Copilot Studio — stavba nad SharePointem
+# Copilot Studio — stavba nad SharePointem
 
 > Typ: povinný · Den: 5 · Odhad: PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

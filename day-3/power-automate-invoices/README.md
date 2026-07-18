@@ -1,4 +1,4 @@
-# M · Power Automate — příchozí faktury
+# Power Automate — příchozí faktury
 
 > Typ: povinný · Den: 3 · Odhad: krátký PM blok — **jen výklad + instruktorské demo, bez labu**
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

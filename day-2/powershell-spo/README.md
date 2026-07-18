@@ -1,4 +1,4 @@
-# M · SharePoint PowerShell (SPO Management Shell)
+# SharePoint PowerShell (SPO Management Shell)
 
 > Typ: povinný · Den: 2 · Odhad: AM blok · Varianta B: studenti píšou skripty
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

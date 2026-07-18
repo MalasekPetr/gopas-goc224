@@ -1,4 +1,4 @@
-# M · Informační architektura SPO (volitelný)
+# Informační architektura SPO (volitelný)
 
 > Typ: volitelný · Den: 1 (za SP úvodem) · Odhad: PM blok
 > Ozdrojováno odkazy na Microsoft (viz [Zdroje](#zdroje-microsoft)).

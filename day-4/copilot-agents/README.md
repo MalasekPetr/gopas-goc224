@@ -1,4 +1,4 @@
-# M · Agenti — mapa cest tvorby (úvod)
+# Agenti — mapa cest tvorby (úvod)
 
 > Typ: povinný · Den: 4 (úvod k agentním blokům) · Odhad: krátký blok — výklad + srovnání + návrhový lab
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

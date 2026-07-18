@@ -1,4 +1,4 @@
-# M · Pro-code vs. low-code agenti a vzory rozšíření
+# Pro-code vs. low-code agenti a vzory rozšíření
 
 > Typ: povinný · Den: 3 (závěr) · Odhad: PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

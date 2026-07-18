@@ -1,4 +1,4 @@
-# M · Agent Builder
+# Agent Builder
 
 > Typ: povinný · Den: 4 · Odhad: krátký blok — vč. živého dema · Kdo staví: **studenti hands-on**
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

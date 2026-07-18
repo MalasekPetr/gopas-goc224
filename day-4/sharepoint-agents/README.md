@@ -1,4 +1,4 @@
-# M · SharePoint agents
+# SharePoint agents
 
 > Typ: povinný · Den: 4 · Odhad: krátký blok — **instruktor jen ukáže** (tvorba = license-only)
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

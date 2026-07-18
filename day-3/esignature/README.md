@@ -1,4 +1,4 @@
-# M · Scénáře eSignature
+# Scénáře eSignature
 
 > Typ: povinný · Den: 3 (otvírák) · Odhad: AM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

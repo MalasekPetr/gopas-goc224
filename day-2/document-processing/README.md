@@ -1,4 +1,4 @@
-# M · Základy Document processing for Microsoft 365
+# Základy Document processing for Microsoft 365
 
 > Typ: povinný · Den: 2 (největší blok dne) · Odhad: dlouhý PM blok — živá konfigurace + 2 dema + lab
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

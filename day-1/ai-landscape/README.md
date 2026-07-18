@@ -1,4 +1,4 @@
-# M · AI landscape a pozicování Copilotu
+# AI landscape a pozicování Copilotu
 
 > Typ: povinný · Den: 1 · Odhad: PM blok
 > Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md) · Zdroje ozdrojované odkazy na Microsoft (viz [Zdroje](#zdroje-microsoft)).

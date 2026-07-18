@@ -1,4 +1,4 @@
-# M · Provozní monitoring a compliance
+# Provozní monitoring a compliance
 
 > Typ: povinný · Den: 5 · Odhad: AM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

@@ -1,4 +1,4 @@
-# M · Orchestry — možnosti řízení Copilotu (volitelný)
+# Orchestry — možnosti řízení Copilotu (volitelný)
 
 > Typ: **volitelný (V)** · Den: 5 (po monitoringu) · Odhad: krátký blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

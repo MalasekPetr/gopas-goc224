@@ -1,4 +1,4 @@
-# M · Nástroje pro správu Copilotu a agentů
+# Nástroje pro správu Copilotu a agentů
 
 > Typ: povinný · Den: 5 (otvírák — správa agentů postavených v D4) · Odhad: AM blok — jádro nitě „nástroje pro správu"
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

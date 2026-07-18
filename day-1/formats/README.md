@@ -1,4 +1,4 @@
-# M · Formáty: JSON, MD, YAML
+# Formáty: JSON, MD, YAML
 
 > Typ: povinný · Den: 1 (konec AM) · Odhad: krátký blok
 > Ozdrojováno odkazy na Microsoft (viz [Zdroje](#zdroje-microsoft)).

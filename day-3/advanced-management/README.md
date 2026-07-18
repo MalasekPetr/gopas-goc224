@@ -1,4 +1,4 @@
-# M · SharePoint Advanced Management (SAM)
+# SharePoint Advanced Management (SAM)
 
 > Typ: povinný · Den: 3 · Odhad: AM/PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

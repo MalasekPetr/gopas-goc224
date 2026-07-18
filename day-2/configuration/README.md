@@ -1,4 +1,4 @@
-# M · Konfigurace krok za krokem
+# Konfigurace krok za krokem
 
 > Typ: povinný · Den: 2 · Odhad: PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

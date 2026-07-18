@@ -1,4 +1,4 @@
-# M · Základy promptování a agentní anatomie
+# Základy promptování a agentní anatomie
 
 > Typ: povinný · Den: 2 (otvírák) · Odhad: AM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

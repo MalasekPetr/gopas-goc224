@@ -1,4 +1,4 @@
-# M · Capstone & next steps
+# Capstone & next steps
 
 > Typ: povinný · Den: 5 (závěr) · Odhad: PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

@@ -1,4 +1,4 @@
-# M · Skills — rozšíření Copilot in SharePoint
+# Skills — rozšíření Copilot in SharePoint
 
 > Typ: povinný · Den: 5 (otvírák) · Odhad: AM blok — vč. **živého dema na instruktorském účtu**
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

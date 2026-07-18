@@ -1,4 +1,4 @@
-# M · Microsoft 365 Agents Toolkit
+# Microsoft 365 Agents Toolkit
 
 > Typ: povinný · Den: 4 · Odhad: krátký blok — **studenti hands-on, společně** · Publikum: **správci**
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

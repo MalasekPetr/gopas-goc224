@@ -1,4 +1,4 @@
-# M · Microsoft 365 Archive
+# Microsoft 365 Archive
 
 > Typ: povinný · Den: 4 · Odhad: kratší AM/PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
