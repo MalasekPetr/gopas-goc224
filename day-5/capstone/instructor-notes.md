@@ -1,4 +1,4 @@
-# Instructor notes — Capstone
+# Instructor notes — Závěrečný projekt
 
 ## Timing
 

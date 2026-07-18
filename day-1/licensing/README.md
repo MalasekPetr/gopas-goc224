@@ -1,4 +1,4 @@
-# Licenční modely a nákladové postoje
+# Licenční modely a řízení nákladů
 
 > Typ: povinný · Den: 1 · Odhad: PM blok
 > Prostředí: [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)

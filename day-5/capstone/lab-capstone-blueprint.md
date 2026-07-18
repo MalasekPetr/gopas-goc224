@@ -1,4 +1,4 @@
-# Lab · Capstone — rollout blueprint
+# Lab · Závěrečný projekt — rollout blueprint
 
 > Modul: capstone · Odhad: 60 min + 30 min prezentace · Režim: individuální design dokument (MD)
 

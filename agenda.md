@@ -13,7 +13,7 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 | 3 | SharePoint technologický úvod | `day-1/sharepoint-intro` | P |
 | 4 | Informační architektura SPO | `day-1/opt-ia-spo` | V |
 | 5 | AI landscape a pozicování Copilotu | `day-1/ai-landscape` | P |
-| 6 | Licenční modely a nákladové postoje | `day-1/licensing` | P |
+| 6 | Licenční modely a řízení nákladů | `day-1/licensing` | P |
 
 ## Den 2 — Prompting, scripting & konfigurace
 
@@ -55,6 +55,6 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 | 3 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
 | 4 | Skills — rozšíření Copilot in SharePoint *(živé demo na instruktorském účtu)* | `day-5/skills` | P |
 | 5 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
-| 6 | Capstone & next steps *(rollout blueprint)* | `day-5/capstone` | P |
+| 6 | Závěrečný projekt a další kroky *(rollout blueprint)* | `day-5/capstone` | P |
 
 > [!NOTE] D4 skončí **stavbou** agentů (`copilot-agents`); D5 ráno naváže jejich **správou** (copilot-admin → monitoring → volitelná Orchestry), pak pokračuje **stavbou** (Skills, Copilot Studio) a **rolloutem** (capstone). Oblouk „postavili jste — teď to řídíte — a stavíte dál". Přesun copilot-admin/monitoring/orchestry z D4 do D5 odlehčil přetížený D4 (velký hands-on blok copilot-agents).

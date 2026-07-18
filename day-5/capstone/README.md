@@ -1,4 +1,4 @@
-# Capstone & next steps
+# Závěrečný projekt a další kroky
 
 > Typ: povinný · Den: 5 (závěr) · Odhad: PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
@@ -11,9 +11,9 @@
 
 ## Výklad
 
-### Capstone = blueprint, ne stavba
+### Závěrečný projekt = blueprint, ne stavba
 
-Celý týden se stavělo a klikalo; capstone skládá kousky do **rozhodovacího dokumentu**, který si student odnáší do své organizace. Formát: MD dokument (samozřejmě), sekce:
+Celý týden se stavělo a klikalo; závěrečný projekt skládá kousky do **rozhodovacího dokumentu**, který si student odnáší do své organizace. Formát: MD dokument (samozřejmě), sekce:
 
 ```mermaid
 flowchart LR

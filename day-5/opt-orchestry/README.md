@@ -3,7 +3,7 @@
 > Typ: **volitelný (V)** · Den: 5 (po monitoringu) · Odhad: krátký blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
-> [!NOTE] Volitelný **leaf** modul — Capstone na něm nezávisí (kdo ho nestihne, není znevýhodněn). Navazuje na 3rd-party řádek mapy vrstev z `copilot-admin`; běží hned po `monitoring`.
+> [!NOTE] Volitelný **leaf** modul — Závěrečný projekt na něm nezávisí (kdo ho nestihne, není znevýhodněn). Navazuje na 3rd-party řádek mapy vrstev z `copilot-admin`; běží hned po `monitoring`.
 
 ## Cíle
 

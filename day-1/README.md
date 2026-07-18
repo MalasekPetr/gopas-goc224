@@ -9,6 +9,6 @@ Dopoledne technický onboarding (celé), odpoledne trojice úvodů + volitelná 
 | 3 | SharePoint technologický úvod | [`sharepoint-intro`](sharepoint-intro/) | P |
 | 4 | Informační architektura SPO | [`opt-ia-spo`](opt-ia-spo/) | V |
 | 5 | AI landscape a pozicování Copilotu | [`ai-landscape`](ai-landscape/) | P |
-| 6 | Licenční modely a nákladové postoje | [`licensing`](licensing/) | P |
+| 6 | Licenční modely a řízení nákladů | [`licensing`](licensing/) | P |
 
 > [!NOTE] Bloky 2–6 jedou odpoledne po celodopoledním onboardingu. Formáty jsou krátký literacy blok. Časování doladit v detailu.
