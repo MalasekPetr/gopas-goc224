@@ -72,4 +72,4 @@ Viz [`lab-prompt-anatomy.md`](lab-prompt-anatomy.md) — anatomie promptu nad vl
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Memory/personalizace = preview (Frontier), chování se mění. Přechod modelů (GPT 5.0 → 5.1) posunul interpretaci instrukcí z literal na intent-first — vzory psaní instrukcí průběžně revidovat dle MS docs.
+> Memory/personalizace = preview (Frontier), chování se mění. Copilot Chat vybírá model routerem (**Auto** / Quick response / Think deeper, [Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview)); v Cowork navíc GPT, Claude i Grok. Konkrétní model pod odpovědí se tak mění bez upozornění — přechody modelů už dříve posunuly interpretaci instrukcí z literal na intent-first. Vzory psaní instrukcí průběžně revidovat dle MS docs.

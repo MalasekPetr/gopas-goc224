@@ -13,11 +13,12 @@ Postavit společně deklarativního agenta v Microsoft 365 Agents Toolkitu **jak
 ## Předpoklady
 
 - **VS Code** + rozšíření **Microsoft 365 Agents Toolkit** (tvorba zdarma).
-- Přihlášení do M365 v Toolkitu. `Provision` i běh deklarativního agenta **empiricky fungují i pro studenty na PAYG bez Copilot licence** (ověřeno na kurzu 2026-07-17; MS to nedokumentuje — re-verify) → může provisionovat a spustit každý sám.
+- Přihlášení do M365 v Toolkitu. `Provision` i běh deklarativního agenta **fungují i pro studenty na PAYG bez Copilot licence** (ověřeno na kurzu 2026-07-17; od 2026-09 i dokumentováno — [Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)) → může provisionovat a spustit každý sám.
+- V tenantu povolené nahrávání vlastních aplikací (Teams admin center → *Upload custom apps*) — bez toho `Provision` neprojde.
 - Knihovna `Runbooky` na `/sites/hr-demo` (vzniká přes `scripts/New-HRAgentData.ps1`).
 
 > [!NOTE] Kdo co dělá
-> **Studenti**: scaffold projektu + editace manifestu (JSON) — hands-on, zdarma, v M365. **`Provision` i živý běh** empiricky fungují i studentům na PAYG (ověřeno 2026-07-17; MS nedokumentuje) — může každý sám, nebo společný instruktorský běh. Cíl je *pochopit agenta jako spravovanou konfiguraci*.
+> **Studenti**: scaffold projektu + editace manifestu (JSON) — hands-on, zdarma, v M365. **`Provision` i živý běh** fungují i studentům na PAYG (ověřeno 2026-07-17, od 2026-09 i dokumentováno) — může každý sám, nebo společný instruktorský běh. Cíl je *pochopit agenta jako spravovanou konfiguraci*.
 
 ## Kroky
 

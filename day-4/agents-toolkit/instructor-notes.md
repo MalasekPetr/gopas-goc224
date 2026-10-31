@@ -2,7 +2,8 @@
 
 ## Go/no-go
 
-- VS Code + rozšíření Agents Toolkit připravené; M365 login. `Provision`/běh **empiricky fungují i pro studenty na PAYG** (ověřeno 2026-07-17; MS nedokumentuje) — může každý sám, nebo společný instruktorský běh. Re-verify před během.
+- VS Code + rozšíření Agents Toolkit připravené; M365 login. `Provision`/běh **fungují i pro studenty na PAYG** (ověřeno 2026-07-17; od 2026-09 i dokumentováno v prerequisites) — může každý sám, nebo společný instruktorský běh. Re-verify před během.
+- Teams admin center → *Upload custom apps* povoleno (sideloading) — jinak `Provision` selže.
 - Knihovna `Runbooky` na `/sites/hr-demo` (z `New-HRAgentData.ps1 -Reseed`).
 - Když čas tlačí: lab zkrátit na scaffold + editaci manifestu (část A+B), běh nechat jako jeden instruktorský run.
 
@@ -10,7 +11,7 @@
 
 - **Publikum jsou správci, ne vývojáři** — držet na úrovni „agent jako konfigurace" (JSON), ne kódování. Akci NEstavět (mimo rozsah, jen M365).
 - Nosná pointa: **agent jako kód** (git, provisioning, publikace přes schválení) vs. Agent Builder = osobní klikačka bez source control.
-- Když padne dotaz „proč Toolkit nedělá HR list": `list_id` = knihovna, ne list (schema 1.7) — tabulková data jen přes Dataverse/konektor/akci. Není slabý, je to špatný nástroj na tuhle práci.
+- Když padne dotaz „proč Toolkit nedělá HR list": `list_id` = knihovna, ne list (schema 1.7 i aktuální 1.9) — tabulková data jen přes Dataverse/konektor/akci. Není slabý, je to špatný nástroj na tuhle práci.
 
 ## Vazby
 

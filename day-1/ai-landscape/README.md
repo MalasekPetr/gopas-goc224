@@ -29,7 +29,7 @@ Nosné rozlišení celého kurzu.
 
 | | Veřejný chat (ChatGPT-styl) / Copilot Chat (Basic) | Microsoft 365 Copilot (add-on) |
 |---|---|---|
-| Grounding | web (u Copilot Chat přes Bing) | **tenant** přes Microsoft Graph + Semantic Index (+ volitelně web) |
+| Grounding | web (u Copilot Chat přes Bing); výjimka Outlook — viz níže | **tenant** přes Microsoft Graph, Work IQ + Semantic Index (+ volitelně web) |
 | Přístup k org obsahu | ne (jen co vložíš do promptu) | ano, ale **jen co uživatel smí vidět** |
 | Datová hranice | — | Microsoft 365 service boundary, EDP |
 | Trénink na tvých datech | u veřejných nástrojů záleží na podmínkách | **ne** — prompty/odpovědi netrénují foundation modely |
@@ -38,16 +38,36 @@ Klíčová fakta (Microsoft):
 
 - Copilot i Copilot Chat běží v **Microsoft 365 service boundary** s **enterprise data protection (EDP)**; prompty a odpovědi **netrénují** foundation modely ([Enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection), [Privacy & protections](https://learn.microsoft.com/en-us/copilot/privacy-and-protections)).
 - **Permission-trimming**: Copilot zobrazí jen data, na která má uživatel oprávnění; Graph/Semantic Index ctí identity-based access boundary; ctí i Purview sensitivity labels a šifrování ([Data, privacy & security](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy), [Data protection architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing)).
-- **Copilot Chat (Basic)** je grounded jen na webu (Bing), ne na org obsahu, dokud ho uživatel nevloží ([Copilot overview](https://learn.microsoft.com/en-us/copilot/overview)).
+- **Copilot Chat (Basic)** je grounded na webu (Bing), ne na org obsahu, dokud ho uživatel nevloží — **s výjimkou Outlooku**: Copilot Chat v Outlooku grounduje i bez licence na poštu, kalendář, schůzky, chaty a omezenou sadu souvisejícího obsahu ([Copilot overview](https://learn.microsoft.com/en-us/copilot/overview)).
 
 > [!IMPORTANT] EU datové hranice — přímo pro CZ/EU zákazníky
-> Microsoft se hlásí ke GDPR, **EU Data Boundary** a ISO/IEC 27018. Ale: **web search dotazy** (přes Bing) a **modely Anthropic** jsou z EU Data Boundary aktuálně **vyňaty** ([Enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection)). To je ta governance nit z `../onboarding/ways-of-working.md` — konkrétní, doložitelný bod pro EU tenanty.
+> Microsoft se hlásí ke GDPR, **EU Data Boundary** a ISO/IEC 27018. Ale: **web search dotazy** (přes Bing) a **modely Anthropic** jsou z EU Data Boundary aktuálně **vyňaty** ([Enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection), [Anthropic models](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor)). **OpenAI** jako subprocesor (od 07/2026) je naopak **uvnitř** EU Data Boundary ([OpenAI subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor)). V tenantu uvnitř EU Data Boundary nabízí **Cowork jen GPT modely** ([Cowork models](https://learn.microsoft.com/en-us/copilot/cowork/cowork-models)). To je ta governance nit z `../onboarding/ways-of-working.md` — konkrétní, doložitelný bod pro EU tenanty.
 
 ## 4. Rodina Copilotů a kam zapadá SharePoint
 
-Microsoft nabízí Copilot napříč produkty (Word/Excel/PowerPoint/Outlook/Teams, Copilot Chat, agenti) ([Copilot overview](https://learn.microsoft.com/en-us/copilot/overview)).
+Microsoft nabízí Copilot napříč produkty (Word/Excel/PowerPoint/Outlook/Teams, Copilot Chat, agenti) ([Copilot overview](https://learn.microsoft.com/en-us/copilot/overview)). Od 25. 9. 2026 je to **„nový Copilot"** — jedna aplikace se třemi vstupy ([Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)):
 
-- **Copilot in SharePoint** = Copilot zážitek nad weby a knihovnami (vč. Skills a agentů) — surface, kde probíhá většina kurzu.
+- **Home** = **Chat** (rychlé dotazy) + **Cowork** (delegovaný úkol do hotového výsledku: pošle e-mail, naplánuje schůzku, vytvoří dokument — každou akci uživatel schvaluje; GA, [Cowork](https://learn.microsoft.com/en-us/copilot/cowork/)) + Office (Word/Excel/PowerPoint přímo v aplikaci Copilot).
+- **Code** = popíšeš aplikaci/dashboard/skript, Copilot ho postaví a hostuje v tenantu (Frontier preview, [Copilot Code](https://learn.microsoft.com/en-us/copilot/code/)).
+- **Autopilot** (dříve Scout) = trvalý proaktivní agent s vlastní identitou (Frontier).
+- **Researcher / Analyst** = vestavění agenti pro hloubkovou rešerši a analýzu dat (součást Copilot licence).
+
+```mermaid
+flowchart LR
+  C[Nový Copilot] --> H[Home]
+  C --> K[Code]
+  C --> A[Autopilot]
+  H --> Ch[Chat - Basic zdarma, work-grounded = licence]
+  H --> Cw[Cowork - licence + Credits]
+  H --> Of[Office v Copilotu]
+  K --> Cr[Licence + Credits, Frontier]
+  A --> Cr2[Credits, Frontier]
+  C -.-> SP[Copilot in SharePoint - surface kurzu]
+```
+
+Licenční dopad (licence vs. Copilot Credits) → `../licensing/`.
+
+- **Copilot in SharePoint** = Copilot zážitek nad weby a knihovnami (vč. Skills a agentů) — surface, kde probíhá většina kurzu. GA rollout od 30. 9. 2026 — v tenantu se může objevit postupně ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
 - **Document processing for Microsoft 365** není „Copilot", ale **dodává Copilotu strukturovaná metadata** (vytěžování dokumentů) → lepší grounding. Vztah: Document processing vytěžuje → Copilot se ptá nad vytěženým (viz `../licensing/`).
 
 ## Data flow (jak Copilot zpracuje dotaz)
@@ -69,10 +89,11 @@ flowchart LR
 - **Web-grounded vs. tenant-grounded** — hlavní osa; určuje, co Copilot „ví".
 - **Copilot ≠ Document processing** — Copilot se ptá, Document processing připravuje data.
 - **EDP ≠ EU Data Boundary pro všechno** — web queries a Anthropic modely jsou vyňaty.
+- **Chat ≠ Cowork** — Chat odpovídá, Cowork koná (a čerpá Copilot Credits navíc k licenci).
 
 ## 5. Naše prostředí (kurz)
 
-Studenti mají **Copilot přes PAYG** (ne plný add-on) → v Copilot Chatu jsou na webovém groundingu, tenant grounding a agenty odemyká PAYG (viz `../licensing/`). Pro EU governance demo je vyňetí Anthropic modelů z EU Data Boundary konkrétní bod k ukázání.
+Studenti mají **Copilot přes PAYG** (ne plnou licenci) → v Copilot Chatu jsou na webovém groundingu, tenant grounding a agenty odemyká PAYG (viz `../licensing/`). Cowork, Code a Autopilot studenti nemají (vyžadují licenci). Pro EU governance demo je vyňetí Anthropic modelů z EU Data Boundary konkrétní bod k ukázání.
 
 ## Lab
 
@@ -82,11 +103,13 @@ Viz [`lab-readiness-checklist.md`](lab-readiness-checklist.md).
 
 Responsible AI: [Principles & approach](https://www.microsoft.com/en-us/ai/principles-and-approach) · [What is Responsible AI](https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai) · [Service assurance](https://learn.microsoft.com/en-us/compliance/assurance/assurance-artificial-intelligence) · [Training](https://learn.microsoft.com/en-us/training/modules/embrace-responsible-ai-principles-practices/)
 Grounding & data protection: [Enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection) · [Privacy & protections](https://learn.microsoft.com/en-us/copilot/privacy-and-protections) · [Data, privacy & security](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) · [Architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture) · [Data protection architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing) · [Web search data](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access)
-Copilot family: [Copilot overview](https://learn.microsoft.com/en-us/copilot/overview)
+Copilot family: [Copilot overview](https://learn.microsoft.com/en-us/copilot/overview) · [Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) · [Cowork](https://learn.microsoft.com/en-us/copilot/cowork/) · [Cowork models](https://learn.microsoft.com/en-us/copilot/cowork/cowork-models) · [Copilot Code](https://learn.microsoft.com/en-us/copilot/code/) · [Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)
+AI subprocesoři: [Anthropic models](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor) · [OpenAI subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor)
 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu
 > - Vyňetí Anthropic modelů z EU Data Boundary se může měnit — ověřit v Enterprise data protection dokumentu.
-> - Modely za Copilotem se mění (GPT-5.x, Anthropic); model updates nemění bezpečnostní/compliance nastavení.
-> - Copilot in SharePoint je v preview.
+> - Modely za Copilotem se mění (router Auto; GPT, Anthropic, v Cowork i xAI); model updates nemění bezpečnostní/compliance nastavení.
+> - Copilot in SharePoint GA od 30. 9. 2026 (rollout).
+> - Nový Copilot (Home/Cowork/Code/Autopilot) — stav k 2026-10; Code a Autopilot ve Frontier. Po Ignite (17.–20. 11. 2026) projet znovu.

@@ -10,7 +10,8 @@
 - [ ] Sada vzorků: 3 dokumenty CZ (smlouva, objednávka, zápis — s jasnou „protistranou") + 3 obrázky (jeden schválně víceznačný, ať tagging ukáže limity), distribuce přes odkaz.
 - [ ] Demo knihovna připravená, ale autofill sloupec zakládat AŽ živě — to je celé demo.
 - [ ] Budget alert zkontrolovaný — 20 studentů × ~10 transakcí je drobné, ale viditelné.
-- [ ] Structured/freeform: pokud se má ukázat víc než slide, ověřit **Power Platform environment + kreditovou cestu** (AI Builder kredity nemáme — jde to přes Copilot Credits dual-mode? viz `comparison-models.md`). Bez toho jen výklad nad maticí, demo nechat na prebuilt/unstructured (M365 PAYG).
+- [ ] Structured/freeform: pokud se má ukázat víc než slide, ověřit **Power Platform environment**; bez AI Builder kreditů jde transakce na M365 PAYG metr $0,05/stránku (ceník) — ověřit v tenantu, compare stránka MS uvádí „not applicable". Bez ověření jen výklad nad maticí, demo nechat na prebuilt/unstructured (M365 PAYG).
+- [ ] Promo kapacita zdarma: podle promo stránky do 12/2026 (100 stran autofill+unstructured, 2 500 obrázků/měs. na tenant) — dema 3+3 se do ní vejdou; v Azure Cost Management ověřit, zda se reálně neúčtují.
 
 ## Dema
 
@@ -20,7 +21,7 @@
 ## Tripwires
 
 - Neříkat Syntex ani SharePoint Premium (glosář); URL v docs „syntex" — upozornit jednou.
-- **Autofill překryv s Copilot in SharePoint** (preview, přes Copilot licenci bez PAYG) — zmínit, náš tenant jede PAYG cestou.
+- **Autofill překryv s Copilot in SharePoint** (GA: everyday autofill v Copilot licenci, real-time/site-wide přes Copilot Credits) — zmínit, náš tenant jede Document processing PAYG cestou. Stejná funkce, dvě cesty účtování = živá ilustrace „Document processing PAYG ≠ Copilot Credits".
 - Studenti rádi nahrají 50 obrázků „na zkoušku" — vzorek je 3+3, říct proč (PAYG).
 - eSignature z rodiny nevykládat — má vlastní blok zítra (D3).
 

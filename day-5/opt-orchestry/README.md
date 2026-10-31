@@ -7,7 +7,7 @@
 
 ## Cíle
 
-- Student ví, co 3rd-party governance vrstva přidává nad Microsoft nástroje (SAM, CCS, Agent 365).
+- Student ví, co 3rd-party governance vrstva přidává nad Microsoft nástroje (SAM, Copilot controls v M365 admin centru, Agent 365).
 - Student umí formulovat kritéria „kdy nekupovat" — kdy Microsoft stack stačí.
 
 ## Výklad
@@ -26,7 +26,7 @@ Microsoft nástroje řídí *co a kdo smí*; Orchestry a spol. přidávají *pro
 
 ## Klíčové rozlišení
 
-- **Kupovat vs. nekupovat**: malý tenant s IT kapacitou → SAM + CCS + skripty stačí; velká organizace se samoobslužným zakládáním workspaces → 3rd-party šetří provozní práci. Rozhoduje objem requestů a kdo je vyřizuje, ne feature list.
+- **Kupovat vs. nekupovat**: malý tenant s IT kapacitou → SAM + M365 admin centrum (Copilot, Agents) + skripty stačí; velká organizace se samoobslužným zakládáním workspaces → 3rd-party šetří provozní práci. Rozhoduje objem requestů a kdo je vyřizuje, ne feature list.
 - **Readiness skóre vs. DAG reporty**: stejná data (oversharing, labely), jiné podání — DAG = syrové reporty pro admina, readiness = agregát pro management. Obojí stojí na tom, co učil D3.
 
 ## Naše prostředí

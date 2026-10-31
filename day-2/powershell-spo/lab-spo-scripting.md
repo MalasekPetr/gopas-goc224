@@ -16,13 +16,16 @@ Napsat skript, který vytvoří AI-governance inventuru tenantu: weby + nastaven
 
 1. Napiš skript `tenant-inventory.ps1`, který:
    - se připojí (`Connect-SPOService -Url ...`),
-   - vypíše z `Get-SPOTenant`: `KnowledgeAgentScope`, storage kvótu,
+   - vypíše z `Get-SPOTenant`: `DelegateRestrictedContentDiscoverabilityManagement` (smí vlastníci webů sami zapínat RCD?), storage kvótu,
    - vypíše `Get-SPOSite -Limit ALL` jako tabulku: URL, Owner, StorageUsageCurrent, Template,
    - výstup uloží do CSV (`Export-Csv -Encoding utf8`).
 2. Přidej komentář ke každému kroku: *co* čte a *proč* je to pro AI governance zajímavé.
 3. Rozšíření pro rychlé: parametrizuj filtr šablony webu; přidej sloupec IsAuthoritative (jen pokud tenant parametr podporuje).
 4. Spuštění podle režimu vyhlášeného instruktorem (vlastní přístup / instruktor na projektoru).
-5. Nad výsledkem odpověz: kolik webů má tenant, který je největší, a jaká je hodnota `KnowledgeAgentScope`?
+5. Nad výsledkem odpověz: kolik webů má tenant, který je největší, a smí vlastníci webů sami spravovat RCD?
+
+> [!IMPORTANT] Názvosloví / lineage
+> Starší verze labu četly `KnowledgeAgentScope`. Microsoft ho při GA Copilot in SharePoint vyřadil (ctěn do 1. 11. 2026) — dostupnost dnes řídí Site AI settings + RCD ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). Pokud ho `Get-SPOTenant` ještě vrací, je to jen historická hodnota bez efektu.
 
 ## Ověření
 

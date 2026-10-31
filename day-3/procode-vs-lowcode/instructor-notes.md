@@ -6,7 +6,8 @@
 
 ## Tripwires
 
-- **Neučit deprecated**: add-in model, TeamsFx SDK (support končí 9/2026), „in a folder" triggery. Když se student zeptá na add-iny — „legacy, migrace na SPFx".
+- **Neučit vyřazené**: add-in model (v SPO skončil 2. 4. 2026), TeamsFx SDK (support skončil 9/2026), „in a folder" triggery. Když se student zeptá na add-iny — „v SharePoint Online už nefungují, náhrada SPFx".
+- SPFx 1.24 / Copilot UX components zmínit jednou větou jako novou hranu mapy (UI agenta v Copilotu, jen s Copilot licencí) — ne demo.
 - Názvy: **Microsoft 365 Agents Toolkit** (ne Teams Toolkit), **Copilot connectors** (ne Graph connectors), **Agents SDK** (ne TeamsFx).
 - Nezabřednout do SPFx detailů (toolchain, Heft…) — tady jde o rozhodovací mapu, ne o kurz vývoje.
 - Custom connector sdílení: Power Automate + Power Apps + Copilot Studio ano, Logic Apps ne — častý dotaz.
@@ -19,4 +20,4 @@
 ## Vazby
 
 - Zpět: demo flow (blok 3), Document Intelligence akcent, formáty (OpenAPI = JSON/YAML, D1).
-- Dopředu: deklarativní vs. custom engine agent → D4 `copilot-agents` (hned zítra, závěr dne); repo-as-code přístup → D5 capstone.
+- Dopředu: deklarativní vs. custom engine agent → D4 `copilot-agents` (hned zítra, 3. blok dne); repo-as-code přístup → D5 capstone.

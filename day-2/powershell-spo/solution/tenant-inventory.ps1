@@ -5,7 +5,8 @@
 
 .NOTES
     Vyžaduje roli SharePoint Administrator (viz lab-spo-scripting.md, Předpoklady).
-    Modul Microsoft.Online.SharePoint.PowerShell 16.0.26615.12013+ (kvůli KnowledgeAgentScope).
+    Modul Microsoft.Online.SharePoint.PowerShell v aktuální verzi.
+    KnowledgeAgentScope se od 1. 11. 2026 nečte — MS ho vyřadil (Site AI settings + RCD).
 #>
 param(
     # Admin URL tenantu, viz environment.md
@@ -25,14 +26,15 @@ Import-Module Microsoft.Online.SharePoint.PowerShell
 # Připojení k SPO admin endpointu — všechny další cmdlety běží v jeho kontextu.
 Connect-SPOService -Url $AdminUrl
 
-# Nastavení tenantu: KnowledgeAgentScope říká, nad kterými weby smí pracovat
-# Knowledge Agent — přímý vstup pro rozhodnutí, co Copilot "vidí".
+# Nastavení tenantu: DelegateRestrictedContentDiscoverabilityManagement říká,
+# zda smí vlastníci webů sami zapínat Restricted Content Discovery (RCD) —
+# tedy kdo rozhoduje, co Copilot "nevidí".
 # Storage kvóta dává kontext k velikostem webů níže (kolik obsahu AI reálně indexuje).
 $tenant = Get-SPOTenant
 [PSCustomObject]@{
-    KnowledgeAgentScope = $tenant.KnowledgeAgentScope
-    StorageQuotaMB      = $tenant.StorageQuota
-    StorageQuotaUsedMB  = $tenant.StorageQuotaAllocated
+    RcdDelegatedToSiteAdmins = $tenant.DelegateRestrictedContentDiscoverabilityManagement
+    StorageQuotaMB           = $tenant.StorageQuota
+    StorageQuotaUsedMB       = $tenant.StorageQuotaAllocated
 } | Format-List
 
 # Inventura webů: URL + Owner = kdo za obsah odpovídá (governance kontakt),

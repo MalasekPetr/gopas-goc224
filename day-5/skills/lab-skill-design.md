@@ -1,6 +1,6 @@
 # Lab · Návrh a review Skillu
 
-> Modul: skills · Odhad: 35 min (25 návrh + review, 10 běhy) · Režim: **studenti hands-on** — návrh, tvorba i běh Skillu (Copilot in SharePoint empiricky funguje na PAYG, ověřeno 2026-07-17; MS nedokumentuje — re-verify, fallback instruktorský běh)
+> Modul: skills · Odhad: 35 min (25 návrh + review, 10 běhy) · Režim: návrh + review vždy hands-on; tvorba a běh **podle go/no-go T1** (po GA MS dokumentuje Copilot in SharePoint jako license-only; v preview 2026-07-17 fungoval i na PAYG) — jinak instruktorský běh
 
 ## Cíl
 
@@ -15,9 +15,9 @@ Navrhnout Skill pro opakovaný postup ze svého webu jako `SKILL.md`, projít pe
 3. Zkontroluj proti omezením: žádný externí systém, žádný kód, nic nad rámec práv uživatele. Pokud krok potřebuje akci mimo SharePoint → poznamenej „tohle už je agent" (odpolední blok).
 4. **Peer review ve dvojici**: soused hledá (a) krok, který Copilot nemůže umět, (b) nejednoznačnou instrukci (D2 pravidla promptů platí i tady), (c) chybějící vstup. Zapracuj.
 
-### Část B — tvorba a běh (studenti)
+### Část B — tvorba a běh (studenti, nebo instruktor dle T1)
 
-5. Každý student svůj návrh vytvoří přes chat na vlastním webu (empiricky funguje na PAYG — ověřeno 2026-07-17) a spustí. Sleduj: draft od agenta vs. původní návrh, skill indicator card, výsledný `SKILL.md` v Agent Assets. *(Fallback, kdyby v tenantu nešlo: 2–3 vybrané spustí instruktor.)*
+5. Každý student svůj návrh vytvoří přes chat na vlastním webu jako **site skill** (Copilot se zeptá personal vs. site — volíme site, ať skončí v Agent Assets) a spustí. Sleduj: draft od agenta vs. původní návrh, skill indicator card, výsledný `SKILL.md` v Agent Assets. Bonus: `/skills` vypíše vestavěné skills. *(Pokud T1 neprošel: 2–3 vybrané vytvoří a spustí instruktor.)*
 6. Autor porovná: co agent v draftu změnil oproti mému návrhu a proč?
 
 ## Ověření
@@ -29,4 +29,4 @@ Navrhnout Skill pro opakovaný postup ze svého webu jako `SKILL.md`, projít pe
 
 ## Fallback
 
-- Skills v tenantu nejedou (re-verify — dřív se čekalo license-only, empiricky ale na PAYG fungují 2026-07-17): části A a review jsou plnohodnotný deliverable; běhy nahradí instruktorský běh / screenshoty.
+- Skills studentům v tenantu nejedou (po GA dokumentovaně license-only; T1 neprošel): části A a review jsou plnohodnotný deliverable; běhy nahradí instruktorský běh / screenshoty.

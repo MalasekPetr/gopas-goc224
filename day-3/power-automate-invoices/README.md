@@ -34,16 +34,17 @@ flowchart LR
 
 | Cesta | Co to je | Kdy |
 |---|---|---|
-| **AI Builder — invoice processing** | prebuilt model v Power Platform, low-code, umí **češtinu i slovenštinu**, ~30 polí vč. DIČ (`VendorTaxId`), IBAN ([prebuilt invoice model](https://learn.microsoft.com/en-us/ai-builder/prebuilt-invoice-processing)) | rychlý start uvnitř flow, AI Builder kredity |
+| **AI Builder — invoice processing** | prebuilt model v Power Platform, low-code, umí **češtinu i slovenštinu**, ~30 polí vč. DIČ (`VendorTaxId`), IBAN ([prebuilt invoice model](https://learn.microsoft.com/en-us/ai-builder/prebuilt-invoice-processing)) | rychlý start uvnitř flow; AI Builder kredity → od 11/2026 Copilot Credits (viz delta) |
 | **Document processing for M365** | SharePoint-native (prebuilt/structured/unstructured modely, D2) | metadata v knihovně, bez flow logiky |
 | **Azure AI Document Intelligence** | `prebuilt-invoice` v4.0 GA, 27 jazyků, až 2 000 stran, plná kontrola přes API ([prebuilt-invoice](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice)) | **doporučená cesta pro objem a robustnost** — verzované API, vyšší limity, nezávislost na Power Platform kreditech |
 
 > [!IMPORTANT] Názvosloví
 > „Azure Cognitive Services" je zastaralý brand: Form Recognizer → **Azure AI Document Intelligence** (2023), dnes pod deštníkem **Microsoft Foundry** („Foundry Tools") ([overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview)). V materiálech říkáme Azure AI Document Intelligence. Účtuje se přes Azure — třetí kategorie vedle obou M365 PAYG modelů (viz glosář).
+> Oficiální název na overview stránce je k 2026-10 „**Azure Document Intelligence in Foundry Tools**" (bez „AI") — v běžném textu zatím ponecháváme zavedený název, sjednotíme po Ignite (17.–20. 11. 2026).
 
 ## Klíčové rozlišení
 
-- **AI Builder vs. Document Intelligence**: stejná úloha, jiný kontrakt — AI Builder = kredity + limity Power Platformy, low-code; Document Intelligence = Azure služba s SLA, verzemi API a cenou za stránku. Pro 20 faktur/měsíc AI Builder stačí; pro účtárnu s tisícovkami je Azure robustnější.
+- **AI Builder vs. Document Intelligence**: stejná úloha, jiný kontrakt — AI Builder = kredity (nově Copilot Credits) + limity Power Platformy, low-code; Document Intelligence = Azure služba s SLA, verzemi API a cenou za stránku. Pro 20 faktur/měsíc AI Builder stačí; pro účtárnu s tisícovkami je Azure robustnější.
 - **Vytěžení vs. schválení**: AI dává *návrh dat s confidence*; rozhodnutí zůstává na člověku (Approvals). Nikdy nepouštět nízkou confidence rovnou do metadat.
 
 ## Naše prostředí
@@ -52,9 +53,10 @@ flowchart LR
 
 ## Zdroje (Microsoft)
 
-[Approvals v Power Automate](https://learn.microsoft.com/en-us/power-automate/modern-approvals) · [SharePoint connector — triggery a akce](https://learn.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/sharepoint-connector-actions-triggers) · [AI Builder invoice processing](https://learn.microsoft.com/en-us/ai-builder/prebuilt-invoice-processing) · [Azure AI Document Intelligence overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview) · [Prebuilt invoice model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice)
+[Approvals v Power Automate](https://learn.microsoft.com/en-us/power-automate/modern-approvals) · [End of AI Builder credits](https://learn.microsoft.com/en-us/ai-builder/endofaibcredits) · [Partner Center — říjen 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-october) · [SharePoint connector — triggery a akce](https://learn.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/sharepoint-connector-actions-triggers) · [AI Builder invoice processing](https://learn.microsoft.com/en-us/ai-builder/prebuilt-invoice-processing) · [Azure AI Document Intelligence overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview) · [Prebuilt invoice model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> **AI Builder kredity:** k 1. 11. 2026 konec prodeje capacity add-onů (i v CSP) a konec seeded kreditů v nových licencích; stávající kredity lze čerpat do konce aktuálního termínu, pak AI Builder funkce čerpají **Copilot Credits** ([Partner Center, říjen 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-october), [End of AI Builder credits](https://learn.microsoft.com/en-us/ai-builder/endofaibcredits)). Demo flow po 1. 11. ověřit v tenantu (z jakých kreditů čerpá).
 > „Foundry Tools" rebrand je čerstvý — MS stránky míchají názvy Azure Document Intelligence / Foundry; před během zkontrolovat aktuální titulky. Deprecated „in a folder" triggery jsou stále v designeru — výslovně varovat. Document Intelligence API: v4.0 GA; v2.1 konec podpory 2027-09.

@@ -9,7 +9,7 @@
 - [ ] Licence Business Basic přiřazené všem 20 účtům.
 - [ ] PAYG billing policy zapnutá a pokrývající studentské účty (Copilot Credits).
 - [ ] Budget alert na PAYG nastavený (spotřebu nezastaví, ale upozorní).
-- [ ] Copilot in SharePoint dostupný (preview enablement, `KnowledgeAgentScope`).
+- [ ] Copilot in SharePoint dostupný na studentských webech (GA; řízení přes Site AI settings + RCD — `KnowledgeAgentScope` vyřazen k 1. 11. 2026). Výsledek T1 z `../licensing/instructor-notes.md` (funguje na PAYG bez licence?).
 - [ ] Každý student má vlastní web s rolí Site Collection Admin / Owner.
 - [ ] Studentům přiřazen **Global Reader** na celý týden.
 

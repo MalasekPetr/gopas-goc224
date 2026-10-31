@@ -13,13 +13,13 @@
 
 ### Co Archive dělá
 
-**Microsoft 365 Archive** = cold storage pro **neaktivní SharePoint weby** (site-level GA; **file-level v preview**); OneDrive jen pro **nelicencované** účty ([Archive overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview)).
+**Microsoft 365 Archive** = cold storage pro **neaktivní SharePoint weby** (site-level GA; **file-level v preview**); OneDrive jen pro **nelicencované** účty ([Archive overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview)). Automatickou archivaci neaktivních souborů na živých webech řeší **inactive files policies v SAM** (preview, zatím přes PowerShell, podle data posledního lidského přístupu).
 
 Archivovaný obsah:
 
 - **není** přímo přístupný uživatelům,
-- **je** plně prohledatelný pro **Purview Content Search / eDiscovery** (compliance nekončí archivací),
-- **Copilot nad ním negrounduje** — archivace je i nástroj AI hygieny (stará data nepletou odpovědi),
+- **je** plně prohledatelný pro **Purview Content Search / eDiscovery** i **end-user search** (compliance nekončí archivací),
+- MS: „**Copilot is not trained on archived content**, maximizing response relevancy" — archivace je i nástroj AI hygieny. Zda Copilot archivovaný obsah vůbec nezahrne do odpovědi, MS výslovně neuvádí — ověřit v tenantu,
 - reaktivace vrací web **beze ztráty** metadat a permissions.
 
 ```mermaid
@@ -27,14 +27,14 @@ flowchart LR
   A[Aktivní web] -->|archivace| C[Archivovaný web<br>cold tier]
   C -->|reaktivace| A2[Aktivní web<br>metadata + permissions zpět]
   C --> E[eDiscovery / Content Search<br>stále funguje]
-  C -.->|negrounduje| X[Copilot]
-  A2 -.->|4 měsíce nelze<br>znovu archivovat| C
+  C -.->|not trained on| X[Copilot]
+  A2 -.->|web: 4 měsíce, soubor: 120 dní<br>nelze znovu archivovat| C
 ```
 
 ### Náklady
 
 - **$0.05/GB/měsíc**, ale účtuje se **jen nad rámec licencované SharePoint kvóty tenantu** — dokud se (aktivní + archivované) vejde do kvóty, archiv je zdarma ([Archive pricing](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-pricing)).
-- **Reaktivační poplatek pro SharePoint zrušen (31. 3. 2025)**; reaktivovaný web nejde 4 měsíce znovu archivovat. Výjimka: nelicencované OneDrivy reaktivaci platí per GB.
+- **Reaktivační poplatek pro SharePoint zrušen (31. 3. 2025)**; reaktivovaný web nejde 4 měsíce znovu archivovat, reaktivovaný soubor 120 dní. Výjimka: nelicencované OneDrivy reaktivaci platí per GB.
 - Vypnutí billingu: obsah zůstává archivovaný a reaktivovatelný, ale počítá se jako aktivní storage.
 
 ### Setup
@@ -61,5 +61,5 @@ Viz [`lab-archive-plan.md`](lab-archive-plan.md) — plán archivace pro kolekci
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> File-level archive = preview (omezené app kompatibility: Word/PPT online, mobil, macOS sync). Cena $0.05/GB/měs a pravidlo „zdarma do kvóty" ověřit proti pricing stránce. Copilot negrounduje archiv — chování ověřit při GA file-level archivu.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> File-level archive = preview (omezené app kompatibility: Word/PPT online, mobil, macOS sync; nearchivují se OneNote, stránky ani SharePoint agents). SAM inactive files policies = preview (PowerShell). Site Archive dostupný i v GCC. Cena $0.05/GB/měs a pravidlo „zdarma do kvóty" ověřit proti pricing stránce. Copilot a archiv: MS uvádí jen „not trained on archived content" — zda se archiv nedostane do odpovědí, ověřit v tenantu.

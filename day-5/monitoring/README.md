@@ -14,8 +14,12 @@
 ### Auditní stopa — Purview Audit
 
 - Purview portál → **Audit**; async search joby (přežijí zavřený prohlížeč, drží se 30 dní); PowerShell: `Search-UnifiedAuditLog`. Retence: **180 dní (Audit Standard) / 1 rok (E5, Audit Premium)** ([Audit search](https://learn.microsoft.com/en-us/purview/audit-search)).
-- **Copilot eventy se logují automaticky** (Audit Standard, bez konfigurace): RecordType **CopilotInteraction**, AIAppInteraction, ConnectedAIAppInteraction. V záznamu: **AccessedResources** (vč. sensitivity labelů), AgentId/AgentName, `JailbreakDetected`, a `BingWebSearch` prozradí web grounding ([Copilot audit](https://learn.microsoft.com/en-us/purview/audit-copilot)).
-- Pozor: audit **ne-Microsoft AI aplikací je PAYG** (per záznam).
+- **Copilot eventy se logují automaticky** (Audit Standard, bez konfigurace): RecordType **CopilotInteraction** (Copilot, **Cowork**, Security Copilot…), AIAppInteraction, ConnectedAIAppInteraction. V záznamu: **AccessedResources** (vč. sensitivity labelů a `XPIADetected` — detekce cross-prompt injection z přistoupeného zdroje), AgentId/AgentName, `JailbreakDetected`, **`ModelTransparencyDetails`** (poskytovatel modelu — důležité při zapnutém Anthropicu / OpenAI subprocesoru; u Cowork zatím chybí), a `BingWebSearch` prozradí web grounding ([Copilot audit](https://learn.microsoft.com/en-us/purview/audit-copilot)).
+- Copilot Studio agenti jsou v Audit Standard. Pozor: audit **ne-Microsoft AI aplikací je PAYG** (per záznam).
+
+### Data security posture — DSPM
+
+- **DSPM for AI** je v Purview označené jako **(classic)** — nahrazuje ho nové **Data Security Posture Management**, které pokrývá AI aplikace i agenty ([DSPM for AI (classic)](https://learn.microsoft.com/en-us/purview/dspm-for-ai), [DSPM](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about)). Pro kurz: oversharing assessment nad top 100 weby a Activity explorer s Copilot interakcemi — most na D3 SAM (DAG) a RCD.
 
 ### Alerty a zdraví služby
 
@@ -38,7 +42,7 @@ Provozní signály z celého týdne se tu potkávají: PAYG spotřeba (D2), DAG 
 ## Klíčové rozlišení
 
 - **Audit vs. usage report**: audit = důkaz (kdo, kdy, k čemu přistoupil — vč. Copilota); usage = adopční metrika. MS explicitně říká: usage reporting nestavět na audit logu — a naopak.
-- **Alert vs. budget alert**: Defender alert policies hlídají *chování* (sdílení, malware); Azure budget alerty hlídají *útratu* (PAYG). Dva systémy, incident runbook potřebuje oba.
+- **Alert vs. budget alert**: Defender alert policies hlídají *chování* (sdílení, malware); budget alerty hlídají *útratu* — Azure budget a billing policy jen upozorní, spending policy v Copilot → Cost management umí i tvrdý strop. Dva systémy, incident runbook potřebuje oba.
 - **Service health vs. vlastní problém**: první krok triáže — je to Microsoft, nebo my? (Health → pak teprve audit.)
 
 ## Naše prostředí
@@ -51,9 +55,10 @@ Viz [`lab-monitoring-runbook.md`](lab-monitoring-runbook.md) — provozní monit
 
 ## Zdroje (Microsoft)
 
-[Audit log search](https://learn.microsoft.com/en-us/purview/audit-search) · [Audit Copilot interactions](https://learn.microsoft.com/en-us/purview/audit-copilot) · [Alert policies (Defender)](https://learn.microsoft.com/en-us/defender-xdr/alert-policies) · [Service health](https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health) · [Copilot usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage)
+[Audit log search](https://learn.microsoft.com/en-us/purview/audit-search) · [Audit Copilot interactions](https://learn.microsoft.com/en-us/purview/audit-copilot) · [DSPM for AI (classic)](https://learn.microsoft.com/en-us/purview/dspm-for-ai) · [DSPM](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about) · [Agents report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new) · [Alert policies (Defender)](https://learn.microsoft.com/en-us/defender-xdr/alert-policies) · [Service health](https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health) · [Copilot usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> CopilotInteraction nově zahrnuje Cowork; přibylo `ModelTransparencyDetails` a `XPIADetected`. DSPM for AI → classic, nové DSPM. Usage report ~48 h, agenti v samostatném Agents reportu (preview).
 > Alert policies dokumentace se přestěhovala pod Defender XDR — ověřit aktuální cestu v portálu. Audit retence 180 dní/1 rok dle licence; kurz jede Business Basic → počítat se 180 dny. PAYG audit ne-MS AI aplikací — sazby ověřit.

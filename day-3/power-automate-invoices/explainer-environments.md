@@ -40,6 +40,7 @@ V Power Platform admin centru kurzovního tenantu uvidíš předprovisionovaný 
 
 1. **Založ vyhrazený environment `GOC224-lab`, typ Sandbox** — studentské flows (kdyby na ně došlo) a hlavně **páteční agenti z Copilot Studia** vzniknou tady, ne v defaultu. Po běhu kurzu **reset** = čistý stůl pro další běh.
 2. **Připoj k němu Copilot Credits PAYG billing policy** (D2, krok 1b — policy se váže na environment; bez ní studenti v pátek agenta nespustí) a **zkontroluj DLP** (SharePoint konektor musí být povolený).
+   - **Pozor na resource-based spending policy** v M365 admin centru (Copilot → Cost management, D2 krok 1c): je opt-in, má přednost před nastavením v Power Platform admin centru a **nepokrývá AI Builder** ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs)). Dokud v `GOC224-lab` běží AI Builder demo flow, environment pod takovou policy nedávat.
 3. **Default nech čistý** — instruktorské demo flow dnes běží v `GOC224-lab`, ať jde příkladem vlastní governance lekci.
 4. Studentům dej do environmentu roli **Environment Maker** (tvorba bez admin práv).
 
@@ -49,5 +50,6 @@ V Power Platform admin centru kurzovního tenantu uvidíš předprovisionovaný 
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Copilot Studio spending jde nově spravovat i z M365 admin centra (resource-based policy, opt-in; AI Builder nepokrývá) — po Ignite (17.–20. 11. 2026) ověřit, kterou plochu pro `GOC224-lab` používat.
 > Environment routing zatím chytá makery při vstupu přes make.powerapps.com — pokrytí dalších vstupních bodů (Copilot Studio!) se rozšiřuje průběžně; před během ověřit, kudy routing platí. Managed Environments funkce (groups, rules, sharing limity) rostou po vlnách — strategie doc aktualizován 2026-05. Vazba billing policy ↔ environment: ověřit v admin centru, že `GOC224-lab` je u policy uvedený.

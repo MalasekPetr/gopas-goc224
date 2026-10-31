@@ -45,21 +45,22 @@ Na tabuli napiš **5 dotazů** a po každé cestě doplň sloupec ✅/❌.
 >
 > - Dotaz 1 a 2 projdou. **Dotaz 3/4 NEspolehlivě** — Builder zdroje jen *prioritizuje*, nedělá agregaci. Řekni: „strop no-code cesty — analytiku prolomíme zítra."
 > - Publikace jen sdílení / org katalog, ne marketplace, žádný source control.
+> - Akce do externích služeb Builder neumí → „copy to Copilot Studio" ([Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)). Skills připojit umí (preview).
 
 ### SharePoint agent — instruktor jen ukáže
 
 > [!IMPORTANT] Proč jen demo
-> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — studenti na Business Basic + PAYG ho můžou *používat*, ne *tvořit* (empiricky potvrzeno 2026-07-17 — na rozdíl od Skills a Toolkitu, které na PAYG fungují). Proto tuhle cestu **instruktor jen předvede**, studenti nestaví.
+> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — studenti na Business Basic + PAYG ho můžou *používat*, ne *tvořit* (empiricky potvrzeno 2026-07-17 — na rozdíl od Toolkitu, který na PAYG funguje). Proto tuhle cestu **instruktor jen předvede**, studenti nestaví. Avizovat: od pol. 11/2026 „Create agent" otevře Agent Builder a `.agent` soubor už nevznikne; `.agent` soubory přestanou odpovídat po 03/2027 ([Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
 
 1. Na `/sites/hr-demo` → **Create agent**, scope omez na **jednu knihovnu** `Smlouvy`.
 2. Dotaz 2 (smlouva) projde; dotaz 1 (list) ne. **Zkus přidat list jako druhý zdroj** → shodí knihovnu.
 
 > [!NOTE] V čem se liší (co ukázat)
 >
-> - **Tvrdý limit: 1 zdroj a nic jiného** (MC1255409). HR scénář (list + 2 knihovny) se do jednoho agenta nevejde.
+> - **Limit: 1 zdroj a nic jiného** (empiricky 2026-07, MC1255409; MS dokumentace limit neuvádí — ověřit živě). HR scénář (list + 2 knihovny) se do jednoho agenta nevejde.
 > - Agent žije s webem (permissions, lifecycle); distribuce jen web.
 
-**Kam patří Toolkit:** do scénáře A **ne** — SharePoint list nescopuje (ověřeno ve schématu 1.7: `list_id` = knihovna, ne list; tabulková data jen přes Dataverse/konektor/akci). Toolkit má vlastní scénář B níže, kde vyhrává.
+**Kam patří Toolkit:** do scénáře A **ne** — SharePoint list nescopuje (ověřeno ve schématu 1.7 i 1.9: `list_id` = knihovna, ne list; tabulková data jen přes Dataverse/konektor/akci). Toolkit má vlastní scénář B níže, kde vyhrává.
 
 ---
 
@@ -84,7 +85,7 @@ Detail a lab: [`scenario-support-agent.md`](scenario-support-agent.md) · [`../a
 1. Ve VS Code s **Agents Toolkit** → **Create a New Agent/App → Declarative Agent → bez akce**. Ukaž **manifest jako konfiguraci** (`declarativeAgent.json`) verzovanou v gitu — ne program.
 2. Uprav `instructions` na Support Asistenta; přidej **knowledge** `OneDriveAndSharePoint` → knihovna `Runbooky` (`items_by_url`).
 3. Přidej `editorial_answers` (dotaz 2) a `discourage_model_knowledge` (dotaz 4). Ukaž **prázdný slot `actions`**: „sem by šlo API — vývoj, mimo náš rozsah."
-4. **Provision** → nasadí do tenantu (žádné Azure). Empiricky funguje i studentům na PAYG (ověřeno 2026-07-17). Pusť 4 dotazy.
+4. **Provision** → nasadí do tenantu (žádné Azure). Funguje i studentům na PAYG — empiricky ověřeno 2026-07-17, od 2026-09 i dokumentováno ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)). Pusť 4 dotazy.
 
 > [!NOTE] V čem se liší (co ukázat — pointa pro správce)
 >
@@ -104,7 +105,7 @@ Detail a lab: [`scenario-support-agent.md`](scenario-support-agent.md) · [`../a
 Jedna věta na nástroj:
 
 - **Agent Builder** — „za minuty, pro každého; lookup a soubory, bez analytiky."
-- **SharePoint agent** — „vlastník obsahu, jeden zdroj a nic jiného."
+- **SharePoint agent** — „vlastník obsahu, jeden zdroj a nic jiného (a od pol. 11/2026 už přes Agent Builder)."
 - **Agents Toolkit** — „agent jako **spravovaná konfigurace**: manifest v gitu, provisioning, publikace přes schválení (akce = vývoj, mimo rozsah)."
 - **Copilot Studio (D5)** — „jediný, co odpoví na *kolik/kdo/kdy* nad listem."
 
@@ -116,5 +117,5 @@ Analytické dotazy 3 a 4 dnes **schválně necháváme viset** — zítra je Cop
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Podpora listů se hýbe nejrychleji (SharePoint agents GA ~05/2026, docs lag; Copilot Studio listy = production-ready preview; manifest schema pro listy v Toolkitu k 2026-07 neexistuje — `list_id` je stále knihovna). Šablony Toolkitu (6.0) se přejmenovávají — ověřit „Declarative Agent" (stavíme bez akce). Před během ověřit go/no-go dostupnost Agent Builderu v PAYG a přesné UI labely.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Podpora listů se hýbe nejrychleji (SharePoint agents GA ~05/2026, docs lag; Copilot Studio listy = production-ready preview; manifest schema 1.9 (2026-09) listy v Toolkitu stále nezná — `list_id` je knihovna). SharePoint agents: od pol. 11/2026 tvorba přes Agent Builder, `.agent` končí po 03/2027 — tento playbook platí pro běh před přechodem. Šablony Toolkitu se přejmenovávají (verze Toolkitu — ověřit) — ověřit „Declarative Agent" (stavíme bez akce). Před během ověřit go/no-go dostupnost Agent Builderu v PAYG a přesné UI labely.

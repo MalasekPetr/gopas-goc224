@@ -8,6 +8,7 @@
 
 - **Přístup studentů do Copilot Studia**: PAYG billing policy / trial pro 20 účtů — ověřit přihlášení testovacím studentským účtem vč. založení agenta a SharePoint knowledge. No-go → fallback (stavba podle návrhů studentů na projektoru).
 - **Environment**: studenti staví v `GOC224-lab` (Sandbox, založený v D3 — viz `../../day-3/power-automate-invoices/explainer-environments.md`), role Environment Maker, billing policy připojená k tomuto environmentu. Ověřit, že se Copilot Studio otvírá v něm, ne v defaultu (přepínač environmentu vpravo nahoře).
+- **Harness**: ověřit, kam vede „New agent" v tenantu (nová zkušenost = GitHub Copilot harness, účtuje od stavby) a jak se dostat na standard harness (*Other ways to build* / *Open classic experience*). Testovacím účtem po pár testech zkontrolovat stránku **Monitor** — čerpá test panel na standard harnessu kredity?
 - Ověřit, že **Restricted SharePoint Search není zapnutý** (blokoval by SharePoint knowledge celé třídě).
 - DLP politiky prostředí: nesmí blokovat SharePoint knowledge, ale ideálně mít **zablokovaný HTTP node a neautentizovaný chat** — governance příklad k ukázání.
 
@@ -16,7 +17,7 @@
 - „Message packs" neexistují — **Copilot Credits** (od 9/2025). Studenti s dřívější zkušeností se budou ptát.
 - Test hranice práv (krok 4) je hvězda labu — nechat každou dvojici říct výsledek nahlas; váže celý týden (permissions > licence > scope).
 - Hlídat publikaci — krok 6 je záměrně zákaz; kdo publikuje, dělá to přes Requests flow jako demo pro všechny.
-- Kreditová disciplína: 20 studentů × ladění = reálné peníze; budget alert z D1 pořád běží.
+- Kreditová disciplína: 20 studentů × ladění = reálné peníze; budget alert z D1 pořád běží (jen upozorní). Kdo omylem staví v nové zkušenosti (GitHub Copilot harness), čerpá kredity od první věty — přesměrovat na standard harness.
 
 ## Vazby
 

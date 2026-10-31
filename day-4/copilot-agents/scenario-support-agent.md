@@ -61,5 +61,5 @@ Knihovna `Runbooky` (4 .md runbooky) vzniká spolu s HR daty přes `scripts/New-
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> UI Agents Toolkitu (aktuálně 6.0) a názvy šablon se mění — ověřit „Declarative Agent" bez akce. `editorial_answers`/`discourage_model_knowledge` = manifest schema 1.7. Provisioning/běh deklarativního agenta vyžaduje Copilot licenci (instruktor).
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> UI Agents Toolkitu a názvy šablon se mění (číslo verze Toolkitu — ověřit) — ověřit „Declarative Agent" bez akce. `editorial_answers`/`discourage_model_knowledge` = manifest schema 1.7 (aktuální je 1.9). Provisioning/běh deklarativního agenta **nevyžaduje** Copilot licenci — MS dokumentuje tvorbu bez licence, grounding na org data = licence nebo PAYG ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)); empiricky ověřeno na kurzu 2026-07-17.

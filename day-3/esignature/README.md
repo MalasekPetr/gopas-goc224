@@ -82,6 +82,6 @@ Viz [`lab-esignature-flow.md`](lab-esignature-flow.md) — eSignature schvalovac
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Promo „až 5 requestů zdarma" platí do června 2026 — před během ověřit, jestli ještě běží. Seznam partnerských providerů (Adobe, Docusign) se může rozšířit. Docs se přestěhovaly z `/syntex/` na `/documentprocessing/` — staré URL redirectují.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Promo „až 5 requestů zdarma měsíčně": [promo stránka](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/promo-syntex) uvádí **do prosince 2026**, [ceník](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services) ještě **červen 2026** — MS si odporuje; v tenantu ověřit, zda se demo requesty účtují. Seznam partnerských providerů (Adobe, Docusign) se může rozšířit. Docs se přestěhovaly z `/syntex/` na `/documentprocessing/` — staré URL redirectují.
 > **eIDAS 2.0** (nařízení (EU) 2024/1183, EUDI Wallet) postupně nabíhá — úrovně SES/AES/QES zůstávají, přibývá peněženka jako podpisový prostředek; před během zkontrolovat, zda Microsoft/provideři neohlásili podporu. Zda nativní eSignature nezískal Power Automate konektor, ověřit v konektorové galerii.

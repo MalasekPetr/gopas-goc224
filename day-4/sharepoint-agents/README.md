@@ -4,18 +4,27 @@
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 > Kontext: deklarativní agent, mapa cest a srovnání → [`../copilot-agents/`](../copilot-agents/README.md)
 
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10: SharePoint agents se mění
+>
+> - **Od poloviny listopadu 2026** otevře „Create agent" na webu **Agent Builder** a `.agent` soubor už se neuloží.
+> - Stávající `.agent` soubory **přestanou odpovídat po březnu 2027**.
+> - Čtyři cesty upgradu: použít přímo **Copilot in SharePoint**, převést agenta na **skill**, upgradovat přes **Agent Builder**, nebo publikovat agenta z **Copilot Studia**. Upgradovaní agenti se sdílejí na úrovni agenta, ne přes SharePoint permissions.
+> - **SharePoint agents PAYG platí jen pro `.agent` soubory** — nelicencované použití přechází na PAYG Copilot appky.
+>
+> Zdroj: [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents). Tento běh (D4 = 5. 11. 2026) je ještě **před** přechodem — demo níže platí, jen to studentům avizuj jako „legacy cesta".
+
 ## Co to je
 
 Agent, kterého staví **vlastník obsahu přímo na SharePoint webu** (`.agent` soubor), bez opuštění webu. Agent **žije s webem** — dědí jeho permissions i lifecycle. Jediná cesta, kde tvůrcem není maker/vývojář, ale vlastník obsahu.
 
-## Tvrdý limit: 1 zdroj a nic jiného
+## Limit: 1 zdroj a nic jiného (empiricky)
 
-Přidání dalšího zdroje **odstraní** ostatní (MC1255409). HR scénář (list + 2 knihovny) se do **jednoho** SharePoint agenta nevejde → buď scopovat na jeden zdroj (např. knihovna `Smlouvy`), nebo víc agentů. **Omezení učí samo sebe** — proto tenhle blok.
+Přidání dalšího zdroje **odstranilo** ostatní (MC1255409, ověřeno v tenantu 2026-07). MS dokumentace takový limit **neuvádí** ([support článek](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) žádný strop zdrojů nemá) — nenalezeno v MS zdroji / ověřit živě před demem. HR scénář (list + 2 knihovny) se do **jednoho** SharePoint agenta nevejde → buď scopovat na jeden zdroj (např. knihovna `Smlouvy`), nebo víc agentů. **Omezení učí samo sebe** — proto tenhle blok.
 
 ## Licence: tvorba vs. použití
 
 - **Tvorba: Copilot licence** → u nás proto **jen instruktorské demo**, studenti sledují.
-- **Použití: licence NEBO PAYG** (meter i pro nelicencované) — vzor „licence gate-uje funkci, permissions gate-ují obsah" z D1.
+- **Použití: licence NEBO PAYG** (meter i pro nelicencované; jen pro `.agent` soubory) — vzor „licence gate-uje funkci, permissions gate-ují obsah" z D1.
 
 ## Distribuce
 
@@ -27,9 +36,9 @@ Jen web (+ sdílení do Teams chatu). Žádný org katalog / marketplace / sourc
 
 ## Zdroje (Microsoft)
 
-[SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents) · [MC1255409 — Lists as knowledge source](https://mc.merill.net/message/MC1255409)
+[SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents) · [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents) · [Create an agent in SharePoint (support)](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) · [MC1255409 — Lists as knowledge source](https://mc.merill.net/message/MC1255409)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Podpora listů: GA ~05/2026 (MC1255409), ale admin dokumentace to k 06/2026 ještě nereflektovala — ukázat jako příklad docs lag. Licenční matice tvorba/použití se může při GA měnit — ověřit get-started stránku.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Podpora listů: GA ~05/2026 (MC1255409), ale admin dokumentace to nereflektuje — ukázat jako příklad docs lag. Limit „1 zdroj" = empirický, MS ho nedokumentuje. Licence: Learn uvádí tvorbu = Copilot licence, support článek připouští licenci nebo PAYG — MS si odporuje. **Od pol. 11/2026 tvorba přes Agent Builder, `.agent` končí po 03/2027** → po Ignite (17.–20. 11. 2026) blok přehodnotit (rozhodnutí autora: legacy demo / segment „upgrade cesty").

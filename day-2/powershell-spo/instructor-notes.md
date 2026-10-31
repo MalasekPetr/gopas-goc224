@@ -9,7 +9,8 @@
 - **Otestovat, zda `Connect-SPOService` + `Get-*` funguje pod Global Reader.** Dokumentace uvádí jen SharePoint Administrator; Global Reader není dokumentovaný.
   - Funguje → studenti spouštějí sami pod svými účty (nejlepší varianta).
   - Nefunguje → rozhodnout: (a) dočasná role SharePoint Administrator na dobu bloku (riziko: `Set-SPOTenant` je tenant-wide — vyhlásit tvrdé pravidlo „žádný Set-*", případně odebrat roli hned po labu), nebo (b) studenti jen píšou, instruktor spouští na projektoru. Doporučení: (b) je bezpečnější, (a) je hodnotnější — rozhodnout podle skupiny.
-- Modul aktualizovat na 16.0.26615.12013+ (kvůli `KnowledgeAgentScope` čtení).
+- Modul aktualizovat na aktuální verzi (min. 16.0.26615.12013).
+- **T3 (po 1. 11. 2026):** `Get-SPOTenant | Select-Object KnowledgeAgentScope` — vrací ho modul ještě? Má změna hodnoty nějaký efekt? Obě varianty skripty zvládnou (legacy hodnotu jen vypíšou); výsledek použít jako živý příklad „docs vs. realita".
 - Referenční řešení pro go/no-go test a projektorový/fallback běh: `solution/tenant-inventory.ps1`.
 - Pro návod Copilot inventarizace: ověřit, že `Get-SPOSite -Identity <url>` v aktuální verzi modulu vrací `RestrictContentOrgWideSearch` (RCD) — dokumentace RCD se vyvíjí. Referenční řešení: `solution/copilot-inventory.ps1`.
 
@@ -23,5 +24,5 @@
 
 ## Vazby
 
-- Dopředu: `KnowledgeAgentScope` hodnota z labu = vstup do odpolední `configuration` (dry-run na ni naváže); inventura webů → D3 SAM (DAG reporty dělají totéž v UI).
+- Dopředu: RCD stav a delegace z labu = vstup do odpolední `configuration` (dry-run na ně naváže); inventura webů → D3 SAM (DAG reporty dělají totéž v UI).
 - Zpět: skripty ukládat jako soubory na vlastní web (D1 návyky, MD/CSV formáty).

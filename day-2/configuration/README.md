@@ -5,9 +5,9 @@
 
 ## Cíle
 
-- Student zná pořadí kroků: předpoklady → PAYG billing → zapnutí Copilot in SharePoint → rozsah → ověření.
-- Student rozlišuje dva PAYG modely a umí nastavit Copilot Credits billing policy (vč. toho, proč budget není limit).
-- Student umí přečíst a interpretovat `KnowledgeAgentScope` a související ovladače.
+- Student zná pořadí kroků: předpoklady → PAYG billing → dostupnost Copilot in SharePoint → rozsah → ověření.
+- Student rozlišuje dva PAYG modely a umí nastavit Copilot Credits billing policy (vč. toho, proč tam budget není limit) i spending policy v Cost management (kde limit je).
+- Student umí řídit dostupnost Copilot in SharePoint po GA (Site AI settings + RCD) a ví, že `KnowledgeAgentScope` je vyřazený.
 - Student odchází s konfiguračním runbookem (dry-run z labu) včetně change-management kroků.
 
 ## Výklad
@@ -35,20 +35,31 @@ Odemyká doc processing služby (Autofill columns, OCR, translation, eSignature,
 
 #### 1b — Copilot Credits PAYG (Copilot bez licencí)
 
-Usage-based přístup ke Copilot službám bez plné M365 Copilot licence — účtuje se za **Copilot Credits**. Pokrývá: **M365 Copilot Chat** (placené funkce = grounding nad tenant daty), **SharePoint agents**, Copilot Retrieval API (preview); Copilot Studio má PAYG vlastní ([Overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview) · [Setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup)). Setup je **dvoukrokový** — a ty kroky mají různý význam:
+Usage-based přístup ke Copilot službám bez plné M365 Copilot licence — účtuje se za **Copilot Credits**. Pokrývá: **M365 Copilot Chat** (placené funkce = grounding nad tenant daty), **SharePoint agents** (jen `.agent` soubory), Copilot Retrieval API (preview); Copilot Studio má PAYG vlastní ([Overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview) · [Setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup)). Setup je **dvoukrokový** — a ty kroky mají různý význam:
 
 1. **Billing policy** (admin center → **Copilot → Billing & usage** → tab **Billing policies** → *Add a billing policy*): účetní identita = Azure subscription + resource group + region + **users/groups** (komu se smí účtovat) + volitelný budget. Policy odděluje *kdo platí* od *co se platí* — proto jich lze mít až 50 (např. per oddělení) a jednu policy připojit k více službám.
 2. **Connect policy ke službě** (tab **Pay-as-you-go services** → *Microsoft 365 Copilot Chat* / *SharePoint agents* → vybrat policy): **teprve tohle** službu uživatelům z policy zpřístupní. Samotná policy nic nezapíná; disconnect přístup odebírá (propagace do ~2 h).
 
-- **Budget ≠ limit.** Budget jen posílá e-mailové notifikace při milnících útraty — **strop nevynucuje**, služba běží dál i po překročení. Tvrdý limit neexistuje; hlídá se přes notifikace + Cost Management. Nosný teaching point do komunikačního plánu (lab, krok 3).
+- **Budget ≠ limit.** Budget jen posílá e-mailové notifikace při milnících útraty — **strop nevynucuje**, služba běží dál i po překročení. U téhle plochy tvrdý limit neexistuje; hlídá se přes notifikace + Azure Cost Management. Nosný teaching point do komunikačního plánu (lab, krok 3).
 - Role: Billing Admin / **AI Administrator** / Global Admin; **Global Reader vidí read-only** — přesně náš studentský model (ověření v labu).
 - Ověření funkčnosti: uživatel bez licence zkusí agenta (např. *Learning Coach*), základní prompt ≈ 12 kreditů; útrata pak v **Copilot Credits Report**.
 
-### Krok 2 — zapnutí Copilot in SharePoint
+#### 1c — Copilot Credits přes usage-based billing (Cost management)
 
-- Stav: **preview, od poloviny června 2026 opt-out** — default zapnuto pro uživatele s **M365 Copilot licencí** ([Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
-- Rozsah řídí `Set-SPOTenant -KnowledgeAgentScope` — hodnoty `AllSites` | `IncludeSelectedSites` | `ExcludeSelectedSites` | `NoSites` (default `NoSites`); výběr webů `KnowledgeAgentSelectedSitesList` (max 100) + `...Operation` (Overwrite/Append/Remove). Parametry drží preview jméno „KnowledgeAgent" kvůli kompatibilitě.
-- Další ovladače: **Site AI settings** (vlastník webu), **Restricted Content Discovery** (přebíjí scope — web s RCD Copilot nevidí, most na D3 SAM).
+Druhá, novější plocha pro Copilot Credits: **Copilot → Cost management** → **Configuration** → *Add spending policy* ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)). Pokrývá Cowork, **Advanced work in SharePoint** / OneDrive, Code, Work IQ API, Copilot Managed Runtime; volitelně Copilot Studio.
+
+- Spending policy = **scope** (users/groups nebo prostředí/agenti) + **vybrané služby** + **limity** + billing method. Policy zároveň **řídí přístup** — kdo v ní není, službu nepoužije.
+- **Limited budget je tvrdý strop**: po vyčerpání uživatel ztratí přístup do 1. dne dalšího měsíce. Minimum 2 000 kreditů/uživatel/měs.
+- **Auto-apply new services** je default zapnuté → nové UBB služby se do policy přidají samy. U kontrolovaného rolloutu vypnout.
+- U Cowork, Advanced work a Code MS vyžaduje Copilot licenci — Credits ji nenahrazují. V našem tenantu (bez licencí) tedy jen ukázka obrazovky.
+
+### Krok 2 — dostupnost Copilot in SharePoint
+
+- Stav: **GA rollout od 30. 9. 2026**; everyday funkce v Copilot licenci bez opt-in kroku, „Advanced work" přes Copilot Credits (krok 1c) ([Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
+- **`Set-SPOTenant -KnowledgeAgentScope` (+ `KnowledgeAgentSelectedSitesList`, `...Operation`) je vyřazený** — MS ctí stávající nastavení jen **do 1. 11. 2026**. Od té doby se dostupnost řídí:
+  - **Site AI settings** (vlastník webu, *Settings → Site AI*): který agent se otevře z ikony v hlavičce (Copilot in SharePoint nebo vlastní agent), skrytí Copilot tlačítka pro návštěvníky webu, zapnutí advanced document processing pro web.
+  - **Restricted Content Discovery** — na webu s RCD se Copilot in SharePoint ani AI akce neobjeví, bez ohledu na ostatní nastavení (most na D3 SAM).
+- Tenant-wide vypínač po GA MS nedokumentuje — *kdo* funkci má, řídí licence; *kde* se neobjeví, řídí RCD.
 
 ### Krok 3 — vyhledávání a zdroje
 
@@ -63,7 +74,7 @@ Technický rollout je menší půlka. Komunikační plán: co se zapíná, koho 
 ```mermaid
 flowchart LR
   A[Předpoklady<br>Azure + role] --> B[PAYG billing<br>doc processing + Copilot Credits]
-  B --> C[Copilot in SharePoint<br>KnowledgeAgentScope]
+  B --> C[Copilot in SharePoint<br>Site AI settings + RCD]
   C --> D[Search / zdroje<br>RSS, RCD, autoritativní weby]
   D --> E[Change management<br>komunikace + podpora]
   E --> F[Ověření<br>Get-SPOTenant + UI]
@@ -71,9 +82,10 @@ flowchart LR
 
 ## Klíčové rozlišení
 
-- **Licence vs. PAYG u Copilot in SharePoint**: preview je license-based (M365 Copilot, bez příplatku). Copilot Credits PAYG (krok 1b) dokumentovaně kryje **Copilot Chat a SharePoint agents** — zda odemkne i Copilot in SharePoint pro nelicencované uživatele, dokumentace neříká. Přesně náš případ (tenant bez Copilot licencí) — ověřovat živě.
+- **Licence vs. PAYG u Copilot in SharePoint**: po GA MS výslovně uvádí Copilot licenci jako prerekvizitu; Copilot Credits PAYG (krok 1b) dokumentovaně kryje jen **Copilot Chat a SharePoint agents**. V preview fungoval Copilot in SharePoint v našem tenantu i na PAYG (2026-07-17) — stav po GA viz výsledek go/no-go z D1 (`../../day-1/licensing/instructor-notes.md`).
 - **Billing policy vs. connect**: policy je jen účetní identita (kdo + přes co platí); přístup ke službě vzniká až připojením policy ke konkrétní službě. Dva kroky = dvě různá rozhodnutí.
-- **Zapnout vs. zpřístupnit**: `KnowledgeAgentScope` říká *kde* funkce smí běžet; licence/kredity říkají *kdo* ji smí použít; permissions říkají *nad čím*. Tři nezávislé vypínače.
+- **Billing policy (1b) vs. spending policy (1c)**: první jen účtuje a upozorňuje, druhá řídí přístup a umí tvrdý strop.
+- **Zapnout vs. zpřístupnit**: Site AI settings a RCD říkají *kde* se funkce objeví; licence/kredity říkají *kdo* ji smí použít; permissions říkají *nad čím*. Tři nezávislé vypínače.
 
 ## Naše prostředí
 
@@ -85,10 +97,10 @@ Viz [`lab-config-dry-run.md`](lab-config-dry-run.md) — tenant configuration dr
 
 ## Zdroje (Microsoft)
 
-[Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started) · [Set up pay-as-you-go billing (doc processing)](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-azure-billing) · [Copilot pay-as-you-go overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview) · [Set up Copilot pay-as-you-go](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup) · [Copilot enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources)
+[Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started) · [Set up pay-as-you-go billing (doc processing)](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-azure-billing) · [Copilot pay-as-you-go overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview) · [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) · [Set up Copilot pay-as-you-go](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup) · [Copilot enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Copilot in SharePoint je preview a MS avizuje, že **enablement se při GA změní** — před během zkontrolovat get-started stránku. Parametry zatím `KnowledgeAgent*`; opt-out default běží od 6/2026. Nedostupné v GCC/GCC High/DoD.
-> Copilot Credits PAYG (Copilot → Billing & usage) je čerstvé — cesty v admin centru a chování budgetu (zatím jen notifikace, ne vynucený strop) ověřit v tenantu před během; cena za kredit dle glosáře, ověřit v ceníku.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Copilot in SharePoint: GA rollout od 30. 9. 2026; `KnowledgeAgent*` parametry ctěny jen do 1. 11. 2026, pak Site AI settings + RCD. Nedostupné v GCC/GCC High/DoD.
+> Copilot Credits mají dvě plochy: PAYG (Copilot → Billing & usage; budget = jen notifikace) a usage-based billing (Copilot → Cost management; tvrdý strop). Služby se mezi nimi přesouvají — po Ignite (17.–20. 11. 2026) ověřit cesty v admin centru; cena za kredit dle glosáře, ověřit v ceníku.

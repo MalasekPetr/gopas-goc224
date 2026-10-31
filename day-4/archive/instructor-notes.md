@@ -18,4 +18,4 @@
 ## Vazby
 
 - Zpět: inactive site policy (D3 SAM) jako zdroj kandidátů; inventura webů (D2 PowerShell) jako vstup labu.
-- Dopředu: „Copilot negrounduje archiv" → `copilot-admin` (D5, řízení co AI vidí) a D5 grounding.
+- Dopředu: „Copilot is not trained on archived content" (MS formulace — neslibovat víc; zda archiv vypadne i z odpovědí, ověřit v tenantu) → `copilot-admin` (D5, řízení co AI vidí) a D5 grounding.

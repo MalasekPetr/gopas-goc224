@@ -28,7 +28,7 @@ flowchart LR
 Katalog kurzu říká „SharePoint Premium". Značka byla rozdělena — v kurzu používáme aktuální názvy (viz [`../../GLOSSARY.md`](../../GLOSSARY.md)). Tuto poznámku studentům řekni hned tady, ať je katalog vs. slajdy nemate.
 
 ## Klíčové rozlišení
-- **Onboarding vs. konfigurace**: tady jen přístup a identity. Zapínání funkcí (`KnowledgeAgentScope`, search/zdroje) je až v konfiguraci (den 2) — a je to instruktorské demo (studenti nejsou admini).
+- **Onboarding vs. konfigurace**: tady jen přístup a identity. Zapínání funkcí (Site AI settings, RCD, search/zdroje) je až v konfiguraci (den 2) — a je to instruktorské demo (studenti nejsou admini).
 - **Licence vs. permissions**: licence (Business Basic + PAYG) řeší *přístup k funkci*; SharePoint role (Owner/Edit/View) řeší *kdo co na webu dělá*.
 
 ## Lab

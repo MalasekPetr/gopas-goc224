@@ -13,7 +13,7 @@
 
 ### Co rodina obsahuje
 
-**Document processing for Microsoft 365** (ex-Syntex, viz glosář) = 10 služeb: autofill columns, document translation, eSignature, OCR, content assembly, image tagging, taxonomy tagging, prebuilt / structured & freeform / unstructured modely ([Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-overview)). Licenčně **čistý PAYG** — žádný upfront závazek, platí se použití. Výjimka: **structured a freeform modely jsou AI Builder** (Power Platform) a přes M365 PAYG se neúčtují — srovnání typů modelů vč. Dataverse napojení a jazyků: [`comparison-models.md`](comparison-models.md).
+**Document processing for Microsoft 365** (ex-Syntex, viz glosář) = 10 služeb: autofill columns, document translation, eSignature, OCR, content assembly, image tagging, taxonomy tagging, prebuilt / structured & freeform / unstructured modely ([Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-overview)). Licenčně **čistý PAYG** — žádný upfront závazek, platí se použití. Výjimka: **structured a freeform modely jsou AI Builder** (Power Platform) — nejdřív čerpají AI Builder kredity environmentu, teprve pak M365 PAYG metr ($0,05/stránku) — srovnání typů modelů vč. Dataverse napojení a jazyků: [`comparison-models.md`](comparison-models.md).
 
 ```mermaid
 flowchart LR
@@ -32,7 +32,7 @@ Cesta: M365 admin center → **Settings → Org settings → Pay-as-you-go servi
 
 ### Demo 1 — Autofill columns
 
-Sloupec knihovny, který AI vyplní z obsahu dokumentu (extrakce/sumarizace podle promptu sloupce). Účtuje se za transakci ([Autofill setup](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/autofill-setup)). Poznámka k překryvu: autofill je v preview **součástí Copilot in SharePoint** — s Copilot licencí běží bez PAYG setupu; bez ní jede přes PAYG (náš případ).
+Sloupec knihovny, který AI vyplní z obsahu dokumentu (extrakce/sumarizace podle promptu sloupce). Účtuje se za transakci ([Autofill setup](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/autofill-setup)). Poznámka k překryvu: autofill je i **součástí Copilot in SharePoint** (GA rollout od 30. 9. 2026) — s Copilot licencí je „Use Autofill metadata" v ceně licence, **real-time / site-wide autofill** je „Advanced work" a čerpá Copilot Credits přes spending policy ([Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). Bez licence jede autofill přes Document processing PAYG (náš případ). Tady se rozlišení „Document processing PAYG ≠ Copilot Credits" poprvé dotýká: stejná funkce, dvě cesty účtování.
 
 ### Demo 2 — Image tagging
 
@@ -62,6 +62,6 @@ Viz [`lab-sample-library.md`](lab-sample-library.md) — nastavení ukázkové k
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Promo „měsíční kapacita zdarma" končí **červen 2026** — ověřit, zda ještě platí, jinak vyhodit ze slidů. Autofill překryv s Copilot in SharePoint (preview) se při GA může změnit. Ceny průběžně revidovat proti pricing stránce; docs jedou pod `/documentprocessing/`, staré `/syntex/` URL redirectují.
-> **AI Builder kredity** (structured/freeform modely) končí k 1. 11. 2026 — náhrada Copilot Credits; detail v [`comparison-models.md`](comparison-models.md).
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Promo „měsíční kapacita zdarma" (např. 100 stran autofill + unstructured, 2 500 obrázků image tagging měsíčně na tenant): [promo stránka](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/promo-syntex) uvádí **do prosince 2026**, [ceník](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services) ještě **červen 2026** — MS si odporuje; v tenantu ověřit, zda dema spotřebovávají kapacitu zdarma. Autofill: everyday v Copilot licenci, real-time/site-wide přes Copilot Credits (GA Copilot in SharePoint). Ceny průběžně revidovat proti pricing stránce; docs jedou pod `/documentprocessing/`, staré `/syntex/` URL redirectují.
+> **AI Builder kredity** (structured/freeform modely): k 1. 11. 2026 konec prodeje add-onů a seeded kreditů v nových licencích, stávající kredity do konce termínu; pak PAYG metr / Copilot Credits — detail v [`comparison-models.md`](comparison-models.md).

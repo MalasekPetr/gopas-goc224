@@ -31,17 +31,19 @@ flowchart TB
 
 | Cesta | Pro koho | Tvorba vyžaduje | Distribuce |
 |---|---|---|---|
-| **[Agent Builder](../agent-builder/README.md)** | koncový uživatel | M365 Copilot licence, **nebo** tenant s PAYG pro Copilot Studio | sdílení + org katalog; **ne marketplace** |
-| **[SharePoint agents](../sharepoint-agents/README.md)** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG | jen web (sdílení do Teams chatu) |
-| **[Agents Toolkit](../agents-toolkit/README.md)** | vývojář (u nás: správce, jako konfigurace) | zdarma (VS Code); repo-as-code | org katalog, marketplace |
-| **Copilot Studio** (D5) | maker / power user | Copilot Studio přístup (kredity/PAYG) | org katalog přes schválení, marketplace |
-| **Skills** (D5, preview) | uživatel webu | Copilot in SharePoint (MS: Copilot licence; **empiricky i PAYG** — ověřeno 2026-07-17) + Edit | v rámci webu |
+| **[Agent Builder](../agent-builder/README.md)** | koncový uživatel | M365 Copilot licence, **nebo** tenant s PAYG pro Copilot Studio; externí akce ne → „copy to Copilot Studio" | sdílení + org katalog; **ne marketplace** |
+| **[SharePoint agents](../sharepoint-agents/README.md)** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG; od pol. 11/2026 tvorba přes Agent Builder | jen web (sdílení do Teams chatu) |
+| **[Agents Toolkit](../agents-toolkit/README.md)** | vývojář (u nás: správce, jako konfigurace) | zdarma (VS Code); bez Copilot licence (dokumentováno); repo-as-code | org katalog, marketplace |
+| **Copilot Studio** (D5) | maker / power user | Copilot Studio přístup (kredity/PAYG); dva harnessy (standard / GitHub Copilot) | org katalog přes schválení, marketplace |
+| **Skills** (D5) | uživatel webu | Copilot in SharePoint (GA rollout; MS: Copilot licence; v preview empiricky i PAYG — po GA ověřit) + Edit | v rámci webu |
+
+Mimo tuto tabulku MS nově uvádí i **Cowork plugins** a **Work IQ Dev Tools** (preview) — viz poznámka v [`comparison-agent-paths.md`](comparison-agent-paths.md). Skills (`SKILL.md`) nejsou jen v Copilot in SharePoint: připojí je i Agent Builder, manifest (`agent_skills`) a Cowork.
 
 Detailní **srovnání schopností** (knowledge vč. listů, akce, orchestrace, ALM, governance) + rozhodovací osa: [`comparison-agent-paths.md`](comparison-agent-paths.md).
 
 ### Distribuce a governance — návaznost na copilot-admin
 
-Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reject → „Built by your org" v **Agent Store** ([Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store), [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)). Registr, blokaci a Agent 365 proberete hned zítra ráno v `copilot-admin` (D5).
+Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reject → „Built by your org" v **Agent Store** ([Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store), [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)). Vedle registru agentů má admin centrum nově i **Agents › Tools › Registry / Plugins / Requests** pro plugins, skills a MCP servery ([Manage plugins, skills and MCP servers](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers)). Registr, blokaci a Agent 365 proberete hned zítra ráno v `copilot-admin` (D5).
 
 ## Klíčové rozlišení
 
@@ -53,7 +55,7 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 
 1. **Agenti — mapa cest** (tento blok): výklad + srovnání + návrhový lab.
 2. **[Agent Builder](../agent-builder/README.md)** — studenti hands-on (HR Asistent).
-3. **[SharePoint agents](../sharepoint-agents/README.md)** — instruktor ukáže (limit 1 zdroj; tvorba license-only).
+3. **[SharePoint agents](../sharepoint-agents/README.md)** — instruktor ukáže (empirický limit 1 zdroj; tvorba license-only; od pol. 11/2026 přechod na Agent Builder).
 4. **[Agents Toolkit](../agents-toolkit/README.md)** — studenti společně (agent jako spravovaná konfigurace).
 
 **Copilot Studio i Skills jsou až D5.**
@@ -66,9 +68,9 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 
 ## Zdroje (Microsoft)
 
-[Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) · [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) · [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
+[Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) · [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) · [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish) · [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) · [Agent capabilities & licensing](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites) · [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) · [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Dostupnost Agent Builderu v PAYG tenantu ověřit před během (go/no-go). SharePoint agents podpora listů = GA ~05/2026 (docs lag). Skills = preview; MS uvádí license-only, ale **empiricky fungují i na PAYG** (ověřeno 2026-07-17). **Tvorba SharePoint agenta** ale Copilot licenci **vyžaduje** (potvrzeno).
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Dostupnost Agent Builderu v PAYG tenantu ověřit před během (go/no-go). SharePoint agents podpora listů = GA ~05/2026 (docs lag); **od pol. 11/2026 tvorba přes Agent Builder, `.agent` končí po 03/2027**. Skills: Copilot in SharePoint má GA rollout od 30. 9. 2026 a MS uvádí license-only — empirický nález „funguje i na PAYG" (2026-07-17, preview) znovu ověřit (T1, D1). **Tvorba SharePoint agenta** Copilot licenci **vyžaduje** (potvrzeno). Agents Toolkit bez Copilot licence je od 2026-09 dokumentovaný. Po Ignite (17.–20. 11. 2026) projet mapu cest (Cowork plugins, Work IQ Dev Tools, plugin registry).

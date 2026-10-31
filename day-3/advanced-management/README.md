@@ -28,6 +28,7 @@ flowchart TB
 
 - **Content sprawl**: politika vlastnictví webů, **inactive site policy** (notifikace vlastníkům), atestace.
 - **Content lifecycle**: katalog webů, **change history reporty (180 dní zpět)**, nedávné admin akce (30 dní), omezení zakládání webů aplikacemi.
+- **Agenti** (nové): reporty agent insights a agent-access insights + **SharePoint Admin Agent** ([SAM overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management)) — SAM se rozšiřuje i na governance agentů nad SharePointem.
 - **Oversharing** (nejdůležitější pro Copilot): **Restricted Access Control (RAC)** — přístup k webu/OneDrive jen pro security groups; **Restricted Content Discovery (RCD)** — web zůstane přístupný, ale Copilot/search ho negrounduje; **DAG reporty** (permission state, sharing links za 28 dní, EEEU insights, per-user permissions); site access reviews; porovnání politik až přes 10 000 webů.
 
 ### Proč před Copilotem
@@ -36,11 +37,12 @@ Copilot respektuje permissions — **oversharing se stává AI problémem**: co 
 
 ### Licencování
 
-SAM není jeden SKU, ale sada funkcí se **dvěma odemykacími cestami** ([SAM features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-features-copilot-license)):
+SAM není jeden SKU, ale sada funkcí se **dvěma odemykacími cestami** ([SAM features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-features-copilot-license), [Prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites)):
 
-- **SAM Plan 1 add-on** — samostatná per-user licence ($3/uživatel/měs, viz D1); cesta pro organizace bez Copilotu.
-- **M365 Copilot licence** — **jedna přiřazená licence odemyká SAM funkce pro celý tenant** (přesně náš případ). Feature set je totožný s Plan 1 až na jedinou dokumentovanou výjimku: *restricted site creation by apps* vyžaduje Plan 1 i tak. DAG report nad sensitivity labels chce navíc E5.
+- **SAM Plan 1 add-on** — samostatná per-user licence (cena: ověřit, MS stránka ji neuvádí; viz D1); cesta pro organizace bez Copilotu.
+- **Copilot licence** — **jedna přiřazená licence odemyká SAM funkce pro celý tenant** (přesně náš případ). Platí i pro **E7**, které Copilot obsahuje. Feature set je totožný s Plan 1 až na jedinou dokumentovanou výjimku: *restricted site creation by apps* vyžaduje Plan 1 i tak. DAG report nad sensitivity labels chce navíc E5.
 - Formulační pozor: neříkat „SAM zdarma s Copilotem" — Copilot licence je dražší než Plan 1; odemčení SAM je vedlejší efekt.
+- **Role:** nově existuje **SharePoint Advanced Management Administrator** — SAM jde delegovat bez plné role SharePoint Administrator ([Prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites)).
 
 ## Klíčové rozlišení
 
@@ -58,9 +60,9 @@ Viz [`lab-sam-policies.md`](lab-sam-policies.md) — aplikace a ověření polit
 
 ## Zdroje (Microsoft)
 
-[SharePoint Advanced Management overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management) · [SAM licensing](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing)
+[SharePoint Advanced Management overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management) · [SAM features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-features-copilot-license) · [SAM prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Odemknutí SAM přes Copilot licenci: v běhu 2026-07 **potvrzeno** (instruktorský účet má Copilot licenci) — pro další běhy ověřit znovu. Feature set SAM roste po měsících (stránka aktualizovaná 2026-06).
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Odemknutí SAM přes Copilot licenci: v běhu 2026-07 **potvrzeno** (instruktorský účet má Copilot licenci) — pro další běhy ověřit znovu. Feature set SAM roste po měsících (overview aktualizovaná 2026-10: agent insights, agent-access insights, SharePoint Admin Agent). Nová role SAM Administrator. Cena Plan 1 — ověřit v ceníku. Stará URL `sharepoint-advanced-management-licensing` přesměrovává na *features-copilot-license*.

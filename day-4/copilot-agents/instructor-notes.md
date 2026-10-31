@@ -12,16 +12,17 @@
 ## Go/no-go — otestovat před během
 
 - Tool-specific go/no-go je v instructor-notes jednotlivých bloků: [agent-builder](../agent-builder/instructor-notes.md), [sharepoint-agents](../sharepoint-agents/instructor-notes.md), [agents-toolkit](../agents-toolkit/instructor-notes.md).
-- Napříč: **Agent Builder** dostupnost v PAYG (určuje studenti vs. demo); **SharePoint agents** tvorba = Copilot licence (jen demo — empiricky potvrzeno); **Skills** a **Toolkit** (tvorba/nasazení) empiricky fungují i na PAYG (ověřeno 2026-07-17, MS nedokumentuje). Skills až D5.
+- Napříč: **Agent Builder** dostupnost v PAYG (určuje studenti vs. demo); **SharePoint agents** tvorba = Copilot licence (jen demo — empiricky potvrzeno); **Toolkit** (tvorba/nasazení) bez licence je od 2026-09 dokumentovaný (prerequisites) — přesto re-test; **Skills** fungovaly na PAYG v preview (2026-07-17), po GA MS uvádí license-only → výsledek T1 (D1). Skills až D5.
+- Na PAYG nefunguje knowledge Email / People / Teams messages / Teams meetings (jen licencovaní) — nedávat studentům do návrhu jako testovatelný zdroj.
 
 ## Tripwires
 
 - Callback na D2: tabulku vrstev instrukcí ukázat znovu — „teď píšete Agent Instructions doopravdy".
 - **Instrukce ≠ knowledge** (XPIA) — kontrolovat v labu, studenti rádi nacpou směrnici do instrukcí.
 - Negativní test v evaluačním plánu je povinný — bez něj se agent „vždycky povede".
-- Researcher/Analyst nejsou „agenti k tvorbě" — D4 už to říkal, nenechat zamotat.
+- Researcher/Analyst nejsou „agenti k tvorbě" — D4 už to říkal, nenechat zamotat. Jsou součást Copilot licence; admin je umí blokovat.
 - Demo agenta stavět nad instruktorským webem, ne nad studentskými (práva, překvapení).
-- Srovnávací matici (`comparison-agent-paths.md`) promítnout u mapy cest — nosné rozdíly: listy (Studio 10 + analytika / Builder 1 / SharePoint agent 1 a nic jiného / Toolkit nic), akce (Studio konektory+MCP+triggery vs. Toolkit OpenAPI), ALM (jen Toolkit = git). U SharePoint agents zmínit docs lag k listům (MC1255409 GA ~05/2026, get-started to k 06/2026 neuvádí).
+- Srovnávací matici (`comparison-agent-paths.md`) promítnout u mapy cest — nosné rozdíly: listy (Studio 10 + analytika / Builder 1 / SharePoint agent 1 a nic jiného / Toolkit nic), akce (Studio konektory+MCP+triggery vs. Toolkit OpenAPI), ALM (jen Toolkit = git). U SharePoint agents zmínit docs lag k listům (MC1255409 GA ~05/2026, get-started to neuvádí) a že limit „1 zdroj" je empirický, MS ho nedokumentuje. Avizovat: od pol. 11/2026 jde tvorba SharePoint agenta přes Agent Builder, `.agent` končí po 03/2027.
 
 ## HR Asistent — running example (příprava dat)
 
@@ -35,7 +36,7 @@
 
 - **Publikum = správci, ne vývojáři. Kurz zůstává v M365.** Proto Toolkit učíme jako **„agent jako spravovaná konfigurace"** (manifest v gitu, provisioning, publikace přes schválení — governance/ALM), **ne jako vývoj**. **Akce / API plugin / Azure jsou mimo rozsah** — v labu jen pojmenovat slot `actions` a odkázat „udělej něco v tenantu → Power Automate (D3)".
 - Demo playbook [`guide-agent-build-demo.md`](guide-agent-build-demo.md) staví **dva** scénáře: **HR Asistent** (data/knowledge → Agent Builder + SharePoint agent; analytika = Copilot Studio až **D5**) a **Support Asistent** ([`scenario-support-agent.md`](scenario-support-agent.md), **čte runbooky, bez akce** → Agents Toolkit jako řízená konfigurace). Support běží nad knihovnou `Runbooky`. Meta-lekce pro správce: **tentýž agent, jiná disciplína stavby** (klikačka vs. governed kód).
-- **Proč Toolkit nedostal HR:** ověřeno ve schématu manifestu 1.7 — SharePoint knowledge = weby/knihovny/složky/soubory, `list_id` = **knihovna** (ne list), `unique_id` = soubor/složka. Strukturovaný list manifest jako knowledge nezná; tabulková data jen přes `Dataverse`/konektor/akci. Když se student zeptá „proč zrovna Toolkit vychází špatně", tohle je odpověď se zdrojem ([manifest 1.7](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.7), [Toolkit add knowledge](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-declarative-agents-add-knowledge)) — ne „Toolkit je slabý", ale „špatný nástroj na tuhle práci".
+- **Proč Toolkit nedostal HR:** ověřeno ve schématu manifestu 1.7 a znovu v 1.9 (2026-09) — SharePoint knowledge = weby/knihovny/složky/soubory, `list_id` = **knihovna** (ne list), `unique_id` = soubor/složka. Strukturovaný list manifest jako knowledge nezná; tabulková data jen přes `Dataverse`/konektor/akci. Když se student zeptá „proč zrovna Toolkit vychází špatně", tohle je odpověď se zdrojem ([manifest 1.9](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9), [Toolkit add knowledge](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-declarative-agents-add-knowledge)) — ne „Toolkit je slabý", ale „špatný nástroj na tuhle práci".
 
 ## Vazby
 

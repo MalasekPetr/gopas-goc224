@@ -27,5 +27,5 @@ Zopakovat instruktorská dema na vlastní knihovně: autofill sloupec + image ta
 
 ## Fallback
 
-- Autofill nedostupný na studentských webech (scope/preview): studenti píšou prompt sloupce a předají instruktorovi, který je nasadí na demo knihovně; kroky 4–5 beze změny.
+- Autofill nedostupný na studentských webech (scope služby / RCD): studenti píšou prompt sloupce a předají instruktorovi, který je nasadí na demo knihovně; kroky 4–5 beze změny.
 - Image tagging nefunguje: analýza tagů na instruktorově demo knihovně (read-only).

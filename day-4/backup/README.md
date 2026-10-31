@@ -20,11 +20,12 @@
 | Parametr | SharePoint / OneDrive | Exchange |
 |---|---|---|
 | Restore pointy | à 10 min po dobu 2 týdnů, pak týdenní do 52 týdnů | à 10 min po celých 52 týdnů |
-| Retence záloh | 1 rok | 1 rok |
+| Okno obnovy (recovery window) | nastavitelné v backup policy: 3 / 6 / 12 / 24 měsíců (stávající policy default 1 rok) | totéž |
 | RTO | 1–3 TB/h; express restore webu 10–120 min | ~200–500 položek/min |
 
 - Granularita: rollback celého webu/OneDrivu; Exchange item-level; **granular file/folder restore = public preview** (od 12/2025); obnova verzí souborů „coming soon".
 - Úložiště je **append-only**; offboarding má 90denní ochrannou lhůtu s notifikacemi adminům.
+- **Škálovací limity** (per workload zvlášť): max 1 000 000 položek, 100 backup policies, 100 000 položek v jedné policy; nad to přes Microsoft. Dostupné i pro **GCC** ([Backup overview](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview)).
 
 ### Setup a role
 
@@ -32,7 +33,7 @@ Azure subscription + PAYG billing (nově v **Billing node** admin centra) → Se
 
 ### Cena
 
-**$0.15/GB/měsíc chráněného obsahu; obnovy zdarma** ([Pricing](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-pricing)). Účtovaná velikost = živý obsah (vč. 1. koše, archivu mailboxu) + smazaná/verzovaná data držená pro obnovu. Kalkulačka: aka.ms/M365BackupCalculator.
+**$0.15/GiB/měsíc chráněného obsahu; obnovy zdarma** ([Pricing](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-pricing)). Účtovaná velikost = živý obsah (vč. 1. koše, archivu mailboxu) + smazaná/verzovaná data držená pro obnovu. Kalkulačka: aka.ms/M365BackupCalculator.
 
 ```mermaid
 flowchart LR
@@ -63,5 +64,5 @@ Viz [`lab-backup-restore.md`](lab-backup-restore.md) — backup posture review &
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Granular file/folder restore je public preview; file-version restore „coming soon" — ověřit stav. Billing setup se stěhuje ze Setup node do Billing node (migrace běží). Cena $0.15/GB/měs — ověřit proti pricing stránce.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Granular file/folder restore je public preview; file-version restore „coming soon" — ověřit stav. Okno obnovy je nově nastavitelné (3/6/12/24 měsíců) — delší okno = víc účtovaných dat. Billing setup se stěhuje ze Setup node do Billing node (migrace běží). Cena $0.15/GiB/měs — ověřit proti pricing stránce.

@@ -3,7 +3,7 @@
 > Modul: skills · Typ: doporučená praxe · Prostředí: viz [`../../environment.md`](../../environment.md)
 
 > [!IMPORTANT] Zatím neoficiální
-> **`SHAREPOINT.md` není k datu psaní (2026-06) dokumentován na Microsoft Learn** — oficiálně je popsán jen `SKILL.md` ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)). Níže je **doporučení** postavené na komunitní praxi; chování ověřit před spoléháním v produkci. Zdroje jsou třetí strana, ne Microsoft.
+> **`SHAREPOINT.md` není k 2026-10 dokumentován na Microsoft Learn** (Skills stránka, ms.date 2026-09-28, ho nezmiňuje) — oficiálně je popsán jen `SKILL.md` ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)). Níže je **doporučení** postavené na komunitní praxi; chování ověřit před spoléháním v produkci. Zdroje jsou třetí strana, ne Microsoft.
 
 ## Co to je a proč to doporučujeme
 

@@ -26,4 +26,4 @@ Student se přihlásí, ověří přístup ke svému prostoru a potvrdí dostupn
 
 ## Fallback
 - Problémy s registrací MFA (QR kód, SMS, zablokovaný účet): viz „Časté problémy" v [`mfa-setup.md`](mfa-setup.md); když nepomůže, řeší instruktor.
-- Když Copilot in SharePoint není dostupný: ověřit PAYG billing policy a `KnowledgeAgentScope` (instruktor, admin) — patří do konfigurace den 2, tady jen konstatovat a pokračovat.
+- Když Copilot in SharePoint není dostupný: ověřit PAYG billing policy, Site AI settings webu a Restricted Content Discovery (instruktor, admin); od GA MS dokumentuje Copilot in SharePoint jen s Copilot licencí — patří do konfigurace den 2, tady jen konstatovat a pokračovat.

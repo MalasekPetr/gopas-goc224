@@ -24,11 +24,11 @@
 flowchart LR
   C[Connect-SPOService<br>admin URL] --> T[Get-SPOTenant<br>org nastavení]
   C --> S[Get-SPOSite -Limit ALL<br>inventura webů]
-  T --> R[Report:<br>KnowledgeAgentScope, kvóty]
+  T --> R[Report:<br>delegace RCD, kvóty]
   S --> R
 ```
 
-- **`Get-SPOTenant`** — org-level vlastnosti vč. `KnowledgeAgentScope` (rozsah Copilot in SharePoint — most na odpolední konfiguraci) ([Get-SPOTenant](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spotenant)).
+- **`Get-SPOTenant`** — org-level vlastnosti, např. `DelegateRestrictedContentDiscoverabilityManagement` (smí vlastníci webů sami zapínat RCD — most na odpolední konfiguraci) ([Get-SPOTenant](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spotenant)). Dřívější `KnowledgeAgentScope` je od GA Copilot in SharePoint vyřazený (ctěn do 1. 11. 2026, [Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
 - **`Get-SPOSite`** — inventura webů; default `-Limit 200`, plný výpis `-Limit ALL`; s `-Limit`/`-Filter` řada vlastností vrací defaulty (SharingCapability, SensitivityLabel…) — pro detail číst web jednotlivě ([Get-SPOSite](https://learn.microsoft.com/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-sposite)).
 - AI-relevantní novinka: parametr **`-IsAuthoritative`** — označuje weby s „oficiálním" obsahem pro Search/Copilot/agenty.
 
@@ -38,7 +38,7 @@ flowchart LR
 
 ## Klíčové rozlišení
 
-- **SPO Management Shell vs. PnP.PowerShell**: kurz jede na SPO modulu (pokrývá tenant admin, SAM, `KnowledgeAgentScope`); PnP je komunitní nástroj pro obsah webů — mimo rozsah kurzu (viz glosář).
+- **SPO Management Shell vs. PnP.PowerShell**: kurz jede na SPO modulu (pokrývá tenant admin, SAM vč. RCD, `IsAuthoritative`); PnP je komunitní nástroj pro obsah webů — mimo rozsah kurzu (viz glosář).
 - **Get vs. Set**: čtení je bezpečné a paralelní; zápis je tenant-wide a výhradně instruktorský. Skript se píše tak, aby šel *nejdřív* spustit jen se čtením.
 
 ## Naše prostředí
@@ -49,7 +49,7 @@ flowchart LR
 
 Viz [`lab-spo-scripting.md`](lab-spo-scripting.md) — inventura tenantu skriptem.
 
-Navazující návod: [`guide-copilot-inventory.md`](guide-copilot-inventory.md) — inventarizace nastavení Copilot in SharePoint (scope + RCD → efektivní dostupnost per web).
+Navazující návod: [`guide-copilot-inventory.md`](guide-copilot-inventory.md) — inventarizace nastavení Copilot in SharePoint (RCD + `IsAuthoritative` → efektivní dostupnost a governance konflikty per web).
 
 ## Zdroje (Microsoft)
 
@@ -57,6 +57,6 @@ Navazující návod: [`guide-copilot-inventory.md`](guide-copilot-inventory.md) 
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-07.
-> Copilot funkce vyžadují modul 16.0.26615.12013+ — před kurzem aktualizovat. Zda `Get-*` cmdlety fungují pod Global Reader, dokumentace neříká (uvádí jen SharePoint Administrator) — otestovat v tenantu před během, viz instructor-notes.
-> Copilot in SharePoint je od 2026-06 **opt-out preview** (zapíná se automaticky licencovaným uživatelům); parametry si drží preview názvy `KnowledgeAgent*`. Enablement se má pro GA změnit — před během ověřit v článku [Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started).
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
+> Copilot funkce vyžadují modul 16.0.26615.12013+ — před kurzem aktualizovat (aktuální verze v PowerShell Gallery k 2026-09: 16.0.27709.12000). Zda `Get-*` cmdlety fungují pod Global Reader, dokumentace neříká (uvádí jen SharePoint Administrator) — otestovat v tenantu před během, viz instructor-notes.
+> Copilot in SharePoint má od 30. 9. 2026 **GA rollout**; preview parametry `KnowledgeAgent*` jsou vyřazené (ctěny do 1. 11. 2026), dostupnost řídí Site AI settings + RCD ([Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). Reference `Set-SPOTenant` to k 2026-10 ještě nereflektuje.

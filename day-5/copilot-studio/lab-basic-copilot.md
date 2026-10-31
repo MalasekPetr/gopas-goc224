@@ -16,7 +16,7 @@ Postavit v Copilot Studiu agenta nad vlastním SharePoint webem a protáhnout ho
 
 ## Kroky
 
-1. Založ agenta (New agent) — jméno a **popis piš pečlivě**: generative orchestration podle něj routuje.
+1. Založ agenta na **standard harnessu** (klasická zkušenost — *Other ways to build* / *Open classic experience*, [Access standard agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/switch-experiences)); nová zkušenost (GitHub Copilot harness) účtuje kredity už od stavby. Jméno a **popis piš pečlivě**: generative orchestration podle něj routuje.
 2. Vlož instrukce z dopoledního návrhu (part A, krok 2).
 3. Přidej **knowledge: SharePoint** — URL vlastního webu. Ověř v nastavení, že jede plná integrace (ne upload).
 4. V testovacím panelu spusť **5 testů z evaluačního plánu** vč. negativního testu a testu hranice práv (požádej souseda, ať položí dotaz na tvůj web, na který nemá práva — čekáme „no response").
@@ -36,4 +36,4 @@ Postavit v Copilot Studiu agenta nad vlastním SharePoint webem a protáhnout ho
 
 ## PAYG poznámka
 
-Každý testovací dotaz = Copilot Credits. 5 promyšlených testů + 1 iterace, ne brute-force ladění.
+Na standard harnessu MS účtuje až po publikaci; na GitHub Copilot harnessu je každý testovací dotaz = Copilot Credits ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview)). Proto standard harness — a i tak 5 promyšlených testů + 1 iterace, ne brute-force ladění.
