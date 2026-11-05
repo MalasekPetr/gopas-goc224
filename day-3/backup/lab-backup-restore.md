@@ -70,7 +70,7 @@ Posoudit backup posture fiktivní firmy, navrhnout backup policy s cenovým argu
 
 | Situace | Co udělat |
 |---|---|
-| Nevím, jak dohledat legitimní změny po incidentu | Audit log (D5) + verze souborů po obnově; nebo granulární obnova jen přepsaných souborů (preview — ověřit). |
+| Nevím, jak dohledat legitimní změny po incidentu | Audit log (D5) + verze souborů po obnově; nebo granulární obnova jen přepsaných souborů (jen z restore pointů za posledních 14 dní — viz README). |
 | Nesedí mi výpočet | GiB × 0,15 = $/měsíc; B = 1 000 + 2 000 + 1 000 GiB. |
 
 ## Fallback

@@ -13,7 +13,7 @@
 - Neříkat „SharePoint archive" — **Microsoft 365 Archive** (glosář).
 - **Archiv není záloha** — jediná kopie dat, jen levnější; čekat záměnu, mít odpověď připravenou (klíčové rozlišení v README).
 - Pravidlo „zdarma do kvóty" studenti rádi přeslechnou — v labu je schválně výpočet, který bez něj vyjde špatně.
-- File-level archive nedemonstrovat (preview, app-compat omezení) — jen zmínit.
+- File-level archive nedemonstrovat (app-compat omezení) — jen zmínit. MS stránky ho k 2026-10 už jako preview neoznačují; preview jsou jen SAM inactive files policies.
 
 ## Vazby
 

@@ -6,7 +6,7 @@
 
 ## Go/no-go
 
-- **Před během ověřit, že SAM je v tenantu odemčený** (odemyká ho 1 přiřazená M365 Copilot licence — v kurzovním tenantu ji má instruktorský účet; **běh 2026-07: potvrzeno odemčeno**). No-go → lab fallback na screenshoty, rozhodovací část zůstává.
+- **Před během ověřit, že SAM je v tenantu odemčený** (odemyká ho už 1 přiřazená M365 Copilot licence — od běhu 2026-11 ji mají i studenti; **běh 2026-07: potvrzeno odemčeno**). No-go → lab fallback na screenshoty, rozhodovací část zůstává.
 - Pokud SAM jede: připravit dopředu testovací „neaktivní" web, ať má inactive site policy co chytit.
 
 ## Příprava ráno v den bloku — věci s latencí (KLÍČOVÉ)
@@ -18,7 +18,7 @@
 
 ## Demo checklist (pořadí v bloku)
 
-1. **Otvírák — licenční pointa**: „SAM tu svítí, protože je v tenantu jedna Copilot licence" — živý důkaz D1 lekce. 2 minuty, velký efekt.
+1. **Otvírák — licenční pointa**: „SAM tu svítí, protože stačí jedna Copilot licence v tenantu" — živý důkaz D1 lekce. 2 minuty, velký efekt.
 2. **Recent admin actions + change history report** — „je tam váš celý týden": založení 20 studentských webů, změny z D2 konfigurace („vzpomínáte na včerejší `Set-SPOTenant`? Tady je"). Okamžité, nulová příprava.
 3. **DAG sharing links report** — třída tipuje nejčastější nález, pak otevřít předgenerovaný report + EEEU insights (klasický oversharing vektor, který Copilot zviditelní).
 4. **RCD — uzavření smyčky z D2**: Restricted tag na testovacím webu → studenti znovu pustí `copilot-inventory.ps1` (read-only, dle D2 go/no-go) → `RestrictedContentDiscovery` True, `CopilotAvailable` False. Včerejší skript dnes detekuje admin zásah — nejsilnější můstek dne.

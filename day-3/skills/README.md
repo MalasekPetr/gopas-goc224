@@ -1,25 +1,44 @@
 # Skills — rozšíření Copilot in SharePoint
 
-> Typ: povinný · Den: 3 (závěr) · Odhad: PM blok — vč. **živého dema na instruktorském účtu**
+> Typ: povinný · Den: 3 (závěr) · Odhad: PM blok
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle
 
-- Student ví, co Skill **je a není** (vs. agent, vs. jednorázový prompt) a kdy ho použít.
-- Student zná anatomii `SKILL.md`, umí Skill navrhnout a zreviduje cizí návrh.
-- Student viděl **živě** celý cyklus: tvorba v chatu → review draftu → uložení → běh se skill indicator kartou → soubor v Agent Assets.
-- Student rozumí governance Skills (žádný admin vypínač; řídí se právy na souborech) a licenční bráně.
+- Rozlišíte, co Skill **je a není** — oproti agentovi i oproti jednorázovému promptu — a poznáte, kdy se vyplatí ho vytvořit.
+- Znáte anatomii `SKILL.md`, umíte Skill navrhnout a zrevidovat cizí návrh.
+- Projdete celý cyklus: tvorba v chatu → review draftu → uložení → běh se skill indicator kartou → soubor v knihovně Agent Assets.
+- Rozumíte governance Skills (žádný admin vypínač, řízení přes oprávnění na souborech) a licenční bráně.
+
+## Proč Skills
+
+Copilot in SharePoint odpovídá na to, co mu právě napíšete. Když stejný postup — třeba kontrolu smluv podle firemního checklistu — zadáváte potřetí, začnou se výsledky lišit podle toho, jak přesně jste prompt zrovna formulovali. A kolega, který postup nezná, ho zopakuje ještě jinak. Skills tenhle problém řeší: postup jednou popíšete, uložíte a Copilot ho pak provádí pokaždé stejně, pro každého, kdo na webu pracuje.
+
+Pro správce je podstatné, že Skill není nová služba ani nová aplikace. Je to obyčejný Markdown soubor uložený v SharePointu — a tak se také spravuje.
 
 ## Výklad
 
 ### Co je Skill
 
-**Skill** = opakovatelný vícekrokový postup uložený jako **reusable asset** na webu — Copilot in SharePoint ho načte automaticky podle dotazu, nebo explicitně jménem ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)). Zachycuje org-specifická pravidla (standardy dokumentů, review checklisty), takže Copilot pracuje **konzistentně**, ne podle nálady jednorázového promptu.
+**Skill** je opakovatelný vícekrokový postup uložený jako znovupoužitelný asset (reusable asset). Copilot in SharePoint ho načte sám, když dotaz odpovídá účelu Skillu, nebo ho zavoláte explicitně jménem. Do Skillu se ukládají pravidla specifická pro organizaci — standardy dokumentů, review checklisty, postup aktualizace sdíleného listu — takže Copilot pracuje **konzistentně**, ne podle toho, jak se zrovna povedl jednorázový prompt ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)).
 
-- Tvorba: **přirozeným jazykem v chatu** — popíšeš workflow, vestavěná schopnost **Create skill** vrátí draft definice, zreviduješ, uložíš.
-- Běh: dotaz odpovídající účelu Skillu (auto-load), nebo „Run *název* on the selected documents"; načtení potvrzuje **skill indicator card** v chatu.
+Tvorba ani běh nevyžadují žádné programování:
 
-Tři druhy Skills ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)):
+- **Tvorba** probíhá **přirozeným jazykem v chatu**. Popíšete workflow — kroky, vstupy, očekávaný výstup — a vestavěná schopnost **Create skill** vám vrátí draft definice. Draft zrevidujete, případně necháte upravit, a potvrdíte uložení.
+- **Běh** spustíte buď dotazem, který odpovídá účelu Skillu (Copilot ho načte automaticky), nebo explicitně, například „Run *název* on the selected documents". Že se Skill opravdu načetl, potvrzuje v chatu **skill indicator card**.
+
+```mermaid
+flowchart LR
+  A[Popis postupu<br>v chatu] --> B[Create skill<br>vrátí draft]
+  B --> C[Review<br>a úpravy]
+  C --> D[Uložení<br>SKILL.md]
+  D --> E[Běh: dotaz<br>nebo jméno]
+  E --> F[Skill indicator<br>card v chatu]
+```
+
+### Tři druhy Skills
+
+Skills se liší tím, kdo je vlastní, kde jsou uložené a kde jsou dostupné ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)):
 
 | | **Site skill** | **Personal skill** | **Built-in skill** |
 |---|---|---|---|
@@ -27,83 +46,111 @@ Tři druhy Skills ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot
 | Úložiště | knihovna **Agent Assets** webu | **OneDrive** uživatele | součást produktu (needitovatelné) |
 | Dostupnost | jen na daném webu | vlastníkovi napříč weby | všem; seznam přes `/skills` v chatu |
 
-Personal skill je přenosný, ale **nepřenáší práva** — běží jen nad obsahem, ke kterému má uživatel přístup.
+**Site skill** je vhodný pro postup, který mají všichni na webu dělat stejně — týmová pravidla review, sdílené standardy dokumentů, aktualizace společného listu. Právě takový Skill vytvoříte v labu. **Personal skill** zachycuje váš osobní způsob práce (vlastní checklist, preferované formátování) a chodí s vámi po všech webech. Přenositelnost ale **nepřenáší oprávnění**: personal skill pracuje jen s obsahem, ke kterému má uživatel přístup. **Built-in skills** dodává Microsoft — pomáhají Skills vytvářet, kontrolovat a vylepšovat a upravit je nejde; můžete je jen doplnit vlastními.
 
-> [!NOTE] Jeden formát, víc hostitelů
-> Stejný princip `SKILL.md` dnes používá i Copilot v Excelu/Wordu, Agent Builder (až 8 skills na agenta, preview), manifest deklarativního agenta 1.9 (`agent_skills`) a Cowork (až 50 vlastních skills). Chování a limity se liší podle hostitele — tady učíme Copilot in SharePoint.
+### Jeden formát, víc hostitelů
+
+Formát `SKILL.md` není vázaný jen na SharePoint. Stejný princip potkáte ve čtvrtém dni: Skills lze připojit k agentovi v **Agent Builderu** (preview, nejvýš 8 na agenta), odkazovat z manifestu deklarativního agenta ve schématu 1.9 (`agent_skills`) a rozšiřovat jimi **Cowork** (až 50 vlastních skills) ([Agent Builder — skills](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills), [Manifest 1.9](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9), [Cowork overview](https://learn.microsoft.com/en-us/copilot/cowork/)). Chování a limity se podle hostitele liší; tento modul se věnuje Copilot in SharePoint. Dovednost napsat dobrý `SKILL.md` je ale přenositelná.
 
 ### Co Skill umí a neumí
 
-- **Umí**: řetězit vestavěné schopnosti Copilot in SharePoint — sumarizace/porozumění obsahu, organizace souborů a složek, práce se seznamy (např. „zvaliduj smlouvy a nevalidní zapiš do listu Invalid Contracts").
-- **Neumí**: externí systémy, vlastní kód. **Nepřekročí práva uživatele** — nerozšiřuje přístup ani schopnosti nad rámec Copilot in SharePoint. (Na akce a integrace jsou agenti — D4.)
+Skill nepřidává Copilotu nové schopnosti — **řetězí ty vestavěné**. Copilot in SharePoint umí porozumět obsahu a shrnout ho, organizovat soubory a složky a pracovat se seznamy. Skill z těchto stavebních kamenů skládá posloupnost kroků. Typický příklad z dokumentace: „zvaliduj smlouvy a nevalidní zapiš do listu Invalid Contracts" — tedy čtení obsahu, vyhodnocení podle pravidla a zápis do listu.
+
+Co Skill **neumí**: připojit se k externímu systému, spustit vlastní kód, ani **překročit oprávnění uživatele**. Skill nerozšiřuje přístup ani schopnosti nad rámec Copilot in SharePoint ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)). Jakmile potřebujete poslat e-mail, zavolat API nebo pracovat se systémem mimo SharePoint, potřebujete agenta nebo flow — k oběma se dostanete ve čtvrtém dni. V labu si tuto hranici vyzkoušíte v kroku „Kontrola omezení".
 
 ### Kde Skill žije — SKILL.md
 
-Úložiště site skillu: knihovna **Agent Assets** na webu, cesta `/Agent Assets/Skills/<název>/SKILL.md` (knihovna vznikne automaticky s prvním site skillem). Je to obyčejný **Markdown** (callback na D1 formáty!) — jde editovat i přímo, jen držet strukturu, ať ho Copilot dál umí interpretovat.
+Site skill je uložený v knihovně **Agent Assets** na webu, v cestě `/Agent Assets/Skills/<název>/SKILL.md`. Knihovnu nemusíte zakládat ani aktivovat — vznikne automaticky s prvním site skillem ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)).
 
-### Governance a práva
+`SKILL.md` je obyčejný **Markdown** — tedy formát, který znáte z D1 [`formats`](../../day-1/formats/). Skill obvykle vytváříte a upravujete v chatu, ale soubor jde otevřít a editovat i přímo. Pokud ho upravujete ručně, zachovejte jeho strukturu, aby ho Copilot dál dokázal interpretovat.
 
-- **Žádný admin vypínač** — Skills jsou nativní schopnost Copilot in SharePoint, samostatně se nevypínají. Knihovnu Agent Assets vytváří produkt a **nejde smazat**.
-- Řízení = **standardní file governance**: permissions, retention, sensitivity labels, audit — jako u každého obsahu. Default: **Edit** na webu = tvorba Skillu, **View** = spuštění; přísnější model = break inheritance na Agent Assets.
-- **Licenční brána**: Skills běží tam, kde je dostupný **Copilot in SharePoint** — od GA (rollout 30. 9. 2026) MS výslovně uvádí Copilot licenci jako prerekvizitu. **Tvorba a správa skills je v ceně licence**; skills v **plánovaných AI automatizacích** a práce ve velkém jsou „Advanced work" a čerpají Copilot Credits přes spending policy ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). V preview (2026-07-17) Skills fungovaly i na PAYG bez licence; **po GA ne — ověřeno v tenantu 2026-11**. Copilot Credits PAYG licenci nenahradí. Druhá brána = **Edit** (tvorba site skillu) / **View** (spuštění).
+### Governance a oprávnění
+
+Skills jsou nativní schopnost Copilot in SharePoint, a proto **nemají žádný samostatný admin vypínač** — v admin centru je nenajdete. Knihovnu Agent Assets vytváří a spravuje produkt a **nejde smazat** ([Skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)).
+
+Řízení proto probíhá stejně jako u jakéhokoli jiného obsahu v SharePointu — **standardní file governance**: oprávnění, retence, sensitivity labels, audit. Výchozí model je jednoduchý:
+
+- **Edit** na webu = můžete vytvořit site skill.
+- **View** na webu = můžete site skill spustit.
+
+Pokud potřebujete přísnější model (například aby Skills vytvářel jen vlastník webu), přerušíte dědičnost oprávnění na knihovně Agent Assets a nastavíte jí vlastní oprávnění. Personal skills se řídí politikami OneDrivu.
+
+### Licenční brána
+
+Skills běží všude tam, kde je dostupný **Copilot in SharePoint**. Ten je od 30. 9. 2026 v GA a Microsoft u něj výslovně uvádí aktivní Microsoft 365 Copilot licenci jako prerekvizitu ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). Licenční model je hybridní:
+
+- **Tvorba a správa Skills** jsou v ceně Copilot licence.
+- **Skills v plánovaných AI automatizacích** a práce ve velkém spadají do „Advanced work" a čerpají navíc **Copilot Credits** přes spending policy.
+
+V preview (2026-07-17) Skills fungovaly i na PAYG bez licence; po GA už ne — to jsme ověřili v kurzovním tenantu v 2026-11. Copilot Credits licenci **nenahradí**. Celý licenční obraz najdete v D1 [`licensing`](../../day-1/licensing/).
 
 ### Jak se Skills aktivují
 
-Skills se samostatně nezapínají — jedou tam, kde je dostupný **Copilot in SharePoint**. Dvě brány:
+Skills se samostatně nezapínají. K tomu, aby uživatel Skill vytvořil nebo spustil, musí projít dvěma branami:
 
-1. **Licence:** M365 Copilot licence (po GA license-only, ověřeno 2026-11; PAYG nestačí).
-2. **Dostupnost na webu:** **Site AI settings** (vlastník webu: který agent se otevře z ikony v hlavičce, skrytí Copilot tlačítka pro visitory, zapnutí advanced document processing) a **Restricted Content Discovery** (RCD web z Copilotu vyřadí — přebíjí ostatní nastavení). Inventura RCD skriptem je v D2 [`../../day-2/powershell-spo/guide-copilot-inventory.md`](../../day-2/powershell-spo/guide-copilot-inventory.md).
+1. **Licence** — Microsoft 365 Copilot licence. PAYG po GA nestačí.
+2. **Dostupnost Copilot in SharePoint na webu** — řídí ji dvě nastavení:
+   - **Site AI settings** nastavuje vlastník webu: který agent se otevře z ikony v hlavičce webu, zda se tlačítko Copilot skryje návštěvníkům (visitors) a zda je zapnuté advanced document processing.
+   - **Restricted Content Discovery (RCD)** web z Copilotu vyřadí a přebíjí ostatní nastavení. Inventuru RCD skriptem najdete v D2 [`../../day-2/powershell-spo/guide-copilot-inventory.md`](../../day-2/powershell-spo/guide-copilot-inventory.md).
 
-Na úrovni webu **není žádná „site collection feature" k aktivaci** — Agent Assets se aktivuje sám s prvním site skillem. Skills jsou nativní schopnost — žádný další vypínač.
+Na úrovni webu neexistuje žádná „site collection feature", kterou by bylo třeba aktivovat — Agent Assets se aktivuje samo s prvním site skillem.
 
-> [!IMPORTANT] Názvosloví / lineage
-> Do 1. 11. 2026 se dostupnost Copilot in SharePoint (a tedy Skills) řídila tenant-wide parametrem `Set-SPOTenant -KnowledgeAgentScope`. Při GA ho Microsoft vyřadil; dnes Site AI settings + RCD ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
+Do 1. 11. 2026 se dostupnost Copilot in SharePoint (a tedy i Skills) řídila tenant-wide parametrem `Set-SPOTenant -KnowledgeAgentScope`. Při GA ho Microsoft vyřadil; dnes rozhodují Site AI settings a RCD ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). Pokud parametr najdete ve starších návodech nebo skriptech, je zastaralý.
 
-### Na jakém modelu Skills běží (a co Anthropic)
+### Na jakém modelu Skills běží
 
-Copilot in SharePoint — a tedy Skills — běží na **Microsoft-managed reasoning modelu od OpenAI**; model se nekonfiguruje. Skills proto **na Anthropicu nezávisí** (Claude se v této cestě aktuálně nepoužívá). AI subprocesoři, Anthropic a EU Data Boundary: [`../../day-5/copilot-admin/explainer-ai-subprocessors.md`](../../day-5/copilot-admin/explainer-ai-subprocessors.md).
+Copilot in SharePoint — a tedy i Skills — běží na **reasoning modelu od OpenAI spravovaném Microsoftem**; model se nekonfiguruje ([Get started — models](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started#models)). Skills proto **nezávisí na Anthropicu** — Claude se v této cestě aktuálně nepoužívá. Pokud zákazník řeší AI subprocesory nebo EU Data Boundary, podrobnosti najdete v [`../../day-5/copilot-admin/explainer-ai-subprocessors.md`](../../day-5/copilot-admin/explainer-ai-subprocessors.md).
 
 ### Kontext webu — SHAREPOINT.md (doporučení)
 
-**Doporučená praxe:** jeden `SHAREPOINT.md` v **kořeni knihovny Agent Assets** dá Copilotu trvalý kontext o webu (účel, mapa knihoven, konvence pojmenování, pravidla pro AI, glosář) — načítá se do každého chatu na webu a Skills ho dědí. Konzistentní kontext napříč tenanty = levná páka na kvalitu odpovědí (obdoba `AGENTS.md`/`CLAUDE.md` pro repo).
+Skill popisuje *postup*. Copilot ale pro kvalitní odpovědi potřebuje i *kontext webu* — k čemu web slouží, jaké má knihovny, jaké konvence pojmenování používá a jaká pravidla pro AI platí. Komunitní praxe proto doporučuje jeden soubor `SHAREPOINT.md` v **kořeni knihovny Agent Assets**. Načítá se do každého chatu na webu a Skills ho dědí. Je to obdoba souborů `AGENTS.md` nebo `CLAUDE.md`, které vývojáři dávají do repozitářů kódu: levná páka na kvalitu odpovědí, zvlášť když ho udržujete konzistentní napříč weby.
 
-> [!IMPORTANT] Zatím neoficiální
-> **`SHAREPOINT.md` není k 2026-10 dokumentován na Microsoft Learn** (oficiálně jen `SKILL.md`) — komunitní pattern, chování před produkčním spoléháním ověřit. Detail, šablona, kam patří a na co dát pozor: [`explainer-sharepoint-md.md`](explainer-sharepoint-md.md).
+Pozor: **`SHAREPOINT.md` není k 2026-10 dokumentován na Microsoft Learn** — oficiálně je popsaný jen `SKILL.md`. Jde o komunitní pattern a jeho chování si před produkčním nasazením ověřte. Šablonu, umístění a úskalí najdete v [`explainer-sharepoint-md.md`](explainer-sharepoint-md.md).
 
 ### Tip: `--agenttools` — co agent na webu umí
 
-V chatu Copilot in SharePoint vypíše `--agenttools` **view-only seznam všech tools**, které má agent na daném místě, seskupené do kategorií (docAssist, Creation, Deletion, Automation & Rules…) — např. `create_file`, `create_folder`, `create_form`, `delete_field`, `delete_list`. Rychlá **discoverability**: co může Skill na tomto webu/knihovně řetězit.
+Když chcete vědět, co může Skill na konkrétním webu nebo v knihovně řetězit, napište do chatu Copilot in SharePoint `--agenttools`. Vypíše se seznam všech nástrojů (tools), které má agent na daném místě k dispozici, seskupený do kategorií (docAssist, Creation, Deletion, Automation & Rules…) — například `create_file`, `create_folder`, `create_form`, `delete_field`, `delete_list`. Seznam je jen pro čtení.
 
-> [!IMPORTANT] Zatím neoficiální
-> `--agenttools` (a další `--` příkazy) **nejsou dokumentované na MS Learn** — in-product preview pomůcka; hláška v UI sama říká, že se tools v čase mění. Brát jako tip, ne stabilní API.
+Berte to jako tip, ne jako stabilní rozhraní: `--agenttools` ani další příkazy začínající `--` **nejsou dokumentované na Microsoft Learn**. Jde o pomůcku v preview a sama hláška v UI upozorňuje, že se nástroje v čase mění.
 
-Nejblíž oficiálnímu **katalogu schopností** je [Work IQ SharePoint reference (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-sharepoint-work-iq) — MCP server „Work IQ SharePoint" pro Copilot Studio (`findSite`, `createSmallTextFile`, `createFolder`, `createList`, `createColumn`, `shareFileOrFolder`, `setSensitivityLabelOnFile`…). Pozor: **jiná plocha** (Copilot Studio MCP) a **jiné názvy** než `--agenttools` — reference schopností, ne 1:1 dokumentace toho příkazu. Preview: názvy se můžou měnit.
-
-### Živé demo (instruktor)
-
-Celý cyklus na instruktorském webu: prompt na tvorbu Skillu (review smluv → zápis nevalidních do listu) → review draftu → uložení → výběr souborů v knihovně → běh → skill indicator card → prohlídka `SKILL.md` v Agent Assets.
+Nejblíž oficiálnímu katalogu schopností je reference **Work IQ SharePoint** — MCP server pro Copilot Studio s nástroji jako `findSite`, `createSmallTextFile`, `createFolder`, `createList`, `createColumn`, `shareFileOrFolder` nebo `setSensitivityLabelOnFile` ([Work IQ SharePoint reference (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-sharepoint-work-iq)). Jde ale o **jinou plochu** (Copilot Studio MCP) s **jinými názvy** než `--agenttools`, takže ji čtěte jako přehled schopností, ne jako dokumentaci toho příkazu. Je v preview a názvy se mohou měnit.
 
 ## Klíčové rozlišení
 
-- **Skill vs. agent**: Skill = uložený *postup* uvnitř Copilot in SharePoint (bez vlastní persony, knowledge a akcí); agent = samostatná *persona* s instrukcemi, knowledge a případně akcemi. Mapa cest tvorby agentů: [`../../day-4/copilot-agents/`](../../day-4/copilot-agents/).
-- **Skill vs. prompt**: prompt je jednorázový a osobní; Skill je uložený, sdílený (View stačí) a konzistentní. „Dobrý prompt, který píšeš potřetí" = kandidát na Skill (D2 prompt anatomie se recykluje).
-- **Licence vs. permissions** (D1 vzor): licence otvírá funkci (Copilot in SharePoint), permissions řídí tvorbu/běh (Edit/View) — tady jsou brány **dvě za sebou**.
+- **Skill vs. agent**: Skill je uložený *postup* uvnitř Copilot in SharePoint — bez vlastní persony, knowledge a akcí. Agent je samostatná *persona* s instrukcemi, knowledge a případně akcemi. Mapu cest tvorby agentů najdete v [`../../day-4/copilot-agents/`](../../day-4/copilot-agents/).
+- **Skill vs. prompt**: prompt je jednorázový a osobní; Skill je uložený, sdílený (ke spuštění stačí View) a konzistentní. „Dobrý prompt, který píšete potřetí" je kandidát na Skill — a pravidla anatomie promptu z D2 platí i pro popis Skillu.
+- **Licence vs. permissions** (vzor z D1): licence otvírá funkci (Copilot in SharePoint), oprávnění řídí tvorbu a běh (Edit / View). Brány jsou **dvě za sebou** a projít musíte oběma.
 
 ## Naše prostředí
 
-- Studenti mají od běhu 2026-11 **Copilot licenci** → Skill **navrhnou, vytvoří i spustí sami** (`SKILL.md` je jen Markdown — psát umí od D1).
-- Bez licence (PAYG) Skills po GA nejedou (T1, ověřeno 2026-11; v preview 2026-07-17 ještě fungovaly). Fallback, kdyby se licence nepropsala: studenti navrhnou a zrevidují `SKILL.md`, tvorbu a běh předvede instruktor.
-- **Plánované skills** (scheduled AI automations) = Advanced work → Copilot Credits přes spending policy. V labu nezakládat.
+- Od běhu 2026-11 máte **Copilot licenci**, takže Skill **navrhnete, vytvoříte i spustíte sami** — na svém webu nad knihovnou Vzorky z D2. `SKILL.md` je jen Markdown, psát ho umíte od D1.
+- Bez licence (jen PAYG) by Skills po GA nefungovaly (ověřeno 2026-11; v preview 2026-07-17 ještě fungovaly). Kdyby se vám licence nepropsala, lab má záložní režim — viz sekce *Fallback* v labu.
+- **Plánované skills** (scheduled AI automations) jsou Advanced work a čerpají Copilot Credits přes spending policy. V labu je nezakládejte.
+
+## Shrnutí
+
+- Skill je uložený vícekrokový postup v `SKILL.md`, který Copilot in SharePoint provádí konzistentně; tvoří se přirozeným jazykem v chatu.
+- Site skill žije v knihovně Agent Assets daného webu, personal skill v OneDrivu uživatele, built-in skills dodává Microsoft.
+- Skill jen řetězí vestavěné schopnosti Copilot in SharePoint — žádné externí systémy, žádný kód, žádné rozšíření oprávnění.
+- Skills nemají admin vypínač; řídí se oprávněními na souborech (Edit = tvorba, View = běh) a dostupností Copilot in SharePoint (licence, Site AI settings, RCD).
+- Po GA vyžadují Copilot licenci; plánované spouštění čerpá navíc Copilot Credits.
 
 ## Lab
 
-Viz [`lab-skill-design.md`](lab-skill-design.md) — návrh a review SKILL.md + živé spuštění vybraných návrhů.
+Viz [`lab-skill-design.md`](lab-skill-design.md) — návrh a review `SKILL.md`, tvorba site skillu a jeho spuštění nad dokumenty.
 
 ## Zdroje (Microsoft)
 
-[Extend Copilot in SharePoint with skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills) · [Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)
+- **Skills v Copilot in SharePoint:** [Extend Copilot in SharePoint with skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)
+- **Dostupnost, licence a model:** [Get started with Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started) · [Get started — models](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started#models)
+- **Skills v dalších hostitelích:** [Agent Builder — skills](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills) · [Declarative agent manifest 1.9](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9) · [Cowork overview](https://learn.microsoft.com/en-us/copilot/cowork/)
+- **Katalog schopností:** [Work IQ SharePoint reference (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-sharepoint-work-iq)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> Copilot in SharePoint (vč. Skills) má GA rollout od 30. 9. 2026; přibyly personal a built-in skills (`/skills`), skills v plánovaných automatizacích čerpají Copilot Credits. Chování (auto-load, indicator card, formát SKILL.md) se může měnit; před během projít docs (ms.date 2026-09-28). **Licence: po GA license-only — preview nález „PAYG funguje" (2026-07-17) po GA neplatí, ověřeno v tenantu 2026-11 (T1).** `KnowledgeAgentScope` vyřazen k 1. 11. 2026. Skills jsou v SharePointu dostupné jen v first-party Copilot in SharePoint experience.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-11.
+>
+> - Copilot in SharePoint (vč. Skills) má GA rollout od 30. 9. 2026; přibyly personal a built-in skills (`/skills`). Chování (auto-load, indicator card, formát `SKILL.md`) se může měnit — před během projít docs (ms.date 2026-09-28).
+> - **Licence:** po GA license-only; preview nález „PAYG funguje" (2026-07-17) po GA neplatí (ověřeno v tenantu 2026-11). Skills v plánovaných automatizacích čerpají Copilot Credits.
+> - `KnowledgeAgentScope` vyřazen k 1. 11. 2026. Skills jsou v SharePointu dostupné jen v first-party Copilot in SharePoint experience.
+> - `SHAREPOINT.md` a `--agenttools` zatím nejsou na Microsoft Learn — ověřit, zda je Microsoft nezdokumentoval nebo nezměnil.
