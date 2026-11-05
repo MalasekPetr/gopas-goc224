@@ -19,6 +19,8 @@ Typické soubory ve složce modulu:
 | `lab-*.md` | zadání labu | student |
 | `instructor-notes.md` | timing, tripwires, otázky, fallbacky | jen lektor |
 
+`README.md` musí obstát pro **samostudium**: souvislý výklad (co to je, proč to existuje, jak to funguje, příklad z kurzu), vykání, sekce `## Shrnutí` (3–5 bodů) před `## Lab`. Pokyny pro lektora do README nepatří — patří do `instructor-notes.md`. Odkazy na zdroje na konec věty/odstavce, ne doprostřed věty.
+
 Pořadí modulů v běhu drží **`agenda.md`** — je to jediný zdroj pravdy o pořadí. Změna pořadí v rámci dne = úprava `agenda.md`, ne přejmenování složek. Přesun modulu do jiného dne = `git mv` do složky cílového dne + úprava `agenda.md` + oprava relativních odkazů.
 
 ## Markdown styl
@@ -41,7 +43,7 @@ flowchart LR
 
 ## Currency-markery
 
-Fast-moving fakta se v tomto oboru mění po měsících. Balit je do GitHub alertů, ať jsou vizuálně oddělené a grep-nutelné před každým během:
+Fast-moving fakta se v tomto oboru mění po měsících. Balit je do GitHub alertů, ať jsou vizuálně oddělené a grep-nutelné před každým během. **Šetřit:** v README nejvýš jeden `[!WARNING]`, a to v sekci delta (2–4 body); `[!IMPORTANT] Názvosloví` jen u opravdu matoucího přejmenování; ostatní upozornění psát jako běžný text.
 
 ```md
 > [!WARNING] Ověřit k datu běhu — stav k <RRRR-MM>.
