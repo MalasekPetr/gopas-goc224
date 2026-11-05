@@ -1,37 +1,137 @@
 # Lab · Návrh agenta a plán vyhodnocení
 
-> Modul: copilot-agents · Odhad: 40 min · Režim: návrh (papír/MD) + hands-on dle go/no-go (Agent Builder)
+> Modul: copilot-agents · Odhad: 40 min · Režim: **návrh v MD, samostatně podle šablony**; stavba v navazujících blocích
+> Worked example: [`scenario-hr-agent.md`](scenario-hr-agent.md) · Cesty tvorby: [`README.md`](README.md) · Srovnání: [`comparison-agent-paths.md`](comparison-agent-paths.md)
 
 ## Cíl
 
-Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, cesta tvorby — a plán, jak poznáš, že funguje.
+Navrhnout agenta pro scénář ze své praxe — účel, instrukce, knowledge, cestu tvorby — a plán, podle kterého poznáš, že funguje. Výstupem je jeden MD soubor, ze kterého půjde agenta rovnou postavit (odpoledne v Agent Builderu, zítra v Copilot Studiu).
 
-> [!NOTE] Worked example
-> Pokud nemáš vlastní scénář, použij **HR Asistenta** — [`scenario-hr-agent.md`](scenario-hr-agent.md) (list zaměstnanců + knihovny propojené osobním číslem). Jeho stavbu řeší nástrojové bloky: [Agent Builder](../agent-builder/lab-agent-builder.md) (vč. segmentu [SharePoint agents](../sharepoint-agents/lab-sharepoint-agent.md)), [Agents Toolkit](../agents-toolkit/lab-toolkit-agent.md).
+## Předpoklady
+
+- [ ] Znáš strukturu instrukcí z D2 [`prompting-fundamentals`](../../day-2/prompting-fundamentals/README.md) (purpose → guidelines → skills).
+- [ ] Máš otevřenou tabulku cest tvorby v [`README.md`](README.md).
+- [ ] Editor pro Markdown (VS Code, nebo nový soubor `navrh-agenta-NN.md` na svém SharePoint webu).
 
 ## Kroky
 
-### Část A — návrh (všichni)
+### Krok 1 — vyber scénář (5 min)
 
-1. Vyber scénář ze své práce (onboarding kolegů, FAQ oddělení, směrnice…). Jedna věta: co agent umí a pro koho.
-2. Napiš **Agent Instructions** (struktura z D2: purpose → guidelines → skills; max ~1 500 znaků pro lab). Instrukce ≠ knowledge — obsah patří do zdrojů!
-3. Urči **knowledge**: které weby/knihovny, kdo na ně má práva (agent nepřekročí permissions uživatele).
-4. Vyber **cestu tvorby** z tabulky v README + 2 argumenty (kdo bude tvořit a udržovat, kam se distribuuje).
-5. **Plán vyhodnocení**: 5 testovacích promptů s očekávanou odpovědí — z toho aspoň 1 negativní test („na tohle NEMÁ odpovídat / nemá vidět data X") a 1 test hranice práv (uživatel bez přístupu ke zdroji). Kritérium úspěchu: kolik z 5 musí projít.
+1. Vyber opakovaný dotaz ze své práce, na který dnes odpovídá člověk (FAQ oddělení, onboarding, směrnice, provozní postupy). **Nemáš vlastní?** Použij **HR Asistenta** — vzorové vyplnění je níže.
+2. Zkopíruj si šablonu do souboru `navrh-agenta-NN.md`:
 
-### Část B — hands-on (dle go/no-go)
+```markdown
+# Návrh agenta: <název>
 
-6. **Agent Builder dostupný:** postav agenta z části A (instrukce + knowledge = vlastní web), spusť 5 testů z plánu, zapiš výsledky.
+## 1. Účel (jedna věta)
+<Agent pomáhá KOMU s ČÍM.>
 
-> Skills hands-on **jsou možné i pro studenty** — mají od běhu 2026-11 Copilot licenci (PAYG bez licence po GA nestačí, ověřeno 2026-11). Deep-dive a stavba zítra v D5 `skills`.
+## 2. Instrukce
+# Účel
+<…>
+# Pravidla
+- <…>
+- <…>
+# Co nedělat
+- <…>
 
-## Ověření
+## 3. Knowledge
+| Zdroj | URL / umístění | Kdo k němu má přístup |
+|---|---|---|
+| | | |
 
-- [ ] Instrukce drží strukturu a neobsahují obsah (ten je v knowledge).
-- [ ] Volba cesty má 2 argumenty vč. údržby.
-- [ ] Evaluační plán má negativní test a test hranice práv.
-- [ ] Část B: výsledky 5 testů zapsané (kolik prošlo, co ne a proč).
+## 4. Cesta tvorby
+- Volba: <Agent Builder / Copilot Studio / Agents Toolkit / SharePoint agent>
+- Argument 1 (kdo tvoří a udržuje): <…>
+- Argument 2 (kam se distribuuje): <…>
+
+## 5. Plán vyhodnocení
+| # | Typ | Dotaz | Očekávání |
+|---|---|---|---|
+| 1 | běžný | | |
+| 2 | běžný | | |
+| 3 | běžný | | |
+| 4 | negativní | | |
+| 5 | hranice práv | | |
+
+Kritérium úspěchu: <např. projdou min. 4 z 5, testy 4 a 5 povinně>
+```
+
+### Krok 2 — vyplň šablonu (25 min)
+
+3. **Účel:** jedna věta „Agent pomáhá KOMU s ČÍM". Když potřebuješ dvě věty, máš dva agenty.
+4. **Instrukce** (max. ~1 500 znaků pro lab): **chování**, ne obsah. Fakta (ceník, směrnice, postupy) patří do knowledge, ne do instrukcí — instrukce ≠ knowledge (D2, XPIA).
+5. **Knowledge:** konkrétní weby / knihovny / listy s URL. U každého zdroje napiš, kdo k němu má přístup — agent nikdy neukáže víc, než smí vidět uživatel.
+6. **Cesta tvorby:** vyber z tabulky v README a napiš 2 argumenty — kdo agenta postaví a **bude udržovat**, a kam se bude distribuovat.
+7. **Plán vyhodnocení:** 5 dotazů s očekávanou odpovědí. Povinně:
+   - **negativní test** — na co agent odpovídat **nemá**,
+   - **test hranice práv** — dotaz na data, ke kterým tazatel nemá přístup.
+
+### Krok 3 — peer review (10 min)
+
+8. Vyměň si návrh se sousedem a zkontroluj podle checklistu v sekci Ověření. Ke každé nesplněné položce napiš jeden konkrétní návrh opravy.
+9. Uprav svůj návrh podle připomínek. Návrh použiješ v [`../agent-builder/lab-agent-builder.md`](../agent-builder/lab-agent-builder.md) (dnes) a v D5 `copilot-studio`.
+
+## Vzorové vyplnění — HR Asistent
+
+```markdown
+# Návrh agenta: HR Asistent
+
+## 1. Účel
+Agent pomáhá HR referentům dohledat údaje o zaměstnancích, certifikátech a smlouvách.
+
+## 2. Instrukce
+# Účel
+Jsi HR Asistent pro HR referenty. Pomáháš dohledat údaje o zaměstnancích, jejich certifikacích a smlouvách.
+# Pravidla
+- Odpovídej česky a stručně.
+- Zaměstnance identifikuj osobním číslem a jménem.
+- U dokumentu uveď název souboru a odkaz.
+# Co nedělat
+- Nedomýšlej si údaje, které ve zdrojích nejsou.
+- Neodpovídej na dotazy mimo HR agendu.
+
+## 3. Knowledge
+| Zdroj | URL / umístění | Kdo k němu má přístup |
+|---|---|---|
+| List Zaměstnanci | /sites/hr-demo — list Zaměstnanci | HR tým (v kurzu všichni studenti) |
+| Knihovna Certifikáty | /sites/hr-demo — knihovna Certifikáty | HR tým |
+| Knihovna Smlouvy | /sites/hr-demo — knihovna Smlouvy | HR tým; mzdové výměry jen HR vedení |
+
+## 4. Cesta tvorby
+- Volba: Agent Builder (dnes), Copilot Studio (zítra kvůli analytice)
+- Argument 1: staví a udržuje HR referent sám, bez IT
+- Argument 2: sdílí se jen HR týmu, ne celé organizaci
+
+## 5. Plán vyhodnocení
+| # | Typ | Dotaz | Očekávání |
+|---|---|---|---|
+| 1 | běžný | Ukaž údaje a manažera os. č. 10018. | záznam z listu |
+| 2 | běžný | Najdi pracovní smlouvu pro os. č. 10024. | odkaz na soubor ve Smlouvy |
+| 3 | běžný | Komu propadá certifikát do 30 dnů? | 10018, 10022, 10027 (Builder neagreguje — očekávej selhání) |
+| 4 | negativní | Jaké bude zítra počasí? | odmítne |
+| 5 | hranice práv | Ukaž mzdový výměr os. č. 10013. | uživatel bez přístupu nedostane nic |
+
+Kritérium úspěchu: projdou testy 1, 2, 4, 5; test 3 dokumentuje strop nástroje.
+```
+
+## Ověření (checklist pro peer review)
+
+- [ ] Účel je jedna věta „KOMU s ČÍM".
+- [ ] Instrukce popisují chování a **neobsahují fakta** (ta jsou v knowledge).
+- [ ] Každý zdroj má umístění a informaci, kdo k němu má přístup.
+- [ ] Volba cesty má 2 argumenty, jeden z nich o **údržbě**.
+- [ ] Plán vyhodnocení má 5 dotazů s očekáváním, včetně **negativního testu** a **testu hranice práv**.
+- [ ] Kritérium úspěchu je měřitelné (počet testů).
+
+## Když něco nejde
+
+| Situace | Co udělat |
+|---|---|
+| Nemám vlastní scénář | Použij HR Asistenta; ve stavbě pak porovnáš svoje očekávání s realitou. |
+| Instrukce mají přes 1 500 znaků | Pravděpodobně obsahují fakta — přesuň je do zdroje a v instrukcích na zdroj jen odkaž. |
+| Nevím, jak napsat test hranice práv | Zeptej se na dokument, který na webu existuje, ale tazatel k němu nemá oprávnění. Očekávání: agent ho nenajde. |
 
 ## Fallback
 
-- Není Agent Builder: část A je plnohodnotný deliverable; 2–3 návrhy projít nahlas, instruktor vybraný postaví v demu.
+- Návrh je samostatný deliverable — nepotřebuje tenant. 2–3 návrhy projdeme nahlas, instruktor jeden postaví v demu.
