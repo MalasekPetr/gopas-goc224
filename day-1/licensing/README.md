@@ -2,106 +2,149 @@
 
 > Typ: povinný · Den: 1 · Odhad: PM blok
 > Prostředí: [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
-> Všechna tvrzení jsou ozdrojovaná odkazy na Microsoft (viz [Zdroje](#zdroje-microsoft)).
 
 ## Cíle
-- Student rozliší licenční vrstvy Copilota (Chat/Basic vs. add-on/Premium; Business vs Enterprise; E7).
-- Student odliší **dva PAYG modely** a ví, který co platí — a u Copilot Credits rozliší **původní PAYG** a nový **usage-based billing (Cost management)**.
-- Student aplikuje princip **licence vs. permissions** (+ spending policy jako brána pro pokročilé služby).
-- Student zasadí kurzovní prostředí (Business Basic + PAYG) do licenčního obrazu.
+
+- Rozlišíte licenční vrstvy Copilota: zdarma (Basic) vs. placená licence (Premium), Business vs. Enterprise, E7.
+- Odlišíte **dva PAYG modely** a u Copilot Credits rozeznáte **původní PAYG** od **usage-based billingu (Cost management)**.
+- Umíte u každé funkce říct, kterou bránou uživatel projde: **licence**, **oprávnění**, **spending policy**.
+- Zasadíte prostředí kurzu do licenčního obrazu.
+
+## Proč se licencemi zabývat
+
+Správce SharePointu dnes nerozhoduje jen o tom, *kdo vidí který web*. Rozhoduje i o tom, *kdo smí kterou AI funkci použít a kolik to bude stát*. Microsoft přitom kombinuje tři různé principy: fixní licenci na uživatele, platbu za spotřebu (pay-as-you-go, PAYG) a samostatné produkty pro správu obsahu. Kdo je nerozliší, buď zaplatí za licence, které nepotřebuje, nebo spustí službu bez stropu a o útratě se dozví až z faktury.
+
+Modul proto stavíme na jedné otázce, kterou si budete klást u každé funkce v kurzu: **Co musí uživatel mít, aby to fungovalo — a kdo za to platí?**
 
 ## 1. Licenční vrstvy Copilota
 
-**Copilot Chat (Basic) je součást předplatného zdarma**, licence **Microsoft 365 Copilot (Premium)** se dokupuje. Chat je web-grounded; licence odemyká plný Copilot ve Word/Excel/Outlook/Teams a work-grounded chat přes Graph, Work IQ a semantic index ([License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing), [Extensibility cost considerations](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations), [Copilot Chat requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-chat-requirements)).
+### Zdarma vs. placená licence
 
-Štítky v aplikacích ([Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview)):
+Každý uživatel s Microsoft 365 předplatným má **Copilot Chat (Basic)** zdarma. Basic odpovídá z webu — neví nic o vašich dokumentech, e-mailech ani schůzkách. Plnou práci s firemními daty odemyká až licence **Microsoft 365 Copilot (Premium)**: Copilot ve Wordu, Excelu, Outlooku a Teams a chat, který vychází z dat tenantu (Microsoft Graph, Work IQ, sémantický index) ([License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing), [Copilot Chat requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-chat-requirements)).
 
-| Štítek | Kdo | Co má |
+Jakou úroveň uživatel má, pozná podle štítku v aplikaci ([Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview)):
+
+| Štítek | Kdo ho vidí | Co má |
 |---|---|---|
-| **Microsoft 365 Copilot (Premium / Pro)** | s Copilot licencí | plný zážitek, priority access |
-| **Microsoft 365 Copilot (Basic)** | bez licence | standard access ke Copilotu ve Word/Excel/PowerPoint/OneNote |
-| **Copilot Chat (Basic)** | bez licence | jen Chat, bez Copilota v aplikacích |
+| **Microsoft 365 Copilot (Premium / Pro)** | uživatel s Copilot licencí | plný zážitek, prioritní přístup |
+| **Microsoft 365 Copilot (Basic)** | uživatel bez licence | standardní přístup ke Copilotu ve Wordu, Excelu, PowerPointu a OneNote |
+| **Copilot Chat (Basic)** | uživatel bez licence | jen Chat, bez Copilota v aplikacích |
 
-Výjimka z „Basic = jen web": **Copilot Chat v Outlooku** grounduje i bez licence na poštu, kalendář, schůzky, chaty a omezenou sadu souvisejícího obsahu ([Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview)).
+Jedna výjimka z pravidla „Basic = jen web": **Copilot Chat v Outlooku** pracuje i bez licence s poštou, kalendářem, schůzkami, chaty a omezenou sadou souvisejícího obsahu.
 
-Copilot kvalifikuje na base plánech **Business Basic / Standard / Premium**, **Apps for Business**, **Teams Essentials**, **A1–A5**, **E3/E5**, **F1/F3** a dalších; **E7 (Frontier Suite)** Copilot už obsahuje ([License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-license-options), [Setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup)). **E7** = E5 + Copilot + Microsoft Entra Suite + Agent 365 ([Compare E3/E5/E7](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7)).
+### Na jakých plánech Copilot jde koupit
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-10
-> Od **1. 12. 2026** jdou nové Microsoft 365 Copilot a Copilot Business licence koupit **bez base subscription** (stejná cena, nové SKU); dosavadní nabídky nesou od 16. 10. 2026 v názvu „(add-on)". U nových **Copilot Business** přes CSP bude od 1. 12. 2026 **usage-based billing default zapnutý** s limitem 4 000 kreditů/uživatel/měs. ([Partner Center — říjen 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-october)).
+Copilot licence se dokupuje k základním plánům **Business Basic / Standard / Premium**, **Apps for Business**, **Teams Essentials**, **A1–A5**, **E3/E5**, **F1/F3** a dalším. Plán **E7 (Frontier Suite)** ji už obsahuje: E7 = E5 + Copilot + Microsoft Entra Suite + Agent 365 ([License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-license-options), [Compare E3/E5/E7](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7)).
 
-Prerekvizity: Microsoft Entra ID účet, schránka na Exchange Online, pro některé funkce OneDrive, podporovaný update channel ([Requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements)).
+**Copilot Business** (pro organizace do 300 uživatelů) nabízí podle Microsoftu „the same Microsoft Copilot capabilities" jako Enterprise verze. Rozdíl není v Copilotu samotném, ale v tom, co je pod ním — bezpečnost, compliance a Purview z podkladového plánu ([Service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot)). Researcher a Analyst jsou součástí Copilot licence.
 
-**Copilot Business** (≤300 uživatelů) „provides the same Microsoft Copilot capabilities" ([License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-license-options)); rozdíl je v tom, co je „pod tím" (bezpečnost, compliance, Purview) — přehled funkcí napříč plány je ve [service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot). Researcher a Analyst jsou součást Copilot licence.
+Technické předpoklady jsou běžné: účet v Microsoft Entra ID, poštovní schránka v Exchange Online, pro některé funkce OneDrive a podporovaný kanál aktualizací Microsoft 365 Apps ([Requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements)).
 
-### Nový Copilot: co kryje licence a co Credits
-Microsoft 25. 9. 2026 představil „nový Copilot": **Home** (Chat + **Cowork** + Office přímo v aplikaci Copilot), **Code** a **Autopilot** ([Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)). Licenční logika:
+Copilot nemusí spravovat Global Administrator. Pro správu Copilota a AI funkcí existuje role **AI Administrator** — v praxi ji používejte, abyste nerozdávali zbytečně široká oprávnění.
 
-- **Zdarma (Basic)** = Copilot Chat (web-grounded; v Outlooku i omezeně org data).
-- **Licence (fixní cena za uživatele)** = work-grounded Chat, Copilot ve Word/Excel/PowerPoint/Outlook/Teams, výběr modelu, everyday Copilot in SharePoint.
-- **Copilot Credits (usage-based billing)** = Cowork (GA), Code (Frontier preview), Autopilot (Frontier), Advanced work v SharePointu/OneDrivu — u Cowork, Code a Advanced work **navíc k licenci**, ne místo ní ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)).
+### Nový Copilot: co kryje licence a co Copilot Credits
 
-> [!IMPORTANT] Least privilege
-> Copilot a AI experiences lze spravovat rolí **AI Administrator** bez Global Adminu ([Copilot Chat requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-chat-requirements)).
+Microsoft 25. 9. 2026 představil „nový Copilot" se třemi oblastmi: **Home** (Chat, **Cowork** a Office přímo v aplikaci Copilot), **Code** a **Autopilot** ([Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)). Licenčně se tím svět rozdělil na tři patra:
+
+1. **Zdarma (Basic)** — Copilot Chat nad webem; v Outlooku omezeně i nad daty organizace.
+2. **Licence (fixní cena za uživatele)** — chat nad daty tenantu, Copilot v aplikacích Office, výběr modelu a běžné funkce Copilot in SharePoint.
+3. **Copilot Credits (platba za spotřebu)** — Cowork, Code, Autopilot a *Advanced work* v SharePointu a OneDrivu. U Cowork, Code a Advanced work platí Credits **navíc k licenci, ne místo ní** ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)).
+
+Důležitý důsledek: licence už neznamená „všechno v ceně". Uživatel s licencí může narazit na funkci, kterou smí použít jen tehdy, když ho správce zařadí do rozpočtu na spotřebu.
 
 ## 2. Dva PAYG modely (nezaměňovat)
 
-| Model | Co platí | Jak se měří | Setup |
+„Pay-as-you-go" se v Microsoft 365 objevuje ve dvou zcela oddělených modelech. Mají jinou měnu, jiné nastavení i jiné služby:
+
+| Model | Co platí | Jak se měří | Kde se nastavuje |
 |---|---|---|---|
-| **Document processing for Microsoft 365** (ex-Syntex) | vytěžování dokumentů, OCR, překlad, autofill, eSignature | Azure metry (za stránku/transakci) | M365 admin center + Azure subscription |
-| **Copilot Credits** | Copilot Chat nad tenant daty, SharePoint agents, agenti (i bez licence); Cowork, Advanced work v SharePointu, Code (jen **navíc** k licenci) | Copilot Credits (jednotka spotřeby) | dvě správní plochy — viz níže |
+| **Document processing for Microsoft 365** (dříve Syntex) | vytěžování dokumentů, OCR, překlad, autofill, eSignature | Azure metry (za stránku / transakci) | M365 admin center + Azure subscription |
+| **Copilot Credits** | Copilot Chat nad daty tenantu a agenti (i bez licence); Cowork, Advanced work v SharePointu a Code (jen **navíc** k licenci) | Copilot Credits | dvě správní plochy — viz níže |
 
-**Document processing PAYG**: org-wide přístup pro kohokoli s M365 licencí, bez upfront nákupu, Azure billing; k nastavení je potřeba **SharePoint Administrator nebo Global Administrator** ([Licensing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-licensing), [Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing), [PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services)).
+### Document processing PAYG
 
-> [!WARNING] Ověřit k datu běhu
-> Bezplatná included měsíční kapacita pro document processing (malé objemy: např. 100 stran autofill, 5 eSignature požadavků za měsíc na tenant) platí podle [promo stránky](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/promo-syntex) **do prosince 2026**; jiné MS stránky uvádějí starší datum — MS je nekonzistentní. **Nikdy** nezahrnovala Archive ani Backup. V labech na ni nespoléhat.
+Document processing zapne správce pro celou organizaci: kdokoli s Microsoft 365 licencí pak může služby používat, bez nákupu dopředu, a spotřeba se účtuje do připojené Azure subscription. Nastavit to smí **SharePoint Administrator nebo Global Administrator** ([Licensing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-licensing), [Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing), [PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services)).
 
-**Copilot Credits**: od 1. 9. 2025 je společná měna agentů „Copilot Credits" (dříve messages). Uživatel s **M365 Copilot licencí** má agenty v Copilot Chatu/Teams/SharePointu pro tenant grounding **bez metrování**; **nelicencovaný** uživatel je může používat jen přes zapnutý PAYG a spotřeba se měří ([Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing), [Agents for Copilot Chat](https://learn.microsoft.com/en-us/copilot/agents), [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)). Orientačně **~12 kreditů** na složitý tenant-grounded dotaz (10 za grounding + 2 za generativní odpověď); při **~$0,01/kredit** to je ~$0,12 za interakci ([Billing rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management), [Credits report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits), [SharePoint Embedded meters](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/meters), [Capacity packs](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs)).
+Microsoft k tomu nabízí malou bezplatnou měsíční kapacitu (řádově 100 stran autofill a 5 požadavků eSignature na tenant). Podle [promo stránky](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/promo-syntex) platí do prosince 2026, jiné stránky Microsoftu uvádějí jiné datum. Archive ani Backup nikdy nezahrnovala. V plánování na ni nespoléhejte.
 
-**Dvě správní plochy Copilot Credits** (stav 2026-10):
+### Copilot Credits
 
-| | Pay-as-you-go (původní) | Usage-based billing (nová) |
+Copilot Credits jsou od 1. 9. 2025 společnou měnou agentů (dříve „messages"). Platí jednoduché pravidlo:
+
+- Uživatel **s Copilot licencí** používá agenty v Copilot Chatu, Teams a SharePointu nad daty tenantu **bez měření spotřeby**.
+- Uživatel **bez licence** je může používat jen tehdy, když organizace zapne PAYG — a každá konverzace se pak počítá v kreditech ([Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing), [Agents for Copilot Chat](https://learn.microsoft.com/en-us/copilot/agents)).
+
+Pro představu o řádu: složitý dotaz nad daty tenantu stojí orientačně **~12 kreditů** (10 za grounding + 2 za generovanou odpověď). Při ceně **~$0,01 za kredit** vychází jedna taková interakce na ~$0,12 ([Billing rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management), [Credits report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits), [Capacity packs](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs)). S těmito čísly počítáte v labu.
+
+### Dvě správní plochy Copilot Credits
+
+Copilot Credits se dnes spravují na dvou místech, která se chovají odlišně. Rozdíl je hlavně v tom, **zda rozpočet spotřebu skutečně zastaví**:
+
+| | Pay-as-you-go (původní) | Usage-based billing (nový) |
 |---|---|---|
-| Služby | Copilot Chat, SharePoint agents (`.agent`), Copilot Retrieval API | Cowork, Advanced work in SharePoint / OneDrive, Code, Work IQ API, Copilot Managed Runtime, Teams Phone Agent; volitelně Copilot Studio |
-| Kde | Billing policy → připojit ke službě | **Copilot → Cost management** → spending policy |
-| Rozpočet | jen **e-mailová upozornění** | **tvrdý strop** — po vyčerpání ztratí uživatel přístup do 1. dne dalšího měsíce |
-| Přístup | připojení policy = přístup | spending policy = **přístup** (kdo není v policy, službu nepoužije) |
-| Pozor | — | min. 2 000 kreditů/uživatel/měs.; **Auto-apply new services** default ON |
+| Služby | Copilot Chat, SharePoint agents (`.agent`), Copilot Retrieval API | Cowork, Advanced work v SharePointu / OneDrivu, Code, Work IQ API, Copilot Managed Runtime, Teams Phone Agent; volitelně Copilot Studio |
+| Kde | billing policy připojená ke službě | **Copilot → Cost management** → spending policy |
+| Rozpočet | jen **e-mailová upozornění** — spotřebu nezastaví | **tvrdý strop** — po vyčerpání uživatel ztratí přístup do 1. dne dalšího měsíce |
+| Přístup | připojení policy = přístup | spending policy = **přístup** (kdo v ní není, službu nepoužije) |
+| Na co si dát pozor | — | volba **Auto-apply new services** je ve výchozím stavu zapnutá: nové služby se do policy přidají samy |
 
-Zdroje: [PAYG overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview), [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits), [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+Zdroje: [PAYG overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview), [PAYG setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup), [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits), [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
 
-> [!WARNING] Rozpočet ≠ strop — ale jen u původního PAYG
-> U PAYG pro Copilot Chat / SharePoint agenty budget jen **posílá e-mailová upozornění, spotřebu nezastaví** ([PAYG setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup)). Skutečný strop dává **limited budget** ve spending policy v Cost management — ten ale pokrývá jen služby usage-based billingu. Azure budget sám nic nezastaví. Přehled všech PAYG služeb: [Pay-as-you-go services](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services).
+Prakticky: u původního PAYG pro Copilot Chat a SharePoint agenty vám rozpočet jen pošle e-mail a služba běží dál. Skutečný strop dává až **limited budget** ve spending policy v Cost management — ten ale kryje jen služby usage-based billingu. Ani rozpočet v Azure sám nic nezastaví. Přehled všech PAYG služeb najdete na stránce [Pay-as-you-go services](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services).
 
 ## 3. Governance produkty a jejich licenční dotyk
 
-Bývalý deštník „SharePoint Premium" je rozdělen — tohle jsou **samostatné produkty** (viz `../../GLOSSARY.md`):
+Dřívější zastřešující značka „SharePoint Premium" už neexistuje. Rozpadla se na **samostatné produkty**, každý s vlastním licenčním modelem (viz [`GLOSSARY.md`](../../GLOSSARY.md)). Všechny je potkáte později v kurzu:
 
-- **SharePoint Advanced Management (SAM)** — add-on SAM Plan 1 (cena: ověřit, MS stránka ji neuvádí); NEBO se SAM funkce zpřístupní SharePoint adminům, když má aspoň jeden uživatel Copilot licenci; E7 SAM obsahuje (přes zahrnutý Copilot). Některé funkce (restricted site creation by apps) vyžadují SAM Plan 1 i tak. Role: SharePoint Admin / SAM Admin; správa přes SPO Management Shell ([Overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management), [Prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites), [Features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing)).
-- **eSignature** — PAYG služba pod document processing; poskytovatelé Adobe Acrobat Sign a Docusign; simple e-signatures dle eIDAS (EU 910/2014); celosvětově kromě Indonésie; PDF i Word; k nastavení SharePoint/Global Admin ([Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-overview), [Setup](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-setup)).
-- **Microsoft 365 Backup** — samostatný produkt; SharePoint + OneDrive + Exchange; PAYG dle objemu dat; data zůstávají v Microsoft trust boundary, zálohy immutable/append-only ([Overview](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview), [Docs](https://learn.microsoft.com/en-us/microsoft-365/backup/)).
-- **Microsoft 365 Archive** — samostatný produkt; cold storage tier v SharePointu; platíš při překročení kvóty; archivovaný obsah Copilot nepoužívá (lepší relevance); role SharePoint/Global Admin ([Overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview), [Manage](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage)).
+- **SharePoint Advanced Management (SAM)** — správa webů, sdílení a přístupu ve velkém (D3). Buď se kupuje jako add-on **SAM Plan 1**, nebo se funkce SAM zpřístupní SharePoint adminům automaticky, jakmile má aspoň jeden uživatel v tenantu Copilot licenci; E7 SAM obsahuje přes zahrnutý Copilot. Několik funkcí (např. omezení zakládání webů aplikacemi) vyžaduje SAM Plan 1 i tak. Spravuje SharePoint Admin nebo SAM Admin, mimo jiné přes SPO Management Shell ([Overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management), [Prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites), [Features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing)).
+- **eSignature** — elektronický podpis dokumentů přímo v SharePointu (D3). Účtuje se jako PAYG služba v rámci document processing; jako poskytovatele lze zapojit i Adobe Acrobat Sign a Docusign. Jde o *simple e-signatures* podle eIDAS (EU 910/2014), pro PDF i Word, dostupné celosvětově kromě Indonésie ([Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-overview), [Setup](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-setup)).
+- **Microsoft 365 Backup** — zálohování SharePointu, OneDrivu a Exchange (D3). Platí se za objem chráněných dat. Zálohy zůstávají uvnitř hranice důvěry Microsoftu a jsou neměnné — nejde je přepsat ani smazat, jen doplňovat ([Overview](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview)).
+- **Microsoft 365 Archive** — levnější „studené" úložiště pro neaktivní weby SharePointu (D3). Platíte jen za archivovaná data nad rámec kvóty tenantu. Archivovaný obsah není dostupný běžnému vyhledávání a práci uživatelů, což zlepšuje relevanci aktivního obsahu ([Overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview), [Manage](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage)).
 
 ## 4. Licence vs. permissions
 
-- **Licence** = přístup k *funkci*. **Copilot in SharePoint** má od 30. 9. 2026 GA rollout (v tenantu se může objevit postupně) v hybridním modelu: everyday funkce (dotazy, tvorba stránek/souborů, **tvorba a správa Skills**, Autofill metadata) jsou v Copilot licenci; **Advanced work** (práce ve velkém, celé weby, skills v plánovaných AI automatizacích, real-time Autofill, generování obrázků, analytika) = licence + Copilot Credits přes spending policy. MS výslovně: „Users must have an active Microsoft 365 Copilot license" ([get-started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
-  - **Copilot Credits PAYG Copilot licenci u Copilot in SharePoint ani Skills nenahradí** — bez licence nejedou (ověřeno v tenantu 2026-11, po GA; v preview 2026-07-17 to ještě fungovalo). PAYG bez licence = jen Copilot Chat a agenti.
-  - **Tvorba a nasazení agentů přes Agents Toolkit** bez Copilot licence je **dokumentovaná** ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)); grounding na org data = licence nebo PAYG.
-  - Copilot Chat a použití SharePoint agents = licence NEBO Copilot Credits PAYG. **Tvorba SharePoint agenta** vyžaduje Copilot licenci (empiricky; od pol. 11/2026 se tvorba přesouvá do Agent Builderu — [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
-- **SharePoint permissions** = *kdo funkci použije* (Edit = tvorba agenta/Skillu, View = spuštění). Agenti v SharePointu jsou zatím `.agent` soubory; oprávnění na souboru řídí přístup ([Manage access to agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint)).
-- **Spending policy** = třetí brána u služeb usage-based billingu (Cowork, Advanced work): licence + oprávnění nestačí, uživatel musí být v policy.
+Nejčastější chyba při plánování AI funkcí je zaměnit dvě různé otázky:
 
-## Diagram — licenční decision flow
+- **Licence** odpovídá na otázku *„má uživatel přístup k funkci?"*
+- **Oprávnění (permissions)** odpovídají na otázku *„smí tuto funkci použít na tomto obsahu?"*
+
+U služeb s platbou za spotřebu přibývá třetí brána — **spending policy**. Uživatel projde jen tehdy, když splní všechny brány, které daná funkce vyžaduje.
+
+### Brána 1 — licence
+
+**Copilot in SharePoint** je od 30. 9. 2026 v GA (v tenantech se objevuje postupně) a má hybridní model:
+
+- **Běžné funkce** — dotazy nad obsahem, tvorba stránek a souborů, tvorba a správa **Skills**, Autofill metadat — jsou v ceně Copilot licence.
+- **Advanced work** — práce ve velkém nad celými weby, skills v plánovaných AI automatizacích, Autofill v reálném čase, generování obrázků, analytika — vyžaduje licenci **a navíc** Copilot Credits přes spending policy.
+
+Microsoft výslovně uvádí: „Users must have an active Microsoft 365 Copilot license" ([Copilot in SharePoint get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). Copilot Credits licenci **nenahradí** — bez licence Copilot in SharePoint ani Skills nefungují. To jsme ověřili v kurzovním tenantu v 11/2026 po GA; v preview (7/2026) to ještě fungovalo i bez licence. PAYG bez licence tedy pokrývá jen **Copilot Chat a agenty**.
+
+U agentů je obraz pestřejší:
+
+- **Používat** Copilot Chat a SharePoint agenty lze s licencí **nebo** přes Copilot Credits PAYG.
+- **Tvorba SharePoint agenta** vyžaduje Copilot licenci (ověřeno empiricky). Od poloviny 11/2026 se tvorba přesouvá do Agent Builderu ([Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
+- **Postavit a nasadit agenta přes Agents Toolkit** jde i bez Copilot licence — to je dokumentované. Aby agent odpovídal z dat organizace, potřebuje uživatel licenci nebo PAYG ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)).
+
+### Brána 2 — oprávnění v SharePointu
+
+Licence říká, že uživatel funkci *má*; oprávnění říkají, *na čem* ji smí použít. Kdo má na webu **Edit**, může vytvořit agenta nebo Skill; kdo má **View**, může je jen spustit. SharePoint agenti jsou dnes soubory `.agent` a přístup k nim řídí oprávnění na souboru ([Manage access to agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint)). A platí to i obráceně: Copilot nikdy neukáže obsah, ke kterému uživatel nemá přístup — licence oprávnění nerozšiřuje.
+
+### Brána 3 — spending policy
+
+U služeb usage-based billingu (Cowork, Code, Advanced work) nestačí licence ani oprávnění. Uživatel musí být zařazený ve spending policy v Cost management. Bez ní službu nepoužije, i když má licenci.
+
+### Jak bránami projít — rozhodovací diagram
 
 ```mermaid
 flowchart TD
-  Start[Co uživatel potřebuje?] --> F1[Copilot in SharePoint / Skills - everyday]
-  Start --> F2[Copilot Chat / použití SharePoint agents]
+  Start[Co uživatel potřebuje?] --> F1[Copilot in SharePoint / Skills - běžné funkce]
+  Start --> F2[Copilot Chat / použití SharePoint agentů]
   Start --> F3[Cowork / Advanced work v SharePointu / Code]
   F1 --> Q1{Copilot licence?}
   Q1 -->|Ano| OK1[Přístup, v ceně licence]
-  Q1 -->|Jen PAYG| OK1b[Podle docs ne - ověřujeme v tenantu po GA]
+  Q1 -->|Jen PAYG| No1[Bez přístupu - licence nutná]
   F2 --> Q2{Licence NEBO Copilot Credits PAYG?}
-  Q2 -->|Licence| OK2[Přístup, nemetrováno]
+  Q2 -->|Licence| OK2[Přístup, bez měření]
   Q2 -->|PAYG| Metered[Přístup, spotřeba v Copilot Credits]
   Q2 -->|Nic| No2[Bez přístupu]
   F3 --> Q3{Licence A spending policy?}
@@ -109,49 +152,71 @@ flowchart TD
   Q3 -->|Chybí jedno| No3[Bez přístupu]
 ```
 
+Ve všech větvích pak ještě platí brána 2: uživatel pracuje jen s obsahem, ke kterému má oprávnění.
+
 ## 5. Naše prostředí (kurz)
-Studenti mají **Business Basic + Microsoft 365 Copilot licenci** (od běhu 2026-11) + Copilot Credits (PAYG pro agenty, spending policy pro Cowork / Code / Advanced work). Důvod: po GA PAYG bez licence pokrývá jen **Copilot Chat a agenty** — Copilot in SharePoint, Skills, Cowork ani Code bez licence nejedou (ověřeno v tenantu 2026-11). S licencí jde hands-on všechno, včetně **tvorby SharePoint agenta**. Licenční lekce zůstává: srovnání „s licencí vs. jen PAYG" ukazujeme na matici, ne na studentských účtech. Původní PAYG čerpá kredity **bez tvrdého stropu** (budget alert + páteční deaktivace účtů); spending policy strop má (viz `../../environment.md`).
 
-## 6. Doplňky, které souvisí s kurzem
+Studenti mají **Business Basic + Microsoft 365 Copilot licenci** (od běhu 2026-11) a k tomu Copilot Credits: PAYG pro agenty a spending policy pro Cowork, Code a Advanced work. Důvod je přímo z předchozí kapitoly — po GA pokrývá PAYG bez licence jen Copilot Chat a agenty, takže bez licence by nešly Copilot in SharePoint, Skills, Cowork ani Code. S licencí si můžete vše vyzkoušet sami, včetně tvorby SharePoint agenta.
 
-### Agent 365 — řídicí vrstva agentů (ne nástroj na stavbu)
-Governance/security control plane pro AI agenty napříč tenantem: registry, agent identity, access control, napojení na Entra/Defender/Purview/Intune. GA 1. 5. 2026, **per-user**, **$15/uživatel/měs** samostatně nebo součást **E7 ($99)**; agenti sami se nelicencují, licencuje se uživatel, který s nimi pracuje/spravuje/sponzoruje. Microsoft to staví jako: *Copilot = co AI umí; Agent 365 = co AI smí* ([Overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview), [Licensing FAQ](https://www.microsoft.com/licensing/faqs/122), [GA blog](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)). Hloubkově → [`../../day-5/copilot-admin/`](../../day-5/copilot-admin/).
+Rozdíl „s licencí vs. jen PAYG" proto neuvidíte na vlastním účtu — projdete ho v labu na licenční matici. Všimněte si také, že kurzovní tenant používá obě plochy Copilot Credits: původní PAYG pro agenty (rozpočet jen upozorňuje) a spending policy pro Cowork a Code (rozpočet zastaví). Detaily prostředí: [`environment.md`](../../environment.md).
 
-### SharePoint Storage PAYG (třetí typ PAYG)
-**Microsoft 365 SharePoint Storage** = PAYG úložiště nad rámec kvóty tenantu (public preview od června 2026, komerční tenanty, ne EDU/GCC). Kvóta 1 TB + 10 GB / SharePoint licence; při překročení se blokuje klasické zakládání webů a přes PowerShell. Setup: SharePoint/Global Admin ([Add storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space), [Plan storage](https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning)). Souvisí s [`../../day-3/archive/`](../../day-3/archive/) (levnější tier vs. dokup kvóty).
+## 6. Související licence a služby
 
-### Azure Subscription — společný jmenovatel PAYG
-Všechny PAYG modely (document processing, Copilot Credits, eSignature, Backup, Archive, storage) se účtují přes **připojenou Azure subscription + resource group**; k nastavení SharePoint/Global Admin ([Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing)). Pro kurz: jedna Azure subscription tenantu je prerekvizita pro všechny PAYG demo scénáře.
+### Agent 365 — řídicí vrstva agentů
 
-### Vývojářské nástroje (patří do [`day-3/procode-vs-lowcode`](../../day-4/procode-vs-lowcode/))
-Pro-code cesta ke stavbě agentů: **VS Code + Microsoft 365 Agents Toolkit** (nástupce Teams Toolkitu; i pro Visual Studio, GitHub Copilot a CLI) scaffolduje deklarativní agenty, edituje manifest, provisionuje, umí akce přes MCP; **GitHub Copilot** jako AI asistent při psaní kódu ([Agents Toolkit intro](https://devblogs.microsoft.com/microsoft365dev/introducing-the-microsoft-365-agents-toolkit/), [Build declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents), [MCP agents](https://devblogs.microsoft.com/microsoft365dev/build-declarative-agents-for-microsoft-365-copilot-with-mcp/)). Licenční dotyk: Agents Toolkit je zdarma a agenta jde postavit bez Copilot licence ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)); GitHub Copilot má vlastní licenci. Detail → [`../../day-4/procode-vs-lowcode/`](../../day-4/procode-vs-lowcode/).
+Agent 365 není nástroj na stavbu agentů, ale **vrstva pro jejich správu a zabezpečení** napříč tenantem: registr agentů, identita agenta, řízení přístupu a napojení na Entra, Defender, Purview a Intune. Microsoft to shrnuje heslem *Copilot = co AI umí; Agent 365 = co AI smí*.
 
+Je v GA od 1. 5. 2026 a licencuje se **na uživatele**, ne na agenta — licenci potřebuje ten, kdo s agenty pracuje, spravuje je nebo je sponzoruje. Kupuje se samostatně za **$15/uživatel/měs.**, nebo je součástí **E7 ($99)** ([Overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview), [Licensing FAQ](https://www.microsoft.com/licensing/faqs/122), [GA blog](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)). Podrobně v D5 [`copilot-admin`](../../day-5/copilot-admin/).
 
-- **„Skills jen pro E licence"** — mýtus. Gate je *placená* Copilot licence (bez ohledu na tier, i Business). Copilot Credits PAYG licenci nenahradí — bez licence Skills po GA nejedou (ověřeno 2026-11).
-- **Dva PAYG** — Document processing (Azure metry) ≠ Copilot Credits. A Copilot Credits mají dvě plochy: původní PAYG vs. usage-based billing (Cost management).
-- **Budget ≠ strop** u původního Copilot PAYG; v Cost management strop **existuje** (limited budget).
-- **„Credits nahradí licenci"** — u Cowork, Advanced work a Code ne: tam jsou Credits **navíc** k licenci.
-- **„SharePoint Premium"** jako jeden produkt — neexistuje, je rozdělený.
+### SharePoint Storage PAYG — třetí typ PAYG
+
+Když tenant vyčerpá úložiště, lze dokoupit **Microsoft 365 SharePoint Storage** jako PAYG (public preview od června 2026, komerční tenanty, ne EDU/GCC). Základní kvóta tenantu je 1 TB + 10 GB za každou SharePoint licenci. Po jejím překročení se blokuje zakládání webů klasickou cestou i přes PowerShell. Nastavuje SharePoint nebo Global Admin ([Add storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space), [Plan storage](https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning)). Než úložiště dokoupíte, zvažte levnější cestu — přesunout neaktivní weby do [Microsoft 365 Archive](../../day-3/archive/).
+
+### Azure subscription — společný jmenovatel PAYG
+
+Všechny PAYG modely — document processing, Copilot Credits, eSignature, Backup, Archive i úložiště — se účtují přes **připojenou Azure subscription a resource group**. Připojení nastavuje SharePoint nebo Global Admin ([Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing)). Pro organizaci to znamená: kdo spravuje Azure subscription, ten fakticky vidí a řídí náklady na AI v Microsoft 365.
+
+### Vývojářské nástroje
+
+Pro-code cesta ke stavbě agentů vede přes **VS Code a Microsoft 365 Agents Toolkit** (nástupce Teams Toolkitu, k dispozici i pro Visual Studio, GitHub Copilot a CLI). Toolkit založí projekt deklarativního agenta, pomáhá s manifestem, nasazuje agenta do tenantu a umí akce přes MCP ([Agents Toolkit intro](https://devblogs.microsoft.com/microsoft365dev/introducing-the-microsoft-365-agents-toolkit/), [Build declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents), [MCP agents](https://devblogs.microsoft.com/microsoft365dev/build-declarative-agents-for-microsoft-365-copilot-with-mcp/)). Toolkit je zdarma a agenta jde postavit bez Copilot licence; **GitHub Copilot** jako asistent při psaní kódu má vlastní licenci. Prakticky v D4 [`agents-toolkit`](../../day-4/agents-toolkit/) a [`procode-vs-lowcode`](../../day-4/procode-vs-lowcode/).
+
+## Klíčové rozlišení
+
+- **Licence ≠ oprávnění ≠ spending policy.** Tři různé brány; funkce může vyžadovat jednu, dvě nebo všechny tři.
+- **Dva PAYG modely.** Document processing (Azure metry) ≠ Copilot Credits. A Copilot Credits mají ještě dvě správní plochy: původní PAYG vs. usage-based billing.
+- **Rozpočet ≠ strop.** U původního Copilot PAYG rozpočet jen upozorňuje; strop dává až limited budget ve spending policy.
+- **„Credits nahradí licenci"** — u Cowork, Advanced work a Code ne; tam jsou Credits **navíc** k licenci.
+- **„Skills jen pro E licence"** — mýtus. Rozhoduje *placená* Copilot licence bez ohledu na plán, tedy i Business.
+- **„SharePoint Premium"** jako jeden produkt neexistuje — je rozdělený na samostatné produkty.
+
+## Shrnutí
+
+- Copilot Chat je zdarma a odpovídá z webu; práci s daty tenantu odemyká Copilot licence.
+- Nové služby (Cowork, Code, Advanced work) se platí Copilot Credits **navíc** k licenci a přístup k nim řídí spending policy s tvrdým stropem.
+- Bez licence funguje přes PAYG jen Copilot Chat a agenti — Copilot in SharePoint ani Skills ne.
+- Document processing má vlastní PAYG přes Azure metry; Backup, Archive a úložiště jsou další samostatné metry.
+- U každé funkce se ptejte: licence? oprávnění? spending policy?
+
+## Lab
+
+[`lab-license-matrix.md`](lab-license-matrix.md) — licenční matice funkcí kurzu a odhad nákladů pro modelovou organizaci.
 
 ## Zdroje (Microsoft)
-Copilot licence: [License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing) · [License options (plány)](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-license-options) · [Compare E3/E5/E7](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7) · [Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview) · [Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) · [Partner Center — říjen 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-october) · [Minimum requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements) · [Requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements) · [Setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup) · [Chat requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-chat-requirements) · [Service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot) · [Extensibility cost](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations)
-Document processing PAYG: [Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-overview) · [Licensing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-licensing) · [PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services) · [Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing)
-Copilot Credits: [PAYG overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview) · [PAYG setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup) · [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) · [Copilot in SharePoint get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started) · [Promo document processing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/promo-syntex) · [Billing rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management) · [Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing) · [Credits report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits)
-SAM: [Overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management) · [Prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites) · [Features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing) · [Agents access](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint)
-eSignature: [Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-overview) · [Setup](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-setup)
-Backup: [Overview](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview)
-Archive: [Overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview) · [Manage](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage)
-Agent 365: [Overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview) · [Licensing FAQ](https://www.microsoft.com/licensing/faqs/122) · [GA blog](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)
-Úložiště PAYG: [Add storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space) · [Plan storage](https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning) · [Capacity packs](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs)
-Vývojářské nástroje: [Agents Toolkit intro](https://devblogs.microsoft.com/microsoft365dev/introducing-the-microsoft-365-agents-toolkit/) · [Build declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents) · [MCP agents](https://devblogs.microsoft.com/microsoft365dev/build-declarative-agents-for-microsoft-365-copilot-with-mcp/)
+
+- **Copilot licence:** [License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing) · [License options (plány)](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-license-options) · [Compare E3/E5/E7](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7) · [Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview) · [Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) · [Partner Center — říjen 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-october) · [Minimum requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements) · [Requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements) · [Setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup) · [Chat requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-chat-requirements) · [Service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot) · [Extensibility cost](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations)
+- **Document processing:** [Overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-overview) · [Licensing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-licensing) · [PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services) · [Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing) · [Promo](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/promo-syntex)
+- **Copilot Credits:** [PAYG overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview) · [PAYG setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup) · [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) · [Billing rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management) · [Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing) · [Credits report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits) · [Capacity packs](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs) · [Pay-as-you-go services](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services)
+- **Copilot in SharePoint a agenti:** [Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started) · [Agents access](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint) · [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents) · [Agent prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)
+- **SAM:** [Overview](https://learn.microsoft.com/en-us/sharepoint/advanced-management) · [Prerequisites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites) · [Features in Copilot licenses](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing)
+- **eSignature, Backup, Archive:** [eSignature overview](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-overview) · [eSignature setup](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/esignature-setup) · [Backup overview](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview) · [Archive overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview) · [Archive manage](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage)
+- **Agent 365:** [Overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview) · [Licensing FAQ](https://www.microsoft.com/licensing/faqs/122) · [GA blog](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)
+- **Úložiště:** [Add storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space) · [Plan storage](https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning)
+- **Vývojářské nástroje:** [Agents Toolkit intro](https://devblogs.microsoft.com/microsoft365dev/introducing-the-microsoft-365-agents-toolkit/) · [Build declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents)
 
 ## Stav produktu / delta
-> [!WARNING] Ověřit k datu běhu
-> **Stav k 2026-10-31** (po Ignite 17.–20. 11. 2026 projet znovu)
+
+> [!WARNING] Ověřit k datu běhu — stav k 2026-11.
 >
-> - Ceny (Copilot, SAM Plan 1, PAYG metry, $/kredit) — ověřit v aktuálních Microsoft cenících a v Copilot Credits Guide.
-> - **Nový Copilot** (25. 9. 2026): Cowork GA, Code a Autopilot ve Frontier. Licence vs. usage-based billing — rozsah se bude měnit.
-> - **Copilot in SharePoint GA** od 30. 9. 2026, hybridní model; PowerShell `KnowledgeAgentScope` vyřazen k 1. 11. 2026 → Site AI settings + RCD.
-> - **Licenční delta (nejdůležitější):** v preview Copilot in SharePoint / Skills fungovaly empiricky i na PAYG bez licence (2026-07-17); **po GA license-only — ověřeno v tenantu 2026-11** (PAYG bez licence = jen Copilot Chat + agenti). Proto od běhu 2026-11 mají studenti Copilot licenci. Agents Toolkit bez licence je dokumentovaný. Tvorba SharePoint agenta vyžaduje licenci; od pol. 11/2026 jde přes Agent Builder.
-> - Copilot Credits mají dvě správní plochy (PAYG vs. Cost management); služby se mezi nimi přesouvají.
-> - Od 1. 12. 2026 Copilot SKU bez base subscription; Copilot Business přes CSP s UBB default ON.
+> - **Ceny** (Copilot, Agent 365, SAM Plan 1, PAYG metry, $/kredit) ověřte v aktuálních cenících Microsoftu a v Copilot Credits Guide.
+> - **Od 1. 12. 2026** jdou Copilot a Copilot Business koupit bez základního předplatného (nová SKU, stejná cena); nové Copilot Business přes CSP mají usage-based billing ve výchozím stavu zapnutý s limitem 4 000 kreditů/uživatel/měs. ([Partner Center — říjen 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-october)).
+> - **Služby se přesouvají** mezi původním PAYG a usage-based billingem; Code a Autopilot jsou ve Frontier preview. Po Ignite (17.–20. 11. 2026) projít znovu.
