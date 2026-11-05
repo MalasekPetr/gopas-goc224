@@ -18,9 +18,16 @@ Lightweight tvorba deklarativního agenta **přímo v M365 Copilot appce** (web 
 
 ## Kdo / licence / distribuce
 
-- **Koncový uživatel.** Tvorba: M365 Copilot licence **nebo** tenant s PAYG pro Copilot Studio (u nás go/no-go — ověřit).
+- **Koncový uživatel.** Tvorba: M365 Copilot licence **nebo** tenant s PAYG pro Copilot Studio. U nás mají studenti od 2026-11 Copilot licenci.
 - Distribuce: sdílení + **org katalog** (Requests → admin), **ne marketplace**. Pozor: sdílením agenta s embedded soubory sdílíš i jejich obsah.
 - Od pol. 11/2026 sem vede i „Create agent" na SharePoint webu (nástupce `.agent`, viz [`../sharepoint-agents/`](../sharepoint-agents/README.md)).
+
+## Segment: SharePoint agents (10 min)
+
+- „Create agent" na SharePoint webu **od pol. 11/2026 otevře Agent Builder**, `.agent` soubor už nevznikne; stávající `.agent` soubory **přestanou odpovídat po 03/2027** ([Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
+- Čtyři cesty upgradu: použít přímo **Copilot in SharePoint**, převést agenta na **skill** (D5), upgradovat přes **Agent Builder**, publikovat z **Copilot Studia** (D5). Upgradovaní agenti se sdílejí na úrovni agenta, ne přes SharePoint permissions.
+- Odnést si: **co dělat s existujícími `.agent` u zákazníka** — inventura, výběr cesty, termín 03/2027.
+- Detail a empirický limit „1 zdroj" u legacy `.agent`: [`../sharepoint-agents/`](../sharepoint-agents/README.md) (referenční materiál, už ne samostatný blok).
 
 ## Demo a lab
 
@@ -35,4 +42,4 @@ Lightweight tvorba deklarativního agenta **přímo v M365 Copilot appce** (web 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> Dostupnost Agent Builderu v PAYG tenantu (bez Copilot licencí) ověřit živě před během — určuje, jestli studenti staví sami, nebo je to instruktorské demo. UI labely se mění. Skills v Builderu = preview. Od pol. 11/2026 přebírá tvorbu SharePoint agentů — po Ignite (17.–20. 11. 2026) projet.
+> Studenti mají od běhu 2026-11 Copilot licenci — před během ověřit, že je propsaná (jinak instruktorské demo). UI labely se mění. Skills v Builderu = preview. Od pol. 11/2026 přebírá tvorbu SharePoint agentů — po Ignite (17.–20. 11. 2026) projet.

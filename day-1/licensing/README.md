@@ -48,7 +48,7 @@ Microsoft 25. 9. 2026 představil „nový Copilot": **Home** (Chat + **Cowork**
 | Model | Co platí | Jak se měří | Setup |
 |---|---|---|---|
 | **Document processing for Microsoft 365** (ex-Syntex) | vytěžování dokumentů, OCR, překlad, autofill, eSignature | Azure metry (za stránku/transakci) | M365 admin center + Azure subscription |
-| **Copilot Credits** | Copilot Chat nad tenant daty, SharePoint agents, Cowork, Advanced work v SharePointu, Code, agenti | Copilot Credits (jednotka spotřeby) | dvě správní plochy — viz níže |
+| **Copilot Credits** | Copilot Chat nad tenant daty, SharePoint agents, agenti (i bez licence); Cowork, Advanced work v SharePointu, Code (jen **navíc** k licenci) | Copilot Credits (jednotka spotřeby) | dvě správní plochy — viz níže |
 
 **Document processing PAYG**: org-wide přístup pro kohokoli s M365 licencí, bez upfront nákupu, Azure billing; k nastavení je potřeba **SharePoint Administrator nebo Global Administrator** ([Licensing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-licensing), [Set up billing](https://learn.microsoft.com/en-us/microsoft-365/contentunderstanding/syntex-azure-billing), [PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services)).
 
@@ -84,7 +84,7 @@ Bývalý deštník „SharePoint Premium" je rozdělen — tohle jsou **samostat
 ## 4. Licence vs. permissions
 
 - **Licence** = přístup k *funkci*. **Copilot in SharePoint** má od 30. 9. 2026 GA rollout (v tenantu se může objevit postupně) v hybridním modelu: everyday funkce (dotazy, tvorba stránek/souborů, **tvorba a správa Skills**, Autofill metadata) jsou v Copilot licenci; **Advanced work** (práce ve velkém, celé weby, skills v plánovaných AI automatizacích, real-time Autofill, generování obrázků, analytika) = licence + Copilot Credits přes spending policy. MS výslovně: „Users must have an active Microsoft 365 Copilot license" ([get-started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
-  - Na kurzu jsme **2026-07-17 (v preview)** ověřili, že Copilot in SharePoint i Skills fungovaly i na PAYG bez licence. **Po GA platí docs, dokud to znovu neověříme v tenantu** — viz instructor notes.
+  - **Copilot Credits PAYG Copilot licenci u Copilot in SharePoint ani Skills nenahradí** — bez licence nejedou (ověřeno v tenantu 2026-11, po GA; v preview 2026-07-17 to ještě fungovalo). PAYG bez licence = jen Copilot Chat a agenti.
   - **Tvorba a nasazení agentů přes Agents Toolkit** bez Copilot licence je **dokumentovaná** ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)); grounding na org data = licence nebo PAYG.
   - Copilot Chat a použití SharePoint agents = licence NEBO Copilot Credits PAYG. **Tvorba SharePoint agenta** vyžaduje Copilot licenci (empiricky; od pol. 11/2026 se tvorba přesouvá do Agent Builderu — [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
 - **SharePoint permissions** = *kdo funkci použije* (Edit = tvorba agenta/Skillu, View = spuštění). Agenti v SharePointu jsou zatím `.agent` soubory; oprávnění na souboru řídí přístup ([Manage access to agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint)).
@@ -110,7 +110,7 @@ flowchart TD
 ```
 
 ## 5. Naše prostředí (kurz)
-Studenti mají **Business Basic + Copilot PAYG** → cesta „nelicencovaný + PAYG". Funguje **Copilot Chat, použití SharePoint agents** a **tvorba/nasazení agentů přes Agents Toolkit** (dokumentováno). **Copilot in SharePoint / Skills** fungovaly v preview empiricky i na PAYG (ověřeno 2026-07-17); od GA je MS dokumentuje jako license-only → **stav pro tento běh potvrdí instruktor živě** (pokud nefungují, Skills a Copilot in SharePoint jedou jako instruktorské demo). Cowork, Code a Advanced work studenti nemají (vyžadují licenci). Každá interakce přes původní PAYG čerpá kredity **bez tvrdého stropu** (proto budget alert + páteční deaktivace účtů, viz `../../environment.md`). **Tvorbu SharePoint agenta** studenti bez Copilot licence **nezvládnou** (jen instruktor); použití agenta jde přes PAYG.
+Studenti mají **Business Basic + Microsoft 365 Copilot licenci** (od běhu 2026-11) + Copilot Credits (PAYG pro agenty, spending policy pro Cowork / Code / Advanced work). Důvod: po GA PAYG bez licence pokrývá jen **Copilot Chat a agenty** — Copilot in SharePoint, Skills, Cowork ani Code bez licence nejedou (ověřeno v tenantu 2026-11). S licencí jde hands-on všechno, včetně **tvorby SharePoint agenta**. Licenční lekce zůstává: srovnání „s licencí vs. jen PAYG" ukazujeme na matici, ne na studentských účtech. Původní PAYG čerpá kredity **bez tvrdého stropu** (budget alert + páteční deaktivace účtů); spending policy strop má (viz `../../environment.md`).
 
 ## 6. Doplňky, které souvisí s kurzem
 
@@ -127,7 +127,7 @@ Všechny PAYG modely (document processing, Copilot Credits, eSignature, Backup, 
 Pro-code cesta ke stavbě agentů: **VS Code + Microsoft 365 Agents Toolkit** (nástupce Teams Toolkitu; i pro Visual Studio, GitHub Copilot a CLI) scaffolduje deklarativní agenty, edituje manifest, provisionuje, umí akce přes MCP; **GitHub Copilot** jako AI asistent při psaní kódu ([Agents Toolkit intro](https://devblogs.microsoft.com/microsoft365dev/introducing-the-microsoft-365-agents-toolkit/), [Build declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents), [MCP agents](https://devblogs.microsoft.com/microsoft365dev/build-declarative-agents-for-microsoft-365-copilot-with-mcp/)). Licenční dotyk: Agents Toolkit je zdarma a agenta jde postavit bez Copilot licence ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)); GitHub Copilot má vlastní licenci. Detail → [`../../day-3/procode-vs-lowcode/`](../../day-3/procode-vs-lowcode/).
 
 
-- **„Skills jen pro E licence"** — mýtus. Gate je *placená* Copilot licence (bez ohledu na tier, i Business). Na PAYG bez licence Skills fungovaly v preview (2026-07-17); po GA je MS dokumentuje jako license-only — ověřujeme.
+- **„Skills jen pro E licence"** — mýtus. Gate je *placená* Copilot licence (bez ohledu na tier, i Business). Copilot Credits PAYG licenci nenahradí — bez licence Skills po GA nejedou (ověřeno 2026-11).
 - **Dva PAYG** — Document processing (Azure metry) ≠ Copilot Credits. A Copilot Credits mají dvě plochy: původní PAYG vs. usage-based billing (Cost management).
 - **Budget ≠ strop** u původního Copilot PAYG; v Cost management strop **existuje** (limited budget).
 - **„Credits nahradí licenci"** — u Cowork, Advanced work a Code ne: tam jsou Credits **navíc** k licenci.
@@ -152,6 +152,6 @@ Vývojářské nástroje: [Agents Toolkit intro](https://devblogs.microsoft.com/
 > - Ceny (Copilot, SAM Plan 1, PAYG metry, $/kredit) — ověřit v aktuálních Microsoft cenících a v Copilot Credits Guide.
 > - **Nový Copilot** (25. 9. 2026): Cowork GA, Code a Autopilot ve Frontier. Licence vs. usage-based billing — rozsah se bude měnit.
 > - **Copilot in SharePoint GA** od 30. 9. 2026, hybridní model; PowerShell `KnowledgeAgentScope` vyřazen k 1. 11. 2026 → Site AI settings + RCD.
-> - **Licenční delta (nejdůležitější):** v preview Copilot in SharePoint / Skills fungovaly empiricky i na PAYG bez licence (2026-07-17); po GA MS výslovně license-only → **ověřit v tenantu před každým během**. Agents Toolkit bez licence je dokumentovaný. Tvorba SharePoint agenta vyžaduje licenci; od pol. 11/2026 jde přes Agent Builder.
+> - **Licenční delta (nejdůležitější):** v preview Copilot in SharePoint / Skills fungovaly empiricky i na PAYG bez licence (2026-07-17); **po GA license-only — ověřeno v tenantu 2026-11** (PAYG bez licence = jen Copilot Chat + agenti). Proto od běhu 2026-11 mají studenti Copilot licenci. Agents Toolkit bez licence je dokumentovaný. Tvorba SharePoint agenta vyžaduje licenci; od pol. 11/2026 jde přes Agent Builder.
 > - Copilot Credits mají dvě správní plochy (PAYG vs. Cost management); služby se mezi nimi přesouvají.
 > - Od 1. 12. 2026 Copilot SKU bez base subscription; Copilot Business přes CSP s UBB default ON.

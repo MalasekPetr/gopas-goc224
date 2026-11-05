@@ -51,7 +51,7 @@ Druhá, novější plocha pro Copilot Credits: **Copilot → Cost management** �
 - Spending policy = **scope** (users/groups nebo prostředí/agenti) + **vybrané služby** + **limity** + billing method. Policy zároveň **řídí přístup** — kdo v ní není, službu nepoužije.
 - **Limited budget je tvrdý strop**: po vyčerpání uživatel ztratí přístup do 1. dne dalšího měsíce. Minimum 2 000 kreditů/uživatel/měs.
 - **Auto-apply new services** je default zapnuté → nové UBB služby se do policy přidají samy. U kontrolovaného rolloutu vypnout.
-- U Cowork, Advanced work a Code MS vyžaduje Copilot licenci — Credits ji nenahrazují. V našem tenantu (bez licencí) tedy jen ukázka obrazovky.
+- U Cowork, Advanced work a Code MS vyžaduje Copilot licenci — Credits ji nenahrazují. V našem tenantu mají studenti licenci (od 2026-11) a spending policy pro Cowork / Code / Advanced work se reálně používá (D4 [`cowork-code`](../../day-4/cowork-code/README.md)).
 
 ### Krok 2 — dostupnost Copilot in SharePoint
 
@@ -82,7 +82,7 @@ flowchart LR
 
 ## Klíčové rozlišení
 
-- **Licence vs. PAYG u Copilot in SharePoint**: po GA MS výslovně uvádí Copilot licenci jako prerekvizitu; Copilot Credits PAYG (krok 1b) dokumentovaně kryje jen **Copilot Chat a SharePoint agents**. V preview fungoval Copilot in SharePoint v našem tenantu i na PAYG (2026-07-17) — stav po GA viz výsledek go/no-go z D1 (`../../day-1/licensing/instructor-notes.md`).
+- **Licence vs. PAYG u Copilot in SharePoint**: po GA MS výslovně uvádí Copilot licenci jako prerekvizitu; Copilot Credits PAYG (krok 1b) kryje jen **Copilot Chat a SharePoint agents** — Copilot in SharePoint ani Skills bez licence nejedou (ověřeno v tenantu 2026-11; v preview 2026-07-17 ještě fungovaly).
 - **Billing policy vs. connect**: policy je jen účetní identita (kdo + přes co platí); přístup ke službě vzniká až připojením policy ke konkrétní službě. Dva kroky = dvě různá rozhodnutí.
 - **Billing policy (1b) vs. spending policy (1c)**: první jen účtuje a upozorňuje, druhá řídí přístup a umí tvrdý strop.
 - **Zapnout vs. zpřístupnit**: Site AI settings a RCD říkají *kde* se funkce objeví; licence/kredity říkají *kdo* ji smí použít; permissions říkají *nad čím*. Tři nezávislé vypínače.

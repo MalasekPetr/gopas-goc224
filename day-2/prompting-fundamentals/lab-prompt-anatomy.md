@@ -1,6 +1,6 @@
 # Lab · Anatomie promptu nad vlastním obsahem
 
-> Modul: prompting-fundamentals · Odhad: 30 min · Režim: živý tenant (Copilot in SharePoint, PAYG)
+> Modul: prompting-fundamentals · Odhad: 30 min · Režim: živý tenant (Copilot in SharePoint, Copilot licence)
 
 ## Cíl
 
@@ -29,6 +29,6 @@ Na vlastní kůži změřit, jak kvalita promptu mění kvalitu odpovědi — st
 
 - Copilot in SharePoint nedostupný: stejné 3 verze promptu napsat na papír a projít v páru; instruktor pak vybrané spustí ve svém prostředí.
 
-## PAYG poznámka
+## Poznámka k nákladům
 
-Každá iterace = Copilot Credits. Tři promyšlené verze > deset náhodných. To je součást lekce.
+Everyday Copilot in SharePoint je v licenci, ale stejné návyky platí v Cowork a Advanced work, kde každá iterace čerpá Copilot Credits. Tři promyšlené verze > deset náhodných. To je součást lekce.

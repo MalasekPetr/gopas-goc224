@@ -7,7 +7,7 @@
 Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, cesta tvorby — a plán, jak poznáš, že funguje.
 
 > [!NOTE] Worked example
-> Pokud nemáš vlastní scénář, použij **HR Asistenta** — [`scenario-hr-agent.md`](scenario-hr-agent.md) (list zaměstnanců + knihovny propojené osobním číslem). Jeho stavbu řeší nástrojové bloky: [Agent Builder](../agent-builder/lab-agent-builder.md), [SharePoint agents](../sharepoint-agents/lab-sharepoint-agent.md), [Agents Toolkit](../agents-toolkit/lab-toolkit-agent.md).
+> Pokud nemáš vlastní scénář, použij **HR Asistenta** — [`scenario-hr-agent.md`](scenario-hr-agent.md) (list zaměstnanců + knihovny propojené osobním číslem). Jeho stavbu řeší nástrojové bloky: [Agent Builder](../agent-builder/lab-agent-builder.md) (vč. segmentu [SharePoint agents](../sharepoint-agents/lab-sharepoint-agent.md)), [Agents Toolkit](../agents-toolkit/lab-toolkit-agent.md).
 
 ## Kroky
 
@@ -23,7 +23,7 @@ Navrhnout agenta pro reálný scénář ze své praxe — instrukce, knowledge, 
 
 6. **Agent Builder dostupný:** postav agenta z části A (instrukce + knowledge = vlastní web), spusť 5 testů z plánu, zapiš výsledky.
 
-> Skills hands-on **jsou možné i pro studenty** — Copilot in SharePoint empiricky funguje i na PAYG (ověřeno 2026-07-17; MS uvádí license-only, docs lag). Deep-dive a stavba zítra v D5 `skills`.
+> Skills hands-on **jsou možné i pro studenty** — mají od běhu 2026-11 Copilot licenci (PAYG bez licence po GA nestačí, ověřeno 2026-11). Deep-dive a stavba zítra v D5 `skills`.
 
 ## Ověření
 

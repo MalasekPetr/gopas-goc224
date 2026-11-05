@@ -45,13 +45,13 @@ Personal skill je přenosný, ale **nepřenáší práva** — běží jen nad o
 
 - **Žádný admin vypínač** — Skills jsou nativní schopnost Copilot in SharePoint, samostatně se nevypínají. Knihovnu Agent Assets vytváří produkt a **nejde smazat**.
 - Řízení = **standardní file governance**: permissions, retention, sensitivity labels, audit — jako u každého obsahu. Default: **Edit** na webu = tvorba Skillu, **View** = spuštění; přísnější model = break inheritance na Agent Assets.
-- **Licenční brána**: Skills běží tam, kde je dostupný **Copilot in SharePoint** — od GA (rollout 30. 9. 2026) MS výslovně uvádí Copilot licenci jako prerekvizitu. **Tvorba a správa skills je v ceně licence**; skills v **plánovaných AI automatizacích** a práce ve velkém jsou „Advanced work" a čerpají Copilot Credits přes spending policy ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). V preview jsme na kurzu (2026-07-17) ověřili, že Skills fungovaly i na PAYG bez licence — **po GA znovu ověřujeme** (go/no-go v instructor-notes). Druhá brána = **Edit** (tvorba site skillu) / **View** (spuštění).
+- **Licenční brána**: Skills běží tam, kde je dostupný **Copilot in SharePoint** — od GA (rollout 30. 9. 2026) MS výslovně uvádí Copilot licenci jako prerekvizitu. **Tvorba a správa skills je v ceně licence**; skills v **plánovaných AI automatizacích** a práce ve velkém jsou „Advanced work" a čerpají Copilot Credits přes spending policy ([Get started](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)). V preview (2026-07-17) Skills fungovaly i na PAYG bez licence; **po GA ne — ověřeno v tenantu 2026-11**. Copilot Credits PAYG licenci nenahradí. Druhá brána = **Edit** (tvorba site skillu) / **View** (spuštění).
 
 ### Jak se Skills aktivují
 
 Skills se samostatně nezapínají — jedou tam, kde je dostupný **Copilot in SharePoint**. Dvě brány:
 
-1. **Licence:** M365 Copilot licence (po GA dokumentovaně license-only; empirický stav na PAYG viz výše).
+1. **Licence:** M365 Copilot licence (po GA license-only, ověřeno 2026-11; PAYG nestačí).
 2. **Dostupnost na webu:** **Site AI settings** (vlastník webu: který agent se otevře z ikony v hlavičce, skrytí Copilot tlačítka pro visitory, zapnutí advanced document processing) a **Restricted Content Discovery** (RCD web z Copilotu vyřadí — přebíjí ostatní nastavení). Inventura RCD skriptem je v D2 [`../../day-2/powershell-spo/guide-copilot-inventory.md`](../../day-2/powershell-spo/guide-copilot-inventory.md).
 
 Na úrovni webu **není žádná „site collection feature" k aktivaci** — Agent Assets se aktivuje sám s prvním site skillem. Skills jsou nativní schopnost — žádný další vypínač.
@@ -91,9 +91,9 @@ Celý cyklus na instruktorském webu: prompt na tvorbu Skillu (review smluv → 
 
 ## Naše prostředí
 
-- **Zda studenti Skills spustí sami, rozhoduje go/no-go T1** (instruktor, před během). V preview (2026-07-17) Copilot in SharePoint fungoval i na Business Basic + PAYG bez Copilot licence; po GA MS dokumentuje license-only.
-  - **T1 projde** → studenti Skill **navrhnou, vytvoří i spustí sami** (`SKILL.md` je jen Markdown — psát umí od D1).
-  - **T1 neprojde** → studenti navrhnou a zrevidují `SKILL.md`, tvorbu a běh předvede instruktor na licencovaném účtu. Návrh a review jsou plnohodnotný deliverable.
+- Studenti mají od běhu 2026-11 **Copilot licenci** → Skill **navrhnou, vytvoří i spustí sami** (`SKILL.md` je jen Markdown — psát umí od D1).
+- Bez licence (PAYG) Skills po GA nejedou (T1, ověřeno 2026-11; v preview 2026-07-17 ještě fungovaly). Fallback, kdyby se licence nepropsala: studenti navrhnou a zrevidují `SKILL.md`, tvorbu a běh předvede instruktor.
+- **Plánované skills** (scheduled AI automations) = Advanced work → Copilot Credits přes spending policy. V labu nezakládat.
 
 ## Lab
 
@@ -106,4 +106,4 @@ Viz [`lab-skill-design.md`](lab-skill-design.md) — návrh a review SKILL.md + 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> Copilot in SharePoint (vč. Skills) má GA rollout od 30. 9. 2026; přibyly personal a built-in skills (`/skills`), skills v plánovaných automatizacích čerpají Copilot Credits. Chování (auto-load, indicator card, formát SKILL.md) se může měnit; před během projít docs (ms.date 2026-09-28). **Licence: po GA MS výslovně license-only; empirický nález z preview (PAYG funguje, 2026-07-17) před každým během znovu ověřit (T1).** `KnowledgeAgentScope` vyřazen k 1. 11. 2026. Skills jsou v SharePointu dostupné jen v first-party Copilot in SharePoint experience.
+> Copilot in SharePoint (vč. Skills) má GA rollout od 30. 9. 2026; přibyly personal a built-in skills (`/skills`), skills v plánovaných automatizacích čerpají Copilot Credits. Chování (auto-load, indicator card, formát SKILL.md) se může měnit; před během projít docs (ms.date 2026-09-28). **Licence: po GA license-only — preview nález „PAYG funguje" (2026-07-17) po GA neplatí, ověřeno v tenantu 2026-11 (T1).** `KnowledgeAgentScope` vyřazen k 1. 11. 2026. Skills jsou v SharePointu dostupné jen v first-party Copilot in SharePoint experience.

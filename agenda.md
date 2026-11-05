@@ -41,10 +41,12 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 |---|---|---|---|
 | 1 | Microsoft 365 Backup | `day-4/backup` | P |
 | 2 | Microsoft 365 Archive | `day-4/archive` | P |
-| 3 | Agenti — mapa cest tvorby *(úvod: deklarativní agent, srovnání, návrhový lab)* | `day-4/copilot-agents` | P |
-| 4 | Agent Builder *(studenti hands-on)* | `day-4/agent-builder` | P |
-| 5 | SharePoint agents *(instruktor demo — limit 1 zdroj)* | `day-4/sharepoint-agents` | P |
-| 6 | Microsoft 365 Agents Toolkit *(agent jako spravovaná konfigurace)* | `day-4/agents-toolkit` | P |
+| 3 | Cowork a Code — Copilot, který koná a staví *(studenti hands-on, 2 laby)* | `day-4/cowork-code` | P |
+| 4 | Agenti — mapa cest tvorby *(úvod: deklarativní agent, srovnání, návrhový lab)* | `day-4/copilot-agents` | P |
+| 5 | Agent Builder *(studenti hands-on; vč. 10min segmentu SharePoint agents — legacy `.agent` a upgrade cesty)* | `day-4/agent-builder` | P |
+| 6 | Microsoft 365 Agents Toolkit *(agent jako spravovaná konfigurace; + agent volající agenta přes `worker_agents`)* | `day-4/agents-toolkit` | P |
+
+> [!NOTE] Od běhu 2026-11 mají studenti Copilot licenci → Cowork a Code jdou hands-on. Samostatný blok `sharepoint-agents` je sloučený do `agent-builder` (od pol. 11/2026 se SharePoint agenti tvoří přes Agent Builder); složka zůstává jako referenční materiál k segmentu.
 
 ## Den 5 — Správa, stavba & rollout
 
@@ -53,7 +55,7 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 | 1 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-5/copilot-admin` | P |
 | 2 | Provozní monitoring a compliance | `day-5/monitoring` | P |
 | 3 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
-| 4 | Skills — rozšíření Copilot in SharePoint *(živé demo na instruktorském účtu)* | `day-5/skills` | P |
+| 4 | Skills — rozšíření Copilot in SharePoint *(studenti hands-on — Copilot licence od 2026-11)* | `day-5/skills` | P |
 | 5 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
 | 6 | Závěrečný projekt a další kroky *(rollout blueprint)* | `day-5/capstone` | P |
 

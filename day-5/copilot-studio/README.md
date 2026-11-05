@@ -57,7 +57,7 @@ Data policies v **Power Platform admin centru** (konektory Business/Non-business
 ### Licence — Copilot Credits
 
 - Od 1. 9. 2025 je měnou **Copilot Credits** („message packs" jsou mrtvý pojem): balíčky 25 000 kreditů/měsíc (nepřenášejí se), **PAYG přes Azure**, nebo roční prepurchase ([Billing & licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing)).
-- **Zero-rating** (standard harness): uživatelé s M365 Copilot licencí nečerpají kredity za classic/generative odpovědi a tenant graph grounding — náš tenant bez licencí platí kreditové sazby za všechno (viz glosář, Copilot Credits PAYG). GitHub Copilot harness čerpá kredity za vše, včetně stavby a testování.
+- **Zero-rating** (standard harness): uživatelé s M365 Copilot licencí nečerpají kredity za classic/generative odpovědi a tenant graph grounding — studenti mají od 2026-11 Copilot licenci, takže zero-rating se na ně vztahuje; uživatelé bez licence platí kreditové sazby za všechno (viz glosář, Copilot Credits PAYG). GitHub Copilot harness čerpá kredity za vše, včetně stavby a testování.
 - Copilot Studio spending lze volitelně řídit i v M365 admin centru (**Copilot → Cost management**, resource-based policy pro prostředí/agenty); jinak platí kontroly v Power Platform admin centru ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs)).
 
 ## Klíčové rozlišení

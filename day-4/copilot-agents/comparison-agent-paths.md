@@ -24,7 +24,7 @@
 | **Governance páky** | admin approval do katalogu | **DLP v Power Platform admin centru** (enforcement povinný), kanály, auth | RAI validace balíčku, admin approval, audit v repu | RCD/RSS na webu, SAM reporty (D3/D4) |
 
 ¹ Copilot Studio má dvě prostředí („harness"): **standard** (klasické — generative/classic orchestrace, topics) a **GitHub Copilot harness** (nová zkušenost, preview — orchestrace nekonfigurovatelná, kredity od první stavby). Sloupec popisuje hlavně standard harness; detail v D5 ([Harnesses](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)).
-² Na PAYG (bez Copilot licence) jsou Email, People, Teams messages a Teams meetings jako knowledge **jen pro licencované** uživatele ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)) — v našem tenantu tento řádek studenti nevyzkouší.
+² Na PAYG (bez Copilot licence) jsou Email, People, Teams messages a Teams meetings jako knowledge **jen pro licencované** uživatele ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)) — studenti mají od 2026-11 Copilot licenci, takže tyto zdroje vyzkoušet můžou.
 
 Průřezově pro všechny: **permission trimming** (agent nikdy nepřekročí práva uživatele), sensitivity labels respektovány, **Restricted SharePoint Search blokuje SharePoint knowledge úplně** a RCD vyřazuje web z groundingu (D2 explainer).
 
@@ -44,7 +44,7 @@ Průřezově pro všechny: **permission trimming** (agent nikdy nepřekročí pr
 2. **Potřebuješ akce/automatizaci?** konektory/MCP/triggery → Copilot Studio (i jako „copy to Copilot Studio" z Builderu) · vlastní API s OpenAPI → Toolkit · žádné akce → Builder/SharePoint agent.
 3. **Potřebuješ source control a CI/CD?** → Toolkit, bez diskuze (repo-as-code přístup kurzu).
 4. **Kdo staví?** koncový uživatel → Builder · vlastník webu → SharePoint agent · maker → Studio · vývojář → Toolkit.
-5. **Kdo platí?** tenant bez Copilot licencí (náš případ): vše jede na Copilot Credits / PAYG — každý testovací dotaz stojí kredity, proto evaluační plán z labu. Pozor na GitHub Copilot harness ve Studiu: kredity čerpá už stavba a testování.
+5. **Kdo platí?** S Copilot licencí (náš případ od 2026-11) jsou agenti v Copilotu bez metrování; bez licence vše jede na Copilot Credits / PAYG — každý testovací dotaz stojí kredity, proto evaluační plán z labu. Pozor na GitHub Copilot harness ve Studiu: kredity čerpá už stavba a testování.
 
 ## Zdroje (Microsoft)
 

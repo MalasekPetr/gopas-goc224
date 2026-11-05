@@ -22,8 +22,8 @@ Student se přihlásí, ověří přístup ke svému prostoru a potvrdí dostupn
 - [ ] Student se přihlásil a vidí svůj prostor.
 - [ ] MFA zaregistrováno — `https://aka.ms/mysecurityinfo` ukazuje alespoň jednu metodu.
 - [ ] Student nahrál dokument.
-- [ ] Copilot in SharePoint odpověděl nad obsahem (potvrzení, že PAYG + přístup fungují).
+- [ ] Copilot in SharePoint odpověděl nad obsahem (potvrzení, že Copilot licence + přístup fungují).
 
 ## Fallback
 - Problémy s registrací MFA (QR kód, SMS, zablokovaný účet): viz „Časté problémy" v [`mfa-setup.md`](mfa-setup.md); když nepomůže, řeší instruktor.
-- Když Copilot in SharePoint není dostupný: ověřit PAYG billing policy, Site AI settings webu a Restricted Content Discovery (instruktor, admin); od GA MS dokumentuje Copilot in SharePoint jen s Copilot licencí — patří do konfigurace den 2, tady jen konstatovat a pokračovat.
+- Když Copilot in SharePoint není dostupný: ověřit přiřazení Copilot licence (propsání trvá), Site AI settings webu a Restricted Content Discovery (instruktor, admin). PAYG bez licence Copilot in SharePoint nezpřístupní (po GA ověřeno 2026-11) — patří do konfigurace den 2, tady jen konstatovat a pokračovat.

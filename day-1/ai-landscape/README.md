@@ -93,7 +93,7 @@ flowchart LR
 
 ## 5. Naše prostředí (kurz)
 
-Studenti mají **Copilot přes PAYG** (ne plnou licenci) → v Copilot Chatu jsou na webovém groundingu, tenant grounding a agenty odemyká PAYG (viz `../licensing/`). Cowork, Code a Autopilot studenti nemají (vyžadují licenci). Pro EU governance demo je vyňetí Anthropic modelů z EU Data Boundary konkrétní bod k ukázání.
+Studenti mají od běhu 2026-11 **Microsoft 365 Copilot licenci** + Copilot Credits (viz `../licensing/`) — PAYG bez licence by odemkl jen Copilot Chat nad tenant daty a agenty, ne Copilot in SharePoint, Skills, Cowork ani Code. **Cowork a Code** si studenti vyzkouší hands-on v D4 ([`../../day-4/cowork-code/`](../../day-4/cowork-code/README.md)); Autopilot (Frontier) jen zmínit. Pro EU governance demo je vyňetí Anthropic modelů z EU Data Boundary konkrétní bod k ukázání.
 
 ## Lab
 

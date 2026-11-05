@@ -13,7 +13,7 @@ Referenční údaje o tenantu, na které se odkazují laby.
 | Přihlašovací doména | `spdemo.online` |
 | Účty studentů | `user.11@spdemo.online` – `user.30@spdemo.online` (user 11–30) |
 | Licence | Microsoft 365 **Business Basic** |
-| AI | Copilot přes **Pay-as-you-go** (Copilot Credits) |
+| AI | **Microsoft 365 Copilot** licence (od běhu 2026-11) + Copilot Credits (PAYG pro agenty, spending policy pro Cowork / Code / Advanced work) |
 | Hesla | přidělena na začátku kurzu |
 | SharePoint root URL | `https://ms365x17157302.sharepoint.com` |
 
@@ -21,4 +21,4 @@ Referenční údaje o tenantu, na které se odkazují laby.
 
 ### Náklady — PAYG upozornění pro učebnu
 > [!WARNING] Ověřit k datu běhu.
-> Copilot Credits ($0,01/kredit) čerpá **každá reálná** interakce (grounding, generative answer, tool call) — orientačně ~12 kreditů/konverzace. **Žádný tvrdý strop** (alerty nezastaví spotřebu). Při 20 studentech se to sčítá — mít nastavený budget alert a hlídat opakované spouštění.
+> S Copilot licencí jsou everyday Copilot in SharePoint, Skills a agenti v Copilotu bez metrování. Copilot Credits ($0,01/kredit) čerpá **Cowork, Code a Advanced work** (navíc k licenci, s **tvrdým stropem** ve spending policy) a původní PAYG (bez stropu — alerty spotřebu nezastaví). Při 20 studentech se to sčítá — hlídat opakované spouštění a plánované úlohy.

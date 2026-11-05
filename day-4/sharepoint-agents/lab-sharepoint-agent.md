@@ -11,7 +11,7 @@ Vidět SharePoint agent naživo a pochopit jeho **limit — 1 zdroj a nic jinéh
 > Od pol. 11/2026 otevře „Create agent" Agent Builder a `.agent` soubor nevznikne; `.agent` přestanou odpovídat po 03/2027 ([Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)). Pokud už UI v tenantu přepnulo, použij fallback.
 
 > [!IMPORTANT] Proč jen demo
-> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — studenti na Business Basic + PAYG ho můžou *používat*, ne *tvořit* (ověřeno). Staví instruktor, studenti sledují a predikují.
+> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — bez licence ho uživatel na PAYG může *používat*, ne *tvořit* (ověřeno). Legacy cesta → staví instruktor, studenti sledují a predikují.
 
 ## Předpoklady
 

@@ -59,7 +59,7 @@ Prompt → **grounding přes Microsoft Graph** v tenantu (jen to, na co má uži
 
 ## Naše prostředí
 
-- Lab běží živě nad Copilot in SharePoint na vlastním webu (PAYG — každá iterace stojí kredity; učíme se iterovat chytře, ne donekonečna).
+- Lab běží živě nad Copilot in SharePoint na vlastním webu (Copilot licence; iterujeme chytře, ne donekonečna — návyk, který u Cowork a Advanced work šetří Copilot Credits).
 
 ## Lab
 

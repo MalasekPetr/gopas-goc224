@@ -10,7 +10,7 @@ Postavit agenta **HR Asistent** v Agent Builderu nad daty zaměstnanců a na vla
 ## Předpoklady
 
 - Data na HR webu (`/sites/hr-demo`): list `Zaměstnanci` + knihovny `Certifikáty`/`Smlouvy`.
-- Agent Builder dostupný pro studenty (go/no-go instruktora — PAYG tenant).
+- Agent Builder dostupný pro studenty (Copilot licence propsaná — ověřuje instruktor).
 - Návrh instrukcí z [`../copilot-agents/lab-agent-design.md`](../copilot-agents/lab-agent-design.md).
 
 ## Kroky
@@ -48,6 +48,6 @@ Postavit agenta **HR Asistent** v Agent Builderu nad daty zaměstnanců a na vla
 
 - Agent Builder nedostupný: část A je plnohodnotný deliverable; instruktor postaví HR agenta v demu, třída píše predikce a pak se ověří.
 
-## PAYG poznámka
+## Poznámka k nákladům
 
-Každý testovací dotaz = Copilot Credits. 5 promyšlených testů + 1 iterace, ne brute-force (viz `../../environment.md`).
+S licencí agent v Copilotu kredity nečerpá, ale u PAYG uživatelů by každý testovací dotaz byl Copilot Credits. 5 promyšlených testů + 1 iterace, ne brute-force (viz `../../environment.md`).

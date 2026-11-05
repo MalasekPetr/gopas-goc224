@@ -8,12 +8,12 @@ Nosná lekce: **nástroj se vybírá podle práce.** V D4 stavíme **dva scéná
 | Cesta | Kdo v D4 | Scénář |
 | --- | --- | --- |
 | **Agent Builder** | **studenti hands-on** | HR Asistent |
-| **SharePoint agent** | **instruktor jen ukáže** (tvorba = Copilot licence, studenti na PAYG netvoří) | HR Asistent |
+| **SharePoint agent** | **instruktor ukáže** v 10min segmentu Agent Builderu (tvorba = Copilot licence; legacy `.agent`, od pol. 11/2026 přes Agent Builder) | HR Asistent |
 | **Agents Toolkit** | **studenti hands-on, společně** (bez akce, agent jako kód) | Support Asistent (runbooky) |
 | ~~Copilot Studio~~ | **až D5** (analytický payoff nad týmiž daty) | HR Asistent → [`../../day-5/copilot-studio/`](../../day-5/copilot-studio/) |
 
 > [!WARNING] Ověřit k datu běhu — UI se hýbe.
-> Popisky v Agent Builderu a Toolkitu se mění po měsících. Drž se úrovně kroků, ne přesných labelů; před během proklikat. Go/no-go: dostupnost Agent Builderu v PAYG tenantu (viz instructor-notes).
+> Popisky v Agent Builderu a Toolkitu se mění po měsících. Drž se úrovně kroků, ne přesných labelů; před během proklikat. Go/no-go: propsané Copilot licence studentů (viz instructor-notes).
 
 ## Příprava (5 min)
 
@@ -50,7 +50,7 @@ Na tabuli napiš **5 dotazů** a po každé cestě doplň sloupec ✅/❌.
 ### SharePoint agent — instruktor jen ukáže
 
 > [!IMPORTANT] Proč jen demo
-> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — studenti na Business Basic + PAYG ho můžou *používat*, ne *tvořit* (empiricky potvrzeno 2026-07-17 — na rozdíl od Toolkitu, který na PAYG funguje). Proto tuhle cestu **instruktor jen předvede**, studenti nestaví. Avizovat: od pol. 11/2026 „Create agent" otevře Agent Builder a `.agent` soubor už nevznikne; `.agent` soubory přestanou odpovídat po 03/2027 ([Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
+> Tvorba SharePoint agenta vyžaduje **Copilot licenci** — bez ní ho uživatel na PAYG může *používat*, ne *tvořit* (empiricky potvrzeno 2026-07-17 — na rozdíl od Toolkitu, který na PAYG funguje). Studenti licenci od 2026-11 mají, ale cesta je legacy — **instruktor ji předvede** v 10min segmentu Agent Builderu. Avizovat: od pol. 11/2026 „Create agent" otevře Agent Builder a `.agent` soubor už nevznikne; `.agent` soubory přestanou odpovídat po 03/2027 ([Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
 
 1. Na `/sites/hr-demo` → **Create agent**, scope omez na **jednu knihovnu** `Smlouvy`.
 2. Dotaz 2 (smlouva) projde; dotaz 1 (list) ne. **Zkus přidat list jako druhý zdroj** → shodí knihovnu.
@@ -118,4 +118,4 @@ Analytické dotazy 3 a 4 dnes **schválně necháváme viset** — zítra je Cop
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> Podpora listů se hýbe nejrychleji (SharePoint agents GA ~05/2026, docs lag; Copilot Studio listy = production-ready preview; manifest schema 1.9 (2026-09) listy v Toolkitu stále nezná — `list_id` je knihovna). SharePoint agents: od pol. 11/2026 tvorba přes Agent Builder, `.agent` končí po 03/2027 — tento playbook platí pro běh před přechodem. Šablony Toolkitu se přejmenovávají (verze Toolkitu — ověřit) — ověřit „Declarative Agent" (stavíme bez akce). Před během ověřit go/no-go dostupnost Agent Builderu v PAYG a přesné UI labely.
+> Podpora listů se hýbe nejrychleji (SharePoint agents GA ~05/2026, docs lag; Copilot Studio listy = production-ready preview; manifest schema 1.9 (2026-09) listy v Toolkitu stále nezná — `list_id` je knihovna). SharePoint agents: od pol. 11/2026 tvorba přes Agent Builder, `.agent` končí po 03/2027 — tento playbook platí pro běh před přechodem. Šablony Toolkitu se přejmenovávají (verze Toolkitu — ověřit) — ověřit „Declarative Agent" (stavíme bez akce). Před během ověřit propsání studentských Copilot licencí a přesné UI labely.

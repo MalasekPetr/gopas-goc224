@@ -3,17 +3,17 @@
 ## Timing
 
 > [!NOTE] Struktura (D4, tento běh)
-> Agentní část rozdělená na **úvod (tento blok) + tři nástrojové bloky**: [`agent-builder`](../agent-builder/), [`sharepoint-agents`](../sharepoint-agents/), [`agents-toolkit`](../agents-toolkit/). **Copilot Studio i Skills jsou celé až D5.**
+> Agentní část rozdělená na **úvod (tento blok) + dva nástrojové bloky**: [`agent-builder`](../agent-builder/) (vč. 10min segmentu [`sharepoint-agents`](../sharepoint-agents/)), [`agents-toolkit`](../agents-toolkit/). Před agenty běží [`cowork-code`](../cowork-code/) (od 2026-11). **Copilot Studio i Skills jsou celé až D5.**
 
 - Tento blok (úvod): deklarativní základ + mapa cest + srovnání (`comparison-agent-paths.md`) ~15–20 min + návrhový lab (`lab-agent-design.md`).
-- Nástrojové bloky mají vlastní laby a go/no-go (jejich instructor-notes). Orientační časy: Agent Builder ~30 min, SharePoint agents ~20 min (demo), Toolkit ~35 min.
+- Nástrojové bloky mají vlastní laby a go/no-go (jejich instructor-notes). Orientační časy: Agent Builder ~30 min + 10 min segment SharePoint agents, Toolkit ~35 min.
 - Most na D5: „dnes jste viděli strop no-code cest (analytika) — zítra ho Studio prorazí; a agenty, co postavíte, ráno spravujete v `copilot-admin`."
 
 ## Go/no-go — otestovat před během
 
 - Tool-specific go/no-go je v instructor-notes jednotlivých bloků: [agent-builder](../agent-builder/instructor-notes.md), [sharepoint-agents](../sharepoint-agents/instructor-notes.md), [agents-toolkit](../agents-toolkit/instructor-notes.md).
-- Napříč: **Agent Builder** dostupnost v PAYG (určuje studenti vs. demo); **SharePoint agents** tvorba = Copilot licence (jen demo — empiricky potvrzeno); **Toolkit** (tvorba/nasazení) bez licence je od 2026-09 dokumentovaný (prerequisites) — přesto re-test; **Skills** fungovaly na PAYG v preview (2026-07-17), po GA MS uvádí license-only → výsledek T1 (D1). Skills až D5.
-- Na PAYG nefunguje knowledge Email / People / Teams messages / Teams meetings (jen licencovaní) — nedávat studentům do návrhu jako testovatelný zdroj.
+- Napříč: studenti mají od běhu 2026-11 **Copilot licenci** → Agent Builder hands-on; **SharePoint agents** tvorba = Copilot licence (legacy, jen 10min segment); **Toolkit** (tvorba/nasazení) bez licence je od 2026-09 dokumentovaný (prerequisites); **Skills** po GA license-only, na PAYG nejedou (T1, ověřeno 2026-11). Skills až D5.
+- Knowledge Email / People / Teams messages / Teams meetings je jen pro licencované — s licencí ho studenti vyzkoušet můžou; u zákazníků s PAYG uživateli na to upozornit.
 
 ## Tripwires
 
@@ -28,9 +28,9 @@
 
 - Scénář [`scenario-hr-agent.md`](scenario-hr-agent.md) + laby [`../agent-builder/lab-agent-builder.md`](../agent-builder/lab-agent-builder.md) a [`../sharepoint-agents/lab-sharepoint-agent.md`](../sharepoint-agents/lab-sharepoint-agent.md) táhnou jeden agent D4 → D5. Data nasadit **před během**: `scripts/New-HRAgentData.ps1 -SiteUrl .../sites/hr-demo -ClientId <PnP-GOC224> -CreateSite -SiteOwner admin@spdemo.online -UseDeviceCode` (ClientId nikdy do repa; skript je gitignored). `-ReferenceDate` pinnout pro reprodukovatelné „do 30 dnů".
 - Data nasazená (2026-07-16). Fresh tenant: přidat `-CreateSite -SiteOwner admin@spdemo.online`. Přidání knihovny `Runbooky` (pro Toolkit lab) i přegenerování dat: `-Reseed`. Reuse spojení = jeden device login na okno.
-- Nosná pointa HR labu: **tentýž požadavek** narazí na jinou hranu — Agent Builder jen prioritizuje (neagreguje), SharePoint agent má **1 zdroj a nic jiného**. Analytiku („komu propadá certifikát") **v D4 nezvládne nikdo** — schválně visí jako most na **Copilot Studio v D5**. JOIN list × knihovna = Power Automate, ne agent.
+- Nosná pointa HR labu: **tentýž požadavek** narazí na jinou hranu — Agent Builder jen prioritizuje (neagreguje), SharePoint agent má **1 zdroj a nic jiného**. Analytiku („komu propadá certifikát") **v D4 nezvládne žádný agent** — schválně visí jako most na **Copilot Studio v D5**. Dopolední dashboard v Code (`cowork-code`) ji zvládl jako **aplikace** — rozlišovat: aplikace = přehled, agent = konverzační odpověď v kontextu. JOIN list × knihovna = Power Automate, ne agent.
 - **Toolkit do HR nepatří** (list nescopuje) — má vlastní lab [`../agents-toolkit/lab-toolkit-agent.md`](../agents-toolkit/lab-toolkit-agent.md) na scénáři Support (runbooky, agent jako spravovaná konfigurace, bez akce).
-- Stavět nad instruktorským HR webem, ne studentskými. U SP agenta studenti jen sledují (license-only).
+- Stavět nad instruktorským HR webem, ne studentskými. U SP agenta studenti jen sledují (legacy cesta, 10min segment).
 
 ## Dva scénáře — každý nástroj na své (playbook)
 

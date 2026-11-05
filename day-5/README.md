@@ -9,4 +9,4 @@
 | 5 | Copilot Studio — stavba nad SharePointem | [`copilot-studio`](copilot-studio/) | P |
 | 6 | Závěrečný projekt a další kroky | [`capstone`](capstone/) | P |
 
-> [!NOTE] Pátek začíná **správou** agentů, které jste postavili na konci D4 ([`../day-4/copilot-agents/`](../day-4/copilot-agents/)): copilot-admin (registr, blokace, Agent 365) → monitoring → Orchestry (volitelný, 3rd-party). Pak **stavba** — Skills (hands-on podle go/no-go T1 — v preview fungovalo na PAYG, po GA MS dokumentuje license-only) a Copilot Studio (analytika nad HR daty z D4). Uzavírá **rollout blueprint** (capstone) — design dokument, ne stavba.
+> [!NOTE] Pátek začíná **správou** agentů, které jste postavili na konci D4 ([`../day-4/copilot-agents/`](../day-4/copilot-agents/)): copilot-admin (registr, blokace, Agent 365) → monitoring → Orchestry (volitelný, 3rd-party). Pak **stavba** — Skills (studenti hands-on — od běhu 2026-11 mají Copilot licenci; PAYG bez licence po GA nestačí) a Copilot Studio (analytika nad HR daty z D4). Uzavírá **rollout blueprint** (capstone) — design dokument, ne stavba.

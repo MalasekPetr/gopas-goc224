@@ -2,7 +2,7 @@
 
 ## Go/no-go
 
-- **Dostupnost v PAYG tenantu**: docs říkají „M365 Copilot licence NEBO tenant s PAYG pro Copilot Studio" — ověřit, že PAYG cesta u nás reálně Agent Builder zpřístupňuje i studentům. Určuje, jestli staví studenti (část B), nebo jen instruktor v demu (fallback).
+- **Licence studentů** (od 2026-11): ověřit, že Copilot licence je propsaná (testovací `user.NN` → Vytvořit agenta). Určuje, jestli staví studenti (část B), nebo jen instruktor v demu (fallback).
 - Demo stavět nad **instruktorským** webem, ne studentskými (práva, překvapení).
 
 ## Tripwires
@@ -12,9 +12,11 @@
 - Strop ukázat naživo: analytický dotaz („komu propadá certifikát do 30 dnů") Builder **neagreguje** — jen prioritizuje. To je most na Copilot Studio (D5), ne selhání labu.
 - Sdílením agenta s embedded soubory sdílíš i obsah — zmínit u publikace.
 - Dotaz „a umí to něco udělat (akci)?" → ne; Builder akce do externích služeb neumí, cesta = „copy to Copilot Studio" (D5).
-- Na PAYG nedávat do knowledge Email / People / Teams — jen pro licencované; studentům by to tiše nefungovalo.
+- Email / People / Teams jako knowledge funguje jen licencovaným — studentům s licencí ano; u zákazníka s PAYG uživateli by to tiše nefungovalo.
 
 ## Vazby
 
 - Zpět: Agent Instructions (D2), mapa cest a srovnání ([`../copilot-agents/`](../copilot-agents/README.md)).
-- Dopředu: SharePoint agents (další blok, empirický limit 1 zdroj; od pol. 11/2026 tvorba přes Agent Builder) → Agents Toolkit → správa v D5 `copilot-admin`; analytika ve Studiu (D5).
+- Zpět: dashboard v Code (`cowork-code`, dopoledne) odpověděl na „komu propadá certifikát" jako **aplikace** — Builder tentýž dotaz neagreguje; dobré srovnání aplikace vs. agent.
+- SharePoint agents = 10min segment v tomto bloku (sloučeno 2026-11; legacy `.agent`, 4 upgrade cesty) — podklady v [`../sharepoint-agents/`](../sharepoint-agents/README.md).
+- Dopředu: Agents Toolkit → správa v D5 `copilot-admin`; analytika ve Studiu (D5).

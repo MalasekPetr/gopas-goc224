@@ -1,6 +1,6 @@
 # SharePoint agents
 
-> Typ: povinný · Den: 4 · Odhad: krátký blok — **instruktor jen ukáže** (tvorba = license-only)
+> Typ: **referenční materiál** k 10min segmentu v [`../agent-builder/`](../agent-builder/README.md) (od 2026-11 už ne samostatný blok) · Den: 4
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 > Kontext: deklarativní agent, mapa cest a srovnání → [`../copilot-agents/`](../copilot-agents/README.md)
 
@@ -23,7 +23,7 @@ Přidání dalšího zdroje **odstranilo** ostatní (MC1255409, ověřeno v tena
 
 ## Licence: tvorba vs. použití
 
-- **Tvorba: Copilot licence** → u nás proto **jen instruktorské demo**, studenti sledují.
+- **Tvorba: Copilot licence** → studenti ji od 2026-11 mají, ale cesta je legacy → **jen instruktorské demo** v segmentu Agent Builderu.
 - **Použití: licence NEBO PAYG** (meter i pro nelicencované; jen pro `.agent` soubory) — vzor „licence gate-uje funkci, permissions gate-ují obsah" z D1.
 
 ## Distribuce
