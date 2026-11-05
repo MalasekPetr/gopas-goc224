@@ -27,7 +27,7 @@
 ## HR Asistent — running example (příprava dat)
 
 - Scénář [`scenario-hr-agent.md`](scenario-hr-agent.md) + laby [`../agent-builder/lab-agent-builder.md`](../agent-builder/lab-agent-builder.md) a [`../sharepoint-agents/lab-sharepoint-agent.md`](../sharepoint-agents/lab-sharepoint-agent.md) táhnou jeden agent D4 → D5. Data nasadit **před během**: `scripts/New-HRAgentData.ps1 -SiteUrl .../sites/hr-demo -ClientId <PnP-GOC224> -CreateSite -SiteOwner admin@spdemo.online -UseDeviceCode` (ClientId nikdy do repa; skript je gitignored). `-ReferenceDate` pinnout pro reprodukovatelné „do 30 dnů".
-- Data nasazená (2026-07-16). Fresh tenant: přidat `-CreateSite -SiteOwner admin@spdemo.online`. Přidání knihovny `Runbooky` (pro Toolkit lab) i přegenerování dat: `-Reseed`. Reuse spojení = jeden device login na okno.
+- **Před každým během přenasadit s `-Reseed -ReferenceDate <datum D4>`** — expirace certifikátů jsou offsety (10018/10022/10027 = +7/+21/+28 dní). Se starými daty z 2026-07-16 by „do 30 dnů" vracelo jiné osoby a laby Agent Builder, Code a Copilot Studio by hodnotily správné odpovědi jako chybné. Laby proto berou jako zdroj pravdy filtr v listu. Data nasazená poprvé 2026-07-16. Fresh tenant: přidat `-CreateSite -SiteOwner admin@spdemo.online`. Přidání knihovny `Runbooky` (pro Toolkit lab) i přegenerování dat: `-Reseed`. Reuse spojení = jeden device login na okno.
 - Nosná pointa HR labu: **tentýž požadavek** narazí na jinou hranu — Agent Builder jen prioritizuje (neagreguje), SharePoint agent má **1 zdroj a nic jiného**. Analytiku („komu propadá certifikát") **v D4 nezvládne žádný agent** — schválně visí jako most na **Copilot Studio v D5**. Dopolední dashboard v Code (`cowork-code`) ji zvládl jako **aplikace** — rozlišovat: aplikace = přehled, agent = konverzační odpověď v kontextu. JOIN list × knihovna = Power Automate, ne agent.
 - **Toolkit do HR nepatří** (list nescopuje) — má vlastní lab [`../agents-toolkit/lab-toolkit-agent.md`](../agents-toolkit/lab-toolkit-agent.md) na scénáři Support (runbooky, agent jako spravovaná konfigurace, bez akce).
 - Stavět nad instruktorským HR webem, ne studentskými. U SP agenta studenti jen sledují (legacy cesta, 10min segment).
@@ -41,4 +41,4 @@
 ## Vazby
 
 - Zpět: Agent Instructions/orchestrator (D2).
-- Dopředu: **správa agentů** (registr, blokace, Agent 365) hned zítra ráno v `copilot-admin` (D5); pak Skills a Copilot Studio = „stejný návrh, silnější nástroj" — návrhy z části A se ve Studiu dají rovnou stavět, **HR Asistent** se dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.
+- Dopředu: **správa agentů** (registr, blokace, Agent 365) hned zítra ráno v `copilot-admin` (D5); pak Skills a Copilot Studio = „stejný návrh, silnější nástroj" — návrhy z návrhového labu se ve Studiu dají rovnou stavět, **HR Asistent** se dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.

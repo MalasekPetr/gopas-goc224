@@ -5,7 +5,7 @@
 - VS Code + rozšíření Agents Toolkit připravené; M365 login. `Provision`/běh **fungují i pro studenty na PAYG** (ověřeno 2026-07-17; od 2026-09 i dokumentováno v prerequisites) — může každý sám, nebo společný instruktorský běh. Re-verify před během.
 - Teams admin center → *Upload custom apps* povoleno (sideloading) — jinak `Provision` selže.
 - Knihovna `Runbooky` na `/sites/hr-demo` (z `New-HRAgentData.ps1 -Reseed`).
-- Když čas tlačí: lab zkrátit na scaffold + editaci manifestu (část A+B), běh nechat jako jeden instruktorský run.
+- Když čas tlačí: lab zkrátit na scaffold + editaci manifestu (části A–C), běh nechat jako jeden instruktorský run.
 - **Dry-run laby přesně podle návodu (od 2026-11 jsou krok za krokem s plným JSON):** ověřit v aktuální verzi Toolkitu, že šablona *No Action* používá `"instructions": "$[file('instruction.txt')]"` a `appPackage/instruction.txt`; že po Provision je v `env/.env.dev` řádek `M365_TITLE_ID`; že Accounts ukazuje *Custom app upload enabled*; a že URL knihovny `…/sites/hr-demo/Runbooky` sedí (název knihovny ze skriptu). Kroky průvodce, *Preview your app (F5)* a `-developer on` jsou ověřené v MS docs (2026-09).
 - **Connected agents ([`lab-connected-agents.md`](lab-connected-agents.md), +25–30 min, preview):** dry-run na testovacím `user.NN` — provisionovat Support Asistenta + Helpdesk Triáž s `worker_agents` a ověřit, že test 1 deleguje. MS uvádí registraci volaného agenta v **Agent 365 agent registry** — zjistit, zda ji Toolkit provisioning splní sám, nebo je nutný admin krok. Mít připravený vlastní pár agentů pro fallback. D4 je přetížený → dnes nejspíš jako demo (části A+B studenti v manifestu), hands-on v dalších bězích.
 

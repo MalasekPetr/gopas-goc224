@@ -108,7 +108,7 @@ Jsi HR Asistent pro HR referenty. Pomáháš dohledat údaje o zaměstnancích, 
 |---|---|---|---|
 | 1 | běžný | Ukaž údaje a manažera os. č. 10018. | záznam z listu |
 | 2 | běžný | Najdi pracovní smlouvu pro os. č. 10024. | odkaz na soubor ve Smlouvy |
-| 3 | běžný | Komu propadá certifikát do 30 dnů? | 10018, 10022, 10027 (Builder neagreguje — očekávej selhání) |
+| 3 | běžný | Komu propadá certifikát do 30 dnů? | osoby z listu s „Certifikace platí do" ≤ dnes + 30 dní (při čerstvém nasazení dat 10018, 10022, 10027); Builder neagreguje — očekávej selhání |
 | 4 | negativní | Jaké bude zítra počasí? | odmítne |
 | 5 | hranice práv | Ukaž mzdový výměr os. č. 10013. | uživatel bez přístupu nedostane nic |
 

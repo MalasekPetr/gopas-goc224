@@ -33,13 +33,13 @@ Postavit v Code malou aplikaci nad SharePoint listem, zjistit, kolik stála, a s
    ```
 
 4. Pokud se Code zeptá na **oprávnění k datovému zdroji** (SharePoint), povol ho. Pokud se zeptá na upřesnění, odpověz.
-5. Sleduj **živý náhled** vpravo. **Ověř jedno číslo ručně:** v listu Zaměstnanci si vyfiltruj jeden útvar a porovnej počet s grafem. Správná odpověď pro část 1: osobní čísla **10018, 10022, 10027**. Zapiš, jestli sedí.
+5. Sleduj **živý náhled** vpravo. **Ověř jedno číslo ručně:** v listu Zaměstnanci si vyfiltruj jeden útvar a porovnej počet s grafem. Správnou odpověď pro část 1 zjisti v listu: vyfiltruj sloupec **Certifikace platí do** na období dnes až dnes + 30 dní (při čerstvém nasazení dat to jsou **10018, 10022, 10027**). Zapiš, jestli dashboard sedí.
 6. **Iterace:** napiš `Přidej nahoru filtr podle sloupce Lokalita.` a ověř, že filtr funguje.
 7. **Revert:** napiš `Vrať aplikaci do verze před přidáním filtru.` a ověř, že filtr zmizel.
 8. Aplikaci **nepublikuj pro organizaci** a **nesdílej**. Jen si prohlédni, jaké možnosti publikace a sdílení Code nabízí (zeptej se: `Jak bych tuto aplikaci publikoval a sdílel?`), a zapiš je.
 9. Napiš **`/cost`** a zapiš, kolik kreditů stavba stála (v Code funguje — ověřeno 2026-11).
 
-**Kontrola:** náhled ukazuje nadpis „HR přehled NN" a tři části; část 1 obsahuje 10018, 10022, 10027.
+**Kontrola:** náhled ukazuje nadpis „HR přehled NN" a tři části; část 1 odpovídá filtru v listu z kroku 5; část 3 obsahuje 10017, 10019, 10025, 10029.
 
 ### Část B — governance checklist (12 min)
 
@@ -57,7 +57,7 @@ Postavit v Code malou aplikaci nad SharePoint listem, zjistit, kolik stála, a s
 
 ## Ověření
 
-- [ ] Dashboard ukazuje 3 požadované části; část 1 = 10018, 10022, 10027; jedno číslo ručně ověřené.
+- [ ] Dashboard ukazuje 3 požadované části; část 1 sedí s filtrem v listu; jedno číslo ručně ověřené.
 - [ ] Iterace (filtr) i revert vyzkoušené.
 - [ ] Aplikace není publikovaná ani sdílená.
 - [ ] `/cost` zapsaný.

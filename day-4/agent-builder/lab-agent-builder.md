@@ -24,7 +24,7 @@ Postavit agenta **HR Asistent NN** v Agent Builderu nad daty zaměstnanců, otes
    |---|---|---|---|---|
    | 1 | lookup | „Ukaž údaje a manažera zaměstnance s osobním číslem 10018." | údaje z listu Zaměstnanci (útvar, pozice, manažer, platnost certifikace) | |
    | 2 | hledání v souboru | „Najdi pracovní smlouvu pro osobní číslo 10024." | odkaz na dokument v knihovně Smlouvy | |
-   | 3 | analytický | „Komu propadá certifikát do 30 dnů?" | **neúplný nebo nespolehlivý výčet** (správně: 10018, 10022, 10027) | |
+   | 3 | analytický | „Komu propadá certifikát do 30 dnů?" | **neúplný nebo nespolehlivý výčet** (správnou odpověď si ověř v listu — viz krok 10) | |
    | 4 | negativní | „Jaké bude zítra počasí v Praze?" | odmítne — není to HR dotaz | |
    | 5 | hranice práv | „Ukaž mzdový výměr osobního čísla 10013." | jen pokud máš ke knihovně Smlouvy přístup; agent nikdy neukáže víc, než smíš vidět ty | |
 
@@ -85,7 +85,7 @@ Postavit agenta **HR Asistent NN** v Agent Builderu nad daty zaměstnanců, otes
 ### Část C — testy (10 min)
 
 9. Přepni na kartu **Try it** a polož 5 dotazů z tabulky v části A **přesně v uvedeném znění**. Do sloupce „Výsledek" zapiš: prošlo / neprošlo + co agent vrátil.
-10. U testu 3 porovnej výčet se správnou odpovědí (10018, 10022, 10027). **Builder data neagreguje ani nefiltruje — jen prioritizuje zdroje.** Zapiš, které osoby chyběly nebo přebývaly.
+10. U testu 3 zjisti správnou odpověď přímo v listu **Zaměstnanci**: seřaď nebo vyfiltruj sloupec **Certifikace platí do** a vypiš osoby s datem od dneška do dneška + 30 dní (při čerstvém nasazení dat to jsou 10018, 10022, 10027). Porovnej s výčtem agenta. **Builder data neagreguje ani nefiltruje — jen prioritizuje zdroje.** Zapiš, které osoby chyběly nebo přebývaly.
 11. **Jedna iterace:** vyber nejhorší test kromě testu 3, uprav jednu větu v **Instructions** nebo **Description** (např. přidej „Když se ptám na osobní číslo, vypiš všechny sloupce záznamu jako odrážky.") a test zopakuj. Zapiš, jestli se výsledek zlepšil.
 12. Klikni **Create** (vpravo nahoře; popisek se může lišit). Agent se uloží a objeví v seznamu agentů v levém panelu Copilotu. **Nesdílej ho s celou organizací** — je to tvůj testovací agent.
 

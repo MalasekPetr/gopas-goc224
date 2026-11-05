@@ -7,7 +7,7 @@
 ## Před během
 
 - [ ] Proklikat živý tenant: Copilot Settings taby, **Cost management**, Agents sekce, Overview dashboard — **UI se mění po měsících**, slidy vs. realita.
-- [ ] Ověřit, že Global Reader otevře Cost management (docs: reader role read-only) — jinak krok 1b labu promítnout.
+- [ ] Ověřit, že Global Reader otevře Cost management (docs: reader role read-only) — jinak krok 2 labu (Cost management) promítnout.
 - [ ] Mít v tenantu aspoň 2–3 agenty (z D4 `copilot-agents` / testovací), ať registr není prázdný a je co blokovat.
 - [ ] Ověřit, co přesně Global Reader vidí v sekci Agents (preview oblasti se mění) — určuje rozsah labu.
 - [ ] Testovací agent na blokaci (demo) — ne ten, který potřebují pozdější bloky D5 (Skills/Studio)!

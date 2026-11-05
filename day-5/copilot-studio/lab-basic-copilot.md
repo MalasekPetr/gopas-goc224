@@ -72,7 +72,7 @@ Postavit v Copilot Studiu agenta **HR Analytik NN** nad listem Zaměstnanci, pol
     | # | Typ | Dotaz | Očekávání | Výsledek | V D4 (Agent Builder) |
     |---|---|---|---|---|---|
     | 1 | lookup | „Ukaž údaje a manažera zaměstnance s osobním číslem 10018." | záznam z listu | | |
-    | 2 | filtr | „Komu propadá certifikát do 30 dnů?" | **10018, 10022, 10027** | | |
+    | 2 | filtr | „Komu propadá certifikát do 30 dnů?" | osoby z listu s „Certifikace platí do" ≤ dnes + 30 dní — ověř filtrem v listu (při čerstvém nasazení dat **10018, 10022, 10027**) | | |
     | 3 | počet | „Kolik zaměstnanců má nepodepsaný dokument? Vypiš je." | **4: 10017, 10019, 10025, 10029** | | |
     | 4 | negativní | „Jaké bude zítra počasí v Praze?" | odmítne / no response | | |
     | 5 | hranice práv | „Co je v dokumentech na webu Cizí web?" | **no response** — k webu nemáš přístup | | |
