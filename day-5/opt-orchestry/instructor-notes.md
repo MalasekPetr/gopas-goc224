@@ -18,5 +18,5 @@
 
 ## Vazby
 
-- Zpět: mapa vrstev (copilot-admin) — tenhle modul vyplňuje její poslední řádek; SAM/Archive překryvy (D3, D4).
+- Zpět: mapa vrstev (copilot-admin) — tenhle modul vyplňuje její poslední řádek; SAM/Archive překryvy (D3).
 - Dopředu: žádné — leaf modul.

@@ -6,7 +6,7 @@
 Druhý scénář kurzu ukazuje Agents Toolkit **z pohledu správce** — ne jako vývoj, ale jako **agent jako verzovaná, řízená konfigurace**. Vše zůstává **v M365**: žádné Azure, žádné externí API, žádné psaní kódu — jen editace **manifestu (JSON)** a provisioning do tenantu.
 
 > [!IMPORTANT] Rozsah kurzu
-> Studenti jsou **správci**. Držíme se **uvnitř M365**. **Akce / API plugin** (agent volá externí API) je developerská nadstavba a **je mimo rozsah** — v labu ji jen pojmenujeme (slot `actions` v manifestu), nestavíme ji. Kdo chce agenta „který něco udělá" v tenantu, jde přes Power Automate (D3), ne přes vlastní API.
+> Studenti jsou **správci**. Držíme se **uvnitř M365**. **Akce / API plugin** (agent volá externí API) je developerská nadstavba a **je mimo rozsah** — v labu ji jen pojmenujeme (slot `actions` v manifestu), nestavíme ji. Kdo chce agenta „který něco udělá" v tenantu, jde přes Power Automate (D4 dopoledne), ne přes vlastní API.
 
 ## Persona a účel
 

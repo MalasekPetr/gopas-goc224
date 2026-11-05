@@ -1,6 +1,6 @@
 # SharePoint agents
 
-> Typ: **referenční materiál** k 10min segmentu v [`../agent-builder/`](../agent-builder/README.md) (od 2026-11 už ne samostatný blok) · Den: 4
+> Typ: **volitelný** (podpora `.agent` končí) · Den: 4 (konec dne) · Odhad: 20 min — instruktorské demo
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 > Kontext: deklarativní agent, mapa cest a srovnání → [`../copilot-agents/`](../copilot-agents/README.md)
 

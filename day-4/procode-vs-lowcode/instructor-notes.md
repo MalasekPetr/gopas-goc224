@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 45 min výklad + 30 min lab + 10 min sdílení návrhů. Závěr dne — energie bude nízká, lab je diskusní, ne klikací.
+- 45 min výklad + 30 min lab + 10 min sdílení návrhů. Dopolední blok D4 — lab je diskusní, ne klikací; navazuje přímo na demo flow.
 
 ## Tripwires
 
@@ -19,5 +19,5 @@
 
 ## Vazby
 
-- Zpět: demo flow (blok 3), Document Intelligence akcent, formáty (OpenAPI = JSON/YAML, D1).
-- Dopředu: deklarativní vs. custom engine agent → D4 `copilot-agents` (hned zítra, 3. blok dne); repo-as-code přístup → D5 capstone.
+- Zpět: demo flow (předchozí blok `power-automate-invoices`), Document Intelligence akcent, formáty (OpenAPI = JSON/YAML, D1).
+- Dopředu: deklarativní vs. custom engine agent → D4 `copilot-agents` (týž den odpoledne); repo-as-code přístup → D5 capstone.

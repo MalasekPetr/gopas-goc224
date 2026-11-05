@@ -4,7 +4,7 @@
 
 - **T1 — Copilot in SharePoint / Skills na PAYG bez licence: VYŘEŠENO 2026-11 → nefunguje.** PAYG bez licence = jen Copilot Chat a agenti. „GA uzavřel preview cestu, platí docs (license-only)." Proto mají studenti od běhu 2026-11 Copilot licenci.
   - Před během ověřit, že **licence jsou studentům přiřazené a propsané** (testovací `user.NN`: Copilot in SharePoint na studentském webu, site skill, Home → přepínač Cowork).
-  - Spending policy pro studenty (Cowork, Code, Advanced work) s per-user stropem — viz `../../day-4/cowork-code/instructor-notes.md`.
+  - Spending policy pro studenty (Cowork, Code, Advanced work) s per-user stropem — viz `../../day-4/cowork/instructor-notes.md`.
 - **Cost management** v M365 AC: zkontrolovat, že instruktorská spending policy nemá zapnuté **Auto-apply new services** (jinak se do ní samy přidají Code/Autopilot apod.).
 
 ## Tripwires

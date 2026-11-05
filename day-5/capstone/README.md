@@ -29,7 +29,7 @@ Každá sekce má oporu v modulu kurzu — blueprint je rekapitulace týdne v ja
 
 ### Registr rizik — minimum
 
-Formát: riziko → dopad → pravděpodobnost → mitigace (nástroj z kurzu!) → vlastník. Povinné kategorie: oversharing (D3), náklady PAYG (D1/D2), ztráta dat (D4), nekontrolovaní agenti (D5), adopční selhání (change).
+Formát: riziko → dopad → pravděpodobnost → mitigace (nástroj z kurzu!) → vlastník. Povinné kategorie: oversharing (D3), náklady PAYG (D1/D2), ztráta dat (D3), nekontrolovaní agenti (D5), adopční selhání (change).
 
 U nákladů nezapomenout na dvě rizika z nového modelu Copilot Credits ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)):
 

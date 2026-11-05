@@ -1,6 +1,6 @@
 # Microsoft 365 Backup
 
-> Typ: povinný · Den: 4 (otvírák) · Odhad: AM blok
+> Typ: povinný · Den: 3 · Odhad: PM blok (po SAM)
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle

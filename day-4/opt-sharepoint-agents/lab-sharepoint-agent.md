@@ -1,6 +1,6 @@
 # Lab · SharePoint agent — limit jednoho zdroje (demo)
 
-> Modul: sharepoint-agents · Odhad: 20 min · Režim: **instruktorské demo** (studenti sledují + predikují)
+> Modul: opt-sharepoint-agents · Odhad: 20 min · Režim: **instruktorské demo** (studenti sledují + predikují)
 > Scénář a data: [`../copilot-agents/scenario-hr-agent.md`](../copilot-agents/scenario-hr-agent.md)
 
 ## Cíl

@@ -67,7 +67,7 @@ Použij CSV z D2 PowerShell labu, nebo tuto náhradní tabulku:
 3. **Výpočet:** archivací se data **nezmenší** — jen se přesunou do levnějšího tieru. Pravidlo: archiv je zdarma, dokud se **aktivní + archiv** vejde do kvóty. **Kontrola:** 850 + 400 = 1 250 GB → 250 GB nad kvótou → **$12,50/měsíc**.
 4. **Rozhodnutí:** nápověda — používá se ještě? Má být dohledatelný v Copilotu? Je obsah zastaralý a mohl by Copilot plést (zastaralé směrnice → archiv nebo RCD, aby je Copilot necitoval)?
 5. **Reaktivace:** reaktivovaný web **nejde 4 měsíce znovu archivovat**; reaktivace je pro SharePoint bez poplatku.
-6. **Backup:** archiv **není záloha** — je to jediná kopie, jen levnější. Zapiš, jestli mají být kritické archivované weby v backup policy (D4 backup lab).
+6. **Backup:** archiv **není záloha** — je to jediná kopie, jen levnější. Zapiš, jestli mají být kritické archivované weby v backup policy (D3 backup lab — předchozí blok).
 
 ## Ověření
 

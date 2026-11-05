@@ -1,6 +1,6 @@
 # Pro-code vs. low-code agenti a vzory rozšíření
 
-> Typ: povinný · Den: 3 (závěr) · Odhad: PM blok
+> Typ: povinný · Den: 4 · Odhad: AM blok (po Power Automate)
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle

@@ -3,7 +3,7 @@
 > Typ: povinný · Den: 4 (úvod k agentním blokům) · Odhad: krátký blok — výklad + srovnání + návrhový lab
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
-Úvodní blok před dvěma nástrojovými: [`../agent-builder/`](../agent-builder/README.md) (vč. segmentu [SharePoint agents](../sharepoint-agents/README.md)) · [`../agents-toolkit/`](../agents-toolkit/README.md). Navazuje na dopolední [`../cowork-code/`](../cowork-code/README.md) — Cowork koná za uživatele, agent je sdílený a spravovaný artefakt. Tady se učí **společný základ** (deklarativní agent, mapa cest, srovnání) a navrhne se agent včetně **plánu vyhodnocení**.
+Úvodní blok před dvěma nástrojovými: [`../agent-builder/`](../agent-builder/README.md) (volitelně [SharePoint agents](../opt-sharepoint-agents/README.md) — podpora končí) · [`../agents-toolkit/`](../agents-toolkit/README.md). Navazuje na dopolední [`../cowork/`](../cowork/README.md) — Cowork koná za uživatele, agent je sdílený a spravovaný artefakt. Tady se učí **společný základ** (deklarativní agent, mapa cest, srovnání) a navrhne se agent včetně **plánu vyhodnocení**.
 
 ## Cíle
 
@@ -32,10 +32,10 @@ flowchart TB
 | Cesta | Pro koho | Tvorba vyžaduje | Distribuce |
 |---|---|---|---|
 | **[Agent Builder](../agent-builder/README.md)** | koncový uživatel | M365 Copilot licence, **nebo** tenant s PAYG pro Copilot Studio; externí akce ne → „copy to Copilot Studio" | sdílení + org katalog; **ne marketplace** |
-| **[SharePoint agents](../sharepoint-agents/README.md)** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG; od pol. 11/2026 tvorba přes Agent Builder | jen web (sdílení do Teams chatu) |
+| **[SharePoint agents](../opt-sharepoint-agents/README.md)** | vlastník obsahu | **tvorba: Copilot licence**; použití: licence NEBO PAYG; od pol. 11/2026 tvorba přes Agent Builder | jen web (sdílení do Teams chatu) |
 | **[Agents Toolkit](../agents-toolkit/README.md)** | vývojář (u nás: správce, jako konfigurace) | zdarma (VS Code); bez Copilot licence (dokumentováno); repo-as-code | org katalog, marketplace |
 | **Copilot Studio** (D5) | maker / power user | Copilot Studio přístup (kredity/PAYG); dva harnessy (standard / GitHub Copilot) | org katalog přes schválení, marketplace |
-| **Skills** (D5) | uživatel webu | Copilot in SharePoint (GA; **Copilot licence** — PAYG nestačí, ověřeno 2026-11) + Edit | v rámci webu |
+| **Skills** (D3) | uživatel webu | Copilot in SharePoint (GA; **Copilot licence** — PAYG nestačí, ověřeno 2026-11) + Edit | v rámci webu |
 
 Mimo tuto tabulku MS nově uvádí i **Cowork plugins** a **Work IQ Dev Tools** (preview) — viz poznámka v [`comparison-agent-paths.md`](comparison-agent-paths.md). Skills (`SKILL.md`) nejsou jen v Copilot in SharePoint: připojí je i Agent Builder, manifest (`agent_skills`) a Cowork.
 
@@ -54,10 +54,10 @@ Org flow: maker publikuje → **Requests** v admin centru → admin Publish/Reje
 ## Naše prostředí — tři agentní bloky D4
 
 1. **Agenti — mapa cest** (tento blok): výklad + srovnání + návrhový lab.
-2. **[Agent Builder](../agent-builder/README.md)** — studenti hands-on (HR Asistent) + 10min segment **SharePoint agents** (legacy `.agent`, od pol. 11/2026 tvorba přes Agent Builder, upgrade cesty).
+2. **[Agent Builder](../agent-builder/README.md)** — studenti hands-on (HR Asistent).
 3. **[Agents Toolkit](../agents-toolkit/README.md)** — studenti společně (agent jako spravovaná konfigurace).
 
-**Copilot Studio i Skills jsou až D5.**
+**Skills znáte z D3, Copilot Studio je v D5.** Volitelně na konci dne: [SharePoint agents](../opt-sharepoint-agents/README.md) (legacy, podpora končí).
 
 ## Lab a sdílené materiály
 

@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 35 min výklad + živé demo, 35 min lab (25 návrh/review + 10 živé běhy). Otvírák pátku — energie je, ale kredity a pozornost šetřit na Copilot Studio (další blok); Skills demo kredity nečerpá jinak než přes instruktorskou licenci.
+- 35 min výklad + živé demo, 35 min lab (25 návrh/review + 10 živé běhy). Závěr D3 — most k zítřejším agentům (D4) a Cowork skills; Skills demo kredity nečerpá jinak než přes instruktorskou licenci.
 
 ## Go/no-go — otestovat před během
 
@@ -17,7 +17,7 @@
 ## Tripwires
 
 - **Licence po GA**: Copilot in SharePoint (vč. Skills) je license-only; v preview (2026-07-17) na PAYG fungovalo, po GA ne (ověřeno 2026-11). Říct jako „GA uzavřel preview cestu" — proto mají studenti licenci. Psaní SKILL.md zůstává přenositelná dovednost v obou případech — stejný formát používá Excel/Word, Agent Builder i Cowork.
-- **Skills ≠ automatizace**: žádné externí systémy, žádný kód — na to jsou agenti (odpoledne) a Power Automate (D3). Plánované spouštění skills existuje, ale jako „Advanced work" za Copilot Credits (vyžaduje licenci). Studenti budou chtít „skill, co pošle e-mail" — zastavit u kroku 2 labu (kontrola omezení).
+- **Skills ≠ automatizace**: žádné externí systémy, žádný kód — na to jsou agenti a Power Automate (obojí D4). Plánované spouštění skills existuje, ale jako „Advanced work" za Copilot Credits (vyžaduje licenci). Studenti budou chtít „skill, co pošle e-mail" — zastavit u kroku 2 labu (kontrola omezení).
 - **Personal vs. site skill**: Copilot se při tvorbě zeptá — pro lab chceme **site skill** (Agent Assets, sdílený), personal skill skončí v OneDrive.
 - **Žádný admin vypínač** — governance dotazy směřovat na file permissions na Agent Assets (break inheritance), ne do admin centra.
 - Agent Assets nejde smazat — nepanikat při demu, je to by design.

@@ -10,7 +10,7 @@
 - [ ] Ověřit, že Global Reader otevře Cost management (docs: reader role read-only) — jinak krok 2 labu (Cost management) promítnout.
 - [ ] Mít v tenantu aspoň 2–3 agenty (z D4 `copilot-agents` / testovací), ať registr není prázdný a je co blokovat.
 - [ ] Ověřit, co přesně Global Reader vidí v sekci Agents (preview oblasti se mění) — určuje rozsah labu.
-- [ ] Testovací agent na blokaci (demo) — ne ten, který potřebují pozdější bloky D5 (Skills/Studio)!
+- [ ] Testovací agent na blokaci (demo) — ne ten, který potřebují pozdější bloky D5 (Studio)!
 
 ## Tripwires
 

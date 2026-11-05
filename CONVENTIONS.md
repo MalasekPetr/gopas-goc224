@@ -19,7 +19,7 @@ Typické soubory ve složce modulu:
 | `lab-*.md` | zadání labu | student |
 | `instructor-notes.md` | timing, tripwires, otázky, fallbacky | jen lektor |
 
-Pořadí modulů v běhu drží **`agenda.md`** — je to jediný zdroj pravdy o pořadí. Změna pořadí = úprava `agenda.md`, ne přejmenování složek.
+Pořadí modulů v běhu drží **`agenda.md`** — je to jediný zdroj pravdy o pořadí. Změna pořadí v rámci dne = úprava `agenda.md`, ne přejmenování složek. Přesun modulu do jiného dne = `git mv` do složky cílového dne + úprava `agenda.md` + oprava relativních odkazů.
 
 ## Markdown styl
 

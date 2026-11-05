@@ -13,7 +13,7 @@ Navrhnout sadu governance politik pro 3rd-party vrstvu — a u každé říct, �
 ## Předpoklady
 
 - [ ] Přečtený [README modulu](README.md) — request centrum, lifecycle, Copilot Readiness Dashboard (13 signálů).
-- [ ] Znáš z kurzu: SAM inactive site policy (D3), Microsoft 365 Archive (D4), DAG reporty (D3), RCD/RAC (D2–D3).
+- [ ] Znáš z kurzu: SAM inactive site policy (D3), Microsoft 365 Archive (D3), DAG reporty (D3), RCD/RAC (D2–D3).
 
 ## Kroky
 
@@ -25,7 +25,7 @@ Navrhnout sadu governance politik pro 3rd-party vrstvu — a u každé říct, �
 ## A. Šablony pro request centrum (3)
 | Šablona | Kdo schvaluje | Výchozí privacy | Výchozí sensitivity label | Microsoft nástroj bez 3rd-party |
 |---|---|---|---|---|
-| Projektový tým | vedoucí projektu + IT | Private | Interní | Ruční proces: Teams/SharePoint creation omezené na skupinu + formulář a flow (D3) |
+| Projektový tým | vedoucí projektu + IT | Private | Interní | Ruční proces: Teams/SharePoint creation omezené na skupinu + formulář a flow (D4) |
 | Oddělení | | | | |
 | Externí spolupráce | | | | |
 

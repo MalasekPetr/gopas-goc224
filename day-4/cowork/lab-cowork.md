@@ -1,6 +1,6 @@
 # Lab · Delegovaný úkol v Cowork
 
-> Modul: cowork-code · Odhad: 30 min · Režim: **studenti hands-on, samostatně podle návodu** (vlastní účet a web)
+> Modul: cowork · Odhad: 30 min · Režim: **studenti hands-on, samostatně podle návodu** (vlastní účet a web)
 > Data: knihovna `Vzorky` na vlastním webu z D2 ([`../../day-2/document-processing/lab-sample-library.md`](../../day-2/document-processing/lab-sample-library.md))
 
 ## Cíl
@@ -54,7 +54,7 @@ Delegovat na Cowork úkol, který končí reálnými akcemi (Word dokument + e-m
 12. Jako Global Reader otevři **M365 admin center → Copilot → Cost management → Consumption → Users** a najdi svou spotřebu. Data mají zpoždění — pokud tam ještě nejsi, ověříš zítra v D5.
 13. Vyplň tabulku:
 
-    | Kritérium | Cowork | Agent | Power Automate flow (D3) |
+    | Kritérium | Cowork | Agent | Power Automate flow (D4 dopoledne) |
     |---|---|---|---|
     | Kdo úkol spouští | | | |
     | Kdo schvaluje akce | | | |

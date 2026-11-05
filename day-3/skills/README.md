@@ -1,6 +1,6 @@
 # Skills — rozšíření Copilot in SharePoint
 
-> Typ: povinný · Den: 5 (otvírák) · Odhad: AM blok — vč. **živého dema na instruktorském účtu**
+> Typ: povinný · Den: 3 (závěr) · Odhad: PM blok — vč. **živého dema na instruktorském účtu**
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle
@@ -61,7 +61,7 @@ Na úrovni webu **není žádná „site collection feature" k aktivaci** — Ag
 
 ### Na jakém modelu Skills běží (a co Anthropic)
 
-Copilot in SharePoint — a tedy Skills — běží na **Microsoft-managed reasoning modelu od OpenAI**; model se nekonfiguruje. Skills proto **na Anthropicu nezávisí** (Claude se v této cestě aktuálně nepoužívá). AI subprocesoři, Anthropic a EU Data Boundary: [`../copilot-admin/explainer-ai-subprocessors.md`](../copilot-admin/explainer-ai-subprocessors.md).
+Copilot in SharePoint — a tedy Skills — běží na **Microsoft-managed reasoning modelu od OpenAI**; model se nekonfiguruje. Skills proto **na Anthropicu nezávisí** (Claude se v této cestě aktuálně nepoužívá). AI subprocesoři, Anthropic a EU Data Boundary: [`../../day-5/copilot-admin/explainer-ai-subprocessors.md`](../../day-5/copilot-admin/explainer-ai-subprocessors.md).
 
 ### Kontext webu — SHAREPOINT.md (doporučení)
 

@@ -81,7 +81,7 @@ Během kroků 1–6 doplňuj:
 | Položka v navigaci chybí | skrytá za **Show all** | klikni **Show all** dole v levém panelu |
 | Cost management je prázdné nebo nepřístupné | preview změny / Global Reader tab nevidí | zapiš to; instruktor promítne ze svého účtu |
 | Své agenty z D4 v **All agents** nevidíš | agenti z Toolkitu jsou nasazení jen pro tebe (sideload) | hledej podle názvu s tvým `NN`; zapiš, jestli tam jsou |
-| **Apps** v navigaci nemáš | Copilot Managed Runtime admin experience ještě není v tenantu | zapiš to jako zjištění; řádek 6 doplň z README cowork-code |
+| **Apps** v navigaci nemáš | Copilot Managed Runtime admin experience ještě není v tenantu | zapiš to jako zjištění; řádek 6 doplň z README modulu D4 `code` |
 | Usage report je prázdný | zpoždění dat ~48 h | v pořádku — zapiš „data ještě nedorazila" |
 
 ## Fallback

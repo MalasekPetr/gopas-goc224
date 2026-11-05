@@ -1,6 +1,6 @@
 # Lab · Dashboard v Code a governance checklist
 
-> Modul: cowork-code · Odhad: 30 min · Režim: **studenti hands-on, samostatně podle návodu** (Frontier); fallback instruktorské demo
+> Modul: code · Odhad: 30 min · Režim: **studenti hands-on, samostatně podle návodu** (Frontier); fallback instruktorské demo
 > Data: list `Zaměstnanci` na HR webu — [`../copilot-agents/scenario-hr-agent.md`](../copilot-agents/scenario-hr-agent.md)
 
 ## Cíl

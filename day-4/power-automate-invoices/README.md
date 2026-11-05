@@ -1,6 +1,6 @@
 # Power Automate — příchozí faktury
 
-> Typ: povinný · Den: 3 · Odhad: krátký PM blok — **jen výklad + instruktorské demo, bez labu**
+> Typ: povinný · Den: 4 (otvírák) · Odhad: krátký AM blok — **jen výklad + instruktorské demo, bez labu**
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle
@@ -49,7 +49,7 @@ flowchart LR
 
 ## Naše prostředí
 
-- **Bez labu.** Instruktor předvede demo flow (trigger → AI Builder vytěžení → approval → metadata). Studenti flow využijí v D3 bloku 4 jako podklad pro návrh rozšíření.
+- **Bez labu.** Instruktor předvede demo flow (trigger → AI Builder vytěžení → approval → metadata). Studenti flow využijí hned v dalším bloku (D4 `procode-vs-lowcode`) jako podklad pro návrh rozšíření.
 
 ## Zdroje (Microsoft)
 

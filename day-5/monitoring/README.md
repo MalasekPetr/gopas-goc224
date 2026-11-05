@@ -37,7 +37,7 @@ flowchart LR
   K --> P[Post-mortem<br>úprava politik]
 ```
 
-Provozní signály z celého týdne se tu potkávají: PAYG spotřeba (D2), DAG reporty (D3), backup drilly (D4) a agent dashboard (D5, `copilot-admin`). Runbook je říká *v jakém pořadí a kdo*.
+Provozní signály z celého týdne se tu potkávají: PAYG spotřeba (D2), DAG reporty (D3), backup drilly (D3) a agent dashboard (D5, `copilot-admin`). Runbook je říká *v jakém pořadí a kdo*.
 
 ## Klíčové rozlišení
 

@@ -13,7 +13,7 @@
 
 ## Rámec kurzu — správci, ne vývojáři, jen M365
 
-Učíme ho jako **„agent jako spravovaná konfigurace"** — governance a ALM (manifest v gitu, opakovatelný `Provision`, publikace přes schválení), **ne jako vývoj**. **Akce / API plugin / Azure jsou mimo rozsah** — v labu jen pojmenujeme slot `actions`; „udělej něco v tenantu" = Power Automate (D3).
+Učíme ho jako **„agent jako spravovaná konfigurace"** — governance a ALM (manifest v gitu, opakovatelný `Provision`, publikace přes schválení), **ne jako vývoj**. **Akce / API plugin / Azure jsou mimo rozsah** — v labu jen pojmenujeme slot `actions`; „udělej něco v tenantu" = Power Automate (D4 dopoledne).
 
 ## Knowledge — fakta z manifestu (schema 1.7, ověřeno i v 1.9)
 

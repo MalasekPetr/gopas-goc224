@@ -8,7 +8,7 @@
 Postavit deklarativního agenta **Support Asistent** v Microsoft 365 Agents Toolkitu **jako verzovanou konfiguraci** — editací **manifestu (JSON)**, bez psaní kódu a **bez opuštění M365**. Na konci máš agenta nasazeného v tenantu, otestovaného 4 dotazy, a umíš vysvětlit rozdíl proti Agent Builderu.
 
 > [!IMPORTANT] Rozsah — správci, ne vývojáři
-> **Žádné Azure, žádné externí API, žádný hosting.** Editujeme jen manifest (JSON — znáš ho z D1 `formats`). **Akci (API plugin) nestavíme** — slot `actions` jen pojmenujeme; „udělej něco v tenantu" se řeší přes Power Automate (D3).
+> **Žádné Azure, žádné externí API, žádný hosting.** Editujeme jen manifest (JSON — znáš ho z D1 `formats`). **Akci (API plugin) nestavíme** — slot `actions` jen pojmenujeme; „udělej něco v tenantu" se řeší přes Power Automate (D4 dopoledne).
 
 ## Předpoklady
 

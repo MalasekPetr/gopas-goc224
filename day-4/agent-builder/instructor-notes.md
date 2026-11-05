@@ -17,6 +17,6 @@
 ## Vazby
 
 - Zpět: Agent Instructions (D2), mapa cest a srovnání ([`../copilot-agents/`](../copilot-agents/README.md)).
-- Zpět: dashboard v Code (`cowork-code`, dopoledne) odpověděl na „komu propadá certifikát" jako **aplikace** — Builder tentýž dotaz neagreguje; dobré srovnání aplikace vs. agent.
-- SharePoint agents = 10min segment v tomto bloku (sloučeno 2026-11; legacy `.agent`, 4 upgrade cesty) — podklady v [`../sharepoint-agents/`](../sharepoint-agents/README.md).
+- Zpět: dashboard v Code (`code`, dopoledne) odpověděl na „komu propadá certifikát" jako **aplikace** — Builder tentýž dotaz neagreguje; dobré srovnání aplikace vs. agent.
+- SharePoint agents = volitelný blok na konci D4 (podpora `.agent` končí) — [`../opt-sharepoint-agents/`](../opt-sharepoint-agents/README.md); tady jen zmínit, že „Create agent" na webu vede do Agent Builderu.
 - Dopředu: Agents Toolkit → správa v D5 `copilot-admin`; analytika ve Studiu (D5).

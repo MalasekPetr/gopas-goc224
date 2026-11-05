@@ -18,5 +18,5 @@
 
 ## Vazby
 
-- Zpět: celotýdenní signály (PAYG D2, DAG D3, backup drill D4, agent dashboard D5 `copilot-admin`) se potkávají v runbooku; eSignature audit (D3).
+- Zpět: celotýdenní signály (PAYG D2, DAG D3, backup drill D3, agent dashboard D5 `copilot-admin`) se potkávají v runbooku; eSignature audit (D3).
 - Dopředu: runbook = sekce capstone blueprintu (D5); po tomto bloku **go/no-go na opt-orchestry**.

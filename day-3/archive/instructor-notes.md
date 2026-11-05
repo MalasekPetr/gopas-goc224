@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 30 min výklad + 25 min lab. Kratší blok — most mezi backupem a copilot-agents.
+- 30 min výklad + 25 min lab. Kratší blok — most mezi backupem a skills (závěr D3).
 
 ## Demo
 

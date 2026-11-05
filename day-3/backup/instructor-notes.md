@@ -3,7 +3,7 @@
 ## Timing
 
 - 40 min výklad + 30 min lab (vč. dema v kroku 6). RPO/RTO tabulka je jádro — nechat studenty čísla použít v labu, ne je jen ukázat.
-- **Otvírák dne (5 min, před výkladem):** revisit výsledků **inactive site policy** ze včerejšího SAM bloku (simulation doběhla přes noc) + kontrola, zda dopropagovalo RCD na testovacím webu (AI entry pointy zmizely?).
+- **Úvod bloku (5 min, před výkladem):** navázat na právě aplikovanou **inactive site policy** z předchozího SAM bloku (výsledek simulace doběhne až přes noc — revisit ráno D4) + kontrola, zda dopropagovalo RCD na testovacím webu (AI entry pointy zmizely?).
 
 ## Go/no-go
 

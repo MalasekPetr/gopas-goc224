@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 40–50 min: 25 min výklad (anatomie + tři cesty vytěžení) + 15–20 min živé demo flow. **Bez labu** — čas jde bloku 4 (procode-vs-lowcode), který na demo flow navazuje.
+- 40–50 min: 25 min výklad (anatomie + tři cesty vytěžení) + 15–20 min živé demo flow. **Bez labu** — čas jde dalšímu bloku (procode-vs-lowcode), který na demo flow navazuje.
 
 ## Demo checklist
 

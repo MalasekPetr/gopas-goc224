@@ -8,7 +8,7 @@ Nosná lekce: **nástroj se vybírá podle práce.** V D4 stavíme **dva scéná
 | Cesta | Kdo v D4 | Scénář |
 | --- | --- | --- |
 | **Agent Builder** | **studenti hands-on** | HR Asistent |
-| **SharePoint agent** | **instruktor ukáže** v 10min segmentu Agent Builderu (tvorba = Copilot licence; legacy `.agent`, od pol. 11/2026 přes Agent Builder) | HR Asistent |
+| **SharePoint agent** | **volitelně** — instruktor ukáže v bloku `opt-sharepoint-agents` (tvorba = Copilot licence; legacy `.agent`, podpora končí) | HR Asistent |
 | **Agents Toolkit** | **studenti hands-on, společně** (bez akce, agent jako kód) | Support Asistent (runbooky) |
 | ~~Copilot Studio~~ | **až D5** (analytický payoff nad týmiž daty) | HR Asistent → [`../../day-5/copilot-studio/`](../../day-5/copilot-studio/) |
 
@@ -69,7 +69,7 @@ Na tabuli napiš **5 dotazů** a po každé cestě doplň sloupec ✅/❌.
 Detail a lab: [`scenario-support-agent.md`](scenario-support-agent.md) · [`../agents-toolkit/lab-toolkit-agent.md`](../agents-toolkit/lab-toolkit-agent.md). Pro **správce**: tentýž typ agenta (čte knowledge) jako v Builderu, ale postavený jako **verzovaná, řízená konfigurace** — ne osobní klikačka. Vše v M365, **žádné API / Azure / psaní kódu**.
 
 > [!IMPORTANT] Rozsah
-> **Akci (API plugin) nestavíme** — je to vývoj mimo M365. Jen ukážeme slot `actions` a řekneme, k čemu je. „Udělej něco v tenantu" = Power Automate (D3), ne vlastní API.
+> **Akci (API plugin) nestavíme** — je to vývoj mimo M365. Jen ukážeme slot `actions` a řekneme, k čemu je. „Udělej něco v tenantu" = Power Automate (D4 dopoledne), ne vlastní API.
 
 4 dotazy scénáře B (čtení z runbooků):
 

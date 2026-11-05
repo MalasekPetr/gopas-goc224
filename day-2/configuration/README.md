@@ -31,7 +31,7 @@ Aktivace: M365 admin center → **Setup → Billing and licenses → Activate pa
 - **Region** — kde budou uložena **usage metadata** (tenant ID, názvy webů). Data-residency rozhodnutí, ne výkonové — obsah dokumentů zůstává v tenantu.
 - **Terms of service** — samostatné PAYG podmínky (jiný právní režim než M365 subscription).
 
-Odemyká doc processing služby (Autofill columns, OCR, translation, eSignature, …) a je to stejná plumbing, na kterou navazují Backup/Archive/Storage metry (D4). Role: SharePoint nebo Global Admin.
+Odemyká doc processing služby (Autofill columns, OCR, translation, eSignature, …) a je to stejná plumbing, na kterou navazují Backup/Archive/Storage metry (D3). Role: SharePoint nebo Global Admin.
 
 #### 1b — Copilot Credits PAYG (Copilot bez licencí)
 
@@ -51,7 +51,7 @@ Druhá, novější plocha pro Copilot Credits: **Copilot → Cost management** �
 - Spending policy = **scope** (users/groups nebo prostředí/agenti) + **vybrané služby** + **limity** + billing method. Policy zároveň **řídí přístup** — kdo v ní není, službu nepoužije.
 - **Limited budget je tvrdý strop**: po vyčerpání uživatel ztratí přístup do 1. dne dalšího měsíce. Minimum 2 000 kreditů/uživatel/měs.
 - **Auto-apply new services** je default zapnuté → nové UBB služby se do policy přidají samy. U kontrolovaného rolloutu vypnout.
-- U Cowork, Advanced work a Code MS vyžaduje Copilot licenci — Credits ji nenahrazují. V našem tenantu mají studenti licenci (od 2026-11) a spending policy pro Cowork / Code / Advanced work se reálně používá (D4 [`cowork-code`](../../day-4/cowork-code/README.md)).
+- U Cowork, Advanced work a Code MS vyžaduje Copilot licenci — Credits ji nenahrazují. V našem tenantu mají studenti licenci (od 2026-11) a spending policy pro Cowork / Code / Advanced work se reálně používá (D4 [`cowork`](../../day-4/cowork/README.md), [`code`](../../day-4/code/README.md)).
 
 ### Krok 2 — dostupnost Copilot in SharePoint
 

@@ -1,8 +1,8 @@
 # Agenda — pořadí bloků
 
-Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tato tabulka.
+Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy uložené ve složce dne; pořadí v rámci dne drží tato tabulka.
 
-**5 dní · ~4–6 bloky/den.** P = povinný, V = volitelný.
+**5 dní · ~4–8 bloků/den.** P = povinný, V = volitelný.
 
 ## Den 1 — Foundation
 
@@ -26,27 +26,33 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 
 > [!NOTE] Prompting hned ráno — studenti používají Copilot od D1, prompt literacy se úročí celý týden (a šetří Copilot Credits). PowerShell je scripting-literacy opener před konfiguračními moduly.
 
-## Den 3 — Obsahové služby, governance & automatizace
+## Den 3 — Obsahové služby, governance & ochrana dat
 
 | # | Blok | Slug | Typ |
 |---|---|---|---|
 | 1 | Scénáře eSignature | `day-3/esignature` | P |
 | 2 | SharePoint Advanced Management (SAM) | `day-3/advanced-management` | P |
-| 3 | Power Automate — příchozí faktury *(jen výklad + demo; akcent Azure AI Document Intelligence jako alternativa)* | `day-3/power-automate-invoices` | P |
-| 4 | Pro-code vs. low-code agenti a vzory rozšíření | `day-3/procode-vs-lowcode` | P |
+| 3 | Microsoft 365 Backup | `day-3/backup` | P |
+| 4 | Microsoft 365 Archive | `day-3/archive` | P |
+| 5 | Skills — rozšíření Copilot in SharePoint *(studenti hands-on)* | `day-3/skills` | P |
 
-## Den 4 — Data protection & tvorba agentů
+> [!NOTE] Dějová linka dne: eSignature → SAM politiky (nit „nástroje pro správu", pokračuje v D5 `copilot-admin`) → ochrana dat (backup → archive) → Skills jako most k agentům v D4. Orientačně ~370 min.
+
+## Den 4 — Automatizace, Copilot, který koná, & tvorba agentů
 
 | # | Blok | Slug | Typ |
 |---|---|---|---|
-| 1 | Microsoft 365 Backup | `day-4/backup` | P |
-| 2 | Microsoft 365 Archive | `day-4/archive` | P |
-| 3 | Cowork a Code — Copilot, který koná a staví *(studenti hands-on, 2 laby)* | `day-4/cowork-code` | P |
-| 4 | Agenti — mapa cest tvorby *(úvod: deklarativní agent, srovnání, návrhový lab)* | `day-4/copilot-agents` | P |
-| 5 | Agent Builder *(studenti hands-on; vč. 10min segmentu SharePoint agents — legacy `.agent` a upgrade cesty)* | `day-4/agent-builder` | P |
-| 6 | Microsoft 365 Agents Toolkit *(agent jako spravovaná konfigurace; + agent volající agenta přes `worker_agents`)* | `day-4/agents-toolkit` | P |
+| 1 | Power Automate — příchozí faktury *(jen výklad + demo; akcent Azure AI Document Intelligence jako alternativa)* | `day-4/power-automate-invoices` | P |
+| 2 | Pro-code vs. low-code agenti a vzory rozšíření | `day-4/procode-vs-lowcode` | P |
+| 3 | Cowork — Copilot, který koná *(studenti hands-on)* | `day-4/cowork` | P |
+| 4 | Code — Copilot, který staví *(studenti hands-on, Frontier)* | `day-4/code` | P |
+| 5 | Přístup jiných AI k datům tenantu — aplikační registrace, podnikové aplikace, consent, agent identity *(audit + demo)* | `day-4/ai-app-access` | P |
+| 6 | Agenti — mapa cest tvorby *(úvod: deklarativní agent, srovnání, návrhový lab)* | `day-4/copilot-agents` | P |
+| 7 | Agent Builder *(studenti hands-on)* | `day-4/agent-builder` | P |
+| 8 | Microsoft 365 Agents Toolkit *(agent jako spravovaná konfigurace; + agent volající agenta přes `worker_agents`)* | `day-4/agents-toolkit` | P |
+| 9 | SharePoint agents *(instruktorské demo — legacy `.agent`, podpora končí 03/2027)* | `day-4/opt-sharepoint-agents` | V |
 
-> [!NOTE] Od běhu 2026-11 mají studenti Copilot licenci → Cowork a Code jdou hands-on. Samostatný blok `sharepoint-agents` je sloučený do `agent-builder` (od pol. 11/2026 se SharePoint agenti tvoří přes Agent Builder); složka zůstává jako referenční materiál k segmentu.
+> [!NOTE] Od běhu 2026-11: Backup, Archive a Skills přesunuté do D3; Power Automate a procode do D4 (vyvážení zátěže). Cowork a Code jsou samostatné moduly. SharePoint agents jsou volitelné — „Create agent" na webu od pol. 11/2026 otevírá Agent Builder a `.agent` soubory přestanou odpovídat po 03/2027. Nový blok `ai-app-access` (převzatý a rozšířený z GOC223). D4 je nejplnější den (~470 min bez volitelného bloku) — viz instructor notes `cowork` / `code` pro zkrácení.
 
 ## Den 5 — Správa, stavba & rollout
 
@@ -55,8 +61,7 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy; pořadí drží tat
 | 1 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-5/copilot-admin` | P |
 | 2 | Provozní monitoring a compliance | `day-5/monitoring` | P |
 | 3 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
-| 4 | Skills — rozšíření Copilot in SharePoint *(studenti hands-on — Copilot licence od 2026-11)* | `day-5/skills` | P |
-| 5 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
-| 6 | Závěrečný projekt a další kroky *(rollout blueprint)* | `day-5/capstone` | P |
+| 4 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
+| 5 | Závěrečný projekt a další kroky *(rollout blueprint)* | `day-5/capstone` | P |
 
-> [!NOTE] D4 skončí **stavbou** agentů (`copilot-agents`); D5 ráno naváže jejich **správou** (copilot-admin → monitoring → volitelná Orchestry), pak pokračuje **stavbou** (Skills, Copilot Studio) a **rolloutem** (capstone). Oblouk „postavili jste — teď to řídíte — a stavíte dál". Přesun copilot-admin/monitoring/orchestry z D4 do D5 odlehčil přetížený D4 (velký hands-on blok copilot-agents).
+> [!NOTE] D4 skončí **stavbou** agentů; D5 ráno naváže jejich **správou** (copilot-admin → monitoring → volitelná Orchestry), pak pokračuje **stavbou** (Copilot Studio) a **rolloutem** (capstone). Oblouk „postavili jste — teď to řídíte — a stavíte dál".

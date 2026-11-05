@@ -7,7 +7,7 @@
 ## Go/no-go — otestovat před během
 
 - **Přístup studentů do Copilot Studia**: PAYG billing policy / trial pro 20 účtů — ověřit přihlášení testovacím studentským účtem vč. založení agenta a SharePoint knowledge. No-go → fallback (stavba podle návrhů studentů na projektoru).
-- **Environment**: studenti staví v `GOC224-lab` (Sandbox, založený v D3 — viz `../../day-3/power-automate-invoices/explainer-environments.md`), role Environment Maker, billing policy připojená k tomuto environmentu. Ověřit, že se Copilot Studio otvírá v něm, ne v defaultu (přepínač environmentu vpravo nahoře).
+- **Environment**: studenti staví v `GOC224-lab` (Sandbox, založený v D3 — viz `../../day-4/power-automate-invoices/explainer-environments.md`), role Environment Maker, billing policy připojená k tomuto environmentu. Ověřit, že se Copilot Studio otvírá v něm, ne v defaultu (přepínač environmentu vpravo nahoře).
 - **Harness**: ověřit, kam vede „New agent" v tenantu (nová zkušenost = GitHub Copilot harness, účtuje od stavby) a jak se dostat na standard harness (*Other ways to build* / *Open classic experience*). Testovacím účtem po pár testech zkontrolovat stránku **Monitor** — čerpá test panel na standard harnessu kredity?
 - **HR data čerstvá:** expirace certifikátů jsou offsety od `-ReferenceDate`. Den před D4 přenasadit `scripts/New-HRAgentData.ps1 -Reseed -ReferenceDate <datum D4>` (jinak „do 30 dnů" ≠ 10018/10022/10027). Offsety 7/21/28 dní, nejbližší další 60 → výsledek drží i přes D5.
 - Ověřit, že **Restricted SharePoint Search není zapnutý** (blokoval by SharePoint knowledge celé třídě).
