@@ -107,7 +107,7 @@ Datumy se počítají jako **offsety vůči `-ReferenceDate`** (default dnešek)
 # instruktor, jednorázově; ClientId = app PnP-GOC224 (nikdy do repa)
 ./scripts/New-HRAgentData.ps1 `
   -SiteUrl https://ms365x17157302.sharepoint.com/sites/hr-demo `
-  -ClientId <guid> -CreateSite -SiteOwner admin@spdemo.online -UseDeviceCode
+  -ClientId <guid> -CreateSite -SiteOwner <admin-účet — viz instruktorský soubor> -UseDeviceCode
 ```
 
 Idempotentní; opětovné naplnění dat přes `-Reseed`. Detail viz hlavička skriptu.
