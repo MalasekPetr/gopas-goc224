@@ -26,5 +26,5 @@
 ## Závěr kurzu
 
 - Next steps: Success Kit + enablement guide (odkazy v README) — ukázat, kde jsou.
-- Připomenout: účty se v pátek večer deaktivují (lifecycle, PAYG) — blueprint si stáhnout!
+- Připomenout: blueprint si stáhnout — kurzovní účty po kurzu nejsou k dispozici.
 - Feedback formulář GOPAS.

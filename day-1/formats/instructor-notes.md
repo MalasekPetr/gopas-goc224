@@ -10,3 +10,6 @@
 ## Tripwires
 - YAML odsazení (mezery vs. taby) — nejčastější chyba studentů.
 - JSON bez komentářů — studenti se ptají „proč mi to hlásí chybu".
+
+## Přesunuto z README (samostudium)
+- Pokud v `day-4/agents-toolkit` ukazujete YAML config Agents Toolkitu, před během ověřte aktuální název souboru.

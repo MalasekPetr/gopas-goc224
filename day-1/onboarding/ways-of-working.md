@@ -15,7 +15,7 @@ Governance ground-rules kurzu. Zavádí se tady a pozdější moduly se na ně o
 - **Licence vs. permissions** — viz `../../GLOSSARY.md`.
 
 ## PAYG chování v učebně
-- AI je metrovaná (Copilot Credits). Neopakovat zbytečně dotazy „pro efekt" — každá interakce stojí kredity a nemá tvrdý strop.
+- Cowork, Code a Advanced work čerpají Copilot Credits navíc k licenci; agenti na původním PAYG čerpají kredity bez tvrdého stropu. Neopakovat zbytečně dotazy „pro efekt".
 
 ## Zodpovědná AI
 - Ověřovat výstupy AI, neposílat citlivá data mimo tenant, respektovat sensitivity labels.

@@ -8,3 +8,7 @@
 
 - Nezabřednout do klasické hierarchie subwebů; držet moderní plochou strukturu + huby.
 - Propojit s Copilotem: metadata a taxonomie zlepšují grounding, ne jen navigaci.
+
+## Přesunuto z README
+
+- Spouštět, když skupina potřebuje IA refresher (dříve NOTE v README).

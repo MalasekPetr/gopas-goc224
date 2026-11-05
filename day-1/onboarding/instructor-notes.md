@@ -16,12 +16,11 @@
 ## Model rolí (viz `../../environment.md`)
 - Studenti: **Global Reader** (celý týden) + **Owner** na vlastním webu. **Ne Global Admin.**
 - Tenant-wide operace (`Set-SPOTenant`, service enablement) = instruktorské demo.
-- **Lifecycle:** Po ráno nastavit role → Pá večer deaktivovat účty (ochrana PAYG).
 
 ## Tripwires
 - Onboarding vs. konfigurace: nezapínat funkce tady, jen přístup.
 - Poznámka k názvosloví (SharePoint Premium → aktuální názvy) říct hned na začátku.
-- Role ≠ ochrana PAYG — kredity žere používání Copilota. PAYG hlídá budget alert + páteční deaktivace.
+- Role ≠ ochrana PAYG — kredity žere používání Copilota. PAYG hlídá budget alert.
 
 ## PAYG cost watch
-- 20 studentů × opakované dotazy = reálné Azure náklady bez tvrdého stropu. Zmínit studentům v pravidlech práce.
+- 20 studentů × opakované dotazy = reálné náklady; původní PAYG (agenti) nemá tvrdý strop, spending policy (Cowork, Code) ano. Zmínit studentům v pravidlech práce.
