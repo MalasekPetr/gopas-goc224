@@ -43,7 +43,7 @@ Postavit v Code malou aplikaci nad SharePoint listem, zjistit, kolik stála, a s
 
 ### Část B — governance checklist (12 min)
 
-10. Do poznámek odpověz na 7 otázek. Nápovědu najdeš v [README modulu](README.md), sekce *Kde aplikace žije — Copilot Managed Runtime*.
+10. Do poznámek odpověz na 8 otázek. Nápovědu najdeš v [README modulu](README.md), sekce *Kde aplikace žije — Copilot Managed Runtime* a *Aplikace z Code a SharePoint*.
 
     | # | Otázka | Tvoje odpověď |
     |---|---|---|
@@ -54,6 +54,7 @@ Postavit v Code malou aplikaci nad SharePoint listem, zjistit, kolik stála, a s
     | 5 | **Kolik to stálo** — `/cost` z kroku 9 + kde to uvidí admin? | |
     | 6 | **Kdo platí za běh** publikované aplikace? (spending policy *Copilot Managed Runtime*) | |
     | 7 | **Agent nebo aplikace?** Tentýž dotaz „komu propadá certifikát" uvidíš odpoledne v Agent Builderu — v čem se výsledky liší? | |
+    | 8 | **Kde by výstup měl žít?** HR chce přehled jen pro čtení na svém webu — aplikace v Managed Runtime, nebo HTML page v SharePointu? Kdo v každé variantě platí běh? | |
 
 ## Ověření
 
@@ -61,7 +62,7 @@ Postavit v Code malou aplikaci nad SharePoint listem, zjistit, kolik stála, a s
 - [ ] Iterace (filtr) i revert vyzkoušené.
 - [ ] Aplikace není publikovaná ani sdílená.
 - [ ] `/cost` zapsaný.
-- [ ] Governance checklist má všech 7 odpovědí.
+- [ ] Governance checklist má všech 8 odpovědí.
 
 ## Když něco nejde
 

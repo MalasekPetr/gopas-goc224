@@ -34,6 +34,7 @@ M365 admin center → **Agents** ([Manage agents](https://learn.microsoft.com/en
 - **Overview** dashboard: počty agentů, aktivní uživatelé, **run-time hodiny**, **ownerless agents**, agents at risk ([Agents overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview)).
 - Pozor: **Researcher a Analyst** jsou součást Copilot licence (Premium, [Service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot)); admin je může blokovat, ale Researcher zůstává v nabídce Tools i při vypnutých agentech — ověřit v tenantu.
 - **Cowork** je „agentic system", ne agent: jeho položka v Agents nemá efekt, přístup řídí spending policy v Cost management ([Cowork](https://learn.microsoft.com/en-us/copilot/cowork/)).
+- **Agenti z SPFx balíčků:** od SPFx 1.24 může `.sppkg` z tenant **App Catalogu** (*Add to Teams*) nebo SharePoint Store dodat deklarativního agenta s **Copilot UX components** — další zdroj agentů mimo Agent Builder a Copilot Studio. Kdo smí nasazovat do App Catalogu, je tedy i otázka governance agentů; jak se tito agenti zobrazí v Registry, ověřit v tenantu ([SPFx 1.24](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.24.0)).
 
 ### 3. Agent 365 — control plane
 

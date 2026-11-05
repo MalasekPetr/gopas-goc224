@@ -38,6 +38,13 @@ Publikovaná aplikace z Code (stejně jako z Cowork App skillu, Copilot Studia n
 - **Vazba na Power Platform:** spravuje Global Admin nebo **Power Platform Administrator**, pojmy jsou environments / environment groups, platí existující **DLP a advanced connector policies** (přísnější vyhrává). Výchozí politika povoluje jen 18 first-party konektorů s Entra ID, které drží data v tenantu.
 - **Náklady:** stavbu platí tvůrce (spending policy pro Code), **běh platí každý uživatel, který aplikaci otevře** — samostatná spending policy *Copilot Managed Runtime*. V preview uživatel bez krytí po 20 operacích nebo 5 minutách ztratí přístup ([Admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/)). Správu projdete v D5 [`copilot-admin`](../../day-5/copilot-admin/lab-copilot-admin-tour.md).
 
+### Aplikace z Code a SharePoint
+
+- **Odkaz ze SharePointu** (Quick links, tlačítko, navigace, HTML page) — doporučená cesta. Z HTML page se odkaz otevře, jen když je `managedapps.cloud.microsoft` v HTML Field Security webu.
+- **Vložení jako iframe nedělat** — výchozí CSP aplikace má `frame-ancestors 'self' <platform>` a admin by ho musel rozšířit pro celou environment group; Microsoft scénář nedokumentuje ([CSP](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance#content-security-policy)).
+- **Read-only přehled** můžeš z Code vzít jako jeden HTML soubor a nahrát do Site Pages jako **HTML page** — bez běhových nákladů a bez Copilot licence čtenáře, ale bez zápisu a konektorů ([HTML pages](https://support.microsoft.com/en-us/sharepoint/create-edit-publish-html-pages)).
+- Srovnání všech cest (Managed Runtime, HTML page, SPFx, Copilot UX components): [`procode-vs-lowcode`](../procode-vs-lowcode/README.md#aplikace-pro-uživatele--kde-žije-a-kdo-platí).
+
 ## Klíčové rozlišení
 
 - **Aplikace ≠ agent.** Aplikace ukáže přehled nad daty; agent dává konverzační odpověď v kontextu. Analytický dotaz „komu propadá certifikát" vyřeší dashboard v Code dřív než agent v Agent Builderu.
@@ -55,9 +62,9 @@ Publikovaná aplikace z Code (stejně jako z Cowork App skillu, Copilot Studia n
 
 ## Zdroje (Microsoft)
 
-[Copilot Code](https://learn.microsoft.com/en-us/copilot/code/) · [Use Copilot Code](https://learn.microsoft.com/en-us/copilot/code/use-code) · [Copilot Code requirements](https://learn.microsoft.com/en-us/copilot/code/code-requirements) · [Manage Copilot Code](https://learn.microsoft.com/en-us/copilot/code/code-admin) · [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/) · [Copilot Managed Runtime — admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/) · [Copilot Managed Runtime — governance](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance)
+[Copilot Code](https://learn.microsoft.com/en-us/copilot/code/) · [Use Copilot Code](https://learn.microsoft.com/en-us/copilot/code/use-code) · [Copilot Code requirements](https://learn.microsoft.com/en-us/copilot/code/code-requirements) · [Manage Copilot Code](https://learn.microsoft.com/en-us/copilot/code/code-admin) · [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/) · [Copilot Managed Runtime — admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/) · [Copilot Managed Runtime — governance](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance) · [HTML pages v SharePointu](https://support.microsoft.com/en-us/sharepoint/create-edit-publish-html-pages)
 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-11.
-> Code = Frontier preview — rozsah, UI a výchozí admin nastavení se mění. `/cost` funguje v Code (empiricky ověřeno 2026-11, MS docs ho uvádí jen u Copilot in SharePoint). Copilot Managed Runtime = preview; konkrétní lifecycle akce v *Apps → All apps* (vypnutí, smazání, změna vlastníka) ověřit v UI.
+> Code = Frontier preview — rozsah, UI a výchozí admin nastavení se mění. `/cost` funguje v Code (empiricky ověřeno 2026-11, MS docs ho uvádí jen u Copilot in SharePoint). Copilot Managed Runtime = preview; konkrétní lifecycle akce v *Apps → All apps* (vypnutí, smazání, změna vlastníka) ověřit v UI. HTML pages v SharePointu: GA rollout 11–12/2026.

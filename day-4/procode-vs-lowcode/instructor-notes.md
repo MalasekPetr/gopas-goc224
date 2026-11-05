@@ -8,6 +8,7 @@
 
 - **Neučit vyřazené**: add-in model (v SPO skončil 2. 4. 2026), TeamsFx SDK (support skončil 9/2026), „in a folder" triggery. Když se student zeptá na add-iny — „v SharePoint Online už nefungují, náhrada SPFx".
 - SPFx 1.24 / Copilot UX components zmínit jednou větou jako novou hranu mapy (UI agenta v Copilotu, jen s Copilot licencí) — ne demo.
+- Tabulka „Aplikace pro uživatele" (~5 min): pointa je **kdo platí běh** a **kde výsledek žije** (Managed Runtime vs. HTML page vs. SPFx). HTML pages jsou do konce 12/2026 v GA rolloutu — před během ověřit, že je tenant má (*+ New → HTML page* na studentském webu).
 - Názvy: **Microsoft 365 Agents Toolkit** (ne Teams Toolkit), **Copilot connectors** (ne Graph connectors), **Agents SDK** (ne TeamsFx).
 - Nezabřednout do SPFx detailů (toolchain, Heft…) — tady jde o rozhodovací mapu, ne o kurz vývoje.
 - Custom connector sdílení: Power Automate + Power Apps + Copilot Studio ano, Logic Apps ne — častý dotaz.

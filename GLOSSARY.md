@@ -102,7 +102,7 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 | **Copilot Studio** | low-code stavba agentů; dvě „harness" prostředí: **standard** (klasické) a **GitHub Copilot harness** (nová zkušenost, preview) | Copilot Credits / M365 Copilot licence (zero-rating jen na standard harness); GitHub Copilot harness čerpá kredity už od stavby a licence ho nekryje |
 | **Agent Builder** | lightweight tvorba deklarativních agentů přímo v Copilotu (bez opuštění appky); umí připojit Skills (preview); externí akce ne → „copy to Copilot Studio" | Copilot licence / tenant s PAYG pro Copilot Studio (MS prerequisites) — ověřit k datu běhu |
 
-Rozhodovací osa pro [`day-3/procode-vs-lowcode`](day-4/procode-vs-lowcode/): deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
+Rozhodovací osa pro [`day-4/procode-vs-lowcode`](day-4/procode-vs-lowcode/): deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
 
 ## Azure AI služby (mimo M365)
 
