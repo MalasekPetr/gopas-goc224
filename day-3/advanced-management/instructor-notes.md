@@ -23,7 +23,7 @@
 3. **DAG sharing links report** — třída tipuje nejčastější nález, pak otevřít předgenerovaný report + EEEU insights (klasický oversharing vektor, který Copilot zviditelní).
 4. **RCD — uzavření smyčky z D2**: Restricted tag na testovacím webu → studenti znovu pustí `copilot-inventory.ps1` (read-only, dle D2 go/no-go) → `RestrictedContentDiscovery` True, `CopilotAvailable` False. Včerejší skript dnes detekuje admin zásah — nejsilnější můstek dne.
 5. **RAC na obětním webu** — druhá identita dostane „access denied"; kontrast: RAC bere lidem přístup, RCD bere AI viditelnost.
-6. **Inactive site policy** — tvorba v **simulation mode** (volby, notifikace) + na rovinu, že výsledky doběhnou později → revisit zítra ráno 5 min před backupem.
+6. **Inactive site policy** — tvorba v **simulation mode** (volby, notifikace) + na rovinu, že výsledky doběhnou později → revisit zítra ráno (D4) 5 min na začátku dne.
 7. Bonus (zbyde-li 5 min): `Start-SPORestrictedContentDiscoverabilityReport` — tenant-wide RCD report z PowerShellu, navazuje na D2 scripting nit.
 
 ## Tripwires

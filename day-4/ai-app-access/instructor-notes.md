@@ -22,7 +22,7 @@
 - **Změna user consent policy neodvolá staré granty** — studenti to předpokládají. Úklid = audit Enterprise apps + odvolání.
 - **`Sites.Selected` po consentu nevidí nic** — „dal jsem consent a nefunguje" je správné chování, ne chyba.
 - **Odvolat credential ≠ odebrat oprávnění** (GOC223 tripwire) — ztracený klíč se řeší smazáním credentialu podle thumbprintu.
-- **CA pro workload identity** se vynucuje jen při přímém přiřazení service principalu, ne přes skupinu; multi-tenant SaaS aplikace nepokrývá.
+- **CA pro workload identity** se vynucuje jen při přímém přiřazení service principalu, ne přes skupinu; multi-tenant SaaS aplikace nepokrývá — tedy **ne** AI aplikace třetích stran. Kdo ji v labu navrhne jako nápravu pro cizí AI aplikaci, opravit.
 - Neslibovat licence app governance a Agent ID funkcí — ověřit k datu běhu (README delta).
 - Data sovereignty: u každé AI aplikace se ptát „kde data skončí" — vázat na registr aplikací v capstone.
 

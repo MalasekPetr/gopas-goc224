@@ -56,7 +56,7 @@ flowchart LR
 
 ### Další páky správce
 
-- **Conditional Access pro workload identity** — CA lze cílit i na service principal, ale jen **přiřazením přímo** (ne přes skupinu); multi-tenant SaaS aplikace a managed identity politika **nepokrývá**; vyžaduje licenci Workload Identities Premium ([CA for workload identities](https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity)).
+- **Conditional Access pro workload identity** — CA lze cílit i na service principal, ale jen **přiřazením přímo** (ne přes skupinu); multi-tenant SaaS aplikace a managed identity politika **nepokrývá**; vyžaduje licenci Workload Identities Premium ([CA for workload identities](https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity)). **Použitelné jen pro vlastní (single-tenant) aplikace** — na AI aplikace třetích stran (multi-tenant SaaS) CA pro workload identity nedosáhne; tam zbývá consent, `Sites.Selected`, app governance a smlouva.
 - **Credentials** — u vlastních aplikací: managed identity → certifikát → client secret (jen dev/test). Při ztrátě se odvolává **credential**, ne oprávnění ([Migrate away from secrets](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-applications-from-secrets)).
 - **App governance** (Microsoft Defender for Cloud Apps) — přehled všech OAuth aplikací třetích stran registrovaných v Entra ID, jejich oprávnění, kdo je odsouhlasil, a politiky, které rizikové aplikace omezí; alerty v Defender XDR ([App governance](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance)). Vyžaduje licenci Defender for Cloud Apps — ověřit.
 - **Agent identity (Microsoft Entra Agent ID)** — nový typ identity pro AI agenty, odlišný od service principalu. Agenti z **Copilot Studia** dostávají agent identity se **sponzorem** (tvůrcem); přihlášení se logují jako AI agent; v Entra admin centru je karta **Agent identities**. Agent ID je dostupné všem zákazníkům Entra; rozšíření bezpečnostních funkcí Entra na agenty vyžaduje **Agent 365** ([What are agent identities](https://learn.microsoft.com/en-us/entra/agent-id/what-are-agent-identities)).
@@ -72,7 +72,7 @@ flowchart TB
   C -->|delegovaná| D[Admin consent pro vybranou skupinu<br/>user consent jen low impact]
   C -->|aplikační| E{Stačí Sites.Selected?}
   E -->|ano| F[Sites.Selected + grant na konkrétní web]
-  E -->|ne| G[Výjimka: zdůvodnit, CA pro workload identity,<br/>app governance politika, vlastník, revize]
+  E -->|ne| G[Výjimka: zdůvodnit, smluvně ošetřit,<br/>app governance politika, vlastník, datum revize]
   D --> R[Zapsat do registru aplikací + revize 1× za kvartál]
   F --> R
   G --> R

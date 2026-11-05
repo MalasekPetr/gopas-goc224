@@ -10,7 +10,7 @@ Navrhnout Skill pro opakovaný postup na svém webu, nechat Copilot in SharePoin
 
 - [ ] Přihlášení jako `user.NN@spdemo.online` (Copilot licence).
 - [ ] Tvůj web `https://ms365x17157302.sharepoint.com/sites/user.NN` — jsi jeho Owner (Edit stačí na tvorbu site skillu).
-- [ ] Knihovna **Vzorky** se 3 dokumenty z D2 (smlouva, objednávka, zápis), případně i „Přehled vzorků NN" z D4 Cowork labu.
+- [ ] Knihovna **Vzorky** se 3 dokumenty z D2 (smlouva, objednávka, zápis).
 
 > [!NOTE] `NN` = tvoje číslo účtu. Skills nemají admin vypínač — jedou všude, kde je dostupný Copilot in SharePoint.
 

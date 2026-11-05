@@ -26,4 +26,4 @@
 ## Vazby
 
 - Zpět: MD formát (D1 `formats`), prompt anatomie (D2 — nejednoznačné instrukce), agent vs. skill (D4 `copilot-agents`), Site AI settings/RCD (D2 konfigurace + explainer).
-- Dopředu: Copilot Studio (hned potom) — „skill = postup uvnitř Copilotu; když potřebujete akce, kanály nebo vlastní knowledge, stavíte agenta"; topics v Studiu ≠ Skills (jiný mechanismus, stejná disciplína popisů).
+- Dopředu: Cowork skills a agenti (D4), Copilot Studio (D5) — „skill = postup uvnitř Copilotu; když potřebujete akce, kanály nebo vlastní knowledge, stavíte agenta"; topics v Studiu ≠ Skills (jiný mechanismus, stejná disciplína popisů).

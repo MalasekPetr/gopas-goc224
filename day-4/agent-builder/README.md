@@ -13,7 +13,7 @@ Lightweight tvorba deklarativního agenta **přímo v M365 Copilot appce** (web 
 - **1 SharePoint list** (20k položek / 50 MB; přílohy se neindexují) + soubory/složky/weby (≤ 100).
 - **Bez analytiky** — zdroje umí jen *prioritizovat*, ne agregovat/filtrovat („Only use specified sources" negarantuje úplný výčet). Dotazy typu „kolik/kdo/kdy" → **Copilot Studio (D5)**.
 - **Bez akcí do externích služeb** — Builder je neumí; pro akce, konektory a workflow MS doporučuje „copy the agent to Copilot Studio" ([Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)).
-- **Skills** (`SKILL.md`) lze k agentovi připojit (preview, max 8; [Add skills](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)) — stejný formát jako Skills v Copilot in SharePoint (D5).
+- **Skills** (`SKILL.md`) lze k agentovi připojit (preview, max 8; [Add skills](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)) — stejný formát jako Skills v Copilot in SharePoint (D3).
 - Na PAYG bez licence nejsou dostupné knowledge zdroje Email / People / Teams messages / Teams meetings ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)).
 
 ## Kdo / licence / distribuce

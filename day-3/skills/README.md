@@ -35,7 +35,7 @@ Personal skill je přenosný, ale **nepřenáší práva** — běží jen nad o
 ### Co Skill umí a neumí
 
 - **Umí**: řetězit vestavěné schopnosti Copilot in SharePoint — sumarizace/porozumění obsahu, organizace souborů a složek, práce se seznamy (např. „zvaliduj smlouvy a nevalidní zapiš do listu Invalid Contracts").
-- **Neumí**: externí systémy, vlastní kód. **Nepřekročí práva uživatele** — nerozšiřuje přístup ani schopnosti nad rámec Copilot in SharePoint. (Na akce a integrace jsou agenti — hned další blok.)
+- **Neumí**: externí systémy, vlastní kód. **Nepřekročí práva uživatele** — nerozšiřuje přístup ani schopnosti nad rámec Copilot in SharePoint. (Na akce a integrace jsou agenti — D4.)
 
 ### Kde Skill žije — SKILL.md
 
