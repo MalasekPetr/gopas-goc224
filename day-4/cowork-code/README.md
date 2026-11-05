@@ -55,6 +55,14 @@ flowchart LR
 | Spolehlivý proces bez člověka (trigger → kroky) | **Power Automate** (D3) | deterministický, auditovatelný, bez LLM rozhodování |
 | Přehled / nástroj nad daty | **Code** | aplikace, kterou lze sdílet a znovu otevřít |
 
+### Kde aplikace žije — Copilot Managed Runtime
+
+Publikovaná aplikace z Code (stejně jako z Cowork App skillu, Copilot Studia nebo CLI) běží v **Copilot Managed Runtime** (preview): Microsoft-hosted prostředí s Entra přihlášením a tenantovými governance politikami. Uživatelé ji najdou na `managedapps.cloud.microsoft` ([What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/)).
+
+- **Správa:** inventář v **M365 AC → Apps → All apps**, politiky v **M365 AC → Apps → Settings → Environment groups** (routing, konektory a MCP servery, sharing, content security policy). Detailní pravidla prostředí a DLP v **Power Platform admin center** — oba admin centry ukazují tutéž konfiguraci ([Governance settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance)).
+- **Vazba na Power Platform:** spravuje Global Admin nebo **Power Platform Administrator**, pojmy jsou environments / environment groups, platí existující **DLP a advanced connector policies** (přísnější vyhrává). Výchozí politika povoluje jen 18 first-party konektorů s Entra ID, které drží data v tenantu.
+- **Náklady:** stavbu platí tvůrce (spending policy pro Code / Cowork), **běh platí každý uživatel, který aplikaci otevře** — samostatná spending policy *Copilot Managed Runtime*. V preview uživatel bez krytí po 20 operacích nebo 5 minutách ztratí přístup ([Admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/)). Správu projdete v D5 [`copilot-admin`](../../day-5/copilot-admin/lab-copilot-admin-tour.md).
+
 ## Klíčové rozlišení
 
 - **Chat ≠ Cowork.** Chat odpovídá, Cowork koná — a čerpá Copilot Credits **navíc** k licenci.
@@ -75,9 +83,9 @@ flowchart LR
 
 ## Zdroje (Microsoft)
 
-[Cowork overview](https://learn.microsoft.com/en-us/copilot/cowork/) · [Get started with Cowork](https://learn.microsoft.com/en-us/copilot/cowork/get-started) · [Cowork models](https://learn.microsoft.com/en-us/copilot/cowork/cowork-models) · [Copilot Code](https://learn.microsoft.com/en-us/copilot/code/) · [Copilot Code requirements](https://learn.microsoft.com/en-us/copilot/code/code-requirements) · [Manage Copilot Code](https://learn.microsoft.com/en-us/copilot/code/code-admin) · [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)
+[Cowork overview](https://learn.microsoft.com/en-us/copilot/cowork/) · [Get started with Cowork](https://learn.microsoft.com/en-us/copilot/cowork/get-started) · [Cowork models](https://learn.microsoft.com/en-us/copilot/cowork/cowork-models) · [Copilot Code](https://learn.microsoft.com/en-us/copilot/code/) · [Copilot Code requirements](https://learn.microsoft.com/en-us/copilot/code/code-requirements) · [Manage Copilot Code](https://learn.microsoft.com/en-us/copilot/code/code-admin) · [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/) · [Copilot Managed Runtime — admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/) · [Copilot Managed Runtime — governance](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance) · [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Introducing the new Copilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)
 
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-11.
-> Cowork GA (pracovní účty), App skill v Cowork = Frontier. Code = Frontier preview — rozsah, UI a výchozí admin nastavení se mění. Sazby Copilot Credits za Cowork/Code tu záměrně neuvádíme — ověřit v Cost management. Po Ignite (17.–20. 11. 2026) projet znovu (Cowork plugins, Autopilot).
+> Cowork GA (pracovní účty), App skill v Cowork = Frontier. Code = Frontier preview — rozsah, UI a výchozí admin nastavení se mění. Sazby Copilot Credits za Cowork/Code tu záměrně neuvádíme — ověřit v Cost management. `/cost` funguje v Code (empiricky ověřeno 2026-11, MS docs ho uvádí jen u Copilot in SharePoint). Copilot Managed Runtime = preview; konkrétní lifecycle akce v *Apps → All apps* (vypnutí, smazání, změna vlastníka) ověřit v UI. Po Ignite (17.–20. 11. 2026) projet znovu (Cowork plugins, Autopilot).

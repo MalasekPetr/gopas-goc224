@@ -34,6 +34,7 @@ Delegovat na Cowork úkol, který končí reálnými akcemi (dokument + zpráva)
 
 7. V tabu **Automations** si prohlédni, jak by se tentýž úkol naplánoval (např. každé pondělí). **Plán nezakládej natrvalo** — každý běh čerpá kredity. Pokud ho pro ukázku založíš, na konci ho smaž.
 8. Vyplň tabulku: tentýž úkol jako **Cowork**, jako **agent**, jako **Power Automate flow** (D3). Kritéria: kdo spouští, kdo schvaluje, opakovatelnost, auditní stopa, náklad.
+9. **Kolik to stálo:** zkus v konverzaci `/cost` (v Code funguje, u Cowork ho MS docs neuvádí — zapiš, co se stalo). Jako Global Reader otevři **M365 AC → Copilot → Cost management → Consumption → Users** a najdi svou spotřebu (data mají zpoždění — pokud tam ještě nejsi, ověř zítra v D5).
 
 ## Ověření
 

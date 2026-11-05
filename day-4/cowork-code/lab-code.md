@@ -24,15 +24,17 @@ Postavit v Code malou aplikaci nad SharePoint listem a sepsat, co musí správce
 2. Sleduj živý náhled. Ověř jedno číslo ručně proti listu (např. počet v jednom útvaru).
 3. Udělej **jednu iteraci** (např. filtr podle lokality) a zkus **revert** na předchozí verzi.
 4. Aplikaci **nepublikuj pro celou organizaci**. Jen si prohlédni, jaké možnosti publikace a sdílení Code nabízí, a zapiš je.
+5. Napiš do konverzace **`/cost`** a zapiš, kolik kreditů stavba zatím stála (funguje v Code — ověřeno 2026-11).
 
 ### Část B — governance checklist (10 min)
 
-5. Do MD poznámky odpověz:
+6. Do MD poznámky odpověz:
    - **Kde aplikace běží** (cloud / zařízení) a kdo o tom rozhoduje.
    - **Jaká data** aplikace čte a pod čími právy. Co uvidí kolega bez přístupu k HR webu?
    - **Komu by byla sdílená**, kdybys ji publikoval, a kdo ji pak udržuje.
    - **Proč je v našem tenantu GitHub connection vypnutá** (data sovereignty).
-   - **Kolik to stálo** — kde to uživatel a admin uvidí.
+   - **Kolik to stálo** — `/cost` z kroku 5 + kde to uvidí admin (Cost management).
+   - **Kdo platí za běh** — publikovaná aplikace běží v Copilot Managed Runtime; každý, kdo ji otevře, potřebuje krytí ve spending policy *Copilot Managed Runtime* (viz README).
    - **Agent nebo aplikace?** Tentýž „komu propadá certifikát" uvidíš odpoledne v Agent Builderu — v čem se výsledky liší.
 
 ## Ověření
@@ -40,7 +42,8 @@ Postavit v Code malou aplikaci nad SharePoint listem a sepsat, co musí správce
 - [ ] Dashboard ukazuje 3 požadované přehledy; jedno číslo ručně ověřené.
 - [ ] Iterace + revert vyzkoušené.
 - [ ] Aplikace není publikovaná pro organizaci.
-- [ ] Governance checklist má všech 6 odpovědí.
+- [ ] `/cost` zapsaný.
+- [ ] Governance checklist má všech 7 odpovědí.
 
 ## Fallback
 
