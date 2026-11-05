@@ -42,3 +42,8 @@
 
 - Zpět: Agent Instructions/orchestrator (D2).
 - Dopředu: **správa agentů** (registr, blokace, Agent 365) hned zítra ráno v `copilot-admin` (D5); pak Copilot Studio = „stejný návrh, silnější nástroj" — návrhy z návrhového labu se ve Studiu dají rovnou stavět, **HR Asistent** se dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.
+
+## Přesunuto z README (přepis pro samostudium, 2026-11)
+
+- Ráno před blokem ověřit, že se studentům propsaly Copilot licence (Agent Builder, tvorba SharePoint agenta i Skills hands-on stojí na nich).
+- Demo playbook [`guide-agent-build-demo.md`](guide-agent-build-demo.md) = instruktorské demo všech cest naživo; v README zůstal jen odkaz.

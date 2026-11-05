@@ -22,3 +22,9 @@
 
 - Zpět: demo flow (předchozí blok `power-automate-invoices`), Document Intelligence akcent, formáty (OpenAPI = JSON/YAML, D1).
 - Dopředu: deklarativní vs. custom engine agent → D4 `copilot-agents` (týž den odpoledne); repo-as-code přístup → D5 capstone.
+
+## Přesunuto z README (2026-11)
+
+- Dev nástroje (Agents Toolkit, SPFx toolchain) jen ukázat, neinstalovat.
+- SPFx 1.25 (12/2026–1/2027, SPFx CLI místo Yeomana) do výkladu nepatří — jen pro případ dotazu.
+- Po Ignite (17.–20. 11. 2026) projet delta sekci README.

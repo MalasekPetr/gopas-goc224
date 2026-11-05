@@ -17,3 +17,10 @@
 
 - Zpět: Agent Builder (předchozí blok), mapa cest a srovnání ([`../copilot-agents/`](../copilot-agents/README.md)).
 - Dopředu: Agents Toolkit (agent jako kód); správa/registr agentů → D5 `copilot-admin`.
+
+## Přesunuto z README (přepis pro samostudium)
+
+- Segment běží jako instruktorské demo v rámci bloku Agent Builderu; studentům avizovat jako „legacy cestu" (běh 5. 11. 2026 je ještě před přechodem — demo platí).
+- Limit „1 zdroj" ověřit živě před demem (MS ho nedokumentuje).
+- Docs lag k listům (GA ~05/2026 dle MC1255409, admin docs to neuvádějí) ukázat jako příklad „ověř stav k datu běhu".
+- Po Ignite (11/2026) blok přehodnotit — rozhodnutí autora: legacy demo vs. segment „upgrade cesty".

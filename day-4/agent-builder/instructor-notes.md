@@ -20,3 +20,9 @@
 - Zpět: dashboard v Code (`code`, dopoledne) odpověděl na „komu propadá certifikát" jako **aplikace** — Builder tentýž dotaz neagreguje; dobré srovnání aplikace vs. agent.
 - SharePoint agents = volitelný blok na konci D4 (podpora `.agent` končí) — [`../opt-sharepoint-agents/`](../opt-sharepoint-agents/README.md); tady jen zmínit, že „Create agent" na webu vede do Agent Builderu.
 - Dopředu: Agents Toolkit → správa v D5 `copilot-admin`; analytika ve Studiu (D5).
+
+## Přesunuto z README
+
+- Odhad bloku počítá s živým demem: HR Asistent nad instruktorským webem (popis → instrukce → knowledge → test).
+- Před během ověřit, že je Copilot licence studentů propsaná — jinak jen instruktorské demo (viz Go/no-go).
+- Po Ignite (17.–20. 11. 2026) projet Builder znovu (přebírá tvorbu SharePoint agentů).

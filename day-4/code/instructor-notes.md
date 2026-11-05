@@ -24,3 +24,7 @@ No-go → demo, část B labu beze změny.
 
 - Zpět: [`../cowork/`](../cowork/README.md) (tři režimy, kdy co), HR scénář (`copilot-agents`).
 - Dopředu: Agent Builder odpoledne (tentýž dotaz jako agent — aplikace vs. agent), [`../ai-app-access/`](../ai-app-access/README.md), D5 `copilot-admin` (Apps → All apps, Environment groups).
+
+## Přesunuto z README (samostudium)
+
+- GitHub connection off prezentovat jako governance rozhodnutí, ne jako chybu (dříve „Ukážeme to jako…" v sekci Naše prostředí).

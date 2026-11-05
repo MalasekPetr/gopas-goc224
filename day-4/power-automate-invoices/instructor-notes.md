@@ -23,3 +23,9 @@
 
 - Zpět: vytěžování → D2 `document-processing`; schvalování → D3 `esignature` (Approvals vs. podpis).
 - Dopředu: demo flow = podklad pro lab v `procode-vs-lowcode`; provozní výjimky → D5 `monitoring` (runbook).
+
+## Přesunuto z README (přepis pro samostudium 2026-11)
+
+- Demo flow po 1. 11. 2026 ověřit v tenantu — z jakých kreditů AI Builder čerpá (zbylé AI Builder kredity vs. Copilot Credits).
+- Před během zkontrolovat aktuální titulky MS stránek Document Intelligence (Foundry rebrand).
+- Deprecated „in a folder" triggery výslovně zmínit při demu.

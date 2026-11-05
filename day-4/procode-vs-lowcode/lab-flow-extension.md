@@ -1,6 +1,6 @@
 # Lab · Rozšíření flow o vlastní akci
 
-> Modul: procode-vs-lowcode · Odhad: 30 min · Režim: **simulace (návrh nad demo flow z bloku 3), samostatně podle šablony**
+> Modul: procode-vs-lowcode · Odhad: 30 min · Režim: **simulace (návrh nad demo flow z modulu power-automate-invoices), samostatně podle šablony**
 
 ## Cíl
 
@@ -18,7 +18,7 @@ Demo flow z bloku 3: **trigger (nová faktura v knihovně) → AI Builder vytě�
 
 ## Předpoklady
 
-- [ ] Viděl/a jsi demo flow z bloku 3 ([`../power-automate-invoices/`](../power-automate-invoices/README.md)).
+- [ ] Viděl/a jsi demo flow z modulu power-automate-invoices ([`../power-automate-invoices/`](../power-automate-invoices/README.md)).
 - [ ] Přečtený [README modulu](README.md) — mapa možností a rozhodovací osa.
 
 ## Kroky
