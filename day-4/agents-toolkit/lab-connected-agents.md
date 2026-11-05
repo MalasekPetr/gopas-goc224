@@ -24,12 +24,12 @@ sequenceDiagram
   participant T as Helpdesk Triáž NN<br/>(volající agent)
   participant C as Copilot Chat<br/>(broker)
   participant S as Support Asistent NN<br/>(worker agent)
-  U->>T: „Uživatel nemůže nahrát soubor, access denied"
+  U->>T: „Uživatel nemůže nahrát soubor, access denied“
   T->>C: postup řešení patří runbookům
   C->>S: textový dotaz (vybráno podle name / description / conversation_starters)
   S-->>C: textová odpověď z knihovny Runbooky
   C-->>T: zapracuje odpověď
-  T-->>U: kategorie + priorita + postup; v konverzaci je vidět volání Support Asistenta
+  T-->>U: kategorie + priorita + postup, v konverzaci je vidět volání Support Asistenta
 ```
 
 - Volající agent má v manifestu `worker_agents` s **title ID** volaného agenta.
