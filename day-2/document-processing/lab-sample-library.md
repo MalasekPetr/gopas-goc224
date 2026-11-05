@@ -54,7 +54,7 @@ Zopakovat instruktorská dema na vlastní knihovně: autofill sloupec a image ta
     # Odhad nákladů labu — user.NN
     | Služba | Počet | Sazba (README) | Cena |
     |---|---|---|---|
-    | Autofill (transakce = soubor × sloupec, vč. testů) | | $0.005 | |
+    | Autofill (transakce = stránka Word/PDF, list Excelu, snímek PPT, jinak soubor; cena stejná pro jeden i víc promptů na stránku — viz README; vč. testů) | | $0.005 | |
     | Image tagging (obrázek) | 3 | $0.001 | |
     | Celkem | | | |
 

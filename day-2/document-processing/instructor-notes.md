@@ -29,3 +29,7 @@
 
 - Zpět: prompt anatomie (ranní blok) přímo v promptu autofill sloupce; PAYG modely (D1 licensing).
 - Dopředu: eSignature (D3/1), vytěžování faktur — prebuilt modely vs. Azure (D4/1), náklady/observabilita → D5 `monitoring`.
+
+## Přesunuto z README (samostudium, 2026-11)
+
+- Konfiguraci (M365 AC → Pay-as-you-go services → Document & image services) a obě dema předvádí instruktor **živě na plátně**; studenti pak totéž opakují v labu na knihovně Vzorky.
