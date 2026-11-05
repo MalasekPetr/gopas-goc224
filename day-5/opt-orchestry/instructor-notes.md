@@ -20,3 +20,9 @@
 
 - Zpět: mapa vrstev (copilot-admin) — tenhle modul vyplňuje její poslední řádek; SAM/Archive překryvy (D3).
 - Dopředu: žádné — leaf modul.
+
+## Přesunuto z README (2026-11)
+
+- Výklad vést průchodem veřejnými materiály/screenshoty z orchestry.com — nic neinstalovat.
+- Zvážit rotaci příkladů (ShareGate, AvePoint…) podle publika — modul je o kategorii nástrojů, ne o jednom vendorovi.
+- U produktových tvrzení o Orchestry explicitně říkat, že zdroj je třetí strana (výjimka z pravidla MS zdrojů).

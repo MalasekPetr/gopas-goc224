@@ -5,15 +5,21 @@
 
 ## Cíle
 
-- Student sestaví **rollout blueprint** — design dokument nasazení Copilotu a obsahových služeb pro svou organizaci.
-- Student umí blueprint obhájit: konfigurace, automatizace, governance, rizika, change enablement, roadmapa.
-- Student odchází s mapou next steps (adopce, zdroje, co ověřit doma).
+- Sestavíte **rollout blueprint** — design dokument nasazení Copilotu a obsahových služeb pro svou organizaci.
+- Blueprint obhájíte: konfiguraci, automatizaci, governance, rizika, change enablement a roadmapu.
+- Odejdete s mapou dalších kroků (adopce, zdroje Microsoftu, co ověřit doma).
 
-## Výklad
+## Proč blueprint, a ne další stavba
 
-### Závěrečný projekt = blueprint, ne stavba
+Celý týden jste stavěli a klikali: nastavovali PAYG, zapínali vytěžování, psali skripty, navrhovali a stavěli agenty, procházeli admin centra. Každý modul přitom řešil jeden výsek. Ve vlastní organizaci ale nebudete rozhodovat po modulech — budete muset odpovědět na otázku „jak to celé nasadíme, kolik to bude stát a co se může pokazit".
 
-Celý týden se stavělo a klikalo; závěrečný projekt skládá kousky do **rozhodovacího dokumentu**, který si student odnáší do své organizace. Formát: MD dokument (samozřejmě), sekce:
+Závěrečný projekt proto nic nového nestaví. Skládá poznatky z týdne do **rozhodovacího dokumentu**, který si odnesete domů. Kurzovní tenant sloužil jako důkaz, že jednotlivé kroky jdou provést; blueprint z nich dělá plán pro vaši firmu. Píšete ho v Markdownu — formátu, který znáte z modulu [`formats`](../../day-1/formats/).
+
+Žádná sekce blueprintu nestojí na volitelných modulech. Všechno, co potřebujete, jste probrali v povinných blocích D1–D5.
+
+## Sedm sekcí blueprintu
+
+Blueprint má sedm sekcí v pevném pořadí. Pořadí není náhodné: nejdřív víte, *kde* jste (kontext), pak *co* nastavíte (konfigurace), *co* tím získáte (automatizace), *jak* to uhlídáte (governance), *co* se může pokazit (rizika), *jak* to lidem podáte (change) a *kdy* co pustíte (roadmapa).
 
 ```mermaid
 flowchart LR
@@ -25,41 +31,113 @@ flowchart LR
   F --> G[7. Roadmapa<br>fáze, go/no-go brány]
 ```
 
-Každá sekce má oporu v modulu kurzu — blueprint je rekapitulace týdne v jazyce vlastní firmy.
+Každá sekce má oporu v konkrétních modulech kurzu. Blueprint je tak rekapitulace týdne v jazyce vaší firmy. Následující přehled ukazuje, odkud ke každé sekci čerpat.
 
-### Registr rizik — minimum
+### 1. Kontext
 
-Formát: riziko → dopad → pravděpodobnost → mitigace (nástroj z kurzu!) → vlastník. Povinné kategorie: oversharing (D3), náklady PAYG (D1/D2), ztráta dat (D3), nekontrolovaní agenti (D5), adopční selhání (change).
+Čtyři řádky: velikost organizace (lidé, weby), licenční stav, cíl nasazení jednou větou a hlavní rizikové místo. Licenční stav popisujete pojmy z modulu [`licensing`](../../day-1/licensing/): kolik máte Copilot licencí, zda zapnete PAYG a zda budete řídit Copilot Credits spending policy. Kontext určuje všechno další — organizace s 30 licencemi a 60 weby řeší jiné otázky než firma, kde licenci dostanou všichni.
 
-U nákladů nezapomenout na dvě rizika z nového modelu Copilot Credits ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)):
+### 2. Konfigurace
 
-- **Dvě správní plochy** — původní PAYG (budget jen upozorní) vs. Cost management (spending policy, tvrdý strop). Kdo hlídá jen jednu, druhou přehlédne.
-- **Auto-apply new services** je ve spending policy default zapnuté — nové služby usage-based billingu (Cowork, Code…) se do policy přidají samy a začnou čerpat kredity. Mitigace: vypnout u policies, kde se nové služby mají schvalovat.
+Tady zúročíte modul [`configuration`](../../day-2/configuration/) a jeho pevné pořadí kroků. Rozhodujete o čtyřech věcech:
 
-### Next steps — kam po kurzu
+- **Licence vs. PAYG** — kdo dostane licenci a komu stačí Copilot Chat a agenti přes PAYG. Připomeňte si tři brány z [`licensing`](../../day-1/licensing/): licence, oprávnění, spending policy.
+- **Copilot Credits** — kterou správní plochu použijete, jaký strop nastavíte a zda necháte zapnuté *Auto-apply new services* (podrobně u rizik níže).
+- **Kde Copilot nesmí** — weby, které Copilot ani vyhledávání nemají groundovat. Nástrojem je Restricted Content Discovery (RCD) ze SharePoint Advanced Management, viz [`advanced-management`](../../day-3/advanced-management/).
+- **Autoritativní obsah** — které weby a zdroje má vyhledávání upřednostnit (krok 3 v [`configuration`](../../day-2/configuration/)).
 
-- **Copilot Success Kit** — implementační průvodce (leaders, user enablement, technical readiness, scénáře) ([Success Kit](https://adoption.microsoft.com/en-us/copilot/success-kit/)); samostatný agents success kit.
-- **Enablement guide** na Learn: 5 kroků org readiness → licence → apps/network → setup → welcome & feedback ([Enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources)).
-- **Adoption hub**: Champion Playbook, Prompt Gallery ([adoption.microsoft.com/copilot](https://adoption.microsoft.com/en-us/copilot/)).
+Konkrétní rozhodnutí vypadá jako „spending policy pro skupinu pilotu, tvrdý strop, Auto-apply vypnuté" — ne „zapneme Copilota".
+
+### 3. Automatizace
+
+Vyberete jeden proces a jednoho agenta. Vzorem pro proces jsou příchozí faktury z D4 ([`power-automate-invoices`](../../day-4/power-automate-invoices/)): příjem → vytěžení → schválení → uložení, s větví výjimek. Pro vytěžení metadat v knihovně zvažte [`document-processing`](../../day-2/document-processing/); jeho PAYG je jiný model než Copilot Credits a v blueprintu ho tak i veďte.
+
+Agenta převezmete ze svého návrhu z labu v [`copilot-agents`](../../day-4/copilot-agents/) a doplníte, jakou cestou ho postavíte ([`agent-builder`](../../day-4/agent-builder/), [`agents-toolkit`](../../day-4/agents-toolkit/) nebo [`copilot-studio`](../copilot-studio/)) a kdo ho bude udržovat. Vezměte s sebou i evaluační plán — agent bez plánu vyhodnocení se v provozu nedá obhájit.
+
+### 4. Governance
+
+Governance je nejširší sekce, protože skládá celou nit „nástroje pro správu":
+
+- **Weby a sdílení** — politiky SAM (neaktivní weby, Restricted Access Control, DAG reporty) z [`advanced-management`](../../day-3/advanced-management/). Pamatujte na rozlišení: RAC bere přístup lidem, RCD jen viditelnost pro Copilot.
+- **Ochrana dat** — backup policy z [`backup`](../../day-3/backup/) a archivní strategie z [`archive`](../../day-3/archive/). Archiv je levnější místo pro nepoužívaná data, ne druhá kopie; záloha bez drilu nemá ověřené RTO.
+- **Cizí AI a aplikace** — kdo smí udělovat consent a jak auditujete Enterprise apps, viz [`ai-app-access`](../../day-4/ai-app-access/).
+- **Copilot a agenti** — kdo má roli AI Administrator, jak schvalujete publikaci agentů a kde spravujete aplikace z Code a Cowork. Mapu míst v M365 admin centru (Copilot → Settings, Cost management, Agents, Apps) máte z [`copilot-admin`](../copilot-admin/).
+- **Audit a provoz** — Purview Audit a váš runbook z [`monitoring`](../monitoring/). Runbook je jedna podsekce governance, ne samostatný dokument vedle blueprintu.
+
+U každého řádku uvádějte konkrétní politiku a portál, kde se nastavuje.
+
+### 5. Registr rizik
+
+Formát je jednoduchý: riziko → dopad → pravděpodobnost → mitigace → vlastník. Mitigace musí být **nástroj z kurzu** (například „RCD na weby HR a Finance"), ne obecná fráze typu „školení" nebo „hlídat". Vlastníkem je role, ne jméno.
+
+Pět kategorií je povinných, protože každou kurz pokryl konkrétním nástrojem:
+
+| Riziko | Kde v kurzu najdete mitigaci |
+|---|---|
+| Oversharing | D3 [`advanced-management`](../../day-3/advanced-management/) — DAG, RAC, RCD |
+| Náklady PAYG a Copilot Credits | D1 [`licensing`](../../day-1/licensing/), D2 [`configuration`](../../day-2/configuration/) — spending policy, strop |
+| Ztráta dat | D3 [`backup`](../../day-3/backup/), [`archive`](../../day-3/archive/) |
+| Nekontrolovaní agenti | D5 [`copilot-admin`](../copilot-admin/), [`monitoring`](../monitoring/) — registr, schvalování, audit |
+| Adopční selhání | D2 [`configuration`](../../day-2/configuration/) — change management a komunikace |
+
+U nákladů nezapomeňte na dvě rizika, která přinesl nový model Copilot Credits. Prvním jsou **dvě správní plochy**: původní PAYG, kde rozpočet jen upozorní, a Cost management se spending policy, která umí tvrdý strop. Kdo hlídá jen jednu, druhou přehlédne. Druhým je **Auto-apply new services**, které je ve spending policy ve výchozím stavu zapnuté: nové služby usage-based billingu (Cowork, Code…) se do policy přidají samy a začnou čerpat kredity. Mitigací je vypnout Auto-apply u policies, kde se nové služby mají schvalovat ([Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)).
+
+### 6. Change enablement
+
+Tři komunikační kroky — co, komu, kdy. Navazujete na krok 4 modulu [`configuration`](../../day-2/configuration/), kde je komunikační plán součástí konfigurace, ne dodatkem. Typicky jde o oznámení pilotu, vysvětlení nákladových pravidel uživatelům a kanál pro zpětnou vazbu.
+
+### 7. Roadmapa
+
+Tři fáze (pilot, rozšíření, plný provoz) a u každé **go/no-go brána**. Brána musí být měřitelná, například „DAG report bez kritických nálezů → pustit Copilot na další weby". Přesně takhle jel celý kurz: tripwire ověřit, teprve pak pokračovat. Pro měření adopce použijete usage report z [`copilot-admin`](../copilot-admin/), pro důkaz incidentů audit z [`monitoring`](../monitoring/).
+
+## Co dělá blueprint dobrým
+
+Dobrý blueprint poznáte podle tří věcí. Každá sekce jmenuje konkrétní nástroj, politiku nebo parametr z kurzu. Každé riziko má mitigaci nástrojem a vlastníka jako roli. A roadmapa má brány, které jde změřit. Fráze, které by se hodily do libovolné prezentace („zvýšíme produktivitu", „zajistíme bezpečnost"), jsou signál, že sekce ještě není hotová.
+
+Funkce, které jsou v preview nebo jejichž stav se rychle mění, označte v blueprintu poznámkou „ověřit při realizaci". Blueprint budete realizovat za týdny až měsíce a mezitím se může změnit název, cena i dostupnost.
 
 ## Klíčové rozlišení
 
-- **Blueprint vs. runbook**: runbook (D5) říká *co dělat, když hoří*; blueprint říká *co postavit, aby nehořelo*. Runbook je jedna sekce blueprintu (governance/provoz).
-- **Roadmapa s branami**: každá fáze má go/no-go kritérium (např. „DAG report bez kritických nálezů → pustit Copilot na další weby") — přesně jak jel celý kurz.
+- **Blueprint vs. runbook.** Runbook (D5 [`monitoring`](../monitoring/)) říká, *co dělat, když hoří*; blueprint říká, *co postavit, aby nehořelo*. Runbook je jedna podsekce blueprintu (governance a provoz).
+- **Roadmapa s branami vs. harmonogram.** Harmonogram říká *kdy*; brána říká *za jakých podmínek*. Každá fáze má měřitelné go/no-go kritérium.
+- **Mitigace nástrojem vs. mitigace frází.** „RCD na weby HR" je rozhodnutí; „hlídat oversharing" je přání.
 
 ## Naše prostředí
 
-- Blueprint se píše pro **vlastní organizaci studenta** (ne pro kurzovní tenant) — kurzovní tenant sloužil jako důkaz proveditelnosti.
+- Blueprint píšete pro **vlastní organizaci** — ne pro kurzovní tenant. Kurzovní tenant sloužil jako důkaz proveditelnosti.
+- Nemáte vlastní organizaci (konzultant, student)? Lab nabízí fiktivní firmu Contoso Strojírny.
+- Názvy a čísla z vlastní firmy anonymizujte — dokument je váš, ale vzniká v kurzovním prostředí. Hotový blueprint si uložte mimo kurzovní prostředí.
+
+## Další kroky po kurzu
+
+Blueprint je začátek, ne konec. Pro samotné nasazení nabízí Microsoft tři ucelené zdroje:
+
+- **Copilot Success Kit** je implementační průvodce rozdělený podle publika: vedení, user enablement, technical readiness a scénáře. Vedle něj existuje samostatný success kit pro agenty ([Success Kit](https://adoption.microsoft.com/en-us/copilot/success-kit/)).
+- **Enablement guide** na Learn vede v pěti krocích: připravenost organizace → licence → aplikace a síť → nastavení → uvítání a zpětná vazba. Hodí se jako kontrolní seznam k vaší roadmapě ([Enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources)).
+- **Adoption hub** nabízí Champion Playbook pro budování sítě ambasadorů a Prompt Gallery s ukázkovými prompty ([Copilot adoption hub](https://adoption.microsoft.com/en-us/copilot/)).
+
+## Shrnutí
+
+- Závěrečný projekt je design dokument, ne stavba: skládá poznatky z D1–D5 do plánu nasazení pro vaši organizaci.
+- Blueprint má sedm sekcí; každá stojí na konkrétních povinných modulech kurzu.
+- Registr rizik pokrývá pět povinných kategorií a každé riziko mitiguje nástrojem z kurzu s vlastníkem v roli.
+- U nákladů hlídejte obě správní plochy Copilot Credits a Auto-apply new services.
+- Roadmapa má tři fáze s měřitelnými go/no-go branami.
 
 ## Lab
 
-Viz [`lab-capstone-blueprint.md`](lab-capstone-blueprint.md) — rollout blueprint. Hodnoticí rubrika: instructor-notes.
+[`lab-capstone-blueprint.md`](lab-capstone-blueprint.md) — rollout blueprint podle šablony a tříminutová obhajoba.
 
 ## Zdroje (Microsoft)
 
-[Copilot Success Kit](https://adoption.microsoft.com/en-us/copilot/success-kit/) · [Copilot enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources) · [Copilot adoption hub](https://adoption.microsoft.com/en-us/copilot/)
+- **Copilot Credits:** [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
+- **Správa Copilotu:** [Copilot controls overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/copilot-controls-overview)
+- **Adopce a enablement:** [Copilot Success Kit](https://adoption.microsoft.com/en-us/copilot/success-kit/) · [Copilot enablement resources](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources) · [Copilot adoption hub](https://adoption.microsoft.com/en-us/copilot/)
 
 ## Stav produktu / delta
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> „Copilot Control System" → „Copilot controls" (rámec); scope Copilot in SharePoint se po GA neřídí `KnowledgeAgentScope`, ale licencemi + RCD + Site AI settings — blueprinty podle toho. Success Kit se aktualizuje průběžně (naposledy 2/2026, česky není) — před během zkontrolovat obsah balíčku. Odkazy na preview funkce v blueprintech studentů označovat markerem „ověřit při realizaci".
+> [!WARNING] Ověřit k datu běhu — stav k 2026-11.
+>
+> - „Copilot Control System" se dnes jmenuje **Copilot controls** a jde o rámec, ne stránku v admin centru ([Copilot controls overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/copilot-controls-overview)).
+> - Dostupnost Copilot in SharePoint se po GA neřídí `KnowledgeAgentScope`, ale licencemi, RCD a Site AI settings — blueprinty podle toho.
+> - Success Kit se průběžně aktualizuje; datum poslední verze a dostupnost v češtině ověřit.

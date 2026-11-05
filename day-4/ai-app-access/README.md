@@ -92,6 +92,7 @@ Důsledek je zásadní: **CA pro workload identity je použitelné jen pro vlast
 ### Credentials
 
 U vlastních aplikací volíte, čím se aplikace prokazuje. Pořadí podle bezpečnosti: managed identity → certifikát → client secret (jen dev/test). Při ztrátě klíče se odvolává **credential**, ne oprávnění — aplikace dál potřebuje svá oprávnění, jen jí vyměníte klíč ([Migrate away from secrets](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-applications-from-secrets)).
+
 ### App governance
 
 App governance je součást Microsoft Defender for Cloud Apps. Dává přehled všech OAuth aplikací třetích stran registrovaných v Entra ID: jaká mají oprávnění, kdo je odsouhlasil, a politiky, které rizikové aplikace omezí; alerty se zobrazují v Defender XDR ([App governance](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance)). Na rozdíl od CA pro workload identity tedy míří právě na aplikace třetích stran. Vyžaduje licenci Defender for Cloud Apps — ověřit.

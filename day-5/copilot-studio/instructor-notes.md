@@ -26,3 +26,10 @@
 
 - Zpět: návrhy a evaluační plány (včerejší copilot-agents, D4), Skills (D3 — skill vs. topic!), popisy/instrukce (D2), DLP a registry (D4), RSS/RCD (D2–D3).
 - Dopředu: capstone — agent je jedna sekce blueprintu, evaluační plán a governance flow se recyklují.
+
+## Přesunuto z README (2026-11, přepis pro samostudium)
+
+- Přístup studentů do Copilot Studia přes tenant PAYG / billing policy = go/no-go instruktora (viz Go/no-go výše).
+- Po testech na standard harnessu zkontrolovat stránku **Monitor** — test panel by kredity čerpat neměl (MS: standard harness účtuje až po publikaci); ověřit v tenantu.
+- Při „New agent" ověřit, kam tenant defaultně vede, a lab vést na standard harness.
+- Zero-rating MS formuluje jen pro Copilot Chat / Teams / SharePoint pod identitou uživatele — ne pro test panel; README to tak nově vysvětluje.

@@ -34,7 +34,7 @@ Copilot Credits se spravují na dvou místech (stav 2026-10):
 | Plocha | Co pokrývá | Strop | Kde |
 |---|---|---|---|
 | **Pay-as-you-go (původní)** | Copilot Chat, SharePoint agents (`.agent`), Copilot Retrieval API | **ne** — budget jen posílá upozornění | Billing policy → připojit ke službě |
-| **Usage-based billing (nová)** | Cowork, Advanced work in SharePoint / OneDrive, Code, Work IQ API, Copilot Managed Runtime, Teams Phone Agent; volitelně Copilot Studio | **ano** — limited budget odstřihne přístup do 1. dne dalšího měsíce; min. 2 000 kreditů/uživatel/měs.; spending policy zároveň **řídí přístup** | **Copilot → Cost management** |
+| **Usage-based billing (nová)** | Cowork, Advanced work in SharePoint / OneDrive, Code, Work IQ API, Copilot Managed Runtime, Teams Phone Agent; volitelně Copilot Studio | **ano** — limited budget odstřihne přístup do 1. dne dalšího měsíce; spending policy zároveň **řídí přístup** | **Copilot → Cost management** |
 
 Pozor: u Cowork, Advanced work a Code MS uvádí „Copilot license required" — Credits tam nenahrazují licenci, jen ji rozšiřují. Spending policy má default zapnuté **Auto-apply new services** → nové UBB služby se do policy přidají samy. Zdroje: [PAYG overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview) · [Usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) · [Spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
 

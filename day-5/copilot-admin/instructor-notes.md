@@ -24,3 +24,9 @@
 
 - Zpět: SAM jako SharePoint vrstva (D3) — mapa vrstev na ni naváže; archiv/RCD = „co AI vidí".
 - Dopředu: audit → `monitoring` (hned potom); 3rd-party řádek mapy → **Orchestry** (samostatný volitelný blok D5 hned po monitoringu); registr a publikace → `copilot-agents` (**včera, D4** — Agent Store flow).
+
+## Přesunuto z README (samostudium)
+
+- Před během proklikat živý tenant a srovnat se slidy (Copilot Settings taby, Cost management, Agents, Agent 365 dashboard); po Ignite (17.–20. 11. 2026) znovu.
+- README má novou kap. 5 „Aplikace z Code — sekce Apps" a řádek Apps v mapě vrstev — při výkladu navázat na krok 4 labu.
+- Ověřit názvosloví v UI: README říká **Registry**, lab krok 3 **Agents → All agents** — sjednotit podle živého tenantu.

@@ -35,7 +35,7 @@ Sestavit rollout blueprint pro vlastní organizaci — každé rozhodnutí opře
 | Autoritativní obsah | | D2 configuration | |
 
 ## 3. Automatizace
-- Proces k automatizaci (vzor: faktury z D3):
+- Proces k automatizaci (vzor: faktury z D4 power-automate-invoices):
 - Cesta vytěžení a schvalování:
 - Agent (z návrhu D4): název, účel, cesta tvorby, kdo ho udržuje:
 

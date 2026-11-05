@@ -49,7 +49,7 @@ Některé zdroje závisí na licenci uživatele. Uživatelé na PAYG bez Copilot
 
 Builder zdroje umí jen **prioritizovat**, ne agregovat nebo filtrovat. Agent vyhledá ve zdrojích relevantní obsah a z něj sestaví odpověď; neprojde ale systematicky všechny řádky listu a nespočítá výsledek. Přepínač **Only use specified sources** jen říká, odkud má agent čerpat přednostně — úplný výčet negarantuje.
 
-Prakticky to znamená, že dotazy typu „kolik / kdo / kdy" dopadnou nespolehlivě. V labu si to ověříte na dotazu *„Komu propadá certifikát do 30 dnů?"*: agent vrátí neúplný nebo nepřesný seznam a vy ho porovnáte se skutečným stavem v listu. Dopoledne stejnou otázku zvládl dashboard v [`code`](../code/README.md) jako **aplikace**; jako **agent** ji zvládne až Copilot Studio (D5). Neúspěch tohoto testu tedy není chyba labu, ale ukázka stropu.
+Prakticky to znamená, že dotazy typu „kolik / kdo / kdy" dopadnou nespolehlivě. V labu si to ověříte na dotazu *„Komu propadá certifikát do 30 dnů?"*: agent vrátí neúplný nebo nepřesný seznam a vy ho porovnáte se skutečným stavem v listu. Dopoledne stejnou otázku zvládl dashboard v [`code`](../code/README.md) jako **aplikace**; jako **agent** ji zkusíte v Copilot Studiu (D5) — agregace nad listy tam Microsoft dokumentuje pro GitHub Copilot harness, lab na standardním harnessu je experiment. Neúspěch tohoto testu tedy není chyba labu, ale ukázka stropu.
 
 ### Bez akcí do externích služeb
 
