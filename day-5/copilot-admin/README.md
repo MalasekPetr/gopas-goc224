@@ -100,6 +100,35 @@ Kromě agentů vznikají v tenantu i aplikace — v D4 [`code`](../../day-4/code
 
 S náklady to souvisí přes Cost management: stavbu aplikace platí tvůrce ze spending policy pro Code, běh platí každý uživatel aplikace ze samostatné spending policy *Copilot Managed Runtime* ([Admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/)). Podrobný výklad je v modulu `code`; v labu si tyto plochy projdete v admin centru.
 
+## 6. Časté dotazy: firemní nastavení Copilota a GPO
+
+Na kurzech zaznívají dvě otázky skoro vždy: *„Dá se pro celou firmu nastavit orchestrator nebo harness, aby Copilot věděl, jaké agenty máme a k čemu slouží?"* a *„Můžu nastavení Copilota šířit přes GPO?"*
+
+### Firemní nastavení orchestrátoru nebo harnessu
+
+**Přímo to nejde.** Orchestrátor Microsoft 365 Copilota (v jazyce D2 harness) nemá firemní nastavení ani firemní „system prompt" a celofiremní custom instructions Microsoft nedokumentuje — custom instructions si nastavuje každý uživatel sám (D2 [`prompting-fundamentals`](../../day-2/prompting-fundamentals/README.md)). V Copilot Studiu se harness volí u každého agenta při založení; firemní přepínač harnessu v dokumentaci není.
+
+Správce ale má čtyři páky, kterými ovlivní, *jaké agenty uživatelé mají a jak je najdou*:
+
+| Páka | Co dělá | Kde a kdo |
+|---|---|---|
+| **Publish / Deploy** | Publish = kdo si agenta smí nainstalovat; Deploy = komu se agent předinstaluje (uživatelé, skupiny) | Agents → All agents → Registry, nebo nahrání ZIP balíčku agenta (**Add agent**) ([Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)) |
+| **Pin** | nasazený agent se připne do Copilota; uživatel admin-pinned agenta neodepne; admin má **3 sloty na uživatele** s pořadím priority; projeví se do 6 hodin | **Manage pinned agents** v Registry; role **AI Administrator** |
+| **Organizational prompts** | firemní prompty jako návrhy v Copilot Chatu, Edge a Teams (Suggested, prompt lab, našeptávač); až 1 000 promptů, 4 připnuté; projeví se zhruba za 3 hodiny | **Copilot → Prompts**; role AI Administrator nebo Search Editor ([Organizational prompts](https://learn.microsoft.com/en-us/copilot/manage/organizational-prompts)) |
+| **Popis agenta** | k čemu agent slouží, se Copilot dozví z popisu a instrukcí v manifestu — podle popisů harness vybírá | u tvůrce agenta (D4), ne v nastavení tenantu |
+
+Automatické přesměrování obecného dotazu v Copilot Chatu na firemního agenta Microsoft nedokumentuje: uživatel agenta vybere v seznamu nebo ho zmíní přes @. Připnutí, dobrý popis a firemní prompty jsou proto reálné nástroje, jak uživatele k agentům dovést. U agentů z Copilot Studia k tomu patří ještě nastavení v Power Platform admin centru — kdo smí agenty stavět, prostředí, DLP a strop kreditů (D5 dopoledne).
+
+### Nastavení Copilota přes GPO
+
+**Prakticky ne.** Nastavení Copilota je cloudové a řídí se identitou uživatele, ne zařízením ([Configure Copilot settings](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-app-admin-settings)):
+
+- **M365 admin centrum → Copilot → Settings** — přístup k agentům, Frontier, image generation, připnutí Copilot Chatu, připnutí aplikace Microsoft Copilot na hlavní panel Windows.
+- **Cloud Policy service** (Microsoft 365 Apps admin center, cílí na skupiny uživatelů, role **Office Apps admin**) — například politika *Allow web search in Copilot* nebo Copilot Pages a Notebooks.
+- **GPO / ADMX jen pro klientskou část.** Edge má v `MSEdge.admx` politiky pro ikonu Copilot Chatu a pro Microsoft 365 Copilot writing assistance ([Edge policy](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/microsoft365copilotchaticonenabled)). Windows mají politiky pro klávesu Copilot a starší `TurnOffWindowsCopilot`, u které Microsoft upozorňuje na budoucí odstranění a doporučuje místo ní možnosti připnutí v M365 admin centru ([WindowsAI policy CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-windowsai)). Stejné politiky lze nasadit i přes Intune (settings catalog).
+
+Doporučení: **místo GPO použijte M365 admin centrum a Cloud Policy.** Fungují i bez připojení k doméně a nastavení jde s uživatelem na jakékoli zařízení. GPO nechte jen na klientské doladění Edge a Windows.
+
 ## Observabilita použití
 
 Správce chce vědět nejen *co* v tenantu běží, ale i *kdo to reálně používá*. Na to slouží usage reporty. **Reports → Usage → Microsoft Copilot → Copilot** ukazuje povolené a aktivní uživatele, prompty a adopci po aplikacích. Data mají zpoždění zhruba 48 hodin a detaily jsou ve výchozím stavu anonymizované ([Copilot usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage)). Adopce agentů je v samostatném reportu **Agents** (preview), kde data dorazí řádově do hodiny ([Agents report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new)).
@@ -110,6 +139,8 @@ Usage report ale není auditní stopa. Odpovídá na otázku „jak se nám dař
 
 - **Copilot → Settings vs. Agent Registry**: Copilot sekce řídí *zážitek a data* Copilotu; Agents sekce řídí *inventář agentů*. Dvě různá místa, často zaměňovaná.
 - **Agent 365 vs. Agents sekce**: Registry (vč. syncu agentů z externích platforem a základní governance) je v M365 plánech i bez Agent 365; Agent 365 přidává policy templates, observability, řízení nástrojů/MCP a Entra/Purview/Defender/Intune ochranu agentů.
+- **Nastavení tenantu vs. nastavení agenta**: orchestrátor/harness firemně nenastavíte; ovlivníte, *kteří agenti* jsou dostupní, předinstalovaní a připnutí, a *jak je popsal tvůrce*.
+- **Cloudová politika vs. GPO**: Copilot se řídí identitou uživatele (M365 AC, Cloud Policy); GPO/ADMX zasahuje jen klienta (Edge, Windows).
 - **Usage report ≠ audit log**: usage = adopční metriky (anonymizovatelné, ~48h zpoždění); audit = důkazní stopa (Purview, další blok).
 
 ## Naše prostředí
@@ -122,6 +153,7 @@ Jako **Global Reader** vidíte sekce Copilot (Settings, Cost management), Agents
 - Sekce Agents je inventář agentů: Registry, Requests a Overview. Cowork tu nevypnete a agenti mohou přicházet i z SPFx balíčků v App Catalogu.
 - Registry a základní governance jsou v M365 plánech; Agent 365 přidává politiky, observabilitu a ochranu přes Entra, Purview, Defender a Intune.
 - Aplikace z Code spravujete v sekci Apps (a v Power Platform admin center).
+- Orchestrátor ani harness firemně nastavit nejde; uživatele k agentům dovedete přes Deploy, Pin (3 sloty), organizational prompts a dobré popisy agentů. Nastavení Copilota šíříte přes M365 AC a Cloud Policy, ne přes GPO.
 - Usage report měří adopci, auditní stopu dává Purview.
 
 ## Lab
@@ -135,6 +167,7 @@ Viz [`lab-copilot-admin-tour.md`](lab-copilot-admin-tour.md) — admin tour: Cop
 - **Agenti:** [Manage Copilot agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps) · [Agents overview / Agent 365 v admin centru](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview) · [Copilot service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot) · [Cowork](https://learn.microsoft.com/en-us/copilot/cowork/) · [SPFx 1.24](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.24.0)
 - **Agent 365:** [Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview) · [Agent 365 service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-agent-365/microsoft-agent-365) · [Compare E3/E5/E7](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7)
 - **Aplikace (Copilot Managed Runtime):** [Governance settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance) · [Admin overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/)
+- **Distribuce agentů a firemní nastavení:** [Agent Registry (deploy, pin)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry) · [Organizational prompts](https://learn.microsoft.com/en-us/copilot/manage/organizational-prompts) · [Configure Copilot settings (Cloud Policy)](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-app-admin-settings) · [Edge — Copilot Chat icon policy](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/microsoft365copilotchaticonenabled) · [WindowsAI policy CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-windowsai)
 - **Reporty:** [Copilot usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage) · [Agents report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new)
 
 ## Stav produktu / delta
@@ -142,6 +175,7 @@ Viz [`lab-copilot-admin-tour.md`](lab-copilot-admin-tour.md) — admin tour: Cop
 > [!WARNING] Ověřit k datu běhu — stav k 2026-11.
 >
 > - **UI se mění po měsících:** taby Copilot Settings, Cost management, sekce Agents i dashboard Agent 365 mohou vypadat jinak než v tomto textu.
+> - **Pin a prompty:** 3 admin sloty pro připnuté agenty, 1 000 / 4 připnuté organizational prompts — limity se mění. Politika „Turn off Microsoft 365 Copilot" v Office ADMX se objevuje jen u třetích stran, na Learn ji Microsoft nedokumentuje — neslibovat.
 > - **Registry sync** s platformami mimo Microsoft je součástí M365 plánů (bez preview štítku); Frontier preview je jen sběr observability dat.
 > - **Reporty:** Copilot usage report ~48 h zpoždění; agenti v samostatném reportu Agents (preview).
 > - **Po Ignite** (17.–20. 11. 2026) projít znovu.

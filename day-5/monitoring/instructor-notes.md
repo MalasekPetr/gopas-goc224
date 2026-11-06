@@ -14,6 +14,7 @@
 - Alert policies ukazovat v **Defender portálu** — kdo je zná z Purview compliance portálu, hledá je špatně (přestěhováno).
 - `JailbreakDetected` a `BingWebSearch` v záznamu — zmínit, výborný teaching point (co všechno stopa nese), ale nedemonstrovat jailbreak!
 - Usage report ≠ audit — MS to říká explicitně, opřít se o to.
+- **Častý dotaz (běh 2026-11, opakovaně): „můžu monitorovat, co si lidé s Copilotem píšou?"** → README sekce *Obsah komunikace s Copilotem*. Technicky ano (eDiscovery = mailbox, Communication Compliance, DSPM activity explorer, retence); vždy dodat právní rámec (GDPR, § 316 ZP, DPO, směrnice) — technická možnost ≠ oprávnění. eDiscovery/Communication Compliance studenti (Global Reader) nemají — jen výklad, žádné živé prohledávání cizích konverzací.
 - Runbook je deliverable dle osnovy — nenechat sklouznout jen k prohlížení auditu.
 
 ## Vazby

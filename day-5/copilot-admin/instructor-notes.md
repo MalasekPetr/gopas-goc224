@@ -19,6 +19,7 @@
 - Researcher/Analyst: součást Copilot licence, admin je může blokovat — ale Researcher zůstává v Tools i při vypnutých agentech; Cowork se v Agents vypnout nedá (přístup = spending policy).
 - Agent 365: licencuje se **uživatel**, ne agent (glosář) — čekat dotaz „kolik stojí agent". A „potřebuju Agent 365 na registry?" — ne, registry a základní governance jsou v M365 plánech.
 - Nezabřednout do Purview auditu — to je další blok; tady jen říct „usage ≠ audit".
+- **Časté dotazy (běh 2026-11, opakovaně): „firemní orchestrator/harness?" a „GPO?"** → README sekce 6. Odpověď: orchestrátor/harness firemně nenastavíte; páky = Deploy, Pin (3 sloty, AI Administrator, do 6 h), organizational prompts (Copilot → Prompts), popis agenta. GPO jen klient (Edge `MSEdge.admx`, Windows klávesa Copilot); Copilot se řídí identitou → M365 AC + Cloud Policy. „Turn off Microsoft 365 Copilot" v Office ADMX neslibovat — na Learn není. Studenti (Global Reader) Manage pinned agents a Prompts vidí jen read-only — ukázat na projektoru.
 
 ## Vazby
 
