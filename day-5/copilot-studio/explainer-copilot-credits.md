@@ -62,7 +62,7 @@ Zdroj: diagram na stránce [Usage-based billing](https://learn.microsoft.com/en-
 
 1. `admin.microsoft.com` → **Copilot → Cost management → Configuration → Add spending policy**. Potřebujete roli Global Administrator nebo AI Administrator; Global Reader a AI Reader stránku vidí bez tlačítka Add.
 2. Název politiky, **Policy scope → Resources**.
-3. **Resource collection → Specific environments** → vyberte prostředí (u nás `GOC224-lab`). Alternativa **Specific resource** = konkrétní agenti; **All environments** přesune řízení všech prostředí najednou — pro první krok nevolit.
+3. Zvolte, co politika pokrývá: **Specific environments** → vyberte prostředí (u nás `GOC224-lab`). Další volby: **Specific resources** = konkrétní agenti (i z různých prostředí); **All environments** = všechna prostředí včetně nových — přesune řízení všech prostředí najednou, pro první krok nevolit. Zkontrolujte seznam zdrojů, které výběr pokryje (zobrazí se jen ty, které čerpají Copilot Credits).
 4. Měsíční limit politiky a **per-agent limit**.
 5. Alert thresholds a příjemci, billing method (výchozí nebo override), vytvořit.
 
@@ -88,7 +88,7 @@ Jak se limity chovají:
 - Úloha, která už běží a přes limit přeteče, smí doběhnout. Přečerpání se do limitu nepočítá a Microsoft ho podle svého uvážení nefakturuje ([Monitor spending](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-copilot-credits-monitor-spending)).
 - Spending policy **nerezervuje** kredity, jen omezuje.
 
-**Resource-based spending policy** řídí Copilot Studio podle toho, *který agent nebo prostředí* kredity čerpá ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs)):
+**Resource-based spending policy** řídí Copilot Studio podle toho, *který agent nebo prostředí* kredity čerpá ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-manage-copilot-studio-costs)):
 
 - Je opt-in. Dokud ji nevytvoříte, platí nastavení v Power Platform admin centru.
 - Pokrývá konkrétní agenty, nebo celá prostředí. U prostředí můžete nastavit limit politiky **a limit na agenta** — například 10 000 kreditů za politiku a 1 000 na agenta. Limit na agenta tak platí i pro agenty, kteří vzniknou až po vytvoření politiky.
@@ -163,7 +163,7 @@ Strop v kurzu nastavuje instruktor jedním ze dvou způsobů: resource-based pol
 ## Zdroje (Microsoft)
 
 - **Kredity a sazby:** [Billing rates and management (standard harness)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management) · [Usage-based billing (GitHub Copilot harness)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) · [Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing)
-- **Řízení v M365 AC:** [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) · [Manage Copilot Studio costs in M365 AC](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs) · [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-copilot-credits-monitor-spending)
+- **Řízení v M365 AC:** [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) · [Manage Copilot Studio costs in M365 AC](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-manage-copilot-studio-costs) · [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-copilot-credits-monitor-spending)
 - **Řízení v PPAC:** [Manage costs for agents powered by the GitHub Copilot harness](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness) · [Govern Copilot Credit consumption](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/govern-credit-consumption)
 - **Azure:** [Understand Cost Management data](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/understand-cost-mgt-data) · [View costs — Copilot PAYG](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/view-cost)
 

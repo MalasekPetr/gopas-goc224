@@ -40,7 +40,7 @@ V Power Platform admin centru kurzovního tenantu uvidíš předprovisionovaný 
 
 1. **Založ vyhrazený environment `GOC224-lab`, typ Sandbox** — studentské flows (kdyby na ně došlo) a hlavně **páteční agenti z Copilot Studia** vzniknou tady, ne v defaultu. Po běhu kurzu **reset** = čistý stůl pro další běh.
 2. **Připoj k němu Copilot Credits PAYG billing policy** (D2, krok 1b — policy se váže na environment; bez ní studenti v D5 agenta nespustí) a **zkontroluj DLP** (SharePoint konektor musí být povolený).
-   - **Pozor na resource-based spending policy** v M365 admin centru (Copilot → Cost management, D2 krok 1c): je opt-in, má přednost před nastavením v Power Platform admin centru a **nepokrývá AI Builder** ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs)). Dokud v `GOC224-lab` běží AI Builder demo flow, environment pod takovou policy nedávat.
+   - **Pozor na resource-based spending policy** v M365 admin centru (Copilot → Cost management, D2 krok 1c): je opt-in, má přednost před nastavením v Power Platform admin centru a **nepokrývá AI Builder** ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-manage-copilot-studio-costs)). Dokud v `GOC224-lab` běží AI Builder demo flow, environment pod takovou policy nedávat.
 3. **Default nech čistý** — instruktorské demo flow dnes běží v `GOC224-lab`, ať jde příkladem vlastní governance lekci.
 4. Studentům dej do environmentu roli **Environment Maker** (tvorba bez admin práv).
 
