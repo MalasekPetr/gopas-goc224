@@ -82,7 +82,9 @@ Model se pod vámi mění (viz Stav produktu níže), vaše instrukce a knowledg
 |---|---|---|
 | **Microsoft 365 Copilot** — agent si orchestrátor a modely půjčuje | Copilot Chat, Copilot in SharePoint, deklarativní agent z Agent Builderu nebo Agents Toolkitu | D2–D4 |
 | **Copilot Studio** — vlastní harnessy, volí se při založení agenta | standard harness, GitHub Copilot harness | D5 |
-| **Vy** — vlastní orchestrace, vlastní model, vlastní hosting | custom engine agent (Microsoft 365 Agents SDK, Microsoft Foundry) | D4 jen výklad |
+| **Vy** — vlastní orchestrace, vlastní model, vlastní hosting | pro-code custom engine agent (Microsoft 365 Agents SDK, Microsoft Foundry) | D4 jen výklad |
+
+Copilot Studio umí postavit i deklarativního agenta pro Microsoft 365 Copilot (pak si orchestrátor půjčuje jako první řádek). Agenty na vlastních harnessech Copilot Studia Microsoft řadí mezi custom engine agenty — orchestrátorem je Copilot Studio, hosting ale zajišťuje Microsoft, ne vy.
 
 Ztotožnění obou pojmů je zjednodušení kurzu — Microsoft je v dokumentaci výslovně nespojuje, popisují ale stejnou roli. Prakticky z toho plyne jedna dovednost: když agent odpoví špatně, hledejte chybu ve správné vrstvě. Špatný tón nebo postup je obvykle v instrukcích (vaše vrstva), špatně vybraný zdroj nebo nástroj v jejich popisech, podle kterých harness vybírá, a vymyšlený fakt je vlastnost modelu, kterou mírní grounding a ověřování.
 

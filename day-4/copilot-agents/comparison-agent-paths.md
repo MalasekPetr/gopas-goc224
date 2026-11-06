@@ -3,7 +3,7 @@
 > Modul: copilot-agents · Doplněk k „Mapa cest tvorby" v README · Stav ověřen k 2026-10
 > Prostředí: viz [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
-Čtyři cesty vedou ke stejnému cíli (deklarativní agent na orchestrátoru M365 Copilot — výjimka viz custom engine níže), ale **schopnosti se liší víc, než mapa cest naznačuje**. Tohle je rozdílová tabulka pro rozhodnutí „čím stavět".
+Agent Builder, SharePoint agents a Agents Toolkit vedou k deklarativnímu agentovi na orchestrátoru M365 Copilot; Copilot Studio staví hlavně agenty na vlastních harnessech (pozn. ¹) a Agents Toolkit vede i na custom engine (viz níže). **Schopnosti se ale liší víc, než mapa cest naznačuje**. Tohle je rozdílová tabulka pro rozhodnutí „čím stavět".
 
 ## Srovnávací matice
 

@@ -32,11 +32,11 @@ Podstatné je, *kde* agent běží. Deklarativní agent nemá vlastní server an
 
 Instrukce agenta znáte z D2 [`prompting-fundamentals`](../../day-2/prompting-fundamentals/README.md): jsou to **Agent Instructions** se strukturou purpose → guidelines → skills a limitem 8 000 znaků. Platí i bezpečnostní pravidlo z D2 — instrukce nepatří do knowledge zdrojů, protože obsah knowledge platforma prověřuje kvůli riziku cross-prompt injection (XPIA). Teď tyto instrukce poprvé píšete pro skutečného agenta.
 
-Výjimkou z deklarativního modelu je **custom engine agent** s vlastním orchestrátorem, modelem a hostingem — v jazyce D2 si přináší **vlastní harness** místo půjčeného orchestrátoru Copilota. Staví se pro-code (Microsoft 365 Agents SDK, Microsoft Foundry) nebo low-code v Copilot Studiu ([Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)); v rozsahu kurzu ho nestavíme. Kam patří, ukazuje sekce *Dvě dráhy, jeden ekosystém* níže; rozdíl low-code vs. pro-code znáte z [`../procode-vs-lowcode/`](../procode-vs-lowcode/README.md).
+Výjimkou z deklarativního modelu je **custom engine agent** s vlastním orchestrátorem, modelem a hostingem — v jazyce D2 si přináší **vlastní harness** místo půjčeného orchestrátoru Copilota. Staví se pro-code (Microsoft 365 Agents SDK, Microsoft Foundry) s vlastním hostingem, nebo low-code v Copilot Studiu — tam je orchestrátorem harness Copilot Studia a hosting zajišťuje Microsoft ([Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent), [Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)). Pro-code variantu v kurzu nestavíme; agenta na harnessu Copilot Studia postavíte v D5. Kam patří, ukazuje sekce *Dvě dráhy, jeden ekosystém* níže; rozdíl low-code vs. pro-code znáte z [`../procode-vs-lowcode/`](../procode-vs-lowcode/README.md).
 
 ### Mapa cest tvorby
 
-Diagram ukazuje, že čtyři cesty ústí do téhož deklarativního agenta. Skills stojí stranou: nejsou to celí agenti, ale workflow, které agenta (nebo Copilot in SharePoint) doplňuje.
+Diagram ukazuje, že čtyři cesty mohou ústit do téhož deklarativního agenta. Copilot Studio a Agents Toolkit ale vedou i k agentům s jiným harnessem: Copilot Studio hlavně k agentům na vlastních harnessech (D5), Agents Toolkit k pro-code custom engine agentovi. Skills stojí stranou: nejsou to celí agenti, ale workflow, které agenta (nebo Copilot in SharePoint) doplňuje.
 
 ```mermaid
 flowchart TB
@@ -46,9 +46,10 @@ flowchart TB
   ATK[Agents Toolkit<br>pro-code, repo] --> DA
   SPA[SharePoint agents<br>.agent na webu, legacy] --> DA
   SK[Skills — SKILL.md<br>workflow, ne celý agent] -.doplněk.-> DA
-  CE[Custom engine agent<br>vlastní harness — mimo rozsah kurzu]
-  ATK -.pro-code.-> CE
-  CS -.low-code.-> CE
+  CSH[Agent na harnessu Copilot Studia<br>hosting Microsoft — D5]
+  CE[Custom engine agent pro-code<br>vlastní harness a hosting — mimo rozsah]
+  CS --> CSH
+  ATK -.-> CE
 ```
 
 Cesty se liší publikem, licenčními požadavky na tvorbu a tím, kam lze agenta distribuovat:
@@ -104,7 +105,7 @@ flowchart LR
 
 **Proč nejde o konkurenty.**
 
-- **Dráhy na sebe navazují.** Z Agent Builderu vede kopie do Copilot Studia; Agents Toolkit staví deklarativní i custom engine agenty a umí do Microsoft 365 připojit agenta z Foundry. Copilot Studio navíc umí custom engine agenty i low-code.
+- **Dráhy na sebe navazují.** Z Agent Builderu vede kopie do Copilot Studia; Agents Toolkit staví deklarativní i custom engine agenty a umí do Microsoft 365 připojit agenta z Foundry. Copilot Studio umí obojí: deklarativního agenta pro Microsoft 365 Copilot i agenta na vlastním harnessu, kterého Microsoft řadí mezi (low-code) custom engine agenty.
 - **Kombinují se.** Microsoft sám počítá s řešením z víc nástrojů — například agent v Copilot Studiu nad službou, kterou udržuje vývojový tým ([Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)).
 - **Končí ve stejné správě.** Ať agent vznikl kdekoli, publikuje se přes schválení správce do Agent Store, objeví se v registru agentů a řídí se identitou v Entra. Proto správa v D5 [`copilot-admin`](../../day-5/copilot-admin/README.md) pokrývá všechny cesty najednou.
 
@@ -145,7 +146,7 @@ Od běhu 2026-11 máte Copilot licenci, takže Agent Builder i tvorbu SharePoint
 
 ## Shrnutí
 
-- Většina cest (Agent Builder, SharePoint agents, Agents Toolkit, Copilot Studio) vede k deklarativnímu agentovi = instrukce + knowledge + akce na orchestrátoru Microsoft 365 Copilot, bez vlastního hostingu.
+- Agent Builder, SharePoint agents a Agents Toolkit vedou k deklarativnímu agentovi = instrukce + knowledge + akce na orchestrátoru Microsoft 365 Copilot, bez vlastního hostingu. Copilot Studio umí deklarativního agenta i agenta na vlastním harnessu.
 - Cesty se liší tím, kdo staví, co potřebuje k tvorbě (licence, přístup) a kam agenta distribuuje; schopnosti srovnává [`comparison-agent-paths.md`](comparison-agent-paths.md).
 - Nástroje tvoří dvě komplementární dráhy: low-code Agent Builder (draft) → Copilot Studio (ladění) a pro-code deklarativní agent v Agents Toolkitu → custom engine agent (Agents SDK, Microsoft Foundry). Liší se tím, čí harness agent používá; správa je pro obě společná.
 - SharePoint agents jsou dobíhající cesta — tvorba se přesouvá do Agent Builderu, `.agent` po 03/2027 končí.

@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 45 min výklad + 30 min lab. Otvírák dne — svěží energie, držet tempo; tabulka vrstev instrukcí je jádro, nekrátit.
+- 45 min výklad + 30 min lab. Podsekce harness (+3 min, 2026-11) jde z Memory — detail eDiscovery/Graph Explorer jen zmínit, plně až D5 monitoring. Otvírák dne — svěží energie, držet tempo; tabulka vrstev instrukcí je jádro, nekrátit.
 
 ## Tripwires
 
