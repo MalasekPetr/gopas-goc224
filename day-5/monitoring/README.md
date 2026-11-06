@@ -1,6 +1,6 @@
 # Provozní monitoring a compliance
 
-> Typ: povinný · Den: 5 · Odhad: AM blok
+> Typ: povinný · Den: 5 · Odhad: PM blok
 > Prostředí: [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 ## Cíle

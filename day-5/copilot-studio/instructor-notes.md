@@ -14,11 +14,13 @@ Studenti dělají **totéž co lektor** (rozhodnutí autora 2026-11). Lektor jed
 
 ## Go/no-go — ráno před blokem
 
-- **Strop kreditů (povinné, jinak no-go hands-on).** Lab na GitHub Copilot harnessu čerpá kredity od první věty a identity-based politika *All Users Policy* (Students, 20 000/měs., 2 000/uživatel) **agenty z Copilot Studia nepokrývá**. Jedna z variant:
-  - **A (doporučeno, pokud v `GOC224-lab` už neběží AI Builder demo z D4):** M365 AC → Copilot → Cost management → Configuration → Add spending policy → Scope **Resources** → **Specific environments** = `GOC224-lab` → limit politiky 60 000, **per-agent limit 3 000**, alert na instruktora. Platí i pro agenty založené až v labu; projeví se do 12 minut. Resource-based politika nahradí PPAC alokaci a billing plan prostředí a **nepokrývá AI Builder**.
-  - **B:** po části B labu v PPAC → Licensing → Copilot Studio → **Manage Agents** → u každého agenta *HR Asistent NN* → **Set limit** 3 000, práh upozornění, **Stop usage** zapnout. Ruční práce pro 20 agentů (~10 min) — udělat během části C.
+- **Strop kreditů (povinné, jinak no-go hands-on).** Lab na GitHub Copilot harnessu čerpá kredity od první věty a identity-based politika *All Users Policy* (Students, 20 000/měs., 2 000/uživatel) **agenty z Copilot Studia nepokrývá**.
+  - **Výši stropu určí dry-run, ne odhad.** Odhad 2 000–6 000 na studenta je široký; pevných 3 000 by část studentů zastavilo uprostřed části F nebo G (Stop usage vypne agenta i v rozběhnuté konverzaci). Projeď celý lab jednou (viz Dry-run níže), přečti kartu Monitor a nastav **per-agent limit ≈ 1,5× spotřeba dry-runu**. Když Monitor do ~15 min nic neukáže, strop je rozpočtové rozhodnutí autora (výchozí návrh 3 000).
+  - **Limit politiky** = per-agent limit × počet agentů: 20 studentů + lektor + dry-run agent = **22 agentů** (při 3 000 → 66 000).
+  - **A (doporučeno, pokud v `GOC224-lab` už neběží AI Builder demo z D4):** M365 AC → Copilot → Cost management → Configuration → Add spending policy → Scope **Resources** → **Specific environments** = `GOC224-lab` → limit politiky + **per-agent limit**, alert na instruktora. Platí i pro agenty založené až v labu; projeví se do 12 minut. Resource-based politika nahradí PPAC alokaci a billing plan prostředí a **nepokrývá AI Builder**.
+  - **B:** po části B labu v PPAC → Licensing → Copilot Studio → **Manage Agents** → u každého agenta *HR Asistent NN* → **Set limit**, práh upozornění, **Stop usage** zapnout. Ruční práce pro 20 agentů (~10 min) — udělat během části C.
 - **Billing prostředí:** `GOC224-lab` má PAYG billing plan (D4) nebo ho pokrývá varianta A. Bez zdroje kreditů se agent nespustí ani v Preview.
-- **Dry-run jedním studentským účtem:** založit agenta přes **Agent** (ne *Other ways to build*), projít testy 1–4, nahrát skill, spustit evaluaci; pak zkontrolovat kartu **Monitor** (kolik kreditů) a PPAC → Manage → Copilot Studio, sloupec **Harness** = GitHub Copilot. Výsledek z Monitoru použít ve výkladu jako „kolik stál dry-run".
+- **Dry-run jedním studentským účtem:** agenta pojmenovat **HR Asistent DRYRUN** (ať nekoliduje s agentem studenta) a po dry-runu ho smazat nebo započítat do limitu politiky. Založit přes **Agent** (ne *Other ways to build*), projít testy 1–4, nahrát skill, spustit evaluaci; pak zkontrolovat kartu **Monitor** (kolik kreditů) a PPAC → Manage → Copilot Studio, sloupec **Harness** = GitHub Copilot. Výsledek z Monitoru použít ve výkladu jako „kolik stál dry-run".
 - **Přístup:** studenti mají v `GOC224-lab` roli Environment Maker; Copilot Studio se otevírá v `GOC224-lab`, ne v defaultu.
 - **DLP prostředí** povoluje konektor **SharePoint** (jinak nástroj Get items nejde přidat).
 - **Maker credentials:** zjistit nastavení PPAC → `GOC224-lab` → Settings → Product → Features → *Control maker credential options*. Pro výklad je ideální ukázat obě volby; pro lab nechat výchozí (obě povolené) — studenti v kroku 15 jen zapisují, co vidí.
@@ -32,7 +34,7 @@ Studenti dělají **totéž co lektor** (rozhodnutí autora 2026-11). Lektor jed
 |---|---|---|
 | Odhad na studenta (~20 light úkolů × 100–300) | 2 000–6 000 | $20–60 |
 | Třída 20 studentů bez stropu | 40 000–120 000 | $400–1 200 |
-| Se stropem 3 000 na agenta | max. 60 000 | max. ~$600 |
+| Se stropem 3 000 na agenta (22 agentů) | max. 66 000 | max. ~$660 |
 | Skutečnost D4 (Cowork + Code, celá třída) | 4 628 | ~$46 |
 
 - V průběhu labu sledovat PPAC → Licensing → Copilot Studio → Manage Agents (spotřeba po agentech). M365 AC Cost management se obnovuje po 2–4 h, Azure po 8–72 h — pro řízení labu **nepoužívat Azure**.

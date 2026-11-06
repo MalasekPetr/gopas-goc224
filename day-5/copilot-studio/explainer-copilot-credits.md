@@ -65,7 +65,7 @@ Zdroj: diagram na stránce [Usage-based billing](https://learn.microsoft.com/en-
 
 Jak se limity chovají:
 
-- Microsoft vyžaduje **nejméně 2 000 kreditů na uživatele měsíčně**; nižší limit politika nepřijme.
+- Microsoft uvádí pro limit na uživatele **nejméně 2 000 kreditů měsíčně** a rozlišuje minimum (politika ho musí splnit) od doporučené hodnoty (při nižší politiku uložíte a admin centrum navrhne vyšší limit).
 - Uživatel, který limit vyčerpá, ztratí přístup ke službám politiky do **1. dne dalšího měsíce**. Může požádat o další kredity, ale do jiné politiky automaticky nepřejde.
 - Úloha, která už běží a přes limit přeteče, smí doběhnout. Přečerpání se do limitu nepočítá a Microsoft ho podle svého uvážení nefakturuje ([Monitor spending](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-copilot-credits-monitor-spending)).
 - Spending policy **nerezervuje** kredity, jen omezuje.
@@ -111,13 +111,13 @@ Zdroje: [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/copi
 
 - M365 AC → Cost management ukazoval **4 628 PAYG kreditů** za měsíc: 212 ze 4. 11. a zhruba 4 400 z 5. 11. (Code 3 252, Cowork 1 366, Managed Runtime 10).
 - Azure Cost analysis ukazoval pro meter *Pay As You Go Copilot Credit* jen **€1,90** — to odpovídá 212 kreditům ze 4. 11. Špička z 5. 11. ještě nedorazila.
-- Závěr: **M365 AC je provozní pohled (hodiny), Azure je faktura (den až tři dny)**. Když chcete vědět, jestli třída nepřečerpává, díváte se do M365 AC nebo PPAC, ne do Azure. Limity spending policy vyhodnocuje Microsoft 365, ne Azure faktura — zpoždění v Azure neznamená, že limit nefunguje.
+- Závěr: **M365 AC je provozní pohled (hodiny), Azure je faktura (den až tři dny)**. Když chcete vědět, jestli třída nepřečerpává, díváte se do M365 AC nebo PPAC, ne do Azure. Azure spotřebu jen fakturuje; limit je součástí spending policy v M365 AC — zpoždění v Azure proto neznamená, že limit nefunguje (naše odvození, MS to výslovně neuvádí).
 
 **Jak spotřebu číst v Azure** (pozorováno v kurzovním tenantu 2026-11):
 
 - Každá spending policy je v Azure samostatný resource typu `microsoft.powerplatform/accounts` (u nás *all users policy* ve skupině `copilot-credits-rg`).
 - Služba se jmenuje **Microsoft Copilot Studio** a meter **Pay As You Go Copilot Credit**, i když jde o Cowork nebo Code. Rozlišíte je tagem `servicename` (Group by → Tag).
-- Agenti z labu půjdou přes billing plan prostředí `GOC224-lab`, tedy jako jiný resource.
+- Očekávání (ověřit po dry-runu): agenti z labu půjdou přes billing plan prostředí `GOC224-lab`, tedy jako jiný resource.
 
 ## Kolik stojí tento lab
 
