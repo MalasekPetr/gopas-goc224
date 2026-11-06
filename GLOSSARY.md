@@ -98,11 +98,15 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 | Nástroj | Co to je | Licenční dotyk |
 |---|---|---|
 | **Microsoft 365 Agents Toolkit** | nástupce Teams Toolkitu; VS Code / Visual Studio / GitHub Copilot / CLI; scaffolduje deklarativní a custom engine agenty, manifest, provisioning, MCP akce | zdarma |
+| **Harness / orchestrator** | řídicí vrstva mezi agentem a modelem (kdy volat model, s jakými daty, které nástroje). M365 Copilot docs: *orchestrator*; Copilot Studio: *harness*. Deklarativní agent si ho půjčuje od Copilota, Copilot Studio má vlastní, custom engine agent si přináší svůj — viz D2 `prompting-fundamentals` | — |
+| **Custom engine agent** | agent s vlastní orchestrací, modelem a hostingem (≠ deklarativní agent); pro-code přes Agents SDK nebo Microsoft Foundry, low-code v Copilot Studiu; v kurzu jen výklad (D4 `copilot-agents`) | hosting mimo M365 (typicky Azure) + licence/kredity podle kanálu |
+| **Microsoft 365 Agents SDK** | framework pro custom engine agenty (vlastní orchestrace, libovolný model, multi-channel); nástupce TeamsFx SDK | SDK zdarma; hosting a modely = Azure spotřeba |
+| **Microsoft Foundry** | Azure platforma pro stavbu agentů (Agent Framework SDK); Foundry agenta lze publikovat do M365 Copilot a Teams z Foundry portálu nebo přes Agents Toolkit | Azure spotřeba — **jiný metr** než Copilot Credits i Document processing PAYG |
 | **GitHub Copilot** | AI asistent při psaní kódu; Agents Toolkit je pro něj dostupný | vlastní licence (mimo M365) |
 | **Copilot Studio** | low-code stavba agentů; čtyři harnessy: **GitHub Copilot harness** (GA 8/2026; blog 11/2026 uvádí nový název **Microsoft Copilot harness**, Learn zatím ne), **standard** (klasický), **Copilot Chat** a **Customer Conversation** | Copilot Credits / M365 Copilot licence (fair use jen standard a Copilot Chat harness); GitHub Copilot harness čerpá kredity už od stavby a licence ho nekryje — viz D5 `copilot-studio/explainer-copilot-credits.md` |
 | **Agent Builder** | lightweight tvorba deklarativních agentů přímo v Copilotu (bez opuštění appky); umí připojit Skills (preview); externí akce ne → „copy to Copilot Studio" | Copilot licence / tenant s PAYG pro Copilot Studio (MS prerequisites) — ověřit k datu běhu |
 
-Rozhodovací osa pro [`day-4/procode-vs-lowcode`](day-4/procode-vs-lowcode/): deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
+Rozhodovací osa pro [`day-4/procode-vs-lowcode`](day-4/procode-vs-lowcode/): deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Dvě komplementární dráhy stavby agentů (low-code Agent Builder → Copilot Studio; pro-code deklarativní agent → custom engine) viz [`day-4/copilot-agents`](day-4/copilot-agents/). Agenti jako kód sedí na repo-as-code přístup kurzu.
 
 ## Azure AI služby (mimo M365)
 

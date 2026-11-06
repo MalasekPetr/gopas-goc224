@@ -32,6 +32,8 @@ Builderovým backendem je přitom Copilot Studio: Builder je zjednodušený vstu
 
 ### Harness — na čem agent běží
 
+Harness znáte z D2 [`prompting-fundamentals`](../../day-2/prompting-fundamentals/README.md): je to stejná řídicí vrstva, které Microsoft 365 Copilot říká orchestrátor. Rozdíl je v tom, kdo ji dodává. Deklarativní agent z Agent Builderu nebo Agents Toolkitu si orchestrátor půjčuje od Copilota; Copilot Studio má **harnessy vlastní** a vy si mezi nimi vybíráte. V low-code dráze z D4 ([`copilot-agents`](../../day-4/copilot-agents/README.md), *Dvě dráhy, jeden ekosystém*) je Copilot Studio druhý krok — sem agent přichází z Agent Builderu (Copy to Copilot Studio), když potřebuje víc než instrukce a knowledge.
+
 Všechno, co v Copilot Studiu postavíte, běží na **harnessu**. Harness je runtime mezi vaším agentem a jazykovým modelem: rozhoduje, kdy zavolat model, co mu poslat, jak vyložit odpověď a které nástroje spustit. Model dodává „uvažování", harness určuje, jak se z něj stane práce. Volba harnessu proto ovlivňuje tři věci najednou — jak agent pracuje, co umí a **jak se účtuje** ([Harnesses](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)).
 
 Copilot Studio má k listopadu 2026 **čtyři harnessy**:
@@ -189,6 +191,7 @@ Lab **čerpá Copilot Credits od první věty** a licence Microsoft 365 Copilot 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-11.
 >
 > - **Harnessy:** čtyři (GitHub Copilot, standard, Copilot Chat, Customer Conversation); přehledová stránka Learn popisuje tři, Copilot Chat harness je v *Access standard agents* a v Learn modulu. Přejmenování na „Microsoft Copilot harness" (blog 3. 11. 2026) zatím Learn nepřevzal.
+> - **Copy to Copilot Studio:** na kterém harnessu přistane agent zkopírovaný z Agent Builderu, Microsoft na stránce [Copy an agent to Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio) neuvádí — ověřit v tenantu.
 > - **Preview funkce GitHub Copilot harnessu:** evaluace, memory, generování agenta z popisu, analytika nad listy — ověřit dostupnost v tenantu.
 > - **Kreditové sazby a fair use** ověřit proti licensing guide (detail v [`explainer-copilot-credits.md`](explainer-copilot-credits.md)).
 > - Po Ignite (17.–20. 11. 2026) projít znovu.

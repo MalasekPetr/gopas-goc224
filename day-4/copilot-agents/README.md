@@ -6,6 +6,7 @@
 ## Cíle
 
 - Znáte **všechny cesty tvorby agentů** a umíte mezi nimi vybrat podle scénáře a publika.
+- Vysvětlíte **dvě dráhy stavby** (low-code: Agent Builder → Copilot Studio; pro-code: deklarativní agent v Agents Toolkitu → custom engine agent) jako komplementární kroky jednoho ekosystému, ne jako konkurenty.
 - Rozumíte **deklarativnímu agentovi** (instrukce + knowledge + akce) a navážete na pojmy z D2, hlavně Agent Instructions.
 - Navrhnete agenta včetně **plánu vyhodnocení** (lab), který použijete v následujících nástrojových blocích.
 
@@ -31,7 +32,7 @@ Podstatné je, *kde* agent běží. Deklarativní agent nemá vlastní server an
 
 Instrukce agenta znáte z D2 [`prompting-fundamentals`](../../day-2/prompting-fundamentals/README.md): jsou to **Agent Instructions** se strukturou purpose → guidelines → skills a limitem 8 000 znaků. Platí i bezpečnostní pravidlo z D2 — instrukce nepatří do knowledge zdrojů, protože obsah knowledge platforma prověřuje kvůli riziku cross-prompt injection (XPIA). Teď tyto instrukce poprvé píšete pro skutečného agenta.
 
-Výjimkou z deklarativního modelu je **custom engine agent** s vlastním orchestrátorem, modelem a hostingem. Vede k němu jen Agents Toolkit a v rozsahu kurzu ho nestavíme; rozdíl znáte z [`../procode-vs-lowcode/`](../procode-vs-lowcode/README.md).
+Výjimkou z deklarativního modelu je **custom engine agent** s vlastním orchestrátorem, modelem a hostingem — v jazyce D2 si přináší **vlastní harness** místo půjčeného orchestrátoru Copilota. Staví se pro-code (Microsoft 365 Agents SDK, Microsoft Foundry) nebo low-code v Copilot Studiu ([Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)); v rozsahu kurzu ho nestavíme. Kam patří, ukazuje sekce *Dvě dráhy, jeden ekosystém* níže; rozdíl low-code vs. pro-code znáte z [`../procode-vs-lowcode/`](../procode-vs-lowcode/README.md).
 
 ### Mapa cest tvorby
 
@@ -45,6 +46,9 @@ flowchart TB
   ATK[Agents Toolkit<br>pro-code, repo] --> DA
   SPA[SharePoint agents<br>.agent na webu, legacy] --> DA
   SK[Skills — SKILL.md<br>workflow, ne celý agent] -.doplněk.-> DA
+  CE[Custom engine agent<br>vlastní harness — mimo rozsah kurzu]
+  ATK -.pro-code.-> CE
+  CS -.low-code.-> CE
 ```
 
 Cesty se liší publikem, licenčními požadavky na tvorbu a tím, kam lze agenta distribuovat:
@@ -68,6 +72,43 @@ Jak tabulku číst:
 Mapa se rozrůstá. Mimo tuto tabulku Microsoft nově uvádí i **Cowork plugins** a **Work IQ Dev Tools** (preview) ([Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)); podrobnosti jsou v poznámce v [`comparison-agent-paths.md`](comparison-agent-paths.md). Všimněte si také, že Skills (`SKILL.md`) nejsou vázané jen na Copilot in SharePoint: připojí je i Agent Builder, manifest deklarativního agenta (`agent_skills`) a Cowork. Formát, který jste se naučili v D3, tedy využijete i u agentů.
 
 Tabulka výše odpovídá na otázku „kdo a za kolik". Na otázku „co agent umí" — knowledge včetně listů, akce, orchestrace, ALM a governance — odpovídá detailní srovnávací matice s rozhodovací osou v [`comparison-agent-paths.md`](comparison-agent-paths.md). Přečtěte si ji před labem; nejvýraznější rozdíly jsou u SharePoint listů, akcí a source control.
+
+### Dvě dráhy, jeden ekosystém
+
+Mapa ukazuje pět míst, ale Microsoft je nestaví proti sobě. Hlavní nástroje tvoří **dvě dráhy** — jednu pro makery, jednu pro vývojáře — a na konci obou čeká stejná správa. U každého kroku si všimněte, čí harness agent používá (pojem z D2 [`prompting-fundamentals`](../../day-2/prompting-fundamentals/README.md)):
+
+```mermaid
+flowchart LR
+  subgraph LC[Low-code dráha]
+    AB[Agent Builder<br>draft: instrukce + knowledge<br>harness: orchestrátor Copilota] -->|Copy to Copilot Studio| CS[Copilot Studio<br>ladění: konektory, workflow,<br>prostředí, analytika, DLP<br>harness: Copilot Studio]
+  end
+  subgraph PC[Pro-code dráha]
+    DA[Agents Toolkit ve VS Code<br>deklarativní agent v gitu<br>harness: orchestrátor Copilota] -->|vlastní orchestrace a model| CE[Custom engine agent<br>Agents SDK / Microsoft Foundry<br>harness: váš]
+  end
+  AB --> G[Společná správa<br>Entra · Requests → Agent Store<br>registr agentů v M365 AC · Agent 365]
+  CS --> G
+  DA --> G
+  CE --> G
+```
+
+**Low-code dráha: Agent Builder na draft, Copilot Studio na ladění.** Rozhodovací postup Microsoftu je jednoduchý: když scénář pokryjí instrukce, knowledge a vestavěné schopnosti Copilota, začněte v Agent Builderu. Když agent potřebuje akce do externích služeb, workflow, oddělená prostředí pro vývoj, test a provoz, analytiku nebo DLP, zkopírujte ho tlačítkem **Copy to Copilot Studio** a pokračujte tam — není potřeba ho stavět znovu ([Choose between Agent Builder and Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience)). Draft tak vznikne za pár minut u člověka, který proces zná, a ladění převezme maker nebo IT. Ke kopii je dobré vědět ([Copy an agent to Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio)):
+
+- Kopie je **jednorázový snímek**. Originál v Agent Builderu zůstane a jeho další úpravy se do kopie nepropisují. Po publikaci kopie rozhodněte, zda originál smazat, jinak budete mít dva agenty.
+- Přenese se název, popis, instrukce, navrhované prompty, ikona, SharePoint a weby jako knowledge. **Nepřenesou se** Copilot konektory, nahrané soubory, Teams a e-mail jako knowledge ani generování obrázků — ty v Copilot Studiu nastavíte znovu, nebo nejsou podporované.
+- Kopie potřebuje licenci Copilot Studio nebo Microsoft 365 Copilot a Power Platform prostředí s Dataverse. Od té chvíle agenta spravujete v Power Platform admin centru (DLP, prostředí), ne už jen v Microsoft 365 admin centru.
+
+**Pro-code dráha: deklarativní agent na začátku, custom engine na konci.** Vývojář začíná deklarativním agentem v Agents Toolkitu: manifest v gitu, orchestrátor a modely Copilota, a tím i zděděné ochrany dat, compliance a RAI. Ke custom engine agentovi přechází, až když potřebuje to, co deklarativní model nedá: vlastní orchestraci s přesnými obchodními pravidly, vlastní nebo doménový model, proaktivní spouštění bez uživatele, spolupráci více lidí v Teams kanálu nebo kanály mimo Microsoft 365 ([Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)). Postaví ho přes **Microsoft 365 Agents SDK**, nebo do Microsoft 365 připojí agenta z **Microsoft Foundry** — přímou publikací z Foundry portálu, nebo přes Agents Toolkit ([Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)). Cenou je vlastní hosting (typicky Azure, za další náklady) a to, že compliance, RAI a bezpečnost už nedědíte, ale zajišťujete sami.
+
+> [!IMPORTANT] Data sovereignty u custom engine agenta
+> Deklarativní agent zpracovává data uvnitř Microsoft 365 service boundary. Custom engine agent běží na vašem hostingu (typicky Azure) — data zůstávají ve vaší správě, ale ochrany Copilotu automaticky nedědí. Region hostingu, identita aplikace a přístup k datům tenantu (D4 [`ai-app-access`](../ai-app-access/README.md)) patří do posouzení rizik ještě před stavbou.
+
+**Proč nejde o konkurenty.**
+
+- **Dráhy na sebe navazují.** Z Agent Builderu vede kopie do Copilot Studia; Agents Toolkit staví deklarativní i custom engine agenty a umí do Microsoft 365 připojit agenta z Foundry. Copilot Studio navíc umí custom engine agenty i low-code.
+- **Kombinují se.** Microsoft sám počítá s řešením z víc nástrojů — například agent v Copilot Studiu nad službou, kterou udržuje vývojový tým ([Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)).
+- **Končí ve stejné správě.** Ať agent vznikl kdekoli, publikuje se přes schválení správce do Agent Store, objeví se v registru agentů a řídí se identitou v Entra. Proto správa v D5 [`copilot-admin`](../../day-5/copilot-admin/README.md) pokrývá všechny cesty najednou.
+
+Praktické pravidlo: **začněte nejnižším krokem, který scénář pokryje, a posuňte se, až narazíte na strop.** Každý krok dál přidává možnosti, ale i provoz, náklady a odpovědnost.
 
 ### Distribuce a governance — návaznost na copilot-admin
 
@@ -106,6 +147,7 @@ Od běhu 2026-11 máte Copilot licenci, takže Agent Builder i tvorbu SharePoint
 
 - Většina cest (Agent Builder, SharePoint agents, Agents Toolkit, Copilot Studio) vede k deklarativnímu agentovi = instrukce + knowledge + akce na orchestrátoru Microsoft 365 Copilot, bez vlastního hostingu.
 - Cesty se liší tím, kdo staví, co potřebuje k tvorbě (licence, přístup) a kam agenta distribuuje; schopnosti srovnává [`comparison-agent-paths.md`](comparison-agent-paths.md).
+- Nástroje tvoří dvě komplementární dráhy: low-code Agent Builder (draft) → Copilot Studio (ladění) a pro-code deklarativní agent v Agents Toolkitu → custom engine agent (Agents SDK, Microsoft Foundry). Liší se tím, čí harness agent používá; správa je pro obě společná.
 - SharePoint agents jsou dobíhající cesta — tvorba se přesouvá do Agent Builderu, `.agent` po 03/2027 končí.
 - Pro celou organizaci se agent publikuje přes schválení správce (Requests → Agent Store); správu proberete v D5.
 - Kvalitu agenta určují instrukce a popis — proto ke každému návrhu patří plán vyhodnocení.
@@ -119,6 +161,7 @@ Od běhu 2026-11 máte Copilot licenci, takže Agent Builder i tvorbu SharePoint
 ## Zdroje (Microsoft)
 
 - **Deklarativní agent a licence:** [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) · [Agent capabilities & licensing](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)
+- **Dvě dráhy:** [Choose between Agent Builder and Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience) · [Copy an agent to Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio) · [Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview) · [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)
 - **Cesty tvorby:** [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) · [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) · [Upgrade SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)
 - **Distribuce a governance:** [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) · [Publish options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish) · [Manage plugins, skills and MCP servers](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers)
 

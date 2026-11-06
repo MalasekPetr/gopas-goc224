@@ -5,7 +5,7 @@
 > [!NOTE] Struktura (D4, tento běh)
 > Agentní část rozdělená na **úvod (tento blok) + dva nástrojové bloky**: [`agent-builder`](../agent-builder/), [`agents-toolkit`](../agents-toolkit/); volitelně [`opt-sharepoint-agents`](../opt-sharepoint-agents/) na konci dne. Před agenty běží [`cowork`](../cowork/), [`code`](../code/) a [`ai-app-access`](../ai-app-access/). **Skills jsou v D3, Copilot Studio v D5.**
 
-- Tento blok (úvod): deklarativní základ + mapa cest + srovnání (`comparison-agent-paths.md`) ~15–20 min + návrhový lab (`lab-agent-design.md`).
+- Tento blok (úvod): deklarativní základ + mapa cest + **dvě dráhy (+5 min)** + srovnání (`comparison-agent-paths.md`) ~20–25 min + návrhový lab (`lab-agent-design.md`).
 - Nástrojové bloky mají vlastní laby a go/no-go (jejich instructor-notes). Orientační časy: Agent Builder ~45 min, Toolkit ~35 min (+ connected agents 25–30 min), volitelně SharePoint agents ~20 min.
 - Most na D5: „dnes jste viděli strop no-code cest (analytika) — zítra dopoledne ho Studio prorazí; a agenty, co postavíte, odpoledne spravujete v `copilot-admin`."
 
@@ -18,6 +18,7 @@
 ## Tripwires
 
 - Callback na D2: tabulku vrstev instrukcí ukázat znovu — „teď píšete Agent Instructions doopravdy".
+- **Dvě dráhy, jeden ekosystém** (rozhodnutí autora 2026-11): pointa „nejsou to konkurenti". Low-code = Agent Builder draft → Copy to Copilot Studio ladění (snímek, nesynchronizuje); pro-code = deklarativní agent v Toolkitu → custom engine (Agents SDK / Foundry). U každého kroku říct, čí harness (callback D2). MS formulace je rozhodovací postup („začněte v Agent Builderu, když stačí instrukce + knowledge"), ne doslovné „draft/tuning" — necitovat jako MS slogan. U custom engine zmínit data sovereignty (hosting mimo M365 boundary).
 - **Instrukce ≠ knowledge** (XPIA) — kontrolovat v labu, studenti rádi nacpou směrnici do instrukcí.
 - Negativní test v evaluačním plánu je povinný — bez něj se agent „vždycky povede".
 - Researcher/Analyst nejsou „agenti k tvorbě" — D4 už to říkal, nenechat zamotat. Jsou součást Copilot licence; admin je umí blokovat.

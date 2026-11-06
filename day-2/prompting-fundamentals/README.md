@@ -6,7 +6,7 @@
 ## Cíle
 
 - Napíšete prompt se čtyřmi částmi (cíl, kontext, očekávání, zdroj) a umíte ho iterovat.
-- Vysvětlíte roli Orchestratoru: co se s promptem děje mezi odesláním a odpovědí.
+- Vysvětlíte roli Orchestratoru: co se s promptem děje mezi odesláním a odpovědí — a víte, že Copilot Studio stejné vrstvě říká **harness**.
 - Rozlišíte pojmy **Prompt · Orchestrator · Context · custom instructions · Memory · Agent Instructions** a víte, kdo kterou vrstvu nastavuje.
 
 ## Proč začínat promptem
@@ -64,6 +64,28 @@ Přerušované šipky v diagramu ukazují, že do Orchestratoru vstupuje víc ne
 
 Pro správce je klíčový krok 2. Copilot nerozšiřuje oprávnění — pokud uživatel dokument nevidí v SharePointu, neuvidí ho ani v odpovědi. Platí to i obráceně: když je obsah přesdílený, Copilot ho najde. Datové hranice a grounding jste probírali v D1 [`ai-landscape`](../../day-1/ai-landscape/README.md); v labu si permission-trimming ověříte sami dotazem na web spolužáka, ke kterému nemáte přístup.
 
+### Orchestrator = harness: stejná vrstva, dvě jména
+
+V D4 a D5 uslyšíte slovo **harness**. Nejde o nic nového — je to tatáž řídicí vrstva, jen pojmenovaná jinak. Dokumentace Microsoft 365 Copilota mluví o **orchestrátoru**; Copilot Studio mluví o **harnessu** a popisuje ho jako runtime mezi agentem a modelem, který rozhoduje, kdy zavolat model, co mu poslat, jak vyložit odpověď a které nástroje spustit ([Harnesses](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)). Každý Copilot i každý agent tak má tři vrstvy:
+
+```mermaid
+flowchart TB
+  A[Agent — co dodáte vy<br>instrukce, knowledge, akce, skills]
+  H[Harness / orchestrator — kdo řídí<br>kdy volat model, s jakými daty, které nástroje]
+  M[Model — kdo uvažuje<br>LLM generuje odpověď]
+  A --> H --> M
+```
+
+Model se pod vámi mění (viz Stav produktu níže), vaše instrukce a knowledge zůstávají. Nástroje na stavbu agentů se proto liší hlavně tím, **čí harness agent používá** ([Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)):
+
+| Kdo dodává harness | Příklady | Kde v kurzu |
+|---|---|---|
+| **Microsoft 365 Copilot** — agent si orchestrátor a modely půjčuje | Copilot Chat, Copilot in SharePoint, deklarativní agent z Agent Builderu nebo Agents Toolkitu | D2–D4 |
+| **Copilot Studio** — vlastní harnessy, volí se při založení agenta | standard harness, GitHub Copilot harness | D5 |
+| **Vy** — vlastní orchestrace, vlastní model, vlastní hosting | custom engine agent (Microsoft 365 Agents SDK, Microsoft Foundry) | D4 jen výklad |
+
+Ztotožnění obou pojmů je zjednodušení kurzu — Microsoft je v dokumentaci výslovně nespojuje, popisují ale stejnou roli. Prakticky z toho plyne jedna dovednost: když agent odpoví špatně, hledejte chybu ve správné vrstvě. Špatný tón nebo postup je obvykle v instrukcích (vaše vrstva), špatně vybraný zdroj nebo nástroj v jejich popisech, podle kterých harness vybírá, a vymyšlený fakt je vlastnost modelu, kterou mírní grounding a ověřování.
+
 ## 3. Vrstvy instrukcí — kdo mluví do odpovědi
 
 Odpověď Copilota neovlivňuje jen to, co právě napíšete. Do Orchestratoru vstupuje několik vrstev textu, které se liší tím, kdo je nastavuje, jak dlouho platí a kde jsou uložené:
@@ -113,6 +135,7 @@ Tuto tabulku vrstev uvidíte znovu v D4 [`copilot-agents`](../../day-4/copilot-a
 - **Context vs. Memory**: context je pracovní paměť jedné konverzace a po jejím skončení zmizí; Memory jsou trvalé poznámky o uživateli napříč konverzacemi.
 - **custom instructions vs. Agent Instructions**: první říkají „jak mluvit se MNOU" (uživatel je nastavuje sobě), druhé „jak se chová AGENT" (tvůrce je nastavuje všem uživatelům agenta).
 - **Grounding vs. context**: grounding je to, co Orchestrator *dohledá* v tenantu (permissions-trimmed); context je to, co už *je* v konverzaci.
+- **Model vs. harness (orchestrator)**: model generuje odpověď; harness rozhoduje, co se modelu pošle a které nástroje se spustí. Nástroje pro stavbu agentů (D4, D5) se liší hlavně harnessem, ne modelem.
 
 ## Naše prostředí
 
@@ -122,6 +145,7 @@ Lab běží živě nad Copilot in SharePoint na vašem vlastním webu — máte 
 
 - Dobrý prompt má cíl, kontext, očekávání a zdroj; povinný je jen cíl a první odpověď je začátek iterace.
 - Orchestrator doplní prompt o data z Microsoft Graph — jen ta, ke kterým má uživatel oprávnění — a teprve pak volá model.
+- Orchestrator a harness jsou stejná vrstva mezi agentem a modelem: Microsoft 365 Copilot ji půjčuje deklarativním agentům, Copilot Studio má vlastní harnessy a custom engine agent si ji přináší sám.
 - Do odpovědi mluví víc vrstev: prompt, context, custom instructions, Memory a u agentů Agent Instructions; každou nastavuje někdo jiný a platí jinak dlouho.
 - Memory je trvalá, uložená v mailboxu, a Purview retence ani audit se na ni nevztahují.
 - Agent Instructions patří do manifestu (purpose → guidelines → skills), nikdy do knowledge zdrojů — riziko XPIA.
@@ -134,6 +158,7 @@ Lab běží živě nad Copilot in SharePoint na vašem vlastním webu — máte 
 
 - **Psaní promptů:** [Get started writing prompts](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-writing-prompts-in-microsoft-365-copilot) · [Prompt Gallery](https://adoption.microsoft.com/en-us/copilot/prompt-gallery/)
 - **Jak Copilot funguje:** [How does Microsoft 365 Copilot work?](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture) · [Copilot Chat overview](https://learn.microsoft.com/en-us/copilot/overview) · [Data protection architecture](https://learn.microsoft.com/en-us/copilot/plan/architecture-data-protection-auditing)
+- **Orchestrator a harness:** [Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview) · [Harnesses in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)
 - **Memory a personalizace:** [Manage Copilot personalization and memory](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-personalization-memory)
 - **Instrukce agentů:** [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions)
 
