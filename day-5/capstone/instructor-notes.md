@@ -25,7 +25,7 @@
 
 ## Závěr kurzu
 
-- **Hlavní poselství (rozhodnutí autora 2026-11): AI není samospasitelná.** Kurz týden ukazoval, co AI umí — závěr musí vyznít opačně než marketing: nejdřív cesta bez AI, AI jen tam, kde nevadí nedeterminismus a přináší hodnotu, kterou pravidlo nebo flow nedá. Ukázat to na vlastním labu z dopoledne: seznam propadajících certifikací dá filtrovaný pohled listu zadarmo a pokaždé stejně.
+- **Hlavní poselství (rozhodnutí autora 2026-11): AI není samospasitelná.** Kurz týden ukazoval, co AI umí — závěr nesmí vyznít jako marketing. Cílem práce studentů není hledat AI řešení za každou cenu, ale **efektivnější pracovní nástroje**. AI je skvělá na objevování možností dat, aplikací a automatizace a na stavbu řešení; spousta řešení ale ke svému běhu AI nepotřebuje a bývá nákladově efektivnější. Ukázat to na vlastním labu z dopoledne: seznam propadajících certifikací dá filtrovaný pohled listu zadarmo a pokaždé stejně — a porovnat s kredity z karty Monitor.
 - Při prezentacích aktivně chválit studenty, kteří AI někde **záměrně nepoužili** — a ptát se „proč tady AI?" u blueprintů, které ji mají všude.
 - Next steps: Success Kit + enablement guide (odkazy v README) — ukázat, kde jsou.
 - Připomenout: blueprint si stáhnout — kurzovní účty po kurzu nejsou k dispozici.

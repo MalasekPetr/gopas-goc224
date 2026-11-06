@@ -17,11 +17,17 @@ Závěrečný projekt proto nic nového nestaví. Skládá poznatky z týdne do 
 
 Žádná sekce blueprintu nestojí na volitelných modulech. Všechno, co potřebujete, jste probrali v povinných blocích D1–D5.
 
-## Nejdřív cesta bez AI
+## Efektivní nástroj, ne AI za každou cenu
 
-Celý týden jste viděli, co AI umí. To neznamená, že ji máte nasadit všude. AI není samospasitelná technologie a dobrý blueprint často obsahuje víc rozhodnutí „tady AI nepoužijeme" než „tady ji zapneme".
+Celý týden jste viděli, co AI umí, a dnes je moderní dávat ji všude. Cílem vašeho blueprintu ale není najít co nejvíc míst pro AI — cílem je **najít pro každou práci nejefektivnější nástroj**. AI není samospasitelná technologie. Spousta osvědčených řešení ke svému běhu žádnou AI nepotřebuje: pohled a filtr v listu, vypočítaný sloupec, formulář s validací, flow s podmínkami, schvalovací proces, report. Bývají levnější, rychlejší a předvídatelnější.
 
-U každého use casu si proto nejdřív položte otázku: **musí výsledek vyjít pokaždé stejně?** Jazykový model je nedeterministický — na stejný vstup může odpovědět pokaždé trochu jinak, a když se splete, splete se přesvědčivě. Kde to vadí, hledejte nejdřív **cestu bez AI (NOAI)**: pravidlo, podmínku ve flow, vypočítaný sloupec, validaci, strukturovaný formulář nebo filtrovaný pohled listu. Taková cesta nečerpá Copilot Credits, dá se otestovat jednou provždy a v auditu se vysvětlí jednou větou.
+AI má přitom v tomhle příběhu důležitou roli — jen často jinde, než se čeká. Mnoho uživatelů právě díky Copilotu objevuje, co jejich data, aplikace a automatizace vůbec umí. AI vám pomůže **řešení najít a postavit** (Copilot navrhne flow, Code napíše aplikaci, Cowork připraví podklady), ale hotové řešení pak může běžet bez AI. Rozlišujte proto **AI při stavbě** a **AI za běhu**: první zaplatíte jednou, druhou při každém spuštění.
+
+U každého use casu si položte tři otázky:
+
+1. **Dá se to vyřešit bez AI se srovnatelnou užitnou hodnotou?** Pak to řešte bez AI (NOAI).
+2. **Kolik stojí jeden běh a kolikrát poběží?** Flow nebo pohled listu nestojí za spuštění nic navíc; AI za běhu čerpá Copilot Credits (nebo PAYG Document processing) pokaždé znovu — u procesu, který běží tisíckrát měsíčně, to rozhoduje.
+3. **Musí výsledek vyjít pokaždé stejně?** Jazykový model je nedeterministický — na stejný vstup může odpovědět pokaždé trochu jinak, a když se splete, splete se přesvědčivě. Výpočty, termíny, schvalování podle limitu a cokoli s auditní stopou patří do pravidla nebo flow.
 
 | Use case potřebuje | Cesta bez AI | Kde AI dává smysl |
 |---|---|---|
@@ -30,7 +36,7 @@ U každého use casu si proto nejdřív položte otázku: **musí výsledek vyj�
 | Přesná data z pevného zdroje | filtrovaný pohled listu, dotaz, report | formulace odpovědi nad už spočítaným výsledkem |
 | Práci s volným textem: shrnutí, návrh, hledání v nestrukturovaném obsahu, vytěžení z dokumentu | často žádná rozumná | Copilot, agent, Document processing |
 
-Pravidlo pro blueprint: **když jde use case vyřešit bez AI se srovnatelnou užitnou hodnotou, vyřešte ho bez AI.** AI musí své místo obhájit — co přináší navíc, kolik stojí, jak ověříte, že se nemýlí (evaluace), a co se stane, když se splete.
+Pravidlo pro blueprint: **AI za běhu musí své místo obhájit** — co přináší navíc oproti řešení bez AI, kolik stojí za měsíc provozu, jak ověříte, že se nemýlí (evaluace), a co se stane, když se splete. Rozhodnutí „tady AI nepotřebujeme" je plnohodnotný a často nejlepší výsledek.
 
 Nejčastěji vyjde hybrid: deterministická kostra a AI jen tam, kde pracuje s volným textem. Faktury z D4 ([`power-automate-invoices`](../../day-4/power-automate-invoices/)) jsou přesně takové — AI vytěží údaje z dokumentu, ale o schválení rozhoduje podmínka ve flow a člověk, ne model. Stejný rozdíl jste viděli v D4 [`cowork`](../../day-4/cowork/): plánovaný prompt není flow, procesy s auditní stopou patří do flow.
 
@@ -73,7 +79,7 @@ Vyberete jeden proces a jednoho agenta. Vzorem pro proces jsou příchozí faktu
 
 Agenta převezmete ze svého návrhu z labu v [`copilot-agents`](../../day-4/copilot-agents/) a doplníte, jakou cestou ho postavíte ([`agent-builder`](../../day-4/agent-builder/), [`agents-toolkit`](../../day-4/agents-toolkit/) nebo [`copilot-studio`](../copilot-studio/)) a kdo ho bude udržovat. Vezměte s sebou i evaluační plán — agent bez plánu vyhodnocení se v provozu nedá obhájit.
 
-U procesu i agenta uveďte, **jakou cestu bez AI jste zvážili a proč nestačí**, a v procesu vyznačte, kde rozhoduje pravidlo nebo člověk a kde jen AI navrhuje (viz [Nejdřív cesta bez AI](#nejdřív-cesta-bez-ai)). Pokud cesta bez AI stačí, je to plnohodnotný výsledek sekce, ne prohra.
+U procesu i agenta uveďte, **jakou cestu bez AI jste zvážili a proč nestačí**, a v procesu vyznačte, kde rozhoduje pravidlo nebo člověk a kde jen AI navrhuje (viz sekce *Efektivní nástroj, ne AI za každou cenu* výše). Pokud cesta bez AI stačí, je to plnohodnotný výsledek sekce, ne prohra.
 
 ### 4. Governance
 
@@ -119,7 +125,7 @@ Funkce, které jsou v preview nebo jejichž stav se rychle mění, označte v bl
 
 ## Klíčové rozlišení
 
-- **Deterministická cesta vs. AI.** Pravidlo nebo flow dá pro stejný vstup vždy stejný výsledek; jazykový model ne. Co musí vyjít pokaždé stejně, řešte bez AI; AI patří k volnému textu a návrhům, které někdo zkontroluje.
+- **AI při stavbě vs. AI za běhu.** AI vám pomůže řešení objevit a postavit (jednorázově); AI za běhu platíte při každém spuštění a nese nedeterminismus. Co jde provozovat bez AI — pohled listu, pravidlo, flow — provozujte bez AI.
 - **Blueprint vs. runbook.** Runbook (D5 [`monitoring`](../monitoring/)) říká, *co dělat, když hoří*; blueprint říká, *co postavit, aby nehořelo*. Runbook je jedna podsekce blueprintu (governance a provoz).
 - **Roadmapa s branami vs. harmonogram.** Harmonogram říká *kdy*; brána říká *za jakých podmínek*. Každá fáze má měřitelné go/no-go kritérium.
 - **Mitigace nástrojem vs. mitigace frází.** „RCD na weby HR" je rozhodnutí; „hlídat oversharing" je přání.
@@ -141,7 +147,7 @@ Blueprint je začátek, ne konec. Pro samotné nasazení nabízí Microsoft tři
 ## Shrnutí
 
 - Závěrečný projekt je design dokument, ne stavba: skládá poznatky z D1–D5 do plánu nasazení pro vaši organizaci.
-- AI není samospasitelná: u každého use casu nejdřív hledejte cestu bez AI; AI nasaďte jen tam, kde přináší hodnotu, kterou pravidlo nebo flow nedá, a kde nevadí, že není deterministická.
+- AI není samospasitelná: cílem je nejefektivnější pracovní nástroj, ne AI za každou cenu. Řešení bez AI bývají levnější a předvídatelnější; AI za běhu nasaďte jen tam, kde přináší hodnotu, kterou pravidlo, pohled listu nebo flow nedá.
 - Blueprint má sedm sekcí; každá stojí na konkrétních povinných modulech kurzu.
 - Registr rizik pokrývá pět povinných kategorií a každé riziko mitiguje nástrojem z kurzu s vlastníkem v roli.
 - U nákladů hlídejte obě správní plochy Copilot Credits a Auto-apply new services.

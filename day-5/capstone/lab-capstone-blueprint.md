@@ -82,7 +82,7 @@ Sestavit rollout blueprint pro vlastní organizaci — každé rozhodnutí opře
    |---|---|---|---|
    | Copilot Credits | spending policy pro skupinu „Back-office pilot", per-user strop (např. 1 000 kreditů/měsíc — konkrétní číslo podle odhadu z Copilot Credit Estimatoru), Auto-apply vypnuté | D2 configuration | nové služby schvalujeme ručně, pilot má tvrdý strop |
 
-4. **Automatizace** (7 min) — jeden proces + jeden agent. Agenta zkopíruj z návrhu D4 a doplň, kdo ho bude udržovat. **Nejdřív hledej cestu bez AI:** musí výsledek vyjít pokaždé stejně (výpočet, termín, schválení podle limitu)? Pak patří do pravidla nebo flow, ne do modelu. Když cesta bez AI stačí, napiš to — je to plnohodnotná odpověď. Viz README, sekce *Nejdřív cesta bez AI*.
+4. **Automatizace** (7 min) — jeden proces + jeden agent. Agenta zkopíruj z návrhu D4 a doplň, kdo ho bude udržovat. **Hledej nejefektivnější nástroj, ne AI za každou cenu:** dá se to vyřešit pohledem listu, pravidlem nebo flow? Kolik by stál každý běh s AI? Musí výsledek vyjít pokaždé stejně? Když cesta bez AI stačí, napiš to — je to plnohodnotná odpověď. Viz README, sekce *Efektivní nástroj, ne AI za každou cenu*.
 5. **Governance** (7 min) — u každého řádku konkrétní politika a portál. Opři se o tabulku z D5 admin tour.
 6. **Registr rizik** (8 min) — 5 povinných kategorií. Mitigace musí být **nástroj z kurzu** (např. „RCD na weby HR a Finance", ne „školení"). Vlastník = role. Příklad:
 
