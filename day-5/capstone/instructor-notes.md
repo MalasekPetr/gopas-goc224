@@ -9,7 +9,7 @@
 | Kritérium | 0 | 1 | 2 |
 |---|---|---|---|
 | Konfigurace | obecné fráze | správné nástroje | + zdůvodněný scope a PAYG volba |
-| Automatizace | chybí | proces NEBO agent | proces + agent s evaluačním plánem |
+| Automatizace | chybí / AI všude bez zdůvodnění | proces NEBO agent | proces + agent s evaluačním plánem + zdůvodněná volba AI vs. cesta bez AI |
 | Governance | chybí vrstvy | mapa vrstev použitá | + role (AI Admin) a audit/runbook |
 | Rizika | výčet | dopady + mitigace | mitigace nástroji kurzu + vlastníci |
 | Change + roadmapa | chybí | fáze bez bran | brány měřitelné |
@@ -25,6 +25,8 @@
 
 ## Závěr kurzu
 
+- **Hlavní poselství (rozhodnutí autora 2026-11): AI není samospasitelná.** Kurz týden ukazoval, co AI umí — závěr musí vyznít opačně než marketing: nejdřív cesta bez AI, AI jen tam, kde nevadí nedeterminismus a přináší hodnotu, kterou pravidlo nebo flow nedá. Ukázat to na vlastním labu z dopoledne: seznam propadajících certifikací dá filtrovaný pohled listu zadarmo a pokaždé stejně.
+- Při prezentacích aktivně chválit studenty, kteří AI někde **záměrně nepoužili** — a ptát se „proč tady AI?" u blueprintů, které ji mají všude.
 - Next steps: Success Kit + enablement guide (odkazy v README) — ukázat, kde jsou.
 - Připomenout: blueprint si stáhnout — kurzovní účty po kurzu nejsou k dispozici.
 - Feedback formulář GOPAS.

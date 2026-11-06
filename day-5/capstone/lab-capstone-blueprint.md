@@ -37,7 +37,9 @@ Sestavit rollout blueprint pro vlastní organizaci — každé rozhodnutí opře
 ## 3. Automatizace
 - Proces k automatizaci (vzor: faktury z D4 power-automate-invoices):
 - Cesta vytěžení a schvalování:
+- Kde rozhoduje pravidlo / člověk a kde jen AI navrhuje:
 - Agent (z návrhu D4): název, účel, cesta tvorby, kdo ho udržuje:
+- Cesta bez AI, kterou jsem zvážil/a (pravidlo, flow, pohled listu…), a proč nestačí:
 
 ## 4. Governance
 | Oblast | Rozhodnutí | Kde (portál) |
@@ -80,7 +82,7 @@ Sestavit rollout blueprint pro vlastní organizaci — každé rozhodnutí opře
    |---|---|---|---|
    | Copilot Credits | spending policy pro skupinu „Back-office pilot", per-user strop (např. 1 000 kreditů/měsíc — konkrétní číslo podle odhadu z Copilot Credit Estimatoru), Auto-apply vypnuté | D2 configuration | nové služby schvalujeme ručně, pilot má tvrdý strop |
 
-4. **Automatizace** (7 min) — jeden proces + jeden agent. Agenta zkopíruj z návrhu D4 a doplň, kdo ho bude udržovat.
+4. **Automatizace** (7 min) — jeden proces + jeden agent. Agenta zkopíruj z návrhu D4 a doplň, kdo ho bude udržovat. **Nejdřív hledej cestu bez AI:** musí výsledek vyjít pokaždé stejně (výpočet, termín, schválení podle limitu)? Pak patří do pravidla nebo flow, ne do modelu. Když cesta bez AI stačí, napiš to — je to plnohodnotná odpověď. Viz README, sekce *Nejdřív cesta bez AI*.
 5. **Governance** (7 min) — u každého řádku konkrétní politika a portál. Opři se o tabulku z D5 admin tour.
 6. **Registr rizik** (8 min) — 5 povinných kategorií. Mitigace musí být **nástroj z kurzu** (např. „RCD na weby HR a Finance", ne „školení"). Vlastník = role. Příklad:
 
@@ -94,13 +96,14 @@ Sestavit rollout blueprint pro vlastní organizaci — každé rozhodnutí opře
 
 8. Připrav 3 věty:
    - **Kontext** (1 věta),
-   - **rozhodnutí, na které jsi hrdý/á**, a proč,
+   - **rozhodnutí, na které jsi hrdý/á**, a proč (klidně to, kde jsi AI záměrně nepoužil/a),
    - **největší riziko** a jak ho mitiguješ.
 9. Ostatní: každý položí aspoň jednu otázku za celý blok.
 
 ## Ověření
 
 - [ ] Všech 7 sekcí vyplněných; každá odkazuje na konkrétní nástroj nebo politiku z kurzu.
+- [ ] Každé použití AI v sekci Automatizace má zdůvodnění, proč nestačí cesta bez AI, a kroky s pevným výsledkem řeší pravidlo, flow nebo člověk.
 - [ ] Registr rizik má 5 kategorií, každé riziko mitigaci nástrojem z kurzu a vlastníka (roli).
 - [ ] Roadmapa má 3 fáze s měřitelnými go/no-go branami.
 - [ ] Prezentace proběhla a ustála otázku.

@@ -17,6 +17,25 @@ Závěrečný projekt proto nic nového nestaví. Skládá poznatky z týdne do 
 
 Žádná sekce blueprintu nestojí na volitelných modulech. Všechno, co potřebujete, jste probrali v povinných blocích D1–D5.
 
+## Nejdřív cesta bez AI
+
+Celý týden jste viděli, co AI umí. To neznamená, že ji máte nasadit všude. AI není samospasitelná technologie a dobrý blueprint často obsahuje víc rozhodnutí „tady AI nepoužijeme" než „tady ji zapneme".
+
+U každého use casu si proto nejdřív položte otázku: **musí výsledek vyjít pokaždé stejně?** Jazykový model je nedeterministický — na stejný vstup může odpovědět pokaždé trochu jinak, a když se splete, splete se přesvědčivě. Kde to vadí, hledejte nejdřív **cestu bez AI (NOAI)**: pravidlo, podmínku ve flow, vypočítaný sloupec, validaci, strukturovaný formulář nebo filtrovaný pohled listu. Taková cesta nečerpá Copilot Credits, dá se otestovat jednou provždy a v auditu se vysvětlí jednou větou.
+
+| Use case potřebuje | Cesta bez AI | Kde AI dává smysl |
+|---|---|---|
+| Stejný výsledek pro stejný vstup (výpočet, termín, schválení podle limitu) | podmínka ve flow, vypočítaný sloupec, pravidlo | nikde — tady AI jen přidává riziko |
+| Auditní stopu a vysvětlitelné rozhodnutí | flow s historií běhů, schvalování | jen jako návrh; rozhoduje pravidlo nebo člověk |
+| Přesná data z pevného zdroje | filtrovaný pohled listu, dotaz, report | formulace odpovědi nad už spočítaným výsledkem |
+| Práci s volným textem: shrnutí, návrh, hledání v nestrukturovaném obsahu, vytěžení z dokumentu | často žádná rozumná | Copilot, agent, Document processing |
+
+Pravidlo pro blueprint: **když jde use case vyřešit bez AI se srovnatelnou užitnou hodnotou, vyřešte ho bez AI.** AI musí své místo obhájit — co přináší navíc, kolik stojí, jak ověříte, že se nemýlí (evaluace), a co se stane, když se splete.
+
+Nejčastěji vyjde hybrid: deterministická kostra a AI jen tam, kde pracuje s volným textem. Faktury z D4 ([`power-automate-invoices`](../../day-4/power-automate-invoices/)) jsou přesně takové — AI vytěží údaje z dokumentu, ale o schválení rozhoduje podmínka ve flow a člověk, ne model. Stejný rozdíl jste viděli v D4 [`cowork`](../../day-4/cowork/): plánovaný prompt není flow, procesy s auditní stopou patří do flow.
+
+Kriticky se podívejte i na vlastní lab z dnešního dopoledne. HR Asistent počítal propadající certifikace, ale v provozu by stejný seznam dal filtrovaný pohled listu Zaměstnanci nebo flow s upozorněním manažerovi — zadarmo a pokaždé stejně. Agent má smysl až tam, kde se manažer ptá přirozeným jazykem a potřebuje odpověď nad směrnicí a daty dohromady.
+
 ## Sedm sekcí blueprintu
 
 Blueprint má sedm sekcí v pevném pořadí. Pořadí není náhodné: nejdřív víte, *kde* jste (kontext), pak *co* nastavíte (konfigurace), *co* tím získáte (automatizace), *jak* to uhlídáte (governance), *co* se může pokazit (rizika), *jak* to lidem podáte (change) a *kdy* co pustíte (roadmapa).
@@ -53,6 +72,8 @@ Konkrétní rozhodnutí vypadá jako „spending policy pro skupinu pilotu, tvrd
 Vyberete jeden proces a jednoho agenta. Vzorem pro proces jsou příchozí faktury z D4 ([`power-automate-invoices`](../../day-4/power-automate-invoices/)): příjem → vytěžení → schválení → uložení, s větví výjimek. Pro vytěžení metadat v knihovně zvažte [`document-processing`](../../day-2/document-processing/); jeho PAYG je jiný model než Copilot Credits a v blueprintu ho tak i veďte.
 
 Agenta převezmete ze svého návrhu z labu v [`copilot-agents`](../../day-4/copilot-agents/) a doplníte, jakou cestou ho postavíte ([`agent-builder`](../../day-4/agent-builder/), [`agents-toolkit`](../../day-4/agents-toolkit/) nebo [`copilot-studio`](../copilot-studio/)) a kdo ho bude udržovat. Vezměte s sebou i evaluační plán — agent bez plánu vyhodnocení se v provozu nedá obhájit.
+
+U procesu i agenta uveďte, **jakou cestu bez AI jste zvážili a proč nestačí**, a v procesu vyznačte, kde rozhoduje pravidlo nebo člověk a kde jen AI navrhuje (viz [Nejdřív cesta bez AI](#nejdřív-cesta-bez-ai)). Pokud cesta bez AI stačí, je to plnohodnotný výsledek sekce, ne prohra.
 
 ### 4. Governance
 
@@ -92,12 +113,13 @@ Tři fáze (pilot, rozšíření, plný provoz) a u každé **go/no-go brána**.
 
 ## Co dělá blueprint dobrým
 
-Dobrý blueprint poznáte podle tří věcí. Každá sekce jmenuje konkrétní nástroj, politiku nebo parametr z kurzu. Každé riziko má mitigaci nástrojem a vlastníka jako roli. A roadmapa má brány, které jde změřit. Fráze, které by se hodily do libovolné prezentace („zvýšíme produktivitu", „zajistíme bezpečnost"), jsou signál, že sekce ještě není hotová.
+Dobrý blueprint poznáte podle čtyř věcí. Každá sekce jmenuje konkrétní nástroj, politiku nebo parametr z kurzu. Každé použití AI má zdůvodnění, proč nestačí cesta bez AI. Každé riziko má mitigaci nástrojem a vlastníka jako roli. A roadmapa má brány, které jde změřit. Fráze, které by se hodily do libovolné prezentace („zvýšíme produktivitu", „zajistíme bezpečnost"), jsou signál, že sekce ještě není hotová.
 
 Funkce, které jsou v preview nebo jejichž stav se rychle mění, označte v blueprintu poznámkou „ověřit při realizaci". Blueprint budete realizovat za týdny až měsíce a mezitím se může změnit název, cena i dostupnost.
 
 ## Klíčové rozlišení
 
+- **Deterministická cesta vs. AI.** Pravidlo nebo flow dá pro stejný vstup vždy stejný výsledek; jazykový model ne. Co musí vyjít pokaždé stejně, řešte bez AI; AI patří k volnému textu a návrhům, které někdo zkontroluje.
 - **Blueprint vs. runbook.** Runbook (D5 [`monitoring`](../monitoring/)) říká, *co dělat, když hoří*; blueprint říká, *co postavit, aby nehořelo*. Runbook je jedna podsekce blueprintu (governance a provoz).
 - **Roadmapa s branami vs. harmonogram.** Harmonogram říká *kdy*; brána říká *za jakých podmínek*. Každá fáze má měřitelné go/no-go kritérium.
 - **Mitigace nástrojem vs. mitigace frází.** „RCD na weby HR" je rozhodnutí; „hlídat oversharing" je přání.
@@ -119,6 +141,7 @@ Blueprint je začátek, ne konec. Pro samotné nasazení nabízí Microsoft tři
 ## Shrnutí
 
 - Závěrečný projekt je design dokument, ne stavba: skládá poznatky z D1–D5 do plánu nasazení pro vaši organizaci.
+- AI není samospasitelná: u každého use casu nejdřív hledejte cestu bez AI; AI nasaďte jen tam, kde přináší hodnotu, kterou pravidlo nebo flow nedá, a kde nevadí, že není deterministická.
 - Blueprint má sedm sekcí; každá stojí na konkrétních povinných modulech kurzu.
 - Registr rizik pokrývá pět povinných kategorií a každé riziko mitiguje nástrojem z kurzu s vlastníkem v roli.
 - U nákladů hlídejte obě správní plochy Copilot Credits a Auto-apply new services.
