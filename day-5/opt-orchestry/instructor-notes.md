@@ -4,6 +4,7 @@
 
 - **Go:** zbývá 45+ min, skupina má governance publikum (IT správci, ne makeři), monitoring doběhl vč. runbooku.
 - **No-go:** čas věnovat dotazům nebo capstone. Modul je leaf — nic dalšího na něm nestojí.
+- **Výchozí stav od 2026-11: no-go.** Odpoledne D5 (copilot-admin 75 + monitoring 75 + capstone 75 min) se s Orchestry nevejde; zařadit jen při náskoku po monitoringu.
 
 ## Timing
 

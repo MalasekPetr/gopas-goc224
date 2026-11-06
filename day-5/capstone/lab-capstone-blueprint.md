@@ -1,6 +1,6 @@
 # Lab · Závěrečný projekt — rollout blueprint
 
-> Modul: capstone · Odhad: 60 min + 30 min prezentace · Režim: **individuální design dokument (MD), samostatně podle šablony**
+> Modul: capstone · Odhad: 40 min + 20 min prezentace · Režim: **individuální design dokument (MD), samostatně podle šablony**
 
 ## Cíl
 
@@ -71,24 +71,24 @@ Sestavit rollout blueprint pro vlastní organizaci — každé rozhodnutí opře
 | Plný provoz | | |
 ```
 
-### Krok 2 — vyplň sekce (55 min)
+### Krok 2 — vyplň sekce (38 min)
 
-2. **Kontext** (5 min) — 4 řádky, žádné odstavce.
-3. **Konfigurace** (10 min) — u každé oblasti konkrétní rozhodnutí, ne „zapneme Copilota". Příklad dobrého řádku:
+2. **Kontext** (3 min) — 4 řádky, žádné odstavce.
+3. **Konfigurace** (7 min) — u každé oblasti konkrétní rozhodnutí, ne „zapneme Copilota". Příklad dobrého řádku:
 
    | Oblast | Rozhodnutí | Nástroj z kurzu | Proč |
    |---|---|---|---|
    | Copilot Credits | spending policy pro skupinu „Back-office pilot", per-user strop (např. 1 000 kreditů/měsíc — konkrétní číslo podle odhadu z Copilot Credit Estimatoru), Auto-apply vypnuté | D2 configuration | nové služby schvalujeme ručně, pilot má tvrdý strop |
 
-4. **Automatizace** (10 min) — jeden proces + jeden agent. Agenta zkopíruj z návrhu D4 a doplň, kdo ho bude udržovat.
-5. **Governance** (10 min) — u každého řádku konkrétní politika a portál. Opři se o tabulku z D5 admin tour.
-6. **Registr rizik** (10 min) — 5 povinných kategorií. Mitigace musí být **nástroj z kurzu** (např. „RCD na weby HR a Finance", ne „školení"). Vlastník = role. Příklad:
+4. **Automatizace** (7 min) — jeden proces + jeden agent. Agenta zkopíruj z návrhu D4 a doplň, kdo ho bude udržovat.
+5. **Governance** (7 min) — u každého řádku konkrétní politika a portál. Opři se o tabulku z D5 admin tour.
+6. **Registr rizik** (8 min) — 5 povinných kategorií. Mitigace musí být **nástroj z kurzu** (např. „RCD na weby HR a Finance", ne „školení"). Vlastník = role. Příklad:
 
    | Riziko | Dopad | Pravděpodobnost | Mitigace | Vlastník |
    |---|---|---|---|---|
    | Náklady Copilot Credits | nové služby (Cowork, Code) začnou čerpat kredity bez schválení | střední | Auto-apply new services vypnuté u všech spending policies; měsíční kontrola Cost management → Consumption | AI Administrator |
 
-7. **Change enablement + roadmapa** (10 min) — 3 komunikační kroky; 3 fáze, každá s **měřitelnou** branou (např. „≥ 60 % pilotních uživatelů aktivních týdně podle usage reportu a 0 incidentů oversharingu za 4 týdny").
+7. **Change enablement + roadmapa** (6 min) — 3 komunikační kroky; 3 fáze, každá s **měřitelnou** branou (např. „≥ 60 % pilotních uživatelů aktivních týdně podle usage reportu a 0 incidentů oversharingu za 4 týdny").
 
 ### Krok 3 — prezentace (3 min na studenta)
 

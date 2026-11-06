@@ -2,7 +2,7 @@
 
 ## Timing
 
-- 15 min výklad (formát + rubrika) + 60 min psaní + 30 min prezentace + závěr kurzu. Pátek odpoledne — energie řídit prezentacemi, ne dalším výkladem.
+- 15 min výklad (formát + rubrika) + 40 min psaní + 20 min prezentace + závěr kurzu (zkráceno 2026-11 — odpoledne D5 se po přesunu Copilot Studia na dopoledne nevešlo). Pátek odpoledne — energie řídit prezentacemi, ne dalším výkladem.
 
 ## Rubrika hodnocení (sdílet předem!)
 
@@ -20,7 +20,7 @@
 
 - Hlídat „PowerPoint fráze" — každá sekce musí jmenovat nástroj/politiku/parametr z kurzu; rubrika to vynucuje.
 - Studenti s vlastní firmou nesmí do blueprintu psát citlivé interní údaje — pravidlo: názvy a čísla anonymizovat (je to jejich dokument, ale píšou ho v kurzovním tenantu).
-- Prezentace timeboxovat tvrdě (3 min + 1 otázka) — jinak se 20 lidí nevejde. Při velké skupině bez druhého instruktora vybrat 8 dobrovolníků, zbytek dostane písemnou zpětnou vazbu.
+- Prezentace timeboxovat tvrdě (3 min + 1 otázka) — jinak se 20 lidí nevejde. Při velké skupině bez druhého instruktora vybrat 5 dobrovolníků (20 min ÷ 4 min), zbytek dostane písemnou zpětnou vazbu.
 - **Žádná závislost na opt modulech** (ia-spo, orchestry) — kdo je neviděl, nesmí být znevýhodněn (leaf pravidlo).
 
 ## Závěr kurzu

@@ -64,4 +64,4 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy uložené ve složce
 | 4 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
 | 5 | Závěrečný projekt a další kroky *(rollout blueprint)* | `day-5/capstone` | P |
 
-> [!NOTE] D5 dopoledne dokončí **stavbu** agentů v Copilot Studiu (GitHub Copilot harness) včetně výkladu Copilot Credits a reálné ceny labu. Odpoledne se správa (copilot-admin → monitoring → volitelná Orchestry) dívá na agenty, které studenti právě postavili, a den uzavírá **rollout blueprint** (capstone). Oblouk „postavili jste — teď to řídíte — a plánujete nasazení".
+> [!NOTE] D5 dopoledne dokončí **stavbu** agentů v Copilot Studiu (GitHub Copilot harness) včetně výkladu Copilot Credits a reálné ceny labu. Odpoledne se správa (copilot-admin → monitoring; volitelná Orchestry jen při náskoku) dívá na agenty, které studenti právě postavili, a den uzavírá **rollout blueprint** (capstone). Oblouk „postavili jste — teď to řídíte — a plánujete nasazení".
