@@ -7,7 +7,7 @@
 
 - Tento blok (úvod): deklarativní základ + mapa cest + srovnání (`comparison-agent-paths.md`) ~15–20 min + návrhový lab (`lab-agent-design.md`).
 - Nástrojové bloky mají vlastní laby a go/no-go (jejich instructor-notes). Orientační časy: Agent Builder ~45 min, Toolkit ~35 min (+ connected agents 25–30 min), volitelně SharePoint agents ~20 min.
-- Most na D5: „dnes jste viděli strop no-code cest (analytika) — zítra ho Studio prorazí; a agenty, co postavíte, ráno spravujete v `copilot-admin`."
+- Most na D5: „dnes jste viděli strop no-code cest (analytika) — zítra dopoledne ho Studio prorazí; a agenty, co postavíte, odpoledne spravujete v `copilot-admin`."
 
 ## Go/no-go — otestovat před během
 
@@ -41,7 +41,7 @@
 ## Vazby
 
 - Zpět: Agent Instructions/orchestrator (D2).
-- Dopředu: **správa agentů** (registr, blokace, Agent 365) hned zítra ráno v `copilot-admin` (D5); pak Copilot Studio = „stejný návrh, silnější nástroj" — návrhy z návrhového labu se ve Studiu dají rovnou stavět, **HR Asistent** se dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.
+- Dopředu: **správa agentů** (registr, blokace, Agent 365) zítra odpoledne v `copilot-admin` (D5); dopoledne předtím Copilot Studio = „stejný návrh, silnější nástroj" — návrhy z návrhového labu se ve Studiu dají rovnou stavět, **HR Asistent** se dostaví k analytickým dotazům nad listem; evaluační plán se recykluje v capstone.
 
 ## Přesunuto z README (přepis pro samostudium, 2026-11)
 

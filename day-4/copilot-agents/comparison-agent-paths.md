@@ -23,7 +23,7 @@
 | **Licence tvorba/použití** | Copilot licence nebo PAYG tenant | Copilot Studio přístup (Copilot Credits / PAYG) | tvorba zdarma; použití licence/kredity | tvorba: Copilot licence; použití: licence **nebo PAYG meter** |
 | **Governance páky** | admin approval do katalogu | **DLP v Power Platform admin centru** (enforcement povinný), kanály, auth | RAI validace balíčku, admin approval, audit v repu | RCD/RSS na webu, SAM reporty (D3/D4) |
 
-¹ Copilot Studio má dvě prostředí („harness"): **standard** (klasické — generative/classic orchestrace, topics) a **GitHub Copilot harness** (nová zkušenost, preview — orchestrace nekonfigurovatelná, kredity od první stavby). Sloupec popisuje hlavně standard harness; detail v D5 ([Harnesses](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)).
+¹ Copilot Studio staví agenty hlavně na dvou harnessech: **standard** (klasický — generative/classic orchestrace, topics) a **GitHub Copilot harness** (GA od 8/2026 — orchestrace nekonfigurovatelná, skills, kredity od první stavby). Sloupec popisuje hlavně standard harness; detail v D5 ([Harnesses](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)).
 ² Na PAYG (bez Copilot licence) jsou Email, People, Teams messages a Teams meetings jako knowledge **jen pro licencované** uživatele ([Prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites)) — studenti mají od 2026-11 Copilot licenci, takže tyto zdroje vyzkoušet můžou.
 
 Průřezově pro všechny: **permission trimming** (agent nikdy nepřekročí práva uživatele), sensitivity labels respektovány, **Restricted SharePoint Search blokuje SharePoint knowledge úplně** a RCD vyřazuje web z groundingu (D2 explainer).

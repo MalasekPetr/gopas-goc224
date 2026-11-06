@@ -11,7 +11,7 @@
 
 ## Proč se správou Copilotu zabývat
 
-Ve čtvrtek jste agenty a aplikace **stavěli** — v Agent Builderu, v Agents Toolkitu, v Code. Dnes ráno se díváte na druhou stranu: jak to všechno vidí a řídí správce. Každý agent je nový objekt v tenantu s vlastníkem, okruhem uživatelů a přístupem k datům; každá AI služba na spotřebu je nová položka v rozpočtu. Kdo to nemá zmapované, neví, co v organizaci běží, kdo za to platí a co se stane, když autor odejde.
+Ve čtvrtek jste agenty a aplikace **stavěli** — v Agent Builderu, v Agents Toolkitu, v Code — a dnes dopoledne v Copilot Studiu. Teď se díváte na druhou stranu: jak to všechno vidí a řídí správce. Každý agent je nový objekt v tenantu s vlastníkem, okruhem uživatelů a přístupem k datům; každá AI služba na spotřebu je nová položka v rozpočtu. Kdo to nemá zmapované, neví, co v organizaci běží, kdo za to platí a co se stane, když autor odejde.
 
 Potíž je v tom, že správa není na jednom místě. SharePoint má svou vrstvu (SAM z D3), M365 admin centrum má zvlášť sekce pro Copilot, agenty a aplikace, nad tím stojí Agent 365 a vedle toho nástroje třetích stran. Modul proto staví na jedné otázce, kterou si položíte u každého správního požadavku: **Kde se tohle řeší — a kdo to smí změnit?**
 

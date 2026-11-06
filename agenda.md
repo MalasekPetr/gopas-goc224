@@ -58,10 +58,10 @@ Jediný zdroj pravdy o pořadí modulů. Složky jsou slugy uložené ve složce
 
 | # | Blok | Slug | Typ |
 |---|---|---|---|
-| 1 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-5/copilot-admin` | P |
-| 2 | Provozní monitoring a compliance | `day-5/monitoring` | P |
-| 3 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
-| 4 | Copilot Studio — stavba nad SharePointem | `day-5/copilot-studio` | P |
+| 1 | Copilot Studio — stavba nad SharePointem + Copilot Credits *(celé dopoledne, ~3 h)* | `day-5/copilot-studio` | P |
+| 2 | Nástroje pro správu Copilotu a agentů (M365 AC: Copilot & Agents, Agent 365, 3rd-party mapa) | `day-5/copilot-admin` | P |
+| 3 | Provozní monitoring a compliance | `day-5/monitoring` | P |
+| 4 | Orchestry — governance/provisioning (3rd-party) | `day-5/opt-orchestry` | V |
 | 5 | Závěrečný projekt a další kroky *(rollout blueprint)* | `day-5/capstone` | P |
 
-> [!NOTE] D4 skončí **stavbou** agentů; D5 ráno naváže jejich **správou** (copilot-admin → monitoring → volitelná Orchestry), pak pokračuje **stavbou** (Copilot Studio) a **rolloutem** (capstone). Oblouk „postavili jste — teď to řídíte — a stavíte dál".
+> [!NOTE] D5 dopoledne dokončí **stavbu** agentů v Copilot Studiu (GitHub Copilot harness) včetně výkladu Copilot Credits a reálné ceny labu. Odpoledne se správa (copilot-admin → monitoring → volitelná Orchestry) dívá na agenty, které studenti právě postavili, a den uzavírá **rollout blueprint** (capstone). Oblouk „postavili jste — teď to řídíte — a plánujete nasazení".

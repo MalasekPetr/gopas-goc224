@@ -99,7 +99,7 @@ Backup i Archive vyžadují nastavený (ex-Syntex) PAYG billing — stejná plum
 |---|---|---|
 | **Microsoft 365 Agents Toolkit** | nástupce Teams Toolkitu; VS Code / Visual Studio / GitHub Copilot / CLI; scaffolduje deklarativní a custom engine agenty, manifest, provisioning, MCP akce | zdarma |
 | **GitHub Copilot** | AI asistent při psaní kódu; Agents Toolkit je pro něj dostupný | vlastní licence (mimo M365) |
-| **Copilot Studio** | low-code stavba agentů; dvě „harness" prostředí: **standard** (klasické) a **GitHub Copilot harness** (nová zkušenost, preview) | Copilot Credits / M365 Copilot licence (zero-rating jen na standard harness); GitHub Copilot harness čerpá kredity už od stavby a licence ho nekryje |
+| **Copilot Studio** | low-code stavba agentů; čtyři harnessy: **GitHub Copilot harness** (GA 8/2026; blog 11/2026 uvádí nový název **Microsoft Copilot harness**, Learn zatím ne), **standard** (klasický), **Copilot Chat** a **Customer Conversation** | Copilot Credits / M365 Copilot licence (fair use jen standard a Copilot Chat harness); GitHub Copilot harness čerpá kredity už od stavby a licence ho nekryje — viz D5 `copilot-studio/explainer-copilot-credits.md` |
 | **Agent Builder** | lightweight tvorba deklarativních agentů přímo v Copilotu (bez opuštění appky); umí připojit Skills (preview); externí akce ne → „copy to Copilot Studio" | Copilot licence / tenant s PAYG pro Copilot Studio (MS prerequisites) — ověřit k datu běhu |
 
 Rozhodovací osa pro [`day-4/procode-vs-lowcode`](day-4/procode-vs-lowcode/): deklarativní agent (Agents Toolkit, source-controlled) vs. Copilot Studio (low-code) vs. SPFx/Graph. Agenti jako kód sedí na repo-as-code přístup kurzu.
