@@ -50,6 +50,24 @@ Zdroj: diagram na stránce [Usage-based billing](https://learn.microsoft.com/en-
 
 ## Kde se spotřeba řídí — dvě admin centra
 
+> [!IMPORTANT] Dva portály, oba mají v menu „Copilot"
+> Spending policies (včetně té pro Copilot Studio) jsou v **Microsoft 365 admin centru**, ne v Power Platform admin centru. Power Platform admin centrum má v levém pruhu také položku **Copilot** — to je ale *Copilot hub* (přehled, nastavení, doporučení, odkazy na Copilot Studio a Power Apps), **Cost management v něm není**. Kdo hledá spending policy v PPAC, nenajde ji.
+
+| Portál | Adresa | Kde v menu | Co tam řídíte |
+|---|---|---|---|
+| **Microsoft 365 admin centrum** (M365 AC) | `admin.microsoft.com` | **Copilot → Cost management** (Overview, Consumption, **Configuration**); sekce Copilot může být schovaná pod **… Show all** | spending policies: **identity-based** (Cowork, Code… podle uživatelů) a **resource-based** (Copilot Studio podle prostředí nebo agenta) |
+| **Power Platform admin centrum** (PPAC) | `admin.powerplatform.microsoft.com` | **Licensing → Copilot Studio** (kredity prostředí, PAYG billing plan, **Manage agents**); **Copilot** = Copilot hub (nastavení, ne náklady) | alokace kreditů prostředí, billing plan, limit na jednotlivého agenta, DLP a prostředí |
+
+**Postup: resource-based politika pro prostředí** ([Manage Copilot Studio costs](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-manage-copilot-studio-costs)):
+
+1. `admin.microsoft.com` → **Copilot → Cost management → Configuration → Add spending policy**. Potřebujete roli Global Administrator nebo AI Administrator; Global Reader a AI Reader stránku vidí bez tlačítka Add.
+2. Název politiky, **Policy scope → Resources**.
+3. **Resource collection → Specific environments** → vyberte prostředí (u nás `GOC224-lab`). Alternativa **Specific resource** = konkrétní agenti; **All environments** přesune řízení všech prostředí najednou — pro první krok nevolit.
+4. Měsíční limit politiky a **per-agent limit**.
+5. Alert thresholds a příjemci, billing method (výchozí nebo override), vytvořit.
+
+Když volba **Resources** v průvodci chybí, resource-based politika ještě není v tenantu dostupná. Pak Copilot Studio řídíte v PPAC (**Licensing → Copilot Studio**, viz níže).
+
 ### M365 admin centrum → Copilot → Cost management
 
 **Identity-based spending policy** řídí služby podle toho, *kdo* je používá ([Managing usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)). Kurzovní tenant má jednu:
